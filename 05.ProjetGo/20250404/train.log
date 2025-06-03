@@ -1,0 +1,508 @@
+epoch 1, lr 0.0005
+313/313 [==============================] - 49s 75ms/step - loss: 7.7658 - policy_loss: 4.8555 - value_loss: 0.6995 - policy_categorical_accuracy: 0.0913 - value_mse: 0.1224
+epoch 2, lr 0.0005
+313/313 [==============================] - 21s 68ms/step - loss: 6.8486 - policy_loss: 3.9701 - value_loss: 0.6916 - policy_categorical_accuracy: 0.1744 - value_mse: 0.1205
+epoch 3, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 6.5996 - policy_loss: 3.7251 - value_loss: 0.6906 - policy_categorical_accuracy: 0.2104 - value_mse: 0.1196
+epoch 4, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 6.4761 - policy_loss: 3.6082 - value_loss: 0.6889 - policy_categorical_accuracy: 0.2233 - value_mse: 0.1194
+epoch 5, lr 0.0005
+313/313 [==============================] - 26s 84ms/step - loss: 6.3792 - policy_loss: 3.5102 - value_loss: 0.6892 - policy_categorical_accuracy: 0.2360 - value_mse: 0.1196
+epoch 6, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 6.2372 - policy_loss: 3.3756 - value_loss: 0.6874 - policy_categorical_accuracy: 0.2531 - value_mse: 0.1191
+epoch 7, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 6.1774 - policy_loss: 3.3194 - value_loss: 0.6865 - policy_categorical_accuracy: 0.2680 - value_mse: 0.1183
+epoch 8, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 6.0931 - policy_loss: 3.2277 - value_loss: 0.6884 - policy_categorical_accuracy: 0.2743 - value_mse: 0.1185
+epoch 9, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 6.0581 - policy_loss: 3.1953 - value_loss: 0.6877 - policy_categorical_accuracy: 0.2800 - value_mse: 0.1184
+epoch 10, lr 0.0005
+313/313 [==============================] - 24s 78ms/step - loss: 5.9762 - policy_loss: 3.1132 - value_loss: 0.6878 - policy_categorical_accuracy: 0.2933 - value_mse: 0.1218
+epoch 11, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.9872 - policy_loss: 3.1327 - value_loss: 0.6857 - policy_categorical_accuracy: 0.2905 - value_mse: 0.1171
+epoch 12, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.9680 - policy_loss: 3.1132 - value_loss: 0.6858 - policy_categorical_accuracy: 0.2955 - value_mse: 0.1176
+epoch 13, lr 0.0005
+313/313 [==============================] - 22s 72ms/step - loss: 5.9241 - policy_loss: 3.0734 - value_loss: 0.6848 - policy_categorical_accuracy: 0.2999 - value_mse: 0.1164
+epoch 14, lr 0.0005
+313/313 [==============================] - 22s 72ms/step - loss: 5.9202 - policy_loss: 3.0704 - value_loss: 0.6846 - policy_categorical_accuracy: 0.2993 - value_mse: 0.1163
+epoch 15, lr 0.0005
+313/313 [==============================] - 25s 79ms/step - loss: 5.9129 - policy_loss: 3.0641 - value_loss: 0.6843 - policy_categorical_accuracy: 0.3023 - value_mse: 0.1176
+epoch 16, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.8558 - policy_loss: 3.0064 - value_loss: 0.6845 - policy_categorical_accuracy: 0.3109 - value_mse: 0.1185
+epoch 17, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.8574 - policy_loss: 3.0086 - value_loss: 0.6843 - policy_categorical_accuracy: 0.3063 - value_mse: 0.1172
+epoch 18, lr 0.0005
+313/313 [==============================] - 25s 80ms/step - loss: 5.8534 - policy_loss: 3.0020 - value_loss: 0.6850 - policy_categorical_accuracy: 0.3047 - value_mse: 0.1172
+epoch 19, lr 0.0005
+313/313 [==============================] - 24s 75ms/step - loss: 5.8046 - policy_loss: 2.9564 - value_loss: 0.6842 - policy_categorical_accuracy: 0.3208 - value_mse: 0.1158
+epoch 20, lr 0.0005
+313/313 [==============================] - 24s 76ms/step - loss: 5.8026 - policy_loss: 2.9541 - value_loss: 0.6843 - policy_categorical_accuracy: 0.3156 - value_mse: 0.1168
+epoch 21, lr 0.0005
+313/313 [==============================] - 24s 75ms/step - loss: 5.7720 - policy_loss: 2.9253 - value_loss: 0.6838 - policy_categorical_accuracy: 0.3212 - value_mse: 0.1168
+epoch 22, lr 0.0005
+313/313 [==============================] - 23s 75ms/step - loss: 5.7560 - policy_loss: 2.9141 - value_loss: 0.6827 - policy_categorical_accuracy: 0.3194 - value_mse: 0.1170
+epoch 23, lr 0.0005
+313/313 [==============================] - 24s 76ms/step - loss: 5.7969 - policy_loss: 2.9464 - value_loss: 0.6848 - policy_categorical_accuracy: 0.3170 - value_mse: 0.1181
+epoch 24, lr 0.0005
+313/313 [==============================] - 23s 72ms/step - loss: 5.7723 - policy_loss: 2.9346 - value_loss: 0.6816 - policy_categorical_accuracy: 0.3165 - value_mse: 0.1165
+epoch 25, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.7442 - policy_loss: 2.9002 - value_loss: 0.6832 - policy_categorical_accuracy: 0.3249 - value_mse: 0.1189
+epoch 26, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.7386 - policy_loss: 2.9032 - value_loss: 0.6811 - policy_categorical_accuracy: 0.3217 - value_mse: 0.1156
+epoch 27, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.7409 - policy_loss: 2.9143 - value_loss: 0.6789 - policy_categorical_accuracy: 0.3171 - value_mse: 0.1152
+epoch 28, lr 0.0005
+313/313 [==============================] - 25s 80ms/step - loss: 5.7515 - policy_loss: 2.9083 - value_loss: 0.6831 - policy_categorical_accuracy: 0.3201 - value_mse: 0.1162
+epoch 29, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.7180 - policy_loss: 2.8834 - value_loss: 0.6809 - policy_categorical_accuracy: 0.3270 - value_mse: 0.1171
+epoch 30, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.6819 - policy_loss: 2.8552 - value_loss: 0.6790 - policy_categorical_accuracy: 0.3282 - value_mse: 0.1145
+epoch 31, lr 0.0005
+313/313 [==============================] - 25s 81ms/step - loss: 5.7051 - policy_loss: 2.8802 - value_loss: 0.6785 - policy_categorical_accuracy: 0.3204 - value_mse: 0.1145
+epoch 32, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.7090 - policy_loss: 2.8706 - value_loss: 0.6819 - policy_categorical_accuracy: 0.3257 - value_mse: 0.1161
+epoch 33, lr 0.0005
+313/313 [==============================] - 23s 75ms/step - loss: 5.6996 - policy_loss: 2.8699 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3199 - value_mse: 0.1156
+epoch 34, lr 0.0005
+313/313 [==============================] - 23s 72ms/step - loss: 5.6755 - policy_loss: 2.8417 - value_loss: 0.6808 - policy_categorical_accuracy: 0.3311 - value_mse: 0.1147
+epoch 35, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.6726 - policy_loss: 2.8531 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3274 - value_mse: 0.1166
+epoch 36, lr 0.0005
+313/313 [==============================] - 25s 79ms/step - loss: 5.6686 - policy_loss: 2.8444 - value_loss: 0.6784 - policy_categorical_accuracy: 0.3314 - value_mse: 0.1148
+epoch 37, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.6440 - policy_loss: 2.8159 - value_loss: 0.6794 - policy_categorical_accuracy: 0.3300 - value_mse: 0.1153
+epoch 38, lr 0.0005
+313/313 [==============================] - 21s 68ms/step - loss: 5.6777 - policy_loss: 2.8507 - value_loss: 0.6791 - policy_categorical_accuracy: 0.3303 - value_mse: 0.1173
+epoch 39, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.6513 - policy_loss: 2.8283 - value_loss: 0.6781 - policy_categorical_accuracy: 0.3337 - value_mse: 0.1147
+epoch 40, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.6335 - policy_loss: 2.8037 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3449 - value_mse: 0.1142
+epoch 41, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.6479 - policy_loss: 2.8187 - value_loss: 0.6797 - policy_categorical_accuracy: 0.3336 - value_mse: 0.1145
+epoch 42, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.6550 - policy_loss: 2.8314 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3315 - value_mse: 0.1153
+epoch 43, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.6467 - policy_loss: 2.8204 - value_loss: 0.6790 - policy_categorical_accuracy: 0.3284 - value_mse: 0.1132
+epoch 44, lr 0.0005
+313/313 [==============================] - 25s 79ms/step - loss: 5.6302 - policy_loss: 2.8081 - value_loss: 0.6780 - policy_categorical_accuracy: 0.3346 - value_mse: 0.1140
+epoch 45, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.6519 - policy_loss: 2.8227 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3326 - value_mse: 0.1160
+epoch 46, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.5963 - policy_loss: 2.7767 - value_loss: 0.6774 - policy_categorical_accuracy: 0.3387 - value_mse: 0.1141
+epoch 47, lr 0.0005
+313/313 [==============================] - 21s 68ms/step - loss: 5.5795 - policy_loss: 2.7639 - value_loss: 0.6764 - policy_categorical_accuracy: 0.3358 - value_mse: 0.1142
+epoch 48, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5673 - policy_loss: 2.7479 - value_loss: 0.6773 - policy_categorical_accuracy: 0.3438 - value_mse: 0.1141
+epoch 49, lr 0.0005
+313/313 [==============================] - 25s 78ms/step - loss: 5.5949 - policy_loss: 2.7743 - value_loss: 0.6777 - policy_categorical_accuracy: 0.3379 - value_mse: 0.1153
+epoch 50, lr 0.0005
+313/313 [==============================] - 22s 72ms/step - loss: 5.6085 - policy_loss: 2.7806 - value_loss: 0.6795 - policy_categorical_accuracy: 0.3413 - value_mse: 0.1121
+epoch 51, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.5968 - policy_loss: 2.7777 - value_loss: 0.6773 - policy_categorical_accuracy: 0.3448 - value_mse: 0.1151
+epoch 52, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5878 - policy_loss: 2.7770 - value_loss: 0.6752 - policy_categorical_accuracy: 0.3444 - value_mse: 0.1139
+epoch 53, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.5979 - policy_loss: 2.7813 - value_loss: 0.6767 - policy_categorical_accuracy: 0.3429 - value_mse: 0.1138
+epoch 54, lr 0.0005
+313/313 [==============================] - 24s 78ms/step - loss: 5.5916 - policy_loss: 2.7661 - value_loss: 0.6789 - policy_categorical_accuracy: 0.3420 - value_mse: 0.1134
+epoch 55, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5999 - policy_loss: 2.7797 - value_loss: 0.6776 - policy_categorical_accuracy: 0.3345 - value_mse: 0.1148
+epoch 56, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5777 - policy_loss: 2.7488 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3446 - value_mse: 0.1145
+epoch 57, lr 0.0005
+313/313 [==============================] - 24s 78ms/step - loss: 5.5833 - policy_loss: 2.7640 - value_loss: 0.6774 - policy_categorical_accuracy: 0.3439 - value_mse: 0.1140
+epoch 58, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5832 - policy_loss: 2.7579 - value_loss: 0.6789 - policy_categorical_accuracy: 0.3444 - value_mse: 0.1146
+epoch 59, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5917 - policy_loss: 2.7712 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3366 - value_mse: 0.1130
+epoch 60, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.5696 - policy_loss: 2.7573 - value_loss: 0.6757 - policy_categorical_accuracy: 0.3387 - value_mse: 0.1145
+epoch 61, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5618 - policy_loss: 2.7508 - value_loss: 0.6754 - policy_categorical_accuracy: 0.3420 - value_mse: 0.1137
+epoch 62, lr 0.0005
+313/313 [==============================] - 25s 81ms/step - loss: 5.5737 - policy_loss: 2.7554 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3451 - value_mse: 0.1122
+epoch 63, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.5570 - policy_loss: 2.7394 - value_loss: 0.6771 - policy_categorical_accuracy: 0.3463 - value_mse: 0.1146
+epoch 64, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5802 - policy_loss: 2.7579 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3438 - value_mse: 0.1160
+epoch 65, lr 0.0005
+313/313 [==============================] - 23s 75ms/step - loss: 5.5385 - policy_loss: 2.7161 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3463 - value_mse: 0.1153
+epoch 66, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5482 - policy_loss: 2.7311 - value_loss: 0.6770 - policy_categorical_accuracy: 0.3495 - value_mse: 0.1158
+epoch 67, lr 0.0005
+313/313 [==============================] - 25s 79ms/step - loss: 5.5521 - policy_loss: 2.7415 - value_loss: 0.6753 - policy_categorical_accuracy: 0.3446 - value_mse: 0.1123
+epoch 68, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5644 - policy_loss: 2.7444 - value_loss: 0.6777 - policy_categorical_accuracy: 0.3500 - value_mse: 0.1132
+epoch 69, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5386 - policy_loss: 2.7313 - value_loss: 0.6746 - policy_categorical_accuracy: 0.3431 - value_mse: 0.1131
+epoch 70, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.5146 - policy_loss: 2.6969 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3542 - value_mse: 0.1127
+epoch 71, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.5120 - policy_loss: 2.6914 - value_loss: 0.6779 - policy_categorical_accuracy: 0.3557 - value_mse: 0.1150
+epoch 72, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.5281 - policy_loss: 2.7132 - value_loss: 0.6765 - policy_categorical_accuracy: 0.3442 - value_mse: 0.1162
+epoch 73, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5223 - policy_loss: 2.7008 - value_loss: 0.6782 - policy_categorical_accuracy: 0.3516 - value_mse: 0.1148
+epoch 74, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.5284 - policy_loss: 2.7159 - value_loss: 0.6759 - policy_categorical_accuracy: 0.3489 - value_mse: 0.1129
+epoch 75, lr 0.0005
+313/313 [==============================] - 24s 76ms/step - loss: 5.5424 - policy_loss: 2.7255 - value_loss: 0.6771 - policy_categorical_accuracy: 0.3394 - value_mse: 0.1149
+epoch 76, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.4948 - policy_loss: 2.6820 - value_loss: 0.6760 - policy_categorical_accuracy: 0.3524 - value_mse: 0.1130
+epoch 77, lr 0.0005
+313/313 [==============================] - 23s 75ms/step - loss: 5.5315 - policy_loss: 2.7154 - value_loss: 0.6769 - policy_categorical_accuracy: 0.3505 - value_mse: 0.1139
+epoch 78, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5154 - policy_loss: 2.7072 - value_loss: 0.6749 - policy_categorical_accuracy: 0.3550 - value_mse: 0.1136
+epoch 79, lr 0.0005
+313/313 [==============================] - 23s 75ms/step - loss: 5.5178 - policy_loss: 2.7122 - value_loss: 0.6743 - policy_categorical_accuracy: 0.3467 - value_mse: 0.1121
+epoch 80, lr 0.0005
+313/313 [==============================] - 24s 75ms/step - loss: 5.5306 - policy_loss: 2.7192 - value_loss: 0.6757 - policy_categorical_accuracy: 0.3469 - value_mse: 0.1106
+epoch 81, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.5574 - policy_loss: 2.7462 - value_loss: 0.6757 - policy_categorical_accuracy: 0.3383 - value_mse: 0.1143
+epoch 82, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.4958 - policy_loss: 2.6943 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3550 - value_mse: 0.1124
+epoch 83, lr 0.0005
+313/313 [==============================] - 23s 73ms/step - loss: 5.4904 - policy_loss: 2.6878 - value_loss: 0.6735 - policy_categorical_accuracy: 0.3501 - value_mse: 0.1135
+epoch 84, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.5141 - policy_loss: 2.7033 - value_loss: 0.6756 - policy_categorical_accuracy: 0.3533 - value_mse: 0.1141
+epoch 85, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.5111 - policy_loss: 2.6938 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3459 - value_mse: 0.1116
+epoch 86, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.5262 - policy_loss: 2.7123 - value_loss: 0.6764 - policy_categorical_accuracy: 0.3478 - value_mse: 0.1144
+epoch 87, lr 0.0005
+313/313 [==============================] - 24s 76ms/step - loss: 5.4999 - policy_loss: 2.6817 - value_loss: 0.6775 - policy_categorical_accuracy: 0.3529 - value_mse: 0.1136
+epoch 88, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.4756 - policy_loss: 2.6652 - value_loss: 0.6756 - policy_categorical_accuracy: 0.3558 - value_mse: 0.1134
+epoch 89, lr 0.0005
+313/313 [==============================] - 23s 72ms/step - loss: 5.5268 - policy_loss: 2.7092 - value_loss: 0.6774 - policy_categorical_accuracy: 0.3428 - value_mse: 0.1140
+epoch 90, lr 0.0005
+313/313 [==============================] - 25s 79ms/step - loss: 5.4829 - policy_loss: 2.6807 - value_loss: 0.6735 - policy_categorical_accuracy: 0.3512 - value_mse: 0.1119
+epoch 91, lr 0.0005
+313/313 [==============================] - 22s 69ms/step - loss: 5.4455 - policy_loss: 2.6386 - value_loss: 0.6747 - policy_categorical_accuracy: 0.3618 - value_mse: 0.1142
+epoch 92, lr 0.0005
+313/313 [==============================] - 22s 70ms/step - loss: 5.4677 - policy_loss: 2.6613 - value_loss: 0.6746 - policy_categorical_accuracy: 0.3547 - value_mse: 0.1140
+epoch 93, lr 0.0005
+313/313 [==============================] - 21s 68ms/step - loss: 5.4981 - policy_loss: 2.6965 - value_loss: 0.6734 - policy_categorical_accuracy: 0.3486 - value_mse: 0.1125
+epoch 94, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.4835 - policy_loss: 2.6757 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3550 - value_mse: 0.1123
+epoch 95, lr 0.0005
+313/313 [==============================] - 24s 78ms/step - loss: 5.4251 - policy_loss: 2.6244 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3623 - value_mse: 0.1107
+epoch 96, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.4799 - policy_loss: 2.6680 - value_loss: 0.6760 - policy_categorical_accuracy: 0.3540 - value_mse: 0.1149
+epoch 97, lr 0.0005
+313/313 [==============================] - 22s 71ms/step - loss: 5.4623 - policy_loss: 2.6611 - value_loss: 0.6733 - policy_categorical_accuracy: 0.3567 - value_mse: 0.1127
+epoch 98, lr 0.0005
+313/313 [==============================] - 25s 80ms/step - loss: 5.4799 - policy_loss: 2.6637 - value_loss: 0.6771 - policy_categorical_accuracy: 0.3559 - value_mse: 0.1128
+epoch 99, lr 0.0005
+313/313 [==============================] - 23s 74ms/step - loss: 5.4109 - policy_loss: 2.6117 - value_loss: 0.6729 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1109
+epoch 100, lr 5e-05
+313/313 [==============================] - 24s 77ms/step - loss: 5.4561 - policy_loss: 2.6534 - value_loss: 0.6737 - policy_categorical_accuracy: 0.3583 - value_mse: 0.1141
+epoch 101, lr 5e-05
+313/313 [==============================] - 23s 75ms/step - loss: 5.4235 - policy_loss: 2.6351 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3541 - value_mse: 0.1120
+epoch 102, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.4210 - policy_loss: 2.6249 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3581 - value_mse: 0.1123
+epoch 103, lr 5e-05
+313/313 [==============================] - 23s 75ms/step - loss: 5.4292 - policy_loss: 2.6275 - value_loss: 0.6735 - policy_categorical_accuracy: 0.3589 - value_mse: 0.1119
+epoch 104, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4342 - policy_loss: 2.6347 - value_loss: 0.6730 - policy_categorical_accuracy: 0.3650 - value_mse: 0.1115
+epoch 105, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.4518 - policy_loss: 2.6587 - value_loss: 0.6713 - policy_categorical_accuracy: 0.3564 - value_mse: 0.1109
+epoch 106, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4224 - policy_loss: 2.6267 - value_loss: 0.6720 - policy_categorical_accuracy: 0.3622 - value_mse: 0.1121
+epoch 107, lr 5e-05
+313/313 [==============================] - 25s 79ms/step - loss: 5.4269 - policy_loss: 2.6358 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3616 - value_mse: 0.1103
+epoch 108, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.3897 - policy_loss: 2.5931 - value_loss: 0.6722 - policy_categorical_accuracy: 0.3631 - value_mse: 0.1109
+epoch 109, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.3850 - policy_loss: 2.5869 - value_loss: 0.6726 - policy_categorical_accuracy: 0.3718 - value_mse: 0.1121
+epoch 110, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4028 - policy_loss: 2.6122 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3625 - value_mse: 0.1112
+epoch 111, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.4527 - policy_loss: 2.6564 - value_loss: 0.6722 - policy_categorical_accuracy: 0.3608 - value_mse: 0.1111
+epoch 112, lr 5e-05
+313/313 [==============================] - 25s 80ms/step - loss: 5.4104 - policy_loss: 2.6199 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3624 - value_mse: 0.1118
+epoch 113, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.4179 - policy_loss: 2.6326 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3592 - value_mse: 0.1111
+epoch 114, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.4444 - policy_loss: 2.6561 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3553 - value_mse: 0.1116
+epoch 115, lr 5e-05
+313/313 [==============================] - 24s 78ms/step - loss: 5.4320 - policy_loss: 2.6331 - value_loss: 0.6728 - policy_categorical_accuracy: 0.3558 - value_mse: 0.1117
+epoch 116, lr 5e-05
+313/313 [==============================] - 22s 69ms/step - loss: 5.3978 - policy_loss: 2.6066 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3703 - value_mse: 0.1121
+epoch 117, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.4233 - policy_loss: 2.6157 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3583 - value_mse: 0.1112
+epoch 118, lr 5e-05
+313/313 [==============================] - 23s 75ms/step - loss: 5.4007 - policy_loss: 2.6037 - value_loss: 0.6724 - policy_categorical_accuracy: 0.3679 - value_mse: 0.1082
+epoch 119, lr 5e-05
+313/313 [==============================] - 22s 71ms/step - loss: 5.4111 - policy_loss: 2.6241 - value_loss: 0.6699 - policy_categorical_accuracy: 0.3595 - value_mse: 0.1102
+epoch 120, lr 5e-05
+313/313 [==============================] - 24s 75ms/step - loss: 5.4032 - policy_loss: 2.6136 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3568 - value_mse: 0.1104
+epoch 121, lr 5e-05
+313/313 [==============================] - 23s 72ms/step - loss: 5.3649 - policy_loss: 2.5744 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3731 - value_mse: 0.1120
+epoch 122, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.3486 - policy_loss: 2.5657 - value_loss: 0.6688 - policy_categorical_accuracy: 0.3707 - value_mse: 0.1100
+epoch 123, lr 5e-05
+313/313 [==============================] - 24s 77ms/step - loss: 5.4003 - policy_loss: 2.6062 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3612 - value_mse: 0.1108
+epoch 124, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.3817 - policy_loss: 2.5863 - value_loss: 0.6719 - policy_categorical_accuracy: 0.3685 - value_mse: 0.1114
+epoch 125, lr 5e-05
+313/313 [==============================] - 25s 80ms/step - loss: 5.3904 - policy_loss: 2.5892 - value_loss: 0.6734 - policy_categorical_accuracy: 0.3691 - value_mse: 0.1122
+epoch 126, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4070 - policy_loss: 2.6082 - value_loss: 0.6728 - policy_categorical_accuracy: 0.3661 - value_mse: 0.1107
+epoch 127, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4315 - policy_loss: 2.6330 - value_loss: 0.6727 - policy_categorical_accuracy: 0.3624 - value_mse: 0.1105
+epoch 128, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.4082 - policy_loss: 2.6059 - value_loss: 0.6737 - policy_categorical_accuracy: 0.3745 - value_mse: 0.1123
+epoch 129, lr 5e-05
+313/313 [==============================] - 22s 71ms/step - loss: 5.3892 - policy_loss: 2.5991 - value_loss: 0.6706 - policy_categorical_accuracy: 0.3632 - value_mse: 0.1105
+epoch 130, lr 5e-05
+313/313 [==============================] - 24s 78ms/step - loss: 5.4081 - policy_loss: 2.6216 - value_loss: 0.6697 - policy_categorical_accuracy: 0.3633 - value_mse: 0.1116
+epoch 131, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.4064 - policy_loss: 2.6170 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3596 - value_mse: 0.1112
+epoch 132, lr 5e-05
+313/313 [==============================] - 21s 69ms/step - loss: 5.3957 - policy_loss: 2.6104 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3646 - value_mse: 0.1104
+epoch 133, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.3879 - policy_loss: 2.6027 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3607 - value_mse: 0.1119
+epoch 134, lr 5e-05
+313/313 [==============================] - 22s 72ms/step - loss: 5.3420 - policy_loss: 2.5566 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3779 - value_mse: 0.1110
+epoch 135, lr 5e-05
+313/313 [==============================] - 22s 69ms/step - loss: 5.4000 - policy_loss: 2.6113 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3681 - value_mse: 0.1105
+epoch 136, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4203 - policy_loss: 2.6154 - value_loss: 0.6743 - policy_categorical_accuracy: 0.3625 - value_mse: 0.1129
+epoch 137, lr 5e-05
+313/313 [==============================] - 25s 81ms/step - loss: 5.3481 - policy_loss: 2.5672 - value_loss: 0.6684 - policy_categorical_accuracy: 0.3744 - value_mse: 0.1107
+epoch 138, lr 5e-05
+313/313 [==============================] - 22s 71ms/step - loss: 5.3872 - policy_loss: 2.5946 - value_loss: 0.6713 - policy_categorical_accuracy: 0.3667 - value_mse: 0.1125
+epoch 139, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.4098 - policy_loss: 2.6167 - value_loss: 0.6714 - policy_categorical_accuracy: 0.3627 - value_mse: 0.1097
+epoch 140, lr 5e-05
+313/313 [==============================] - 24s 77ms/step - loss: 5.4210 - policy_loss: 2.6125 - value_loss: 0.6753 - policy_categorical_accuracy: 0.3654 - value_mse: 0.1115
+epoch 141, lr 5e-05
+313/313 [==============================] - 22s 72ms/step - loss: 5.4095 - policy_loss: 2.6218 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3582 - value_mse: 0.1118
+epoch 142, lr 5e-05
+313/313 [==============================] - 22s 71ms/step - loss: 5.3884 - policy_loss: 2.6033 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3653 - value_mse: 0.1104
+epoch 143, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.3778 - policy_loss: 2.5864 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3707 - value_mse: 0.1109
+epoch 144, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.4007 - policy_loss: 2.6132 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1117
+epoch 145, lr 5e-05
+313/313 [==============================] - 23s 74ms/step - loss: 5.3691 - policy_loss: 2.5848 - value_loss: 0.6692 - policy_categorical_accuracy: 0.3731 - value_mse: 0.1107
+epoch 146, lr 5e-05
+313/313 [==============================] - 23s 73ms/step - loss: 5.3761 - policy_loss: 2.5905 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3675 - value_mse: 0.1106
+epoch 147, lr 5e-05
+313/313 [==============================] - 25s 79ms/step - loss: 5.3860 - policy_loss: 2.5915 - value_loss: 0.6718 - policy_categorical_accuracy: 0.3599 - value_mse: 0.1114
+epoch 148, lr 5e-05
+313/313 [==============================] - 22s 69ms/step - loss: 5.3968 - policy_loss: 2.6034 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3647 - value_mse: 0.1108
+epoch 149, lr 5e-05
+313/313 [==============================] - 22s 70ms/step - loss: 5.3991 - policy_loss: 2.6191 - value_loss: 0.6681 - policy_categorical_accuracy: 0.3574 - value_mse: 0.1086
+epoch 150, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3966 - policy_loss: 2.6096 - value_loss: 0.6699 - policy_categorical_accuracy: 0.3635 - value_mse: 0.1112
+epoch 151, lr 5e-06
+313/313 [==============================] - 23s 73ms/step - loss: 5.3902 - policy_loss: 2.5962 - value_loss: 0.6717 - policy_categorical_accuracy: 0.3629 - value_mse: 0.1099
+epoch 152, lr 5e-06
+313/313 [==============================] - 25s 80ms/step - loss: 5.3583 - policy_loss: 2.5580 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3751 - value_mse: 0.1115
+epoch 153, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.3859 - policy_loss: 2.5935 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3736 - value_mse: 0.1122
+epoch 154, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.4281 - policy_loss: 2.6398 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3538 - value_mse: 0.1111
+epoch 155, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3572 - policy_loss: 2.5601 - value_loss: 0.6724 - policy_categorical_accuracy: 0.3720 - value_mse: 0.1116
+epoch 156, lr 5e-06
+313/313 [==============================] - 23s 72ms/step - loss: 5.4175 - policy_loss: 2.6179 - value_loss: 0.6730 - policy_categorical_accuracy: 0.3631 - value_mse: 0.1134
+epoch 157, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.3997 - policy_loss: 2.6050 - value_loss: 0.6718 - policy_categorical_accuracy: 0.3639 - value_mse: 0.1128
+epoch 158, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.4213 - policy_loss: 2.6353 - value_loss: 0.6697 - policy_categorical_accuracy: 0.3559 - value_mse: 0.1118
+epoch 159, lr 5e-06
+313/313 [==============================] - 25s 79ms/step - loss: 5.4006 - policy_loss: 2.6149 - value_loss: 0.6696 - policy_categorical_accuracy: 0.3595 - value_mse: 0.1100
+epoch 160, lr 5e-06
+313/313 [==============================] - 23s 73ms/step - loss: 5.3941 - policy_loss: 2.6129 - value_loss: 0.6684 - policy_categorical_accuracy: 0.3588 - value_mse: 0.1103
+epoch 161, lr 5e-06
+313/313 [==============================] - 25s 79ms/step - loss: 5.4105 - policy_loss: 2.6110 - value_loss: 0.6730 - policy_categorical_accuracy: 0.3622 - value_mse: 0.1097
+epoch 162, lr 5e-06
+313/313 [==============================] - 22s 72ms/step - loss: 5.3878 - policy_loss: 2.6025 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1116
+epoch 163, lr 5e-06
+313/313 [==============================] - 23s 72ms/step - loss: 5.4075 - policy_loss: 2.6188 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3620 - value_mse: 0.1088
+epoch 164, lr 5e-06
+313/313 [==============================] - 23s 72ms/step - loss: 5.3494 - policy_loss: 2.5633 - value_loss: 0.6697 - policy_categorical_accuracy: 0.3791 - value_mse: 0.1115
+epoch 165, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3531 - policy_loss: 2.5617 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3715 - value_mse: 0.1104
+epoch 166, lr 5e-06
+313/313 [==============================] - 23s 75ms/step - loss: 5.3868 - policy_loss: 2.6082 - value_loss: 0.6678 - policy_categorical_accuracy: 0.3578 - value_mse: 0.1102
+epoch 167, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.3661 - policy_loss: 2.5801 - value_loss: 0.6696 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1100
+epoch 168, lr 5e-06
+313/313 [==============================] - 23s 73ms/step - loss: 5.3964 - policy_loss: 2.6190 - value_loss: 0.6675 - policy_categorical_accuracy: 0.3647 - value_mse: 0.1094
+epoch 169, lr 5e-06
+313/313 [==============================] - 24s 77ms/step - loss: 5.4282 - policy_loss: 2.6320 - value_loss: 0.6722 - policy_categorical_accuracy: 0.3590 - value_mse: 0.1102
+epoch 170, lr 5e-06
+313/313 [==============================] - 22s 69ms/step - loss: 5.3592 - policy_loss: 2.5714 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3698 - value_mse: 0.1109
+epoch 171, lr 5e-06
+313/313 [==============================] - 23s 75ms/step - loss: 5.3935 - policy_loss: 2.6017 - value_loss: 0.6711 - policy_categorical_accuracy: 0.3539 - value_mse: 0.1116
+epoch 172, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3893 - policy_loss: 2.5990 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3613 - value_mse: 0.1091
+epoch 173, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3742 - policy_loss: 2.5873 - value_loss: 0.6699 - policy_categorical_accuracy: 0.3652 - value_mse: 0.1095
+epoch 174, lr 5e-06
+313/313 [==============================] - 23s 73ms/step - loss: 5.4080 - policy_loss: 2.6141 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3593 - value_mse: 0.1129
+epoch 175, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.3930 - policy_loss: 2.5988 - value_loss: 0.6717 - policy_categorical_accuracy: 0.3700 - value_mse: 0.1103
+epoch 176, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.4142 - policy_loss: 2.6258 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3615 - value_mse: 0.1092
+epoch 177, lr 5e-06
+313/313 [==============================] - 22s 69ms/step - loss: 5.3827 - policy_loss: 2.5994 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3612 - value_mse: 0.1109
+epoch 178, lr 5e-06
+313/313 [==============================] - 22s 69ms/step - loss: 5.3594 - policy_loss: 2.5711 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3630 - value_mse: 0.1101
+epoch 179, lr 5e-06
+313/313 [==============================] - 25s 80ms/step - loss: 5.3715 - policy_loss: 2.5924 - value_loss: 0.6679 - policy_categorical_accuracy: 0.3657 - value_mse: 0.1086
+epoch 180, lr 5e-06
+313/313 [==============================] - 24s 76ms/step - loss: 5.4053 - policy_loss: 2.6035 - value_loss: 0.6736 - policy_categorical_accuracy: 0.3665 - value_mse: 0.1113
+epoch 181, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.4132 - policy_loss: 2.6214 - value_loss: 0.6711 - policy_categorical_accuracy: 0.3629 - value_mse: 0.1110
+epoch 182, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.3782 - policy_loss: 2.5861 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3674 - value_mse: 0.1092
+epoch 183, lr 5e-06
+313/313 [==============================] - 23s 73ms/step - loss: 5.3741 - policy_loss: 2.5789 - value_loss: 0.6719 - policy_categorical_accuracy: 0.3671 - value_mse: 0.1115
+epoch 184, lr 5e-06
+313/313 [==============================] - 25s 78ms/step - loss: 5.3692 - policy_loss: 2.5735 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3708 - value_mse: 0.1112
+epoch 185, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.3565 - policy_loss: 2.5685 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3648 - value_mse: 0.1102
+epoch 186, lr 5e-06
+313/313 [==============================] - 21s 68ms/step - loss: 5.4060 - policy_loss: 2.6204 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3554 - value_mse: 0.1111
+epoch 187, lr 5e-06
+313/313 [==============================] - 23s 75ms/step - loss: 5.3855 - policy_loss: 2.6020 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3621 - value_mse: 0.1116
+epoch 188, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.3965 - policy_loss: 2.6230 - value_loss: 0.6665 - policy_categorical_accuracy: 0.3566 - value_mse: 0.1091
+epoch 189, lr 5e-06
+313/313 [==============================] - 22s 71ms/step - loss: 5.4019 - policy_loss: 2.6230 - value_loss: 0.6679 - policy_categorical_accuracy: 0.3560 - value_mse: 0.1104
+epoch 190, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.4193 - policy_loss: 2.6262 - value_loss: 0.6714 - policy_categorical_accuracy: 0.3602 - value_mse: 0.1105
+epoch 191, lr 5e-06
+313/313 [==============================] - 22s 70ms/step - loss: 5.3795 - policy_loss: 2.5960 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3648 - value_mse: 0.1105
+epoch 192, lr 5e-06
+313/313 [==============================] - 23s 74ms/step - loss: 5.3657 - policy_loss: 2.5825 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3644 - value_mse: 0.1111
+epoch 193, lr 5e-06
+313/313 [==============================] - 25s 80ms/step - loss: 5.3759 - policy_loss: 2.5838 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3667 - value_mse: 0.1087
+epoch 194, lr 5e-06
+313/313 [==============================] - 25s 79ms/step - loss: 5.3954 - policy_loss: 2.6030 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3630 - value_mse: 0.1093
+epoch 195, lr 5e-06
+313/313 [==============================] - 26s 84ms/step - loss: 5.3876 - policy_loss: 2.6043 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3669 - value_mse: 0.1103
+epoch 196, lr 5e-06
+313/313 [==============================] - 24s 78ms/step - loss: 5.4094 - policy_loss: 2.6262 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3612 - value_mse: 0.1092
+epoch 197, lr 5e-06
+313/313 [==============================] - 27s 85ms/step - loss: 5.3779 - policy_loss: 2.5931 - value_loss: 0.6693 - policy_categorical_accuracy: 0.3686 - value_mse: 0.1105
+epoch 198, lr 5e-06
+313/313 [==============================] - 24s 75ms/step - loss: 5.4036 - policy_loss: 2.6217 - value_loss: 0.6686 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1112
+epoch 199, lr 5e-06
+313/313 [==============================] - 24s 77ms/step - loss: 5.3676 - policy_loss: 2.5776 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3719 - value_mse: 0.1102
+epoch 200, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.3651 - policy_loss: 2.5837 - value_loss: 0.6685 - policy_categorical_accuracy: 0.3650 - value_mse: 0.1106
+epoch 201, lr 5e-07
+313/313 [==============================] - 22s 70ms/step - loss: 5.3948 - policy_loss: 2.6055 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3603 - value_mse: 0.1112
+epoch 202, lr 5e-07
+313/313 [==============================] - 25s 78ms/step - loss: 5.3745 - policy_loss: 2.5910 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3748 - value_mse: 0.1103
+epoch 203, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3869 - policy_loss: 2.5997 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1107
+epoch 204, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3576 - policy_loss: 2.5701 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3707 - value_mse: 0.1096
+epoch 205, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.4477 - policy_loss: 2.6621 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3556 - value_mse: 0.1098
+epoch 206, lr 5e-07
+313/313 [==============================] - 22s 70ms/step - loss: 5.3569 - policy_loss: 2.5698 - value_loss: 0.6699 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1116
+epoch 207, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3668 - policy_loss: 2.5884 - value_loss: 0.6677 - policy_categorical_accuracy: 0.3606 - value_mse: 0.1085
+epoch 208, lr 5e-07
+313/313 [==============================] - 23s 74ms/step - loss: 5.3877 - policy_loss: 2.6105 - value_loss: 0.6675 - policy_categorical_accuracy: 0.3622 - value_mse: 0.1085
+epoch 209, lr 5e-07
+313/313 [==============================] - 23s 74ms/step - loss: 5.4045 - policy_loss: 2.6093 - value_loss: 0.6720 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1120
+epoch 210, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3692 - policy_loss: 2.5905 - value_loss: 0.6678 - policy_categorical_accuracy: 0.3694 - value_mse: 0.1086
+epoch 211, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.4207 - policy_loss: 2.6273 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3651 - value_mse: 0.1099
+epoch 212, lr 5e-07
+313/313 [==============================] - 25s 81ms/step - loss: 5.4005 - policy_loss: 2.6149 - value_loss: 0.6696 - policy_categorical_accuracy: 0.3633 - value_mse: 0.1103
+epoch 213, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3749 - policy_loss: 2.5809 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1114
+epoch 214, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3670 - policy_loss: 2.5828 - value_loss: 0.6692 - policy_categorical_accuracy: 0.3685 - value_mse: 0.1103
+epoch 215, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3684 - policy_loss: 2.5741 - value_loss: 0.6717 - policy_categorical_accuracy: 0.3687 - value_mse: 0.1110
+epoch 216, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.4008 - policy_loss: 2.6134 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3601 - value_mse: 0.1096
+epoch 217, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3621 - policy_loss: 2.5729 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3683 - value_mse: 0.1114
+epoch 218, lr 5e-07
+313/313 [==============================] - 24s 76ms/step - loss: 5.3888 - policy_loss: 2.6114 - value_loss: 0.6675 - policy_categorical_accuracy: 0.3619 - value_mse: 0.1104
+epoch 219, lr 5e-07
+313/313 [==============================] - 24s 76ms/step - loss: 5.4009 - policy_loss: 2.6133 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3627 - value_mse: 0.1123
+epoch 220, lr 5e-07
+313/313 [==============================] - 26s 82ms/step - loss: 5.3485 - policy_loss: 2.5573 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3754 - value_mse: 0.1114
+epoch 221, lr 5e-07
+313/313 [==============================] - 23s 74ms/step - loss: 5.3829 - policy_loss: 2.5905 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3682 - value_mse: 0.1104
+epoch 222, lr 5e-07
+313/313 [==============================] - 24s 77ms/step - loss: 5.3562 - policy_loss: 2.5690 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3686 - value_mse: 0.1109
+epoch 223, lr 5e-07
+313/313 [==============================] - 23s 72ms/step - loss: 5.4009 - policy_loss: 2.6189 - value_loss: 0.6687 - policy_categorical_accuracy: 0.3589 - value_mse: 0.1093
+epoch 224, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3712 - policy_loss: 2.5891 - value_loss: 0.6687 - policy_categorical_accuracy: 0.3626 - value_mse: 0.1113
+epoch 225, lr 5e-07
+313/313 [==============================] - 24s 76ms/step - loss: 5.3362 - policy_loss: 2.5516 - value_loss: 0.6693 - policy_categorical_accuracy: 0.3794 - value_mse: 0.1115
+epoch 226, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3793 - policy_loss: 2.5840 - value_loss: 0.6720 - policy_categorical_accuracy: 0.3729 - value_mse: 0.1115
+epoch 227, lr 5e-07
+313/313 [==============================] - 26s 82ms/step - loss: 5.3933 - policy_loss: 2.6210 - value_loss: 0.6662 - policy_categorical_accuracy: 0.3638 - value_mse: 0.1098
+epoch 228, lr 5e-07
+313/313 [==============================] - 24s 76ms/step - loss: 5.3888 - policy_loss: 2.5950 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3630 - value_mse: 0.1118
+epoch 229, lr 5e-07
+313/313 [==============================] - 23s 74ms/step - loss: 5.4061 - policy_loss: 2.6184 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3687 - value_mse: 0.1097
+epoch 230, lr 5e-07
+313/313 [==============================] - 25s 78ms/step - loss: 5.3729 - policy_loss: 2.5795 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3738 - value_mse: 0.1098
+epoch 231, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3997 - policy_loss: 2.5996 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3683 - value_mse: 0.1126
+epoch 232, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3688 - policy_loss: 2.5824 - value_loss: 0.6698 - policy_categorical_accuracy: 0.3669 - value_mse: 0.1084
+epoch 233, lr 5e-07
+313/313 [==============================] - 23s 72ms/step - loss: 5.3873 - policy_loss: 2.6063 - value_loss: 0.6684 - policy_categorical_accuracy: 0.3668 - value_mse: 0.1106
+epoch 234, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.3578 - policy_loss: 2.5682 - value_loss: 0.6706 - policy_categorical_accuracy: 0.3702 - value_mse: 0.1100
+epoch 235, lr 5e-07
+313/313 [==============================] - 26s 84ms/step - loss: 5.3491 - policy_loss: 2.5603 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3723 - value_mse: 0.1099
+epoch 236, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3924 - policy_loss: 2.6039 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3596 - value_mse: 0.1107
+epoch 237, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.4200 - policy_loss: 2.6147 - value_loss: 0.6745 - policy_categorical_accuracy: 0.3650 - value_mse: 0.1128
+epoch 238, lr 5e-07
+313/313 [==============================] - 23s 75ms/step - loss: 5.3659 - policy_loss: 2.5745 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3708 - value_mse: 0.1113
+epoch 239, lr 5e-07
+313/313 [==============================] - 22s 72ms/step - loss: 5.3848 - policy_loss: 2.5911 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1115
+epoch 240, lr 5e-07
+313/313 [==============================] - 27s 88ms/step - loss: 5.3921 - policy_loss: 2.6085 - value_loss: 0.6691 - policy_categorical_accuracy: 0.3667 - value_mse: 0.1128
+epoch 241, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.3763 - policy_loss: 2.5859 - value_loss: 0.6708 - policy_categorical_accuracy: 0.3699 - value_mse: 0.1105
+epoch 242, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.3544 - policy_loss: 2.5693 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3741 - value_mse: 0.1111
+epoch 243, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3791 - policy_loss: 2.5948 - value_loss: 0.6692 - policy_categorical_accuracy: 0.3653 - value_mse: 0.1113
+epoch 244, lr 5e-07
+313/313 [==============================] - 23s 73ms/step - loss: 5.3450 - policy_loss: 2.5648 - value_loss: 0.6682 - policy_categorical_accuracy: 0.3679 - value_mse: 0.1116
+epoch 245, lr 5e-07
+313/313 [==============================] - 26s 83ms/step - loss: 5.3727 - policy_loss: 2.5858 - value_loss: 0.6699 - policy_categorical_accuracy: 0.3657 - value_mse: 0.1083
+epoch 246, lr 5e-07
+313/313 [==============================] - 23s 72ms/step - loss: 5.3851 - policy_loss: 2.6020 - value_loss: 0.6689 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1099
+epoch 247, lr 5e-07
+313/313 [==============================] - 24s 76ms/step - loss: 5.4025 - policy_loss: 2.6102 - value_loss: 0.6712 - policy_categorical_accuracy: 0.3633 - value_mse: 0.1122
+epoch 248, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.4260 - policy_loss: 2.6322 - value_loss: 0.6716 - policy_categorical_accuracy: 0.3577 - value_mse: 0.1119
+epoch 249, lr 5e-07
+313/313 [==============================] - 22s 71ms/step - loss: 5.3685 - policy_loss: 2.5720 - value_loss: 0.6723 - policy_categorical_accuracy: 0.3683 - value_mse: 0.1105
+epoch 250, lr 5e-07
+313/313 [==============================] - 26s 84ms/step - loss: 5.3731 - policy_loss: 2.5798 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3682 - value_mse: 0.1120
+
+📊 Validation Results for Nesterov — Epoch 250:
+  - loss                          : 5.3368
+  - policy_loss                   : 2.5754
+  - value_loss                    : 0.6635
+  - policy_categorical_accuracy   : 0.3720
+  - value_mse                     : 0.1062
+  - Time: 12939.0174

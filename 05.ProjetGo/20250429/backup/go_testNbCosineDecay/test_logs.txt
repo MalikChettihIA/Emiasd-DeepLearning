@@ -1,0 +1,1795 @@
+/Users/malikchettih/.pyenv/versions/3.9.21/bin/python /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_testNbCosineDecay.py
+Python version sys.version_info(major=3, minor=9, micro=21, releaselevel='final', serial=0)
+Tensorflow version 2.15.0
+-------------------- Model MobileNet - Nb CosineDecay Cycle is 1 --------------------
+2025-05-06 11:29:45.262135: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M4 Pro
+2025-05-06 11:29:45.262153: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 48.00 GB
+2025-05-06 11:29:45.262159: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 18.00 GB
+2025-05-06 11:29:45.262182: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2025-05-06 11:29:45.262197: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_1 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d (Conv2D)             (None, 19, 19, 64)           1984      ['input_1[0][0]']
+
+ batch_normalization (Batch  (None, 19, 19, 64)           256       ['conv2d[0][0]']
+ Normalization)
+
+ activation (Activation)     (None, 19, 19, 64)           0         ['batch_normalization[0][0]']
+
+ conv2d_1 (Conv2D)           (None, 19, 19, 256)          16384     ['activation[0][0]']
+
+ batch_normalization_1 (Bat  (None, 19, 19, 256)          1024      ['conv2d_1[0][0]']
+ chNormalization)
+
+ activation_1 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_1[0][0]'
+                                                                    ]
+
+ depthwise_conv2d (Depthwis  (None, 19, 19, 256)          2304      ['activation_1[0][0]']
+ eConv2D)
+
+ batch_normalization_2 (Bat  (None, 19, 19, 256)          1024      ['depthwise_conv2d[0][0]']
+ chNormalization)
+
+ activation_2 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_2[0][0]'
+                                                                    ]
+
+ global_average_pooling2d (  (None, 256)                  0         ['activation_2[0][0]']
+ GlobalAveragePooling2D)
+
+ reshape (Reshape)           (None, 1, 1, 256)            0         ['global_average_pooling2d[0][
+                                                                    0]']
+
+ dense (Dense)               (None, 1, 1, 16)             4096      ['reshape[0][0]']
+
+ dense_1 (Dense)             (None, 1, 1, 256)            4096      ['dense[0][0]']
+
+ multiply (Multiply)         (None, 19, 19, 256)          0         ['activation_2[0][0]',
+                                                                     'dense_1[0][0]']
+
+ conv2d_2 (Conv2D)           (None, 19, 19, 64)           16384     ['multiply[0][0]']
+
+ batch_normalization_3 (Bat  (None, 19, 19, 64)           256       ['conv2d_2[0][0]']
+ chNormalization)
+
+ activation_3 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_3[0][0]'
+                                                                    ]
+
+ add (Add)                   (None, 19, 19, 64)           0         ['activation_3[0][0]',
+                                                                     'activation[0][0]']
+
+ conv2d_3 (Conv2D)           (None, 19, 19, 256)          16384     ['add[0][0]']
+
+ batch_normalization_4 (Bat  (None, 19, 19, 256)          1024      ['conv2d_3[0][0]']
+ chNormalization)
+
+ activation_4 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_4[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_1 (Depthw  (None, 19, 19, 256)          2304      ['activation_4[0][0]']
+ iseConv2D)
+
+ batch_normalization_5 (Bat  (None, 19, 19, 256)          1024      ['depthwise_conv2d_1[0][0]']
+ chNormalization)
+
+ activation_5 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_5[0][0]'
+                                                                    ]
+
+ global_average_pooling2d_1  (None, 256)                  0         ['activation_5[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_1 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_1[0
+                                                                    ][0]']
+
+ dense_2 (Dense)             (None, 1, 1, 16)             4096      ['reshape_1[0][0]']
+
+ dense_3 (Dense)             (None, 1, 1, 256)            4096      ['dense_2[0][0]']
+
+ multiply_1 (Multiply)       (None, 19, 19, 256)          0         ['activation_5[0][0]',
+                                                                     'dense_3[0][0]']
+
+ conv2d_4 (Conv2D)           (None, 19, 19, 64)           16384     ['multiply_1[0][0]']
+
+ batch_normalization_6 (Bat  (None, 19, 19, 64)           256       ['conv2d_4[0][0]']
+ chNormalization)
+
+ activation_6 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_6[0][0]'
+                                                                    ]
+
+ add_1 (Add)                 (None, 19, 19, 64)           0         ['activation_6[0][0]',
+                                                                     'add[0][0]']
+
+ global_average_pooling2d_2  (None, 64)                   0         ['add_1[0][0]']
+  (GlobalAveragePooling2D)
+
+ conv2d_5 (Conv2D)           (None, 19, 19, 1)            64        ['add_1[0][0]']
+
+ dense_4 (Dense)             (None, 50)                   3250      ['global_average_pooling2d_2[0
+                                                                    ][0]']
+
+ batch_normalization_7 (Bat  (None, 19, 19, 1)            4         ['conv2d_5[0][0]']
+ chNormalization)
+
+ activation_7 (Activation)   (None, 50)                   0         ['dense_4[0][0]']
+
+ flatten (Flatten)           (None, 361)                  0         ['batch_normalization_7[0][0]'
+                                                                    ]
+
+ dropout (Dropout)           (None, 50)                   0         ['activation_7[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+getValidation
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+nbPositionsSGF = 102208897
+nbPositionsSGF = 102208897
+loading validation.data
+2025-05-06 11:30:06.112390: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+313/313 [==============================] - 12s 34ms/step - loss: 4.7514 - policy_loss: 3.8807 - value_loss: 0.7220 - policy_categorical_accuracy: 0.2018 - value_mse: 0.1321
+Epoch 1/100: time=12.46s, loss=4.7514, policy_loss=3.8807, value_loss=0.7220, policy_categorical_accuracy=0.2018, value_mse=0.1321
+313/313 [==============================] - 10s 33ms/step - loss: 4.1297 - policy_loss: 3.2901 - value_loss: 0.6970 - policy_categorical_accuracy: 0.2806 - value_mse: 0.1246
+Epoch 2/100: time=10.98s, loss=4.1297, policy_loss=3.2901, value_loss=0.6970, policy_categorical_accuracy=0.2806, value_mse=0.1246
+313/313 [==============================] - 10s 33ms/step - loss: 3.9609 - policy_loss: 3.1338 - value_loss: 0.6918 - policy_categorical_accuracy: 0.3006 - value_mse: 0.1195
+Epoch 3/100: time=11.06s, loss=3.9609, policy_loss=3.1338, value_loss=0.6918, policy_categorical_accuracy=0.3006, value_mse=0.1195
+313/313 [==============================] - 11s 34ms/step - loss: 3.8665 - policy_loss: 3.0470 - value_loss: 0.6915 - policy_categorical_accuracy: 0.3137 - value_mse: 0.1213
+Epoch 4/100: time=11.11s, loss=3.8665, policy_loss=3.0470, value_loss=0.6915, policy_categorical_accuracy=0.3137, value_mse=0.1213
+313/313 [==============================] - 10s 33ms/step - loss: 3.8052 - policy_loss: 2.9933 - value_loss: 0.6909 - policy_categorical_accuracy: 0.3195 - value_mse: 0.1215
+Epoch 5/100: time=11.09s, loss=3.8052, policy_loss=2.9933, value_loss=0.6909, policy_categorical_accuracy=0.3195, value_mse=0.1215
+313/313 [==============================] - 11s 34ms/step - loss: 3.7757 - policy_loss: 2.9716 - value_loss: 0.6895 - policy_categorical_accuracy: 0.3237 - value_mse: 0.1190
+Epoch 6/100: time=11.17s, loss=3.7757, policy_loss=2.9716, value_loss=0.6895, policy_categorical_accuracy=0.3237, value_mse=0.1190
+313/313 [==============================] - 11s 34ms/step - loss: 3.7235 - policy_loss: 2.9251 - value_loss: 0.6896 - policy_categorical_accuracy: 0.3272 - value_mse: 0.1192
+Epoch 7/100: time=11.12s, loss=3.7235, policy_loss=2.9251, value_loss=0.6896, policy_categorical_accuracy=0.3272, value_mse=0.1192
+313/313 [==============================] - 11s 34ms/step - loss: 3.7391 - policy_loss: 2.9460 - value_loss: 0.6893 - policy_categorical_accuracy: 0.3283 - value_mse: 0.1177
+Epoch 8/100: time=11.15s, loss=3.7391, policy_loss=2.9460, value_loss=0.6893, policy_categorical_accuracy=0.3283, value_mse=0.1177
+313/313 [==============================] - 11s 34ms/step - loss: 3.7365 - policy_loss: 2.9491 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3242 - value_mse: 0.1187
+Epoch 9/100: time=11.31s, loss=3.7365, policy_loss=2.9491, value_loss=0.6881, policy_categorical_accuracy=0.3242, value_mse=0.1187
+313/313 [==============================] - 11s 34ms/step - loss: 3.6609 - policy_loss: 2.8755 - value_loss: 0.6896 - policy_categorical_accuracy: 0.3320 - value_mse: 0.1192
+Epoch 10/100: time=11.33s, loss=3.6609, policy_loss=2.8755, value_loss=0.6896, policy_categorical_accuracy=0.3320, value_mse=0.1192
+313/313 [==============================] - 11s 34ms/step - loss: 3.6535 - policy_loss: 2.8729 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3431 - value_mse: 0.1194
+Epoch 11/100: time=11.30s, loss=3.6535, policy_loss=2.8729, value_loss=0.6881, policy_categorical_accuracy=0.3431, value_mse=0.1194
+313/313 [==============================] - 11s 34ms/step - loss: 3.6804 - policy_loss: 2.9026 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3368 - value_mse: 0.1192
+Epoch 12/100: time=11.24s, loss=3.6804, policy_loss=2.9026, value_loss=0.6881, policy_categorical_accuracy=0.3368, value_mse=0.1192
+313/313 [==============================] - 11s 34ms/step - loss: 3.6279 - policy_loss: 2.8530 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3420 - value_mse: 0.1181
+Epoch 13/100: time=11.26s, loss=3.6279, policy_loss=2.8530, value_loss=0.6876, policy_categorical_accuracy=0.3420, value_mse=0.1181
+313/313 [==============================] - 11s 34ms/step - loss: 3.6596 - policy_loss: 2.8862 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3315 - value_mse: 0.1179
+Epoch 14/100: time=11.35s, loss=3.6596, policy_loss=2.8862, value_loss=0.6881, policy_categorical_accuracy=0.3315, value_mse=0.1179
+313/313 [==============================] - 11s 34ms/step - loss: 3.6356 - policy_loss: 2.8655 - value_loss: 0.6863 - policy_categorical_accuracy: 0.3425 - value_mse: 0.1197
+Epoch 15/100: time=11.27s, loss=3.6356, policy_loss=2.8655, value_loss=0.6863, policy_categorical_accuracy=0.3425, value_mse=0.1197
+313/313 [==============================] - 11s 34ms/step - loss: 3.6139 - policy_loss: 2.8436 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3457 - value_mse: 0.1191
+Epoch 16/100: time=11.32s, loss=3.6139, policy_loss=2.8436, value_loss=0.6880, policy_categorical_accuracy=0.3457, value_mse=0.1191
+313/313 [==============================] - 11s 34ms/step - loss: 3.5692 - policy_loss: 2.7988 - value_loss: 0.6891 - policy_categorical_accuracy: 0.3478 - value_mse: 0.1188
+Epoch 17/100: time=11.29s, loss=3.5692, policy_loss=2.7988, value_loss=0.6891, policy_categorical_accuracy=0.3478, value_mse=0.1188
+313/313 [==============================] - 11s 34ms/step - loss: 3.5534 - policy_loss: 2.7848 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3485 - value_mse: 0.1184
+Epoch 18/100: time=11.15s, loss=3.5534, policy_loss=2.7848, value_loss=0.6883, policy_categorical_accuracy=0.3485, value_mse=0.1184
+313/313 [==============================] - 11s 34ms/step - loss: 3.5753 - policy_loss: 2.8078 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3521 - value_mse: 0.1190
+Epoch 19/100: time=11.28s, loss=3.5753, policy_loss=2.8078, value_loss=0.6882, policy_categorical_accuracy=0.3521, value_mse=0.1190
+313/313 [==============================] - 11s 34ms/step - loss: 3.5749 - policy_loss: 2.8076 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3450 - value_mse: 0.1218
+Epoch 20/100: time=11.26s, loss=3.5749, policy_loss=2.8076, value_loss=0.6888, policy_categorical_accuracy=0.3450, value_mse=0.1218
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.5442 - policy_loss: 2.7782 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3499 - value_mse: 0.1196
+Validation  Epoch {i}/{epochs}:, loss=3.5442, policy_loss=2.7782, value_loss=0.6877, policy_categorical_accuracy=0.3499, value_mse=0.1196
+313/313 [==============================] - 11s 34ms/step - loss: 3.5501 - policy_loss: 2.7834 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3511 - value_mse: 0.1197
+Epoch 21/100: time=11.35s, loss=3.5501, policy_loss=2.7834, value_loss=0.6887, policy_categorical_accuracy=0.3511, value_mse=0.1197
+313/313 [==============================] - 11s 34ms/step - loss: 3.5162 - policy_loss: 2.7503 - value_loss: 0.6884 - policy_categorical_accuracy: 0.3518 - value_mse: 0.1198
+Epoch 22/100: time=11.38s, loss=3.5162, policy_loss=2.7503, value_loss=0.6884, policy_categorical_accuracy=0.3518, value_mse=0.1198
+313/313 [==============================] - 11s 34ms/step - loss: 3.5124 - policy_loss: 2.7477 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3546 - value_mse: 0.1201
+Epoch 23/100: time=11.41s, loss=3.5124, policy_loss=2.7477, value_loss=0.6879, policy_categorical_accuracy=0.3546, value_mse=0.1201
+313/313 [==============================] - 11s 35ms/step - loss: 3.5048 - policy_loss: 2.7401 - value_loss: 0.6886 - policy_categorical_accuracy: 0.3557 - value_mse: 0.1225
+Epoch 24/100: time=11.46s, loss=3.5048, policy_loss=2.7401, value_loss=0.6886, policy_categorical_accuracy=0.3557, value_mse=0.1225
+313/313 [==============================] - 11s 35ms/step - loss: 3.5254 - policy_loss: 2.7617 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3527 - value_mse: 0.1188
+Epoch 25/100: time=11.47s, loss=3.5254, policy_loss=2.7617, value_loss=0.6881, policy_categorical_accuracy=0.3527, value_mse=0.1188
+313/313 [==============================] - 11s 35ms/step - loss: 3.5445 - policy_loss: 2.7819 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3471 - value_mse: 0.1198
+Epoch 26/100: time=11.50s, loss=3.5445, policy_loss=2.7819, value_loss=0.6874, policy_categorical_accuracy=0.3471, value_mse=0.1198
+313/313 [==============================] - 11s 35ms/step - loss: 3.5041 - policy_loss: 2.7405 - value_loss: 0.6886 - policy_categorical_accuracy: 0.3539 - value_mse: 0.1208
+Epoch 27/100: time=11.57s, loss=3.5041, policy_loss=2.7405, value_loss=0.6886, policy_categorical_accuracy=0.3539, value_mse=0.1208
+313/313 [==============================] - 11s 34ms/step - loss: 3.5201 - policy_loss: 2.7574 - value_loss: 0.6884 - policy_categorical_accuracy: 0.3553 - value_mse: 0.1186
+Epoch 28/100: time=11.36s, loss=3.5201, policy_loss=2.7574, value_loss=0.6884, policy_categorical_accuracy=0.3553, value_mse=0.1186
+313/313 [==============================] - 11s 35ms/step - loss: 3.5221 - policy_loss: 2.7591 - value_loss: 0.6890 - policy_categorical_accuracy: 0.3466 - value_mse: 0.1191
+Epoch 29/100: time=11.48s, loss=3.5221, policy_loss=2.7591, value_loss=0.6890, policy_categorical_accuracy=0.3466, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.5000 - policy_loss: 2.7365 - value_loss: 0.6898 - policy_categorical_accuracy: 0.3547 - value_mse: 0.1193
+Epoch 30/100: time=11.49s, loss=3.5000, policy_loss=2.7365, value_loss=0.6898, policy_categorical_accuracy=0.3547, value_mse=0.1193
+313/313 [==============================] - 11s 34ms/step - loss: 3.4835 - policy_loss: 2.7213 - value_loss: 0.6890 - policy_categorical_accuracy: 0.3622 - value_mse: 0.1185
+Epoch 31/100: time=11.41s, loss=3.4835, policy_loss=2.7213, value_loss=0.6890, policy_categorical_accuracy=0.3622, value_mse=0.1185
+313/313 [==============================] - 11s 34ms/step - loss: 3.4714 - policy_loss: 2.7098 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3594 - value_mse: 0.1205
+Epoch 32/100: time=11.36s, loss=3.4714, policy_loss=2.7098, value_loss=0.6888, policy_categorical_accuracy=0.3594, value_mse=0.1205
+313/313 [==============================] - 11s 34ms/step - loss: 3.4663 - policy_loss: 2.7049 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3605 - value_mse: 0.1199
+Epoch 33/100: time=11.23s, loss=3.4663, policy_loss=2.7049, value_loss=0.6889, policy_categorical_accuracy=0.3605, value_mse=0.1199
+313/313 [==============================] - 11s 35ms/step - loss: 3.4460 - policy_loss: 2.6861 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3619 - value_mse: 0.1198
+Epoch 34/100: time=11.53s, loss=3.4460, policy_loss=2.6861, value_loss=0.6878, policy_categorical_accuracy=0.3619, value_mse=0.1198
+313/313 [==============================] - 11s 34ms/step - loss: 3.4745 - policy_loss: 2.7156 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3534 - value_mse: 0.1204
+Epoch 35/100: time=11.22s, loss=3.4745, policy_loss=2.7156, value_loss=0.6873, policy_categorical_accuracy=0.3534, value_mse=0.1204
+313/313 [==============================] - 11s 35ms/step - loss: 3.4668 - policy_loss: 2.7084 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3608 - value_mse: 0.1208
+Epoch 36/100: time=11.45s, loss=3.4668, policy_loss=2.7084, value_loss=0.6871, policy_categorical_accuracy=0.3608, value_mse=0.1208
+313/313 [==============================] - 11s 34ms/step - loss: 3.4698 - policy_loss: 2.7110 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3602 - value_mse: 0.1190
+Epoch 37/100: time=11.32s, loss=3.4698, policy_loss=2.7110, value_loss=0.6879, policy_categorical_accuracy=0.3602, value_mse=0.1190
+313/313 [==============================] - 11s 34ms/step - loss: 3.4470 - policy_loss: 2.6882 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3615 - value_mse: 0.1193
+Epoch 38/100: time=11.36s, loss=3.4470, policy_loss=2.6882, value_loss=0.6882, policy_categorical_accuracy=0.3615, value_mse=0.1193
+313/313 [==============================] - 11s 34ms/step - loss: 3.4771 - policy_loss: 2.7201 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3552 - value_mse: 0.1180
+Epoch 39/100: time=11.39s, loss=3.4771, policy_loss=2.7201, value_loss=0.6866, policy_categorical_accuracy=0.3552, value_mse=0.1180
+313/313 [==============================] - 11s 34ms/step - loss: 3.4278 - policy_loss: 2.6697 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3679 - value_mse: 0.1209
+Epoch 40/100: time=11.43s, loss=3.4278, policy_loss=2.6697, value_loss=0.6881, policy_categorical_accuracy=0.3679, value_mse=0.1209
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.4427 - policy_loss: 2.6862 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3569 - value_mse: 0.1191
+Validation  Epoch {i}/{epochs}:, loss=3.4427, policy_loss=2.6862, value_loss=0.6866, policy_categorical_accuracy=0.3569, value_mse=0.1191
+313/313 [==============================] - 11s 34ms/step - loss: 3.4641 - policy_loss: 2.7060 - value_loss: 0.6884 - policy_categorical_accuracy: 0.3546 - value_mse: 0.1210
+Epoch 41/100: time=11.42s, loss=3.4641, policy_loss=2.7060, value_loss=0.6884, policy_categorical_accuracy=0.3546, value_mse=0.1210
+313/313 [==============================] - 11s 35ms/step - loss: 3.4257 - policy_loss: 2.6683 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3682 - value_mse: 0.1187
+Epoch 42/100: time=11.43s, loss=3.4257, policy_loss=2.6683, value_loss=0.6880, policy_categorical_accuracy=0.3682, value_mse=0.1187
+313/313 [==============================] - 11s 35ms/step - loss: 3.4081 - policy_loss: 2.6506 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1163
+Epoch 43/100: time=11.49s, loss=3.4081, policy_loss=2.6506, value_loss=0.6883, policy_categorical_accuracy=0.3696, value_mse=0.1163
+313/313 [==============================] - 11s 35ms/step - loss: 3.3877 - policy_loss: 2.6297 - value_loss: 0.6893 - policy_categorical_accuracy: 0.3688 - value_mse: 0.1206
+Epoch 44/100: time=11.45s, loss=3.3877, policy_loss=2.6297, value_loss=0.6893, policy_categorical_accuracy=0.3688, value_mse=0.1206
+313/313 [==============================] - 11s 34ms/step - loss: 3.4365 - policy_loss: 2.6811 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3677 - value_mse: 0.1178
+Epoch 45/100: time=11.42s, loss=3.4365, policy_loss=2.6811, value_loss=0.6873, policy_categorical_accuracy=0.3677, value_mse=0.1178
+313/313 [==============================] - 11s 34ms/step - loss: 3.4012 - policy_loss: 2.6465 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3650 - value_mse: 0.1201
+Epoch 46/100: time=11.41s, loss=3.4012, policy_loss=2.6465, value_loss=0.6870, policy_categorical_accuracy=0.3650, value_mse=0.1201
+313/313 [==============================] - 11s 34ms/step - loss: 3.4052 - policy_loss: 2.6501 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3682 - value_mse: 0.1182
+Epoch 47/100: time=11.38s, loss=3.4052, policy_loss=2.6501, value_loss=0.6879, policy_categorical_accuracy=0.3682, value_mse=0.1182
+313/313 [==============================] - 11s 35ms/step - loss: 3.4104 - policy_loss: 2.6555 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3689 - value_mse: 0.1180
+Epoch 48/100: time=11.43s, loss=3.4104, policy_loss=2.6555, value_loss=0.6881, policy_categorical_accuracy=0.3689, value_mse=0.1180
+313/313 [==============================] - 11s 35ms/step - loss: 3.4063 - policy_loss: 2.6524 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3680 - value_mse: 0.1201
+Epoch 49/100: time=11.45s, loss=3.4063, policy_loss=2.6524, value_loss=0.6874, policy_categorical_accuracy=0.3680, value_mse=0.1201
+313/313 [==============================] - 11s 35ms/step - loss: 3.4241 - policy_loss: 2.6694 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3647 - value_mse: 0.1183
+Epoch 50/100: time=11.43s, loss=3.4241, policy_loss=2.6694, value_loss=0.6887, policy_categorical_accuracy=0.3647, value_mse=0.1183
+313/313 [==============================] - 11s 34ms/step - loss: 3.4017 - policy_loss: 2.6483 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1189
+Epoch 51/100: time=11.39s, loss=3.4017, policy_loss=2.6483, value_loss=0.6877, policy_categorical_accuracy=0.3710, value_mse=0.1189
+313/313 [==============================] - 11s 35ms/step - loss: 3.3744 - policy_loss: 2.6215 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3758 - value_mse: 0.1193
+Epoch 52/100: time=11.47s, loss=3.3744, policy_loss=2.6215, value_loss=0.6877, policy_categorical_accuracy=0.3758, value_mse=0.1193
+313/313 [==============================] - 11s 34ms/step - loss: 3.3660 - policy_loss: 2.6124 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3719 - value_mse: 0.1201
+Epoch 53/100: time=11.44s, loss=3.3660, policy_loss=2.6124, value_loss=0.6888, policy_categorical_accuracy=0.3719, value_mse=0.1201
+313/313 [==============================] - 11s 35ms/step - loss: 3.3734 - policy_loss: 2.6213 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3719 - value_mse: 0.1203
+Epoch 54/100: time=11.48s, loss=3.3734, policy_loss=2.6213, value_loss=0.6877, policy_categorical_accuracy=0.3719, value_mse=0.1203
+313/313 [==============================] - 11s 34ms/step - loss: 3.3908 - policy_loss: 2.6381 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3743 - value_mse: 0.1209
+Epoch 55/100: time=11.43s, loss=3.3908, policy_loss=2.6381, value_loss=0.6887, policy_categorical_accuracy=0.3743, value_mse=0.1209
+313/313 [==============================] - 11s 35ms/step - loss: 3.3461 - policy_loss: 2.5940 - value_loss: 0.6886 - policy_categorical_accuracy: 0.3837 - value_mse: 0.1199
+Epoch 56/100: time=11.45s, loss=3.3461, policy_loss=2.5940, value_loss=0.6886, policy_categorical_accuracy=0.3837, value_mse=0.1199
+313/313 [==============================] - 11s 35ms/step - loss: 3.3893 - policy_loss: 2.6379 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3737 - value_mse: 0.1187
+Epoch 57/100: time=11.48s, loss=3.3893, policy_loss=2.6379, value_loss=0.6882, policy_categorical_accuracy=0.3737, value_mse=0.1187
+313/313 [==============================] - 11s 35ms/step - loss: 3.3605 - policy_loss: 2.6097 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3780 - value_mse: 0.1193
+Epoch 58/100: time=11.44s, loss=3.3605, policy_loss=2.6097, value_loss=0.6880, policy_categorical_accuracy=0.3780, value_mse=0.1193
+313/313 [==============================] - 11s 35ms/step - loss: 3.3322 - policy_loss: 2.5822 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3753 - value_mse: 0.1191
+Epoch 59/100: time=11.48s, loss=3.3322, policy_loss=2.5822, value_loss=0.6876, policy_categorical_accuracy=0.3753, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.3501 - policy_loss: 2.5997 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3767 - value_mse: 0.1206
+Epoch 60/100: time=11.44s, loss=3.3501, policy_loss=2.5997, value_loss=0.6882, policy_categorical_accuracy=0.3767, value_mse=0.1206
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.3577 - policy_loss: 2.6083 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3728 - value_mse: 0.1195
+Validation  Epoch {i}/{epochs}:, loss=3.3577, policy_loss=2.6083, value_loss=0.6874, policy_categorical_accuracy=0.3728, value_mse=0.1195
+313/313 [==============================] - 11s 35ms/step - loss: 3.3425 - policy_loss: 2.5934 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3752 - value_mse: 0.1174
+Epoch 61/100: time=11.44s, loss=3.3425, policy_loss=2.5934, value_loss=0.6873, policy_categorical_accuracy=0.3752, value_mse=0.1174
+313/313 [==============================] - 11s 34ms/step - loss: 3.3812 - policy_loss: 2.6321 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1181
+Epoch 62/100: time=11.42s, loss=3.3812, policy_loss=2.6321, value_loss=0.6878, policy_categorical_accuracy=0.3696, value_mse=0.1181
+313/313 [==============================] - 11s 35ms/step - loss: 3.3617 - policy_loss: 2.6109 - value_loss: 0.6898 - policy_categorical_accuracy: 0.3767 - value_mse: 0.1200
+Epoch 63/100: time=11.45s, loss=3.3617, policy_loss=2.6109, value_loss=0.6898, policy_categorical_accuracy=0.3767, value_mse=0.1200
+313/313 [==============================] - 11s 34ms/step - loss: 3.3238 - policy_loss: 2.5762 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3811 - value_mse: 0.1213
+Epoch 64/100: time=11.43s, loss=3.3238, policy_loss=2.5762, value_loss=0.6869, policy_categorical_accuracy=0.3811, value_mse=0.1213
+313/313 [==============================] - 11s 34ms/step - loss: 3.3265 - policy_loss: 2.5783 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3788 - value_mse: 0.1201
+Epoch 65/100: time=11.35s, loss=3.3265, policy_loss=2.5783, value_loss=0.6878, policy_categorical_accuracy=0.3788, value_mse=0.1201
+313/313 [==============================] - 11s 34ms/step - loss: 3.3940 - policy_loss: 2.6461 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3691 - value_mse: 0.1171
+Epoch 66/100: time=11.43s, loss=3.3940, policy_loss=2.6461, value_loss=0.6878, policy_categorical_accuracy=0.3691, value_mse=0.1171
+313/313 [==============================] - 11s 35ms/step - loss: 3.3276 - policy_loss: 2.5805 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3731 - value_mse: 0.1209
+Epoch 67/100: time=11.44s, loss=3.3276, policy_loss=2.5805, value_loss=0.6873, policy_categorical_accuracy=0.3731, value_mse=0.1209
+313/313 [==============================] - 11s 34ms/step - loss: 3.3276 - policy_loss: 2.5803 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3796 - value_mse: 0.1208
+Epoch 68/100: time=11.41s, loss=3.3276, policy_loss=2.5803, value_loss=0.6877, policy_categorical_accuracy=0.3796, value_mse=0.1208
+313/313 [==============================] - 11s 35ms/step - loss: 3.3373 - policy_loss: 2.5904 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3800 - value_mse: 0.1196
+Epoch 69/100: time=11.49s, loss=3.3373, policy_loss=2.5904, value_loss=0.6877, policy_categorical_accuracy=0.3800, value_mse=0.1196
+313/313 [==============================] - 11s 34ms/step - loss: 3.3477 - policy_loss: 2.6007 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3730 - value_mse: 0.1191
+Epoch 70/100: time=11.41s, loss=3.3477, policy_loss=2.6007, value_loss=0.6880, policy_categorical_accuracy=0.3730, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.3634 - policy_loss: 2.6165 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3726 - value_mse: 0.1176
+Epoch 71/100: time=11.45s, loss=3.3634, policy_loss=2.6165, value_loss=0.6882, policy_categorical_accuracy=0.3726, value_mse=0.1176
+313/313 [==============================] - 11s 34ms/step - loss: 3.3212 - policy_loss: 2.5743 - value_loss: 0.6885 - policy_categorical_accuracy: 0.3757 - value_mse: 0.1203
+Epoch 72/100: time=11.43s, loss=3.3212, policy_loss=2.5743, value_loss=0.6885, policy_categorical_accuracy=0.3757, value_mse=0.1203
+313/313 [==============================] - 11s 35ms/step - loss: 3.3105 - policy_loss: 2.5657 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3857 - value_mse: 0.1195
+Epoch 73/100: time=11.46s, loss=3.3105, policy_loss=2.5657, value_loss=0.6866, policy_categorical_accuracy=0.3857, value_mse=0.1195
+313/313 [==============================] - 11s 35ms/step - loss: 3.3186 - policy_loss: 2.5731 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3729 - value_mse: 0.1177
+Epoch 74/100: time=11.51s, loss=3.3186, policy_loss=2.5731, value_loss=0.6876, policy_categorical_accuracy=0.3729, value_mse=0.1177
+313/313 [==============================] - 11s 34ms/step - loss: 3.3260 - policy_loss: 2.5793 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3722 - value_mse: 0.1196
+Epoch 75/100: time=11.43s, loss=3.3260, policy_loss=2.5793, value_loss=0.6889, policy_categorical_accuracy=0.3722, value_mse=0.1196
+313/313 [==============================] - 11s 35ms/step - loss: 3.2985 - policy_loss: 2.5546 - value_loss: 0.6863 - policy_categorical_accuracy: 0.3846 - value_mse: 0.1182
+Epoch 76/100: time=11.45s, loss=3.2985, policy_loss=2.5546, value_loss=0.6863, policy_categorical_accuracy=0.3846, value_mse=0.1182
+313/313 [==============================] - 11s 34ms/step - loss: 3.3077 - policy_loss: 2.5621 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3773 - value_mse: 0.1208
+Epoch 77/100: time=11.43s, loss=3.3077, policy_loss=2.5621, value_loss=0.6883, policy_categorical_accuracy=0.3773, value_mse=0.1208
+313/313 [==============================] - 11s 35ms/step - loss: 3.2887 - policy_loss: 2.5436 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3811 - value_mse: 0.1207
+Epoch 78/100: time=11.44s, loss=3.2887, policy_loss=2.5436, value_loss=0.6880, policy_categorical_accuracy=0.3811, value_mse=0.1207
+313/313 [==============================] - 11s 35ms/step - loss: 3.3233 - policy_loss: 2.5788 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3772 - value_mse: 0.1203
+Epoch 79/100: time=11.54s, loss=3.3233, policy_loss=2.5788, value_loss=0.6875, policy_categorical_accuracy=0.3772, value_mse=0.1203
+313/313 [==============================] - 11s 35ms/step - loss: 3.2927 - policy_loss: 2.5472 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3818 - value_mse: 0.1191
+Epoch 80/100: time=11.45s, loss=3.2927, policy_loss=2.5472, value_loss=0.6887, policy_categorical_accuracy=0.3818, value_mse=0.1191
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 22ms/step - loss: 3.2927 - policy_loss: 2.5491 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3829 - value_mse: 0.1192
+Validation  Epoch {i}/{epochs}:, loss=3.2927, policy_loss=2.5491, value_loss=0.6868, policy_categorical_accuracy=0.3829, value_mse=0.1192
+313/313 [==============================] - 11s 34ms/step - loss: 3.3032 - policy_loss: 2.5597 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3814 - value_mse: 0.1196
+Epoch 81/100: time=11.42s, loss=3.3032, policy_loss=2.5597, value_loss=0.6868, policy_categorical_accuracy=0.3814, value_mse=0.1196
+313/313 [==============================] - 11s 34ms/step - loss: 3.3033 - policy_loss: 2.5589 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3800 - value_mse: 0.1192
+Epoch 82/100: time=11.43s, loss=3.3033, policy_loss=2.5589, value_loss=0.6879, policy_categorical_accuracy=0.3800, value_mse=0.1192
+313/313 [==============================] - 11s 35ms/step - loss: 3.2828 - policy_loss: 2.5387 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3898 - value_mse: 0.1205
+Epoch 83/100: time=11.50s, loss=3.2828, policy_loss=2.5387, value_loss=0.6876, policy_categorical_accuracy=0.3898, value_mse=0.1205
+313/313 [==============================] - 11s 35ms/step - loss: 3.3050 - policy_loss: 2.5607 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3769 - value_mse: 0.1189
+Epoch 84/100: time=11.47s, loss=3.3050, policy_loss=2.5607, value_loss=0.6880, policy_categorical_accuracy=0.3769, value_mse=0.1189
+313/313 [==============================] - 11s 35ms/step - loss: 3.2754 - policy_loss: 2.5316 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3829 - value_mse: 0.1193
+Epoch 85/100: time=11.46s, loss=3.2754, policy_loss=2.5316, value_loss=0.6875, policy_categorical_accuracy=0.3829, value_mse=0.1193
+313/313 [==============================] - 11s 35ms/step - loss: 3.2761 - policy_loss: 2.5328 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3886 - value_mse: 0.1196
+Epoch 86/100: time=11.50s, loss=3.2761, policy_loss=2.5328, value_loss=0.6871, policy_categorical_accuracy=0.3886, value_mse=0.1196
+313/313 [==============================] - 11s 35ms/step - loss: 3.3245 - policy_loss: 2.5808 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3812 - value_mse: 0.1184
+Epoch 87/100: time=11.44s, loss=3.3245, policy_loss=2.5808, value_loss=0.6876, policy_categorical_accuracy=0.3812, value_mse=0.1184
+313/313 [==============================] - 11s 34ms/step - loss: 3.2550 - policy_loss: 2.5118 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3871 - value_mse: 0.1199
+Epoch 88/100: time=11.41s, loss=3.2550, policy_loss=2.5118, value_loss=0.6872, policy_categorical_accuracy=0.3871, value_mse=0.1199
+313/313 [==============================] - 11s 35ms/step - loss: 3.2828 - policy_loss: 2.5380 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3725 - value_mse: 0.1188
+Epoch 89/100: time=11.56s, loss=3.2828, policy_loss=2.5380, value_loss=0.6889, policy_categorical_accuracy=0.3725, value_mse=0.1188
+313/313 [==============================] - 11s 35ms/step - loss: 3.2897 - policy_loss: 2.5468 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3849 - value_mse: 0.1188
+Epoch 90/100: time=11.48s, loss=3.2897, policy_loss=2.5468, value_loss=0.6870, policy_categorical_accuracy=0.3849, value_mse=0.1188
+313/313 [==============================] - 11s 35ms/step - loss: 3.3046 - policy_loss: 2.5621 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3774 - value_mse: 0.1192
+Epoch 91/100: time=11.48s, loss=3.3046, policy_loss=2.5621, value_loss=0.6867, policy_categorical_accuracy=0.3774, value_mse=0.1192
+313/313 [==============================] - 11s 35ms/step - loss: 3.3174 - policy_loss: 2.5740 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3846 - value_mse: 0.1180
+Epoch 92/100: time=11.45s, loss=3.3174, policy_loss=2.5740, value_loss=0.6876, policy_categorical_accuracy=0.3846, value_mse=0.1180
+313/313 [==============================] - 11s 35ms/step - loss: 3.2849 - policy_loss: 2.5428 - value_loss: 0.6863 - policy_categorical_accuracy: 0.3821 - value_mse: 0.1184
+Epoch 93/100: time=11.49s, loss=3.2849, policy_loss=2.5428, value_loss=0.6863, policy_categorical_accuracy=0.3821, value_mse=0.1184
+313/313 [==============================] - 11s 35ms/step - loss: 3.2988 - policy_loss: 2.5567 - value_loss: 0.6863 - policy_categorical_accuracy: 0.3805 - value_mse: 0.1197
+Epoch 94/100: time=11.56s, loss=3.2988, policy_loss=2.5567, value_loss=0.6863, policy_categorical_accuracy=0.3805, value_mse=0.1197
+313/313 [==============================] - 11s 35ms/step - loss: 3.3021 - policy_loss: 2.5594 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3802 - value_mse: 0.1167
+Epoch 95/100: time=11.50s, loss=3.3021, policy_loss=2.5594, value_loss=0.6869, policy_categorical_accuracy=0.3802, value_mse=0.1167
+313/313 [==============================] - 11s 35ms/step - loss: 3.2612 - policy_loss: 2.5192 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3865 - value_mse: 0.1183
+Epoch 96/100: time=11.52s, loss=3.2612, policy_loss=2.5192, value_loss=0.6862, policy_categorical_accuracy=0.3865, value_mse=0.1183
+313/313 [==============================] - 11s 35ms/step - loss: 3.2510 - policy_loss: 2.5077 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3951 - value_mse: 0.1203
+Epoch 97/100: time=11.51s, loss=3.2510, policy_loss=2.5077, value_loss=0.6876, policy_categorical_accuracy=0.3951, value_mse=0.1203
+313/313 [==============================] - 11s 35ms/step - loss: 3.2677 - policy_loss: 2.5251 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3890 - value_mse: 0.1201
+Epoch 98/100: time=11.47s, loss=3.2677, policy_loss=2.5251, value_loss=0.6869, policy_categorical_accuracy=0.3890, value_mse=0.1201
+313/313 [==============================] - 11s 35ms/step - loss: 3.3004 - policy_loss: 2.5570 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3814 - value_mse: 0.1190
+Epoch 99/100: time=11.58s, loss=3.3004, policy_loss=2.5570, value_loss=0.6877, policy_categorical_accuracy=0.3814, value_mse=0.1190
+313/313 [==============================] - 11s 35ms/step - loss: 3.3163 - policy_loss: 2.5731 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3834 - value_mse: 0.1190
+Epoch 100/100: time=11.49s, loss=3.3163, policy_loss=2.5731, value_loss=0.6873, policy_categorical_accuracy=0.3834, value_mse=0.1190
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.3660 - policy_loss: 2.6217 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3662 - value_mse: 0.1193
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+Validation  Epoch {i}/{epochs}:, loss=3.3660, policy_loss=2.6217, value_loss=0.6872, policy_categorical_accuracy=0.3662, value_mse=0.1193
+Best Model at epoch 80 : loss=3.2926928997039795, policy_loss=2.5491, value_loss=0.6868
+
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 1 — Epoch 100:
+  - loss                          : 3.3660
+  - policy_loss                   : 2.6217
+  - value_loss                    : 0.6872
+  - policy_categorical_accuracy   : 0.3662
+  - value_mse                     : 0.1193
+  - Time: 1200.3673
+-------------------- Model MobileNet - Nb CosineDecay Cycle is 3 --------------------
+Model: "model_1"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_2 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d_6 (Conv2D)           (None, 19, 19, 64)           1984      ['input_2[0][0]']
+
+ batch_normalization_8 (Bat  (None, 19, 19, 64)           256       ['conv2d_6[0][0]']
+ chNormalization)
+
+ activation_8 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_8[0][0]'
+                                                                    ]
+
+ conv2d_7 (Conv2D)           (None, 19, 19, 256)          16384     ['activation_8[0][0]']
+
+ batch_normalization_9 (Bat  (None, 19, 19, 256)          1024      ['conv2d_7[0][0]']
+ chNormalization)
+
+ activation_9 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_9[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_2 (Depthw  (None, 19, 19, 256)          2304      ['activation_9[0][0]']
+ iseConv2D)
+
+ batch_normalization_10 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_2[0][0]']
+ tchNormalization)
+
+ activation_10 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_10[0][0]
+                                                                    ']
+
+ global_average_pooling2d_3  (None, 256)                  0         ['activation_10[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_2 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_3[0
+                                                                    ][0]']
+
+ dense_5 (Dense)             (None, 1, 1, 16)             4096      ['reshape_2[0][0]']
+
+ dense_6 (Dense)             (None, 1, 1, 256)            4096      ['dense_5[0][0]']
+
+ multiply_2 (Multiply)       (None, 19, 19, 256)          0         ['activation_10[0][0]',
+                                                                     'dense_6[0][0]']
+
+ conv2d_8 (Conv2D)           (None, 19, 19, 64)           16384     ['multiply_2[0][0]']
+
+ batch_normalization_11 (Ba  (None, 19, 19, 64)           256       ['conv2d_8[0][0]']
+ tchNormalization)
+
+ activation_11 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_11[0][0]
+                                                                    ']
+
+ add_2 (Add)                 (None, 19, 19, 64)           0         ['activation_11[0][0]',
+                                                                     'activation_8[0][0]']
+
+ conv2d_9 (Conv2D)           (None, 19, 19, 256)          16384     ['add_2[0][0]']
+
+ batch_normalization_12 (Ba  (None, 19, 19, 256)          1024      ['conv2d_9[0][0]']
+ tchNormalization)
+
+ activation_12 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_12[0][0]
+                                                                    ']
+
+ depthwise_conv2d_3 (Depthw  (None, 19, 19, 256)          2304      ['activation_12[0][0]']
+ iseConv2D)
+
+ batch_normalization_13 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_3[0][0]']
+ tchNormalization)
+
+ activation_13 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_13[0][0]
+                                                                    ']
+
+ global_average_pooling2d_4  (None, 256)                  0         ['activation_13[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_3 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_4[0
+                                                                    ][0]']
+
+ dense_7 (Dense)             (None, 1, 1, 16)             4096      ['reshape_3[0][0]']
+
+ dense_8 (Dense)             (None, 1, 1, 256)            4096      ['dense_7[0][0]']
+
+ multiply_3 (Multiply)       (None, 19, 19, 256)          0         ['activation_13[0][0]',
+                                                                     'dense_8[0][0]']
+
+ conv2d_10 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_3[0][0]']
+
+ batch_normalization_14 (Ba  (None, 19, 19, 64)           256       ['conv2d_10[0][0]']
+ tchNormalization)
+
+ activation_14 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_14[0][0]
+                                                                    ']
+
+ add_3 (Add)                 (None, 19, 19, 64)           0         ['activation_14[0][0]',
+                                                                     'add_2[0][0]']
+
+ global_average_pooling2d_5  (None, 64)                   0         ['add_3[0][0]']
+  (GlobalAveragePooling2D)
+
+ conv2d_11 (Conv2D)          (None, 19, 19, 1)            64        ['add_3[0][0]']
+
+ dense_9 (Dense)             (None, 50)                   3250      ['global_average_pooling2d_5[0
+                                                                    ][0]']
+
+ batch_normalization_15 (Ba  (None, 19, 19, 1)            4         ['conv2d_11[0][0]']
+ tchNormalization)
+
+ activation_15 (Activation)  (None, 50)                   0         ['dense_9[0][0]']
+
+ flatten_1 (Flatten)         (None, 361)                  0         ['batch_normalization_15[0][0]
+                                                                    ']
+
+ dropout_1 (Dropout)         (None, 50)                   0         ['activation_15[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten_1[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout_1[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+313/313 [==============================] - 12s 35ms/step - loss: 4.7882 - policy_loss: 3.9099 - value_loss: 0.7308 - policy_categorical_accuracy: 0.2013 - value_mse: 0.1363
+Epoch 1/100: time=12.90s, loss=4.7882, policy_loss=3.9099, value_loss=0.7308, policy_categorical_accuracy=0.2013, value_mse=0.1363
+313/313 [==============================] - 11s 35ms/step - loss: 4.1536 - policy_loss: 3.3135 - value_loss: 0.6990 - policy_categorical_accuracy: 0.2806 - value_mse: 0.1255
+Epoch 2/100: time=11.49s, loss=4.1536, policy_loss=3.3135, value_loss=0.6990, policy_categorical_accuracy=0.2806, value_mse=0.1255
+313/313 [==============================] - 11s 35ms/step - loss: 3.9695 - policy_loss: 3.1416 - value_loss: 0.6944 - policy_categorical_accuracy: 0.3009 - value_mse: 0.1208
+Epoch 3/100: time=11.50s, loss=3.9695, policy_loss=3.1416, value_loss=0.6944, policy_categorical_accuracy=0.3009, value_mse=0.1208
+313/313 [==============================] - 11s 35ms/step - loss: 3.8694 - policy_loss: 3.0487 - value_loss: 0.6947 - policy_categorical_accuracy: 0.3166 - value_mse: 0.1228
+Epoch 4/100: time=11.56s, loss=3.8694, policy_loss=3.0487, value_loss=0.6947, policy_categorical_accuracy=0.3166, value_mse=0.1228
+313/313 [==============================] - 11s 35ms/step - loss: 3.8168 - policy_loss: 3.0063 - value_loss: 0.6916 - policy_categorical_accuracy: 0.3141 - value_mse: 0.1219
+Epoch 5/100: time=11.52s, loss=3.8168, policy_loss=3.0063, value_loss=0.6916, policy_categorical_accuracy=0.3141, value_mse=0.1219
+313/313 [==============================] - 11s 35ms/step - loss: 3.7736 - policy_loss: 2.9717 - value_loss: 0.6895 - policy_categorical_accuracy: 0.3221 - value_mse: 0.1189
+Epoch 6/100: time=11.63s, loss=3.7736, policy_loss=2.9717, value_loss=0.6895, policy_categorical_accuracy=0.3221, value_mse=0.1189
+313/313 [==============================] - 11s 35ms/step - loss: 3.7308 - policy_loss: 2.9340 - value_loss: 0.6902 - policy_categorical_accuracy: 0.3222 - value_mse: 0.1195
+Epoch 7/100: time=11.62s, loss=3.7308, policy_loss=2.9340, value_loss=0.6902, policy_categorical_accuracy=0.3222, value_mse=0.1195
+313/313 [==============================] - 11s 35ms/step - loss: 3.7360 - policy_loss: 2.9458 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3318 - value_mse: 0.1175
+Epoch 8/100: time=11.56s, loss=3.7360, policy_loss=2.9458, value_loss=0.6888, policy_categorical_accuracy=0.3318, value_mse=0.1175
+313/313 [==============================] - 11s 35ms/step - loss: 3.7357 - policy_loss: 2.9499 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3222 - value_mse: 0.1191
+Epoch 9/100: time=11.65s, loss=3.7357, policy_loss=2.9499, value_loss=0.6889, policy_categorical_accuracy=0.3222, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.6515 - policy_loss: 2.8700 - value_loss: 0.6884 - policy_categorical_accuracy: 0.3405 - value_mse: 0.1186
+Epoch 10/100: time=11.57s, loss=3.6515, policy_loss=2.8700, value_loss=0.6884, policy_categorical_accuracy=0.3405, value_mse=0.1186
+313/313 [==============================] - 11s 35ms/step - loss: 3.6431 - policy_loss: 2.8649 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3425 - value_mse: 0.1196
+Epoch 11/100: time=11.61s, loss=3.6431, policy_loss=2.8649, value_loss=0.6883, policy_categorical_accuracy=0.3425, value_mse=0.1196
+313/313 [==============================] - 11s 35ms/step - loss: 3.6697 - policy_loss: 2.8937 - value_loss: 0.6891 - policy_categorical_accuracy: 0.3345 - value_mse: 0.1197
+Epoch 12/100: time=11.57s, loss=3.6697, policy_loss=2.8937, value_loss=0.6891, policy_categorical_accuracy=0.3345, value_mse=0.1197
+313/313 [==============================] - 11s 35ms/step - loss: 3.6198 - policy_loss: 2.8478 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3425 - value_mse: 0.1181
+Epoch 13/100: time=11.59s, loss=3.6198, policy_loss=2.8478, value_loss=0.6875, policy_categorical_accuracy=0.3425, value_mse=0.1181
+313/313 [==============================] - 11s 36ms/step - loss: 3.6348 - policy_loss: 2.8649 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3382 - value_mse: 0.1176
+Epoch 14/100: time=11.84s, loss=3.6348, policy_loss=2.8649, value_loss=0.6874, policy_categorical_accuracy=0.3382, value_mse=0.1176
+313/313 [==============================] - 11s 35ms/step - loss: 3.6165 - policy_loss: 2.8506 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3413 - value_mse: 0.1191
+Epoch 15/100: time=11.71s, loss=3.6165, policy_loss=2.8506, value_loss=0.6852, policy_categorical_accuracy=0.3413, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.5773 - policy_loss: 2.8114 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3450 - value_mse: 0.1185
+Epoch 16/100: time=11.64s, loss=3.5773, policy_loss=2.8114, value_loss=0.6868, policy_categorical_accuracy=0.3450, value_mse=0.1185
+313/313 [==============================] - 11s 35ms/step - loss: 3.5286 - policy_loss: 2.7631 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3538 - value_mse: 0.1181
+Epoch 17/100: time=11.66s, loss=3.5286, policy_loss=2.7631, value_loss=0.6877, policy_categorical_accuracy=0.3538, value_mse=0.1181
+313/313 [==============================] - 11s 35ms/step - loss: 3.5134 - policy_loss: 2.7502 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3537 - value_mse: 0.1177
+Epoch 18/100: time=11.66s, loss=3.5134, policy_loss=2.7502, value_loss=0.6867, policy_categorical_accuracy=0.3537, value_mse=0.1177
+313/313 [==============================] - 11s 36ms/step - loss: 3.5354 - policy_loss: 2.7733 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3593 - value_mse: 0.1182
+Epoch 19/100: time=11.79s, loss=3.5354, policy_loss=2.7733, value_loss=0.6867, policy_categorical_accuracy=0.3593, value_mse=0.1182
+313/313 [==============================] - 11s 35ms/step - loss: 3.5170 - policy_loss: 2.7561 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3573 - value_mse: 0.1207
+Epoch 20/100: time=11.66s, loss=3.5170, policy_loss=2.7561, value_loss=0.6866, policy_categorical_accuracy=0.3573, value_mse=0.1207
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.4999 - policy_loss: 2.7410 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1184
+Validation  Epoch {i}/{epochs}:, loss=3.4999, policy_loss=2.7410, value_loss=0.6852, policy_categorical_accuracy=0.3598, value_mse=0.1184
+313/313 [==============================] - 11s 35ms/step - loss: 3.4928 - policy_loss: 2.7325 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3543 - value_mse: 0.1188
+Epoch 21/100: time=11.57s, loss=3.4928, policy_loss=2.7325, value_loss=0.6869, policy_categorical_accuracy=0.3543, value_mse=0.1188
+313/313 [==============================] - 11s 35ms/step - loss: 3.4693 - policy_loss: 2.7101 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3624 - value_mse: 0.1190
+Epoch 22/100: time=11.57s, loss=3.4693, policy_loss=2.7101, value_loss=0.6867, policy_categorical_accuracy=0.3624, value_mse=0.1190
+313/313 [==============================] - 11s 35ms/step - loss: 3.4633 - policy_loss: 2.7048 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3577 - value_mse: 0.1195
+Epoch 23/100: time=11.55s, loss=3.4633, policy_loss=2.7048, value_loss=0.6867, policy_categorical_accuracy=0.3577, value_mse=0.1195
+313/313 [==============================] - 11s 35ms/step - loss: 3.4398 - policy_loss: 2.6816 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3673 - value_mse: 0.1217
+Epoch 24/100: time=11.54s, loss=3.4398, policy_loss=2.6816, value_loss=0.6870, policy_categorical_accuracy=0.3673, value_mse=0.1217
+313/313 [==============================] - 11s 35ms/step - loss: 3.4548 - policy_loss: 2.6990 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3638 - value_mse: 0.1173
+Epoch 25/100: time=11.67s, loss=3.4548, policy_loss=2.6990, value_loss=0.6852, policy_categorical_accuracy=0.3638, value_mse=0.1173
+313/313 [==============================] - 11s 35ms/step - loss: 3.4894 - policy_loss: 2.7333 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3579 - value_mse: 0.1191
+Epoch 26/100: time=11.62s, loss=3.4894, policy_loss=2.7333, value_loss=0.6859, policy_categorical_accuracy=0.3579, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.4422 - policy_loss: 2.6857 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3651 - value_mse: 0.1198
+Epoch 27/100: time=11.66s, loss=3.4422, policy_loss=2.6857, value_loss=0.6866, policy_categorical_accuracy=0.3651, value_mse=0.1198
+313/313 [==============================] - 11s 35ms/step - loss: 3.4615 - policy_loss: 2.7060 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3634 - value_mse: 0.1174
+Epoch 28/100: time=11.60s, loss=3.4615, policy_loss=2.7060, value_loss=0.6859, policy_categorical_accuracy=0.3634, value_mse=0.1174
+313/313 [==============================] - 11s 35ms/step - loss: 3.4681 - policy_loss: 2.7126 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3552 - value_mse: 0.1176
+Epoch 29/100: time=11.69s, loss=3.4681, policy_loss=2.7126, value_loss=0.6860, policy_categorical_accuracy=0.3552, value_mse=0.1176
+313/313 [==============================] - 11s 35ms/step - loss: 3.4441 - policy_loss: 2.6880 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3612 - value_mse: 0.1178
+Epoch 30/100: time=11.68s, loss=3.4441, policy_loss=2.6880, value_loss=0.6868, policy_categorical_accuracy=0.3612, value_mse=0.1178
+313/313 [==============================] - 11s 35ms/step - loss: 3.4270 - policy_loss: 2.6712 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1173
+Epoch 31/100: time=11.68s, loss=3.4270, policy_loss=2.6712, value_loss=0.6866, policy_categorical_accuracy=0.3696, value_mse=0.1173
+313/313 [==============================] - 11s 35ms/step - loss: 3.4208 - policy_loss: 2.6655 - value_loss: 0.6861 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1192
+Epoch 32/100: time=11.64s, loss=3.4208, policy_loss=2.6655, value_loss=0.6861, policy_categorical_accuracy=0.3655, value_mse=0.1192
+313/313 [==============================] - 11s 35ms/step - loss: 3.4206 - policy_loss: 2.6648 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3683 - value_mse: 0.1188
+Epoch 33/100: time=11.63s, loss=3.4206, policy_loss=2.6648, value_loss=0.6866, policy_categorical_accuracy=0.3683, value_mse=0.1188
+313/313 [==============================] - 11s 35ms/step - loss: 3.5022 - policy_loss: 2.7452 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3531 - value_mse: 0.1196
+Epoch 34/100: time=11.75s, loss=3.5022, policy_loss=2.7452, value_loss=0.6873, policy_categorical_accuracy=0.3531, value_mse=0.1196
+313/313 [==============================] - 11s 35ms/step - loss: 3.5458 - policy_loss: 2.7877 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3483 - value_mse: 0.1204
+Epoch 35/100: time=11.69s, loss=3.5458, policy_loss=2.7877, value_loss=0.6873, policy_categorical_accuracy=0.3483, value_mse=0.1204
+313/313 [==============================] - 11s 35ms/step - loss: 3.5553 - policy_loss: 2.7964 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3494 - value_mse: 0.1211
+Epoch 36/100: time=11.67s, loss=3.5553, policy_loss=2.7964, value_loss=0.6877, policy_categorical_accuracy=0.3494, value_mse=0.1211
+313/313 [==============================] - 11s 35ms/step - loss: 3.5479 - policy_loss: 2.7883 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3508 - value_mse: 0.1191
+Epoch 37/100: time=11.66s, loss=3.5479, policy_loss=2.7883, value_loss=0.6881, policy_categorical_accuracy=0.3508, value_mse=0.1191
+313/313 [==============================] - 11s 35ms/step - loss: 3.5234 - policy_loss: 2.7638 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3525 - value_mse: 0.1190
+Epoch 38/100: time=11.67s, loss=3.5234, policy_loss=2.7638, value_loss=0.6877, policy_categorical_accuracy=0.3525, value_mse=0.1190
+313/313 [==============================] - 11s 36ms/step - loss: 3.5580 - policy_loss: 2.7986 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3437 - value_mse: 0.1184
+Epoch 39/100: time=11.77s, loss=3.5580, policy_loss=2.7986, value_loss=0.6874, policy_categorical_accuracy=0.3437, value_mse=0.1184
+313/313 [==============================] - 11s 35ms/step - loss: 3.5010 - policy_loss: 2.7418 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3624 - value_mse: 0.1204
+Epoch 40/100: time=11.65s, loss=3.5010, policy_loss=2.7418, value_loss=0.6872, policy_categorical_accuracy=0.3624, value_mse=0.1204
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 22ms/step - loss: 3.4998 - policy_loss: 2.7390 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3542 - value_mse: 0.1202
+Validation  Epoch {i}/{epochs}:, loss=3.4998, policy_loss=2.7390, value_loss=0.6888, policy_categorical_accuracy=0.3542, value_mse=0.1202
+313/313 [==============================] - 11s 35ms/step - loss: 3.5345 - policy_loss: 2.7747 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3405 - value_mse: 0.1206
+Epoch 41/100: time=11.63s, loss=3.5345, policy_loss=2.7747, value_loss=0.6876, policy_categorical_accuracy=0.3405, value_mse=0.1206
+313/313 [==============================] - 11s 35ms/step - loss: 3.4945 - policy_loss: 2.7360 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3570 - value_mse: 0.1179
+Epoch 42/100: time=11.59s, loss=3.4945, policy_loss=2.7360, value_loss=0.6862, policy_categorical_accuracy=0.3570, value_mse=0.1179
+313/313 [==============================] - 11s 36ms/step - loss: 3.4746 - policy_loss: 2.7152 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3619 - value_mse: 0.1159
+Epoch 43/100: time=11.79s, loss=3.4746, policy_loss=2.7152, value_loss=0.6875, policy_categorical_accuracy=0.3619, value_mse=0.1159
+313/313 [==============================] - 11s 35ms/step - loss: 3.4541 - policy_loss: 2.6936 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3615 - value_mse: 0.1204
+Epoch 44/100: time=11.68s, loss=3.4541, policy_loss=2.6936, value_loss=0.6889, policy_categorical_accuracy=0.3615, value_mse=0.1204
+313/313 [==============================] - 11s 35ms/step - loss: 3.4915 - policy_loss: 2.7350 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3554 - value_mse: 0.1168
+Epoch 45/100: time=11.65s, loss=3.4915, policy_loss=2.7350, value_loss=0.6852, policy_categorical_accuracy=0.3554, value_mse=0.1168
+313/313 [==============================] - 11s 36ms/step - loss: 3.4490 - policy_loss: 2.6924 - value_loss: 0.6855 - policy_categorical_accuracy: 0.3611 - value_mse: 0.1193
+Epoch 46/100: time=11.77s, loss=3.4490, policy_loss=2.6924, value_loss=0.6855, policy_categorical_accuracy=0.3611, value_mse=0.1193
+313/313 [==============================] - 11s 35ms/step - loss: 3.4604 - policy_loss: 2.7027 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3628 - value_mse: 0.1178
+Epoch 47/100: time=11.68s, loss=3.4604, policy_loss=2.7027, value_loss=0.6870, policy_categorical_accuracy=0.3628, value_mse=0.1178
+313/313 [==============================] - 11s 35ms/step - loss: 3.4488 - policy_loss: 2.6925 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3674 - value_mse: 0.1170
+Epoch 48/100: time=11.56s, loss=3.4488, policy_loss=2.6925, value_loss=0.6860, policy_categorical_accuracy=0.3674, value_mse=0.1170
+313/313 [==============================] - 11s 36ms/step - loss: 3.4353 - policy_loss: 2.6800 - value_loss: 0.6855 - policy_categorical_accuracy: 0.3640 - value_mse: 0.1192
+Epoch 49/100: time=11.85s, loss=3.4353, policy_loss=2.6800, value_loss=0.6855, policy_categorical_accuracy=0.3640, value_mse=0.1192
+313/313 [==============================] - 11s 35ms/step - loss: 3.4579 - policy_loss: 2.7033 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3530 - value_mse: 0.1167
+Epoch 50/100: time=11.72s, loss=3.4579, policy_loss=2.7033, value_loss=0.6852, policy_categorical_accuracy=0.3530, value_mse=0.1167
+313/313 [==============================] - 11s 35ms/step - loss: 3.4159 - policy_loss: 2.6613 - value_loss: 0.6858 - policy_categorical_accuracy: 0.3698 - value_mse: 0.1180
+Epoch 51/100: time=11.64s, loss=3.4159, policy_loss=2.6613, value_loss=0.6858, policy_categorical_accuracy=0.3698, value_mse=0.1180
+313/313 [==============================] - 11s 35ms/step - loss: 3.3983 - policy_loss: 2.6467 - value_loss: 0.6833 - policy_categorical_accuracy: 0.3708 - value_mse: 0.1171
+Epoch 52/100: time=11.62s, loss=3.3983, policy_loss=2.6467, value_loss=0.6833, policy_categorical_accuracy=0.3708, value_mse=0.1171
+313/313 [==============================] - 11s 35ms/step - loss: 3.3776 - policy_loss: 2.6248 - value_loss: 0.6849 - policy_categorical_accuracy: 0.3743 - value_mse: 0.1181
+Epoch 53/100: time=11.59s, loss=3.3776, policy_loss=2.6248, value_loss=0.6849, policy_categorical_accuracy=0.3743, value_mse=0.1181
+313/313 [==============================] - 11s 35ms/step - loss: 3.3853 - policy_loss: 2.6360 - value_loss: 0.6819 - policy_categorical_accuracy: 0.3724 - value_mse: 0.1175
+Epoch 54/100: time=11.64s, loss=3.3853, policy_loss=2.6360, value_loss=0.6819, policy_categorical_accuracy=0.3724, value_mse=0.1175
+313/313 [==============================] - 11s 35ms/step - loss: 3.3992 - policy_loss: 2.6490 - value_loss: 0.6835 - policy_categorical_accuracy: 0.3708 - value_mse: 0.1184
+Epoch 55/100: time=11.59s, loss=3.3992, policy_loss=2.6490, value_loss=0.6835, policy_categorical_accuracy=0.3708, value_mse=0.1184
+313/313 [==============================] - 11s 35ms/step - loss: 3.3585 - policy_loss: 2.6089 - value_loss: 0.6832 - policy_categorical_accuracy: 0.3798 - value_mse: 0.1172
+Epoch 56/100: time=11.62s, loss=3.3585, policy_loss=2.6089, value_loss=0.6832, policy_categorical_accuracy=0.3798, value_mse=0.1172
+313/313 [==============================] - 11s 35ms/step - loss: 3.3794 - policy_loss: 2.6305 - value_loss: 0.6829 - policy_categorical_accuracy: 0.3743 - value_mse: 0.1161
+Epoch 57/100: time=11.65s, loss=3.3794, policy_loss=2.6305, value_loss=0.6829, policy_categorical_accuracy=0.3743, value_mse=0.1161
+313/313 [==============================] - 11s 35ms/step - loss: 3.3536 - policy_loss: 2.6069 - value_loss: 0.6812 - policy_categorical_accuracy: 0.3746 - value_mse: 0.1160
+Epoch 58/100: time=11.60s, loss=3.3536, policy_loss=2.6069, value_loss=0.6812, policy_categorical_accuracy=0.3746, value_mse=0.1160
+313/313 [==============================] - 11s 35ms/step - loss: 3.3262 - policy_loss: 2.5797 - value_loss: 0.6813 - policy_categorical_accuracy: 0.3775 - value_mse: 0.1161
+Epoch 59/100: time=11.71s, loss=3.3262, policy_loss=2.5797, value_loss=0.6813, policy_categorical_accuracy=0.3775, value_mse=0.1161
+313/313 [==============================] - 11s 35ms/step - loss: 3.3437 - policy_loss: 2.5979 - value_loss: 0.6809 - policy_categorical_accuracy: 0.3725 - value_mse: 0.1170
+Epoch 60/100: time=11.60s, loss=3.3437, policy_loss=2.5979, value_loss=0.6809, policy_categorical_accuracy=0.3725, value_mse=0.1170
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 22ms/step - loss: 3.3435 - policy_loss: 2.6058 - value_loss: 0.6730 - policy_categorical_accuracy: 0.3738 - value_mse: 0.1124
+Validation  Epoch {i}/{epochs}:, loss=3.3435, policy_loss=2.6058, value_loss=0.6730, policy_categorical_accuracy=0.3738, value_mse=0.1124
+313/313 [==============================] - 11s 35ms/step - loss: 3.3254 - policy_loss: 2.5812 - value_loss: 0.6795 - policy_categorical_accuracy: 0.3746 - value_mse: 0.1137
+Epoch 61/100: time=11.62s, loss=3.3254, policy_loss=2.5812, value_loss=0.6795, policy_categorical_accuracy=0.3746, value_mse=0.1137
+313/313 [==============================] - 11s 35ms/step - loss: 3.3712 - policy_loss: 2.6265 - value_loss: 0.6803 - policy_categorical_accuracy: 0.3738 - value_mse: 0.1145
+Epoch 62/100: time=11.64s, loss=3.3712, policy_loss=2.6265, value_loss=0.6803, policy_categorical_accuracy=0.3738, value_mse=0.1145
+313/313 [==============================] - 11s 35ms/step - loss: 3.3451 - policy_loss: 2.5997 - value_loss: 0.6810 - policy_categorical_accuracy: 0.3780 - value_mse: 0.1157
+Epoch 63/100: time=11.64s, loss=3.3451, policy_loss=2.5997, value_loss=0.6810, policy_categorical_accuracy=0.3780, value_mse=0.1157
+313/313 [==============================] - 11s 35ms/step - loss: 3.3149 - policy_loss: 2.5735 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3793 - value_mse: 0.1166
+Epoch 64/100: time=11.63s, loss=3.3149, policy_loss=2.5735, value_loss=0.6772, policy_categorical_accuracy=0.3793, value_mse=0.1166
+313/313 [==============================] - 11s 35ms/step - loss: 3.3206 - policy_loss: 2.5789 - value_loss: 0.6775 - policy_categorical_accuracy: 0.3782 - value_mse: 0.1151
+Epoch 65/100: time=11.59s, loss=3.3206, policy_loss=2.5789, value_loss=0.6775, policy_categorical_accuracy=0.3782, value_mse=0.1151
+313/313 [==============================] - 11s 35ms/step - loss: 3.3880 - policy_loss: 2.6430 - value_loss: 0.6808 - policy_categorical_accuracy: 0.3663 - value_mse: 0.1137
+Epoch 66/100: time=11.61s, loss=3.3880, policy_loss=2.6430, value_loss=0.6808, policy_categorical_accuracy=0.3663, value_mse=0.1137
+313/313 [==============================] - 11s 35ms/step - loss: 3.3753 - policy_loss: 2.6276 - value_loss: 0.6830 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1189
+Epoch 67/100: time=11.61s, loss=3.3753, policy_loss=2.6276, value_loss=0.6830, policy_categorical_accuracy=0.3710, value_mse=0.1189
+313/313 [==============================] - 11s 35ms/step - loss: 3.4428 - policy_loss: 2.6912 - value_loss: 0.6848 - policy_categorical_accuracy: 0.3642 - value_mse: 0.1194
+Epoch 68/100: time=11.57s, loss=3.4428, policy_loss=2.6912, value_loss=0.6848, policy_categorical_accuracy=0.3642, value_mse=0.1194
+313/313 [==============================] - 11s 35ms/step - loss: 3.4492 - policy_loss: 2.6957 - value_loss: 0.6856 - policy_categorical_accuracy: 0.3669 - value_mse: 0.1185
+Epoch 69/100: time=11.68s, loss=3.4492, policy_loss=2.6957, value_loss=0.6856, policy_categorical_accuracy=0.3669, value_mse=0.1185
+313/313 [==============================] - 11s 35ms/step - loss: 3.4713 - policy_loss: 2.7188 - value_loss: 0.6838 - policy_categorical_accuracy: 0.3567 - value_mse: 0.1171
+Epoch 70/100: time=11.61s, loss=3.4713, policy_loss=2.7188, value_loss=0.6838, policy_categorical_accuracy=0.3567, value_mse=0.1171
+313/313 [==============================] - 11s 35ms/step - loss: 3.4845 - policy_loss: 2.7294 - value_loss: 0.6858 - policy_categorical_accuracy: 0.3590 - value_mse: 0.1165
+Epoch 71/100: time=11.64s, loss=3.4845, policy_loss=2.7294, value_loss=0.6858, policy_categorical_accuracy=0.3590, value_mse=0.1165
+313/313 [==============================] - 11s 35ms/step - loss: 3.4493 - policy_loss: 2.6947 - value_loss: 0.6847 - policy_categorical_accuracy: 0.3626 - value_mse: 0.1184
+Epoch 72/100: time=11.66s, loss=3.4493, policy_loss=2.6947, value_loss=0.6847, policy_categorical_accuracy=0.3626, value_mse=0.1184
+313/313 [==============================] - 11s 35ms/step - loss: 3.4356 - policy_loss: 2.6820 - value_loss: 0.6832 - policy_categorical_accuracy: 0.3675 - value_mse: 0.1179
+Epoch 73/100: time=11.59s, loss=3.4356, policy_loss=2.6820, value_loss=0.6832, policy_categorical_accuracy=0.3675, value_mse=0.1179
+313/313 [==============================] - 11s 35ms/step - loss: 3.4396 - policy_loss: 2.6866 - value_loss: 0.6819 - policy_categorical_accuracy: 0.3594 - value_mse: 0.1150
+Epoch 74/100: time=11.73s, loss=3.4396, policy_loss=2.6866, value_loss=0.6819, policy_categorical_accuracy=0.3594, value_mse=0.1150
+313/313 [==============================] - 11s 35ms/step - loss: 3.4427 - policy_loss: 2.6882 - value_loss: 0.6829 - policy_categorical_accuracy: 0.3586 - value_mse: 0.1167
+Epoch 75/100: time=11.62s, loss=3.4427, policy_loss=2.6882, value_loss=0.6829, policy_categorical_accuracy=0.3586, value_mse=0.1167
+313/313 [==============================] - 11s 35ms/step - loss: 3.4155 - policy_loss: 2.6632 - value_loss: 0.6804 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1153
+Epoch 76/100: time=11.70s, loss=3.4155, policy_loss=2.6632, value_loss=0.6804, policy_categorical_accuracy=0.3710, value_mse=0.1153
+313/313 [==============================] - 11s 35ms/step - loss: 3.4214 - policy_loss: 2.6668 - value_loss: 0.6825 - policy_categorical_accuracy: 0.3630 - value_mse: 0.1180
+Epoch 77/100: time=11.60s, loss=3.4214, policy_loss=2.6668, value_loss=0.6825, policy_categorical_accuracy=0.3630, value_mse=0.1180
+313/313 [==============================] - 11s 35ms/step - loss: 3.3954 - policy_loss: 2.6420 - value_loss: 0.6811 - policy_categorical_accuracy: 0.3692 - value_mse: 0.1174
+Epoch 78/100: time=11.60s, loss=3.3954, policy_loss=2.6420, value_loss=0.6811, policy_categorical_accuracy=0.3692, value_mse=0.1174
+313/313 [==============================] - 11s 35ms/step - loss: 3.4302 - policy_loss: 2.6785 - value_loss: 0.6794 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1163
+Epoch 79/100: time=11.70s, loss=3.4302, policy_loss=2.6785, value_loss=0.6794, policy_categorical_accuracy=0.3690, value_mse=0.1163
+313/313 [==============================] - 11s 35ms/step - loss: 3.3907 - policy_loss: 2.6402 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1141
+Epoch 80/100: time=11.61s, loss=3.3907, policy_loss=2.6402, value_loss=0.6783, policy_categorical_accuracy=0.3655, value_mse=0.1141
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 22ms/step - loss: 3.4172 - policy_loss: 2.6724 - value_loss: 0.6727 - policy_categorical_accuracy: 0.3663 - value_mse: 0.1123
+Validation  Epoch {i}/{epochs}:, loss=3.4172, policy_loss=2.6724, value_loss=0.6727, policy_categorical_accuracy=0.3663, value_mse=0.1123
+313/313 [==============================] - 11s 35ms/step - loss: 3.4020 - policy_loss: 2.6522 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3686 - value_mse: 0.1153
+Epoch 81/100: time=11.65s, loss=3.4020, policy_loss=2.6522, value_loss=0.6778, policy_categorical_accuracy=0.3686, value_mse=0.1153
+313/313 [==============================] - 11s 35ms/step - loss: 3.3875 - policy_loss: 2.6383 - value_loss: 0.6776 - policy_categorical_accuracy: 0.3683 - value_mse: 0.1142
+Epoch 82/100: time=11.66s, loss=3.3875, policy_loss=2.6383, value_loss=0.6776, policy_categorical_accuracy=0.3683, value_mse=0.1142
+313/313 [==============================] - 11s 36ms/step - loss: 3.3641 - policy_loss: 2.6157 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3778 - value_mse: 0.1154
+Epoch 83/100: time=11.76s, loss=3.3641, policy_loss=2.6157, value_loss=0.6772, policy_categorical_accuracy=0.3778, value_mse=0.1154
+313/313 [==============================] - 11s 35ms/step - loss: 3.3847 - policy_loss: 2.6375 - value_loss: 0.6763 - policy_categorical_accuracy: 0.3719 - value_mse: 0.1132
+Epoch 84/100: time=11.62s, loss=3.3847, policy_loss=2.6375, value_loss=0.6763, policy_categorical_accuracy=0.3719, value_mse=0.1132
+313/313 [==============================] - 11s 35ms/step - loss: 3.3596 - policy_loss: 2.6131 - value_loss: 0.6760 - policy_categorical_accuracy: 0.3757 - value_mse: 0.1137
+Epoch 85/100: time=11.58s, loss=3.3596, policy_loss=2.6131, value_loss=0.6760, policy_categorical_accuracy=0.3757, value_mse=0.1137
+313/313 [==============================] - 11s 35ms/step - loss: 3.3470 - policy_loss: 2.6022 - value_loss: 0.6749 - policy_categorical_accuracy: 0.3759 - value_mse: 0.1138
+Epoch 86/100: time=11.68s, loss=3.3470, policy_loss=2.6022, value_loss=0.6749, policy_categorical_accuracy=0.3759, value_mse=0.1138
+313/313 [==============================] - 11s 35ms/step - loss: 3.3766 - policy_loss: 2.6348 - value_loss: 0.6724 - policy_categorical_accuracy: 0.3707 - value_mse: 0.1111
+Epoch 87/100: time=11.73s, loss=3.3766, policy_loss=2.6348, value_loss=0.6724, policy_categorical_accuracy=0.3707, value_mse=0.1111
+313/313 [==============================] - 11s 35ms/step - loss: 3.3062 - policy_loss: 2.5631 - value_loss: 0.6742 - policy_categorical_accuracy: 0.3823 - value_mse: 0.1137
+Epoch 88/100: time=11.71s, loss=3.3062, policy_loss=2.5631, value_loss=0.6742, policy_categorical_accuracy=0.3823, value_mse=0.1137
+313/313 [==============================] - 11s 35ms/step - loss: 3.3321 - policy_loss: 2.5867 - value_loss: 0.6769 - policy_categorical_accuracy: 0.3736 - value_mse: 0.1130
+Epoch 89/100: time=11.71s, loss=3.3321, policy_loss=2.5867, value_loss=0.6769, policy_categorical_accuracy=0.3736, value_mse=0.1130
+313/313 [==============================] - 11s 35ms/step - loss: 3.3218 - policy_loss: 2.5836 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3818 - value_mse: 0.1108
+Epoch 90/100: time=11.69s, loss=3.3218, policy_loss=2.5836, value_loss=0.6702, policy_categorical_accuracy=0.3818, value_mse=0.1108
+313/313 [==============================] - 11s 35ms/step - loss: 3.3387 - policy_loss: 2.5961 - value_loss: 0.6749 - policy_categorical_accuracy: 0.3706 - value_mse: 0.1136
+Epoch 91/100: time=11.69s, loss=3.3387, policy_loss=2.5961, value_loss=0.6749, policy_categorical_accuracy=0.3706, value_mse=0.1136
+313/313 [==============================] - 11s 35ms/step - loss: 3.3466 - policy_loss: 2.6070 - value_loss: 0.6724 - policy_categorical_accuracy: 0.3761 - value_mse: 0.1108
+Epoch 92/100: time=11.70s, loss=3.3466, policy_loss=2.6070, value_loss=0.6724, policy_categorical_accuracy=0.3761, value_mse=0.1108
+313/313 [==============================] - 11s 35ms/step - loss: 3.3028 - policy_loss: 2.5643 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3801 - value_mse: 0.1114
+Epoch 93/100: time=11.60s, loss=3.3028, policy_loss=2.5643, value_loss=0.6715, policy_categorical_accuracy=0.3801, value_mse=0.1114
+313/313 [==============================] - 11s 36ms/step - loss: 3.3227 - policy_loss: 2.5850 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3767 - value_mse: 0.1124
+Epoch 94/100: time=11.84s, loss=3.3227, policy_loss=2.5850, value_loss=0.6709, policy_categorical_accuracy=0.3767, value_mse=0.1124
+313/313 [==============================] - 11s 35ms/step - loss: 3.3154 - policy_loss: 2.5789 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3749 - value_mse: 0.1087
+Epoch 95/100: time=11.62s, loss=3.3154, policy_loss=2.5789, value_loss=0.6700, policy_categorical_accuracy=0.3749, value_mse=0.1087
+313/313 [==============================] - 11s 35ms/step - loss: 3.2754 - policy_loss: 2.5384 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3816 - value_mse: 0.1108
+Epoch 96/100: time=11.71s, loss=3.2754, policy_loss=2.5384, value_loss=0.6705, policy_categorical_accuracy=0.3816, value_mse=0.1108
+313/313 [==============================] - 11s 35ms/step - loss: 3.2664 - policy_loss: 2.5298 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3924 - value_mse: 0.1120
+Epoch 97/100: time=11.69s, loss=3.2664, policy_loss=2.5298, value_loss=0.6702, policy_categorical_accuracy=0.3924, value_mse=0.1120
+313/313 [==============================] - 11s 35ms/step - loss: 3.2832 - policy_loss: 2.5479 - value_loss: 0.6690 - policy_categorical_accuracy: 0.3844 - value_mse: 0.1116
+Epoch 98/100: time=11.72s, loss=3.2832, policy_loss=2.5479, value_loss=0.6690, policy_categorical_accuracy=0.3844, value_mse=0.1116
+313/313 [==============================] - 11s 36ms/step - loss: 3.3085 - policy_loss: 2.5718 - value_loss: 0.6704 - policy_categorical_accuracy: 0.3801 - value_mse: 0.1107
+Epoch 99/100: time=11.82s, loss=3.3085, policy_loss=2.5718, value_loss=0.6704, policy_categorical_accuracy=0.3801, value_mse=0.1107
+313/313 [==============================] - 11s 35ms/step - loss: 3.3299 - policy_loss: 2.5914 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3787 - value_mse: 0.1118
+Epoch 100/100: time=11.72s, loss=3.3299, policy_loss=2.5914, value_loss=0.6721, policy_categorical_accuracy=0.3787, value_mse=0.1118
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.4393 - policy_loss: 2.6866 - value_loss: 0.6851 - policy_categorical_accuracy: 0.3637 - value_mse: 0.1182
+Validation  Epoch {i}/{epochs}:, loss=3.4393, policy_loss=2.6866, value_loss=0.6851, policy_categorical_accuracy=0.3637, value_mse=0.1182
+Best Model at epoch 60 : loss=3.3435168266296387, policy_loss=2.6058, value_loss=0.6730
+
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 3 — Epoch 100:
+  - loss                          : 3.4393
+  - policy_loss                   : 2.6866
+  - value_loss                    : 0.6851
+  - policy_categorical_accuracy   : 0.3637
+  - value_mse                     : 0.1182
+  - Time: 1207.0434
+-------------------- Model MobileNet - Nb CosineDecay Cycle is 5 --------------------
+Model: "model_2"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_3 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d_12 (Conv2D)          (None, 19, 19, 64)           1984      ['input_3[0][0]']
+
+ batch_normalization_16 (Ba  (None, 19, 19, 64)           256       ['conv2d_12[0][0]']
+ tchNormalization)
+
+ activation_16 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_16[0][0]
+                                                                    ']
+
+ conv2d_13 (Conv2D)          (None, 19, 19, 256)          16384     ['activation_16[0][0]']
+
+ batch_normalization_17 (Ba  (None, 19, 19, 256)          1024      ['conv2d_13[0][0]']
+ tchNormalization)
+
+ activation_17 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_17[0][0]
+                                                                    ']
+
+ depthwise_conv2d_4 (Depthw  (None, 19, 19, 256)          2304      ['activation_17[0][0]']
+ iseConv2D)
+
+ batch_normalization_18 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_4[0][0]']
+ tchNormalization)
+
+ activation_18 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_18[0][0]
+                                                                    ']
+
+ global_average_pooling2d_6  (None, 256)                  0         ['activation_18[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_4 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_6[0
+                                                                    ][0]']
+
+ dense_10 (Dense)            (None, 1, 1, 16)             4096      ['reshape_4[0][0]']
+
+ dense_11 (Dense)            (None, 1, 1, 256)            4096      ['dense_10[0][0]']
+
+ multiply_4 (Multiply)       (None, 19, 19, 256)          0         ['activation_18[0][0]',
+                                                                     'dense_11[0][0]']
+
+ conv2d_14 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_4[0][0]']
+
+ batch_normalization_19 (Ba  (None, 19, 19, 64)           256       ['conv2d_14[0][0]']
+ tchNormalization)
+
+ activation_19 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_19[0][0]
+                                                                    ']
+
+ add_4 (Add)                 (None, 19, 19, 64)           0         ['activation_19[0][0]',
+                                                                     'activation_16[0][0]']
+
+ conv2d_15 (Conv2D)          (None, 19, 19, 256)          16384     ['add_4[0][0]']
+
+ batch_normalization_20 (Ba  (None, 19, 19, 256)          1024      ['conv2d_15[0][0]']
+ tchNormalization)
+
+ activation_20 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_20[0][0]
+                                                                    ']
+
+ depthwise_conv2d_5 (Depthw  (None, 19, 19, 256)          2304      ['activation_20[0][0]']
+ iseConv2D)
+
+ batch_normalization_21 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_5[0][0]']
+ tchNormalization)
+
+ activation_21 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_21[0][0]
+                                                                    ']
+
+ global_average_pooling2d_7  (None, 256)                  0         ['activation_21[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_5 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_7[0
+                                                                    ][0]']
+
+ dense_12 (Dense)            (None, 1, 1, 16)             4096      ['reshape_5[0][0]']
+
+ dense_13 (Dense)            (None, 1, 1, 256)            4096      ['dense_12[0][0]']
+
+ multiply_5 (Multiply)       (None, 19, 19, 256)          0         ['activation_21[0][0]',
+                                                                     'dense_13[0][0]']
+
+ conv2d_16 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_5[0][0]']
+
+ batch_normalization_22 (Ba  (None, 19, 19, 64)           256       ['conv2d_16[0][0]']
+ tchNormalization)
+
+ activation_22 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_22[0][0]
+                                                                    ']
+
+ add_5 (Add)                 (None, 19, 19, 64)           0         ['activation_22[0][0]',
+                                                                     'add_4[0][0]']
+
+ global_average_pooling2d_8  (None, 64)                   0         ['add_5[0][0]']
+  (GlobalAveragePooling2D)
+
+ conv2d_17 (Conv2D)          (None, 19, 19, 1)            64        ['add_5[0][0]']
+
+ dense_14 (Dense)            (None, 50)                   3250      ['global_average_pooling2d_8[0
+                                                                    ][0]']
+
+ batch_normalization_23 (Ba  (None, 19, 19, 1)            4         ['conv2d_17[0][0]']
+ tchNormalization)
+
+ activation_23 (Activation)  (None, 50)                   0         ['dense_14[0][0]']
+
+ flatten_2 (Flatten)         (None, 361)                  0         ['batch_normalization_23[0][0]
+                                                                    ']
+
+ dropout_2 (Dropout)         (None, 50)                   0         ['activation_23[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten_2[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout_2[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+313/313 [==============================] - 13s 38ms/step - loss: 4.7351 - policy_loss: 3.8582 - value_loss: 0.7300 - policy_categorical_accuracy: 0.2104 - value_mse: 0.1356
+Epoch 1/100: time=13.93s, loss=4.7351, policy_loss=3.8582, value_loss=0.7300, policy_categorical_accuracy=0.2104, value_mse=0.1356
+313/313 [==============================] - 12s 38ms/step - loss: 4.1398 - policy_loss: 3.3034 - value_loss: 0.6967 - policy_categorical_accuracy: 0.2805 - value_mse: 0.1244
+Epoch 2/100: time=12.51s, loss=4.1398, policy_loss=3.3034, value_loss=0.6967, policy_categorical_accuracy=0.2805, value_mse=0.1244
+313/313 [==============================] - 12s 39ms/step - loss: 3.9630 - policy_loss: 3.1398 - value_loss: 0.6910 - policy_categorical_accuracy: 0.3000 - value_mse: 0.1192
+Epoch 3/100: time=12.76s, loss=3.9630, policy_loss=3.1398, value_loss=0.6910, policy_categorical_accuracy=0.3000, value_mse=0.1192
+313/313 [==============================] - 12s 38ms/step - loss: 3.8621 - policy_loss: 3.0471 - value_loss: 0.6902 - policy_categorical_accuracy: 0.3201 - value_mse: 0.1206
+Epoch 4/100: time=12.62s, loss=3.8621, policy_loss=3.0471, value_loss=0.6902, policy_categorical_accuracy=0.3201, value_mse=0.1206
+313/313 [==============================] - 12s 38ms/step - loss: 3.8124 - policy_loss: 3.0044 - value_loss: 0.6897 - policy_categorical_accuracy: 0.3172 - value_mse: 0.1209
+Epoch 5/100: time=12.58s, loss=3.8124, policy_loss=3.0044, value_loss=0.6897, policy_categorical_accuracy=0.3172, value_mse=0.1209
+313/313 [==============================] - 12s 39ms/step - loss: 3.7747 - policy_loss: 2.9727 - value_loss: 0.6894 - policy_categorical_accuracy: 0.3257 - value_mse: 0.1189
+Epoch 6/100: time=12.78s, loss=3.7747, policy_loss=2.9727, value_loss=0.6894, policy_categorical_accuracy=0.3257, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.7178 - policy_loss: 2.9229 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3265 - value_mse: 0.1181
+Epoch 7/100: time=12.67s, loss=3.7178, policy_loss=2.9229, value_loss=0.6874, policy_categorical_accuracy=0.3265, value_mse=0.1181
+313/313 [==============================] - 12s 38ms/step - loss: 3.7093 - policy_loss: 2.9179 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3341 - value_mse: 0.1172
+Epoch 8/100: time=12.63s, loss=3.7093, policy_loss=2.9179, value_loss=0.6883, policy_categorical_accuracy=0.3341, value_mse=0.1172
+313/313 [==============================] - 12s 39ms/step - loss: 3.7112 - policy_loss: 2.9245 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3253 - value_mse: 0.1184
+Epoch 9/100: time=12.71s, loss=3.7112, policy_loss=2.9245, value_loss=0.6873, policy_categorical_accuracy=0.3253, value_mse=0.1184
+313/313 [==============================] - 12s 39ms/step - loss: 3.6248 - policy_loss: 2.8402 - value_loss: 0.6884 - policy_categorical_accuracy: 0.3441 - value_mse: 0.1186
+Epoch 10/100: time=12.69s, loss=3.6248, policy_loss=2.8402, value_loss=0.6884, policy_categorical_accuracy=0.3441, value_mse=0.1186
+313/313 [==============================] - 12s 39ms/step - loss: 3.6168 - policy_loss: 2.8361 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3453 - value_mse: 0.1190
+Epoch 11/100: time=12.77s, loss=3.6168, policy_loss=2.8361, value_loss=0.6871, policy_categorical_accuracy=0.3453, value_mse=0.1190
+313/313 [==============================] - 12s 38ms/step - loss: 3.6334 - policy_loss: 2.8558 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3443 - value_mse: 0.1184
+Epoch 12/100: time=12.61s, loss=3.6334, policy_loss=2.8558, value_loss=0.6864, policy_categorical_accuracy=0.3443, value_mse=0.1184
+313/313 [==============================] - 12s 38ms/step - loss: 3.5880 - policy_loss: 2.8126 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3501 - value_mse: 0.1173
+Epoch 13/100: time=12.59s, loss=3.5880, policy_loss=2.8126, value_loss=0.6859, policy_categorical_accuracy=0.3501, value_mse=0.1173
+313/313 [==============================] - 12s 39ms/step - loss: 3.5971 - policy_loss: 2.8221 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3433 - value_mse: 0.1174
+Epoch 14/100: time=12.75s, loss=3.5971, policy_loss=2.8221, value_loss=0.6871, policy_categorical_accuracy=0.3433, value_mse=0.1174
+313/313 [==============================] - 12s 38ms/step - loss: 3.5819 - policy_loss: 2.8107 - value_loss: 0.6844 - policy_categorical_accuracy: 0.3459 - value_mse: 0.1187
+Epoch 15/100: time=12.64s, loss=3.5819, policy_loss=2.8107, value_loss=0.6844, policy_categorical_accuracy=0.3459, value_mse=0.1187
+313/313 [==============================] - 12s 38ms/step - loss: 3.5533 - policy_loss: 2.7813 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3551 - value_mse: 0.1182
+Epoch 16/100: time=12.66s, loss=3.5533, policy_loss=2.7813, value_loss=0.6862, policy_categorical_accuracy=0.3551, value_mse=0.1182
+313/313 [==============================] - 12s 38ms/step - loss: 3.5083 - policy_loss: 2.7356 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3582 - value_mse: 0.1180
+Epoch 17/100: time=12.53s, loss=3.5083, policy_loss=2.7356, value_loss=0.6874, policy_categorical_accuracy=0.3582, value_mse=0.1180
+313/313 [==============================] - 12s 38ms/step - loss: 3.5014 - policy_loss: 2.7304 - value_loss: 0.6861 - policy_categorical_accuracy: 0.3570 - value_mse: 0.1174
+Epoch 18/100: time=12.63s, loss=3.5014, policy_loss=2.7304, value_loss=0.6861, policy_categorical_accuracy=0.3570, value_mse=0.1174
+313/313 [==============================] - 12s 39ms/step - loss: 3.5323 - policy_loss: 2.7615 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3607 - value_mse: 0.1179
+Epoch 19/100: time=12.87s, loss=3.5323, policy_loss=2.7615, value_loss=0.6860, policy_categorical_accuracy=0.3607, value_mse=0.1179
+313/313 [==============================] - 12s 39ms/step - loss: 3.5286 - policy_loss: 2.7574 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3495 - value_mse: 0.1206
+Epoch 20/100: time=12.73s, loss=3.5286, policy_loss=2.7574, value_loss=0.6864, policy_categorical_accuracy=0.3495, value_mse=0.1206
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.6016 - policy_loss: 2.8274 - value_loss: 0.6896 - policy_categorical_accuracy: 0.3437 - value_mse: 0.1205
+Validation  Epoch {i}/{epochs}:, loss=3.6016, policy_loss=2.8274, value_loss=0.6896, policy_categorical_accuracy=0.3437, value_mse=0.1205
+313/313 [==============================] - 12s 38ms/step - loss: 3.6364 - policy_loss: 2.8632 - value_loss: 0.6886 - policy_categorical_accuracy: 0.3380 - value_mse: 0.1197
+Epoch 21/100: time=12.48s, loss=3.6364, policy_loss=2.8632, value_loss=0.6886, policy_categorical_accuracy=0.3380, value_mse=0.1197
+313/313 [==============================] - 12s 38ms/step - loss: 3.6007 - policy_loss: 2.8292 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3443 - value_mse: 0.1196
+Epoch 22/100: time=12.51s, loss=3.6007, policy_loss=2.8292, value_loss=0.6880, policy_categorical_accuracy=0.3443, value_mse=0.1196
+313/313 [==============================] - 12s 38ms/step - loss: 3.5870 - policy_loss: 2.8177 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3432 - value_mse: 0.1197
+Epoch 23/100: time=12.53s, loss=3.5870, policy_loss=2.8177, value_loss=0.6872, policy_categorical_accuracy=0.3432, value_mse=0.1197
+313/313 [==============================] - 12s 38ms/step - loss: 3.5704 - policy_loss: 2.8003 - value_loss: 0.6890 - policy_categorical_accuracy: 0.3441 - value_mse: 0.1227
+Epoch 24/100: time=12.61s, loss=3.5704, policy_loss=2.8003, value_loss=0.6890, policy_categorical_accuracy=0.3441, value_mse=0.1227
+313/313 [==============================] - 12s 38ms/step - loss: 3.5752 - policy_loss: 2.8087 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3435 - value_mse: 0.1179
+Epoch 25/100: time=12.62s, loss=3.5752, policy_loss=2.8087, value_loss=0.6864, policy_categorical_accuracy=0.3435, value_mse=0.1179
+313/313 [==============================] - 12s 38ms/step - loss: 3.5924 - policy_loss: 2.8263 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3422 - value_mse: 0.1196
+Epoch 26/100: time=12.57s, loss=3.5924, policy_loss=2.8263, value_loss=0.6870, policy_categorical_accuracy=0.3422, value_mse=0.1196
+313/313 [==============================] - 12s 38ms/step - loss: 3.5421 - policy_loss: 2.7768 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3529 - value_mse: 0.1202
+Epoch 27/100: time=12.64s, loss=3.5421, policy_loss=2.7768, value_loss=0.6874, policy_categorical_accuracy=0.3529, value_mse=0.1202
+313/313 [==============================] - 12s 38ms/step - loss: 3.5569 - policy_loss: 2.7921 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3532 - value_mse: 0.1185
+Epoch 28/100: time=12.62s, loss=3.5569, policy_loss=2.7921, value_loss=0.6881, policy_categorical_accuracy=0.3532, value_mse=0.1185
+313/313 [==============================] - 12s 39ms/step - loss: 3.5476 - policy_loss: 2.7851 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3430 - value_mse: 0.1180
+Epoch 29/100: time=12.81s, loss=3.5476, policy_loss=2.7851, value_loss=0.6868, policy_categorical_accuracy=0.3430, value_mse=0.1180
+313/313 [==============================] - 12s 38ms/step - loss: 3.5117 - policy_loss: 2.7493 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3543 - value_mse: 0.1183
+Epoch 30/100: time=12.62s, loss=3.5117, policy_loss=2.7493, value_loss=0.6877, policy_categorical_accuracy=0.3543, value_mse=0.1183
+313/313 [==============================] - 12s 38ms/step - loss: 3.4818 - policy_loss: 2.7214 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1174
+Epoch 31/100: time=12.68s, loss=3.4818, policy_loss=2.7214, value_loss=0.6867, policy_categorical_accuracy=0.3598, value_mse=0.1174
+313/313 [==============================] - 12s 38ms/step - loss: 3.4725 - policy_loss: 2.7127 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3616 - value_mse: 0.1196
+Epoch 32/100: time=12.68s, loss=3.4725, policy_loss=2.7127, value_loss=0.6870, policy_categorical_accuracy=0.3616, value_mse=0.1196
+313/313 [==============================] - 12s 38ms/step - loss: 3.4538 - policy_loss: 2.6949 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3648 - value_mse: 0.1190
+Epoch 33/100: time=12.66s, loss=3.4538, policy_loss=2.6949, value_loss=0.6870, policy_categorical_accuracy=0.3648, value_mse=0.1190
+313/313 [==============================] - 12s 39ms/step - loss: 3.4318 - policy_loss: 2.6741 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3679 - value_mse: 0.1191
+Epoch 34/100: time=12.75s, loss=3.4318, policy_loss=2.6741, value_loss=0.6864, policy_categorical_accuracy=0.3679, value_mse=0.1191
+313/313 [==============================] - 12s 38ms/step - loss: 3.4446 - policy_loss: 2.6884 - value_loss: 0.6857 - policy_categorical_accuracy: 0.3637 - value_mse: 0.1196
+Epoch 35/100: time=12.67s, loss=3.4446, policy_loss=2.6884, value_loss=0.6857, policy_categorical_accuracy=0.3637, value_mse=0.1196
+313/313 [==============================] - 12s 39ms/step - loss: 3.4396 - policy_loss: 2.6837 - value_loss: 0.6857 - policy_categorical_accuracy: 0.3668 - value_mse: 0.1201
+Epoch 36/100: time=12.72s, loss=3.4396, policy_loss=2.6837, value_loss=0.6857, policy_categorical_accuracy=0.3668, value_mse=0.1201
+313/313 [==============================] - 12s 38ms/step - loss: 3.4347 - policy_loss: 2.6793 - value_loss: 0.6856 - policy_categorical_accuracy: 0.3669 - value_mse: 0.1178
+Epoch 37/100: time=12.64s, loss=3.4347, policy_loss=2.6793, value_loss=0.6856, policy_categorical_accuracy=0.3669, value_mse=0.1178
+313/313 [==============================] - 12s 39ms/step - loss: 3.4196 - policy_loss: 2.6635 - value_loss: 0.6865 - policy_categorical_accuracy: 0.3665 - value_mse: 0.1185
+Epoch 38/100: time=12.69s, loss=3.4196, policy_loss=2.6635, value_loss=0.6865, policy_categorical_accuracy=0.3665, value_mse=0.1185
+313/313 [==============================] - 12s 39ms/step - loss: 3.4431 - policy_loss: 2.6889 - value_loss: 0.6847 - policy_categorical_accuracy: 0.3593 - value_mse: 0.1171
+Epoch 39/100: time=12.90s, loss=3.4431, policy_loss=2.6889, value_loss=0.6847, policy_categorical_accuracy=0.3593, value_mse=0.1171
+313/313 [==============================] - 12s 38ms/step - loss: 3.3957 - policy_loss: 2.6404 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3764 - value_mse: 0.1198
+Epoch 40/100: time=12.66s, loss=3.3957, policy_loss=2.6404, value_loss=0.6859, policy_categorical_accuracy=0.3764, value_mse=0.1198
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.5244 - policy_loss: 2.7689 - value_loss: 0.6858 - policy_categorical_accuracy: 0.3547 - value_mse: 0.1187
+Validation  Epoch {i}/{epochs}:, loss=3.5244, policy_loss=2.7689, value_loss=0.6858, policy_categorical_accuracy=0.3547, value_mse=0.1187
+313/313 [==============================] - 12s 39ms/step - loss: 3.5450 - policy_loss: 2.7858 - value_loss: 0.6885 - policy_categorical_accuracy: 0.3464 - value_mse: 0.1210
+Epoch 41/100: time=12.72s, loss=3.5450, policy_loss=2.7858, value_loss=0.6885, policy_categorical_accuracy=0.3464, value_mse=0.1210
+313/313 [==============================] - 12s 38ms/step - loss: 3.5183 - policy_loss: 2.7593 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3538 - value_mse: 0.1183
+Epoch 42/100: time=12.67s, loss=3.5183, policy_loss=2.7593, value_loss=0.6871, policy_categorical_accuracy=0.3538, value_mse=0.1183
+313/313 [==============================] - 12s 39ms/step - loss: 3.4933 - policy_loss: 2.7333 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3580 - value_mse: 0.1160
+Epoch 43/100: time=12.82s, loss=3.4933, policy_loss=2.7333, value_loss=0.6878, policy_categorical_accuracy=0.3580, value_mse=0.1160
+313/313 [==============================] - 12s 38ms/step - loss: 3.4827 - policy_loss: 2.7223 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3594 - value_mse: 0.1200
+Epoch 44/100: time=12.68s, loss=3.4827, policy_loss=2.7223, value_loss=0.6881, policy_categorical_accuracy=0.3594, value_mse=0.1200
+313/313 [==============================] - 12s 39ms/step - loss: 3.5209 - policy_loss: 2.7615 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3561 - value_mse: 0.1177
+Epoch 45/100: time=12.71s, loss=3.5209, policy_loss=2.7615, value_loss=0.6870, policy_categorical_accuracy=0.3561, value_mse=0.1177
+313/313 [==============================] - 12s 39ms/step - loss: 3.4698 - policy_loss: 2.7108 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3538 - value_mse: 0.1199
+Epoch 46/100: time=12.71s, loss=3.4698, policy_loss=2.7108, value_loss=0.6867, policy_categorical_accuracy=0.3538, value_mse=0.1199
+313/313 [==============================] - 12s 38ms/step - loss: 3.4779 - policy_loss: 2.7189 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3591 - value_mse: 0.1179
+Epoch 47/100: time=12.60s, loss=3.4779, policy_loss=2.7189, value_loss=0.6872, policy_categorical_accuracy=0.3591, value_mse=0.1179
+313/313 [==============================] - 12s 38ms/step - loss: 3.4651 - policy_loss: 2.7061 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3632 - value_mse: 0.1178
+Epoch 48/100: time=12.56s, loss=3.4651, policy_loss=2.7061, value_loss=0.6876, policy_categorical_accuracy=0.3632, value_mse=0.1178
+313/313 [==============================] - 12s 39ms/step - loss: 3.4525 - policy_loss: 2.6947 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3692 - value_mse: 0.1200
+Epoch 49/100: time=12.72s, loss=3.4525, policy_loss=2.6947, value_loss=0.6871, policy_categorical_accuracy=0.3692, value_mse=0.1200
+313/313 [==============================] - 12s 38ms/step - loss: 3.4669 - policy_loss: 2.7103 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3579 - value_mse: 0.1174
+Epoch 50/100: time=12.63s, loss=3.4669, policy_loss=2.7103, value_loss=0.6867, policy_categorical_accuracy=0.3579, value_mse=0.1174
+313/313 [==============================] - 12s 39ms/step - loss: 3.4388 - policy_loss: 2.6833 - value_loss: 0.6861 - policy_categorical_accuracy: 0.3640 - value_mse: 0.1181
+Epoch 51/100: time=12.77s, loss=3.4388, policy_loss=2.6833, value_loss=0.6861, policy_categorical_accuracy=0.3640, value_mse=0.1181
+313/313 [==============================] - 12s 39ms/step - loss: 3.4043 - policy_loss: 2.6499 - value_loss: 0.6858 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1183
+Epoch 52/100: time=12.83s, loss=3.4043, policy_loss=2.6499, value_loss=0.6858, policy_categorical_accuracy=0.3690, value_mse=0.1183
+313/313 [==============================] - 12s 39ms/step - loss: 3.3851 - policy_loss: 2.6294 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3759 - value_mse: 0.1195
+Epoch 53/100: time=12.87s, loss=3.3851, policy_loss=2.6294, value_loss=0.6877, policy_categorical_accuracy=0.3759, value_mse=0.1195
+313/313 [==============================] - 12s 39ms/step - loss: 3.3882 - policy_loss: 2.6348 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3704 - value_mse: 0.1195
+Epoch 54/100: time=12.86s, loss=3.3882, policy_loss=2.6348, value_loss=0.6860, policy_categorical_accuracy=0.3704, value_mse=0.1195
+313/313 [==============================] - 12s 39ms/step - loss: 3.3882 - policy_loss: 2.6343 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3747 - value_mse: 0.1201
+Epoch 55/100: time=12.73s, loss=3.3882, policy_loss=2.6343, value_loss=0.6870, policy_categorical_accuracy=0.3747, value_mse=0.1201
+313/313 [==============================] - 12s 39ms/step - loss: 3.3554 - policy_loss: 2.6023 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3819 - value_mse: 0.1189
+Epoch 56/100: time=12.73s, loss=3.3554, policy_loss=2.6023, value_loss=0.6867, policy_categorical_accuracy=0.3819, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.3811 - policy_loss: 2.6285 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3788 - value_mse: 0.1178
+Epoch 57/100: time=12.63s, loss=3.3811, policy_loss=2.6285, value_loss=0.6866, policy_categorical_accuracy=0.3788, value_mse=0.1178
+313/313 [==============================] - 12s 38ms/step - loss: 3.3509 - policy_loss: 2.5985 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3781 - value_mse: 0.1186
+Epoch 58/100: time=12.65s, loss=3.3509, policy_loss=2.5985, value_loss=0.6864, policy_categorical_accuracy=0.3781, value_mse=0.1186
+313/313 [==============================] - 12s 39ms/step - loss: 3.3332 - policy_loss: 2.5811 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3800 - value_mse: 0.1184
+Epoch 59/100: time=12.71s, loss=3.3332, policy_loss=2.5811, value_loss=0.6862, policy_categorical_accuracy=0.3800, value_mse=0.1184
+313/313 [==============================] - 12s 38ms/step - loss: 3.3647 - policy_loss: 2.6120 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3739 - value_mse: 0.1199
+Epoch 60/100: time=12.62s, loss=3.3647, policy_loss=2.6120, value_loss=0.6868, policy_categorical_accuracy=0.3739, value_mse=0.1199
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.4640 - policy_loss: 2.7077 - value_loss: 0.6898 - policy_categorical_accuracy: 0.3580 - value_mse: 0.1207
+Validation  Epoch {i}/{epochs}:, loss=3.4640, policy_loss=2.7077, value_loss=0.6898, policy_categorical_accuracy=0.3580, value_mse=0.1207
+313/313 [==============================] - 12s 38ms/step - loss: 3.4438 - policy_loss: 2.6892 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3627 - value_mse: 0.1174
+Epoch 61/100: time=12.62s, loss=3.4438, policy_loss=2.6892, value_loss=0.6872, policy_categorical_accuracy=0.3627, value_mse=0.1174
+313/313 [==============================] - 12s 38ms/step - loss: 3.4952 - policy_loss: 2.7396 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3547 - value_mse: 0.1177
+Epoch 62/100: time=12.57s, loss=3.4952, policy_loss=2.7396, value_loss=0.6869, policy_categorical_accuracy=0.3547, value_mse=0.1177
+313/313 [==============================] - 12s 38ms/step - loss: 3.4615 - policy_loss: 2.7039 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3638 - value_mse: 0.1192
+Epoch 63/100: time=12.65s, loss=3.4615, policy_loss=2.7039, value_loss=0.6881, policy_categorical_accuracy=0.3638, value_mse=0.1192
+313/313 [==============================] - 12s 39ms/step - loss: 3.4323 - policy_loss: 2.6762 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3693 - value_mse: 0.1210
+Epoch 64/100: time=12.82s, loss=3.4323, policy_loss=2.6762, value_loss=0.6862, policy_categorical_accuracy=0.3693, value_mse=0.1210
+313/313 [==============================] - 12s 39ms/step - loss: 3.4299 - policy_loss: 2.6725 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3665 - value_mse: 0.1198
+Epoch 65/100: time=12.89s, loss=3.4299, policy_loss=2.6725, value_loss=0.6872, policy_categorical_accuracy=0.3665, value_mse=0.1198
+313/313 [==============================] - 12s 39ms/step - loss: 3.4950 - policy_loss: 2.7366 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3521 - value_mse: 0.1172
+Epoch 66/100: time=12.71s, loss=3.4950, policy_loss=2.7366, value_loss=0.6881, policy_categorical_accuracy=0.3521, value_mse=0.1172
+313/313 [==============================] - 12s 38ms/step - loss: 3.4228 - policy_loss: 2.6647 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3668 - value_mse: 0.1212
+Epoch 67/100: time=12.67s, loss=3.4228, policy_loss=2.6647, value_loss=0.6879, policy_categorical_accuracy=0.3668, value_mse=0.1212
+313/313 [==============================] - 12s 39ms/step - loss: 3.4188 - policy_loss: 2.6616 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3663 - value_mse: 0.1208
+Epoch 68/100: time=12.82s, loss=3.4188, policy_loss=2.6616, value_loss=0.6876, policy_categorical_accuracy=0.3663, value_mse=0.1208
+313/313 [==============================] - 12s 40ms/step - loss: 3.4074 - policy_loss: 2.6507 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3721 - value_mse: 0.1196
+Epoch 69/100: time=13.07s, loss=3.4074, policy_loss=2.6507, value_loss=0.6877, policy_categorical_accuracy=0.3721, value_mse=0.1196
+313/313 [==============================] - 12s 39ms/step - loss: 3.4238 - policy_loss: 2.6669 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3636 - value_mse: 0.1193
+Epoch 70/100: time=12.94s, loss=3.4238, policy_loss=2.6669, value_loss=0.6883, policy_categorical_accuracy=0.3636, value_mse=0.1193
+313/313 [==============================] - 12s 39ms/step - loss: 3.4294 - policy_loss: 2.6737 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3676 - value_mse: 0.1174
+Epoch 71/100: time=12.99s, loss=3.4294, policy_loss=2.6737, value_loss=0.6877, policy_categorical_accuracy=0.3676, value_mse=0.1174
+313/313 [==============================] - 12s 39ms/step - loss: 3.3859 - policy_loss: 2.6306 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1200
+Epoch 72/100: time=12.87s, loss=3.3859, policy_loss=2.6306, value_loss=0.6879, policy_categorical_accuracy=0.3696, value_mse=0.1200
+313/313 [==============================] - 12s 38ms/step - loss: 3.3675 - policy_loss: 2.6149 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3784 - value_mse: 0.1192
+Epoch 73/100: time=12.62s, loss=3.3675, policy_loss=2.6149, value_loss=0.6859, policy_categorical_accuracy=0.3784, value_mse=0.1192
+313/313 [==============================] - 12s 39ms/step - loss: 3.3541 - policy_loss: 2.6012 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3767 - value_mse: 0.1173
+Epoch 74/100: time=12.88s, loss=3.3541, policy_loss=2.6012, value_loss=0.6867, policy_categorical_accuracy=0.3767, value_mse=0.1173
+313/313 [==============================] - 12s 38ms/step - loss: 3.3562 - policy_loss: 2.6023 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3687 - value_mse: 0.1192
+Epoch 75/100: time=12.53s, loss=3.3562, policy_loss=2.6023, value_loss=0.6882, policy_categorical_accuracy=0.3687, value_mse=0.1192
+313/313 [==============================] - 45s 145ms/step - loss: 3.3257 - policy_loss: 2.5755 - value_loss: 0.6849 - policy_categorical_accuracy: 0.3814 - value_mse: 0.1174
+Epoch 76/100: time=45.82s, loss=3.3257, policy_loss=2.5755, value_loss=0.6849, policy_categorical_accuracy=0.3814, value_mse=0.1174
+313/313 [==============================] - 15s 47ms/step - loss: 3.3331 - policy_loss: 2.5808 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3763 - value_mse: 0.1203
+Epoch 77/100: time=15.29s, loss=3.3331, policy_loss=2.5808, value_loss=0.6872, policy_categorical_accuracy=0.3763, value_mse=0.1203
+313/313 [==============================] - 12s 38ms/step - loss: 3.3218 - policy_loss: 2.5699 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3753 - value_mse: 0.1202
+Epoch 78/100: time=12.47s, loss=3.3218, policy_loss=2.5699, value_loss=0.6869, policy_categorical_accuracy=0.3753, value_mse=0.1202
+313/313 [==============================] - 12s 38ms/step - loss: 3.3527 - policy_loss: 2.6018 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3770 - value_mse: 0.1195
+Epoch 79/100: time=12.57s, loss=3.3527, policy_loss=2.6018, value_loss=0.6860, policy_categorical_accuracy=0.3770, value_mse=0.1195
+313/313 [==============================] - 408s 1s/step - loss: 3.3311 - policy_loss: 2.5795 - value_loss: 0.6867 - policy_categorical_accuracy: 0.3822 - value_mse: 0.1182
+Epoch 80/100: time=408.32s, loss=3.3311, policy_loss=2.5795, value_loss=0.6867, policy_categorical_accuracy=0.3822, value_mse=0.1182
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 23ms/step - loss: 3.4113 - policy_loss: 2.6579 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3656 - value_mse: 0.1195
+Validation  Epoch {i}/{epochs}:, loss=3.4113, policy_loss=2.6579, value_loss=0.6875, policy_categorical_accuracy=0.3656, value_mse=0.1195
+313/313 [==============================] - 11s 36ms/step - loss: 3.4308 - policy_loss: 2.6768 - value_loss: 0.6871 - policy_categorical_accuracy: 0.3636 - value_mse: 0.1198
+Epoch 81/100: time=11.98s, loss=3.4308, policy_loss=2.6768, value_loss=0.6871, policy_categorical_accuracy=0.3636, value_mse=0.1198
+313/313 [==============================] - 12s 37ms/step - loss: 3.4383 - policy_loss: 2.6817 - value_loss: 0.6886 - policy_categorical_accuracy: 0.3640 - value_mse: 0.1196
+Epoch 82/100: time=12.25s, loss=3.4383, policy_loss=2.6817, value_loss=0.6886, policy_categorical_accuracy=0.3640, value_mse=0.1196
+313/313 [==============================] - 912s 3s/step - loss: 3.4141 - policy_loss: 2.6579 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3735 - value_mse: 0.1206
+Epoch 83/100: time=912.48s, loss=3.4141, policy_loss=2.6579, value_loss=0.6877, policy_categorical_accuracy=0.3735, value_mse=0.1206
+313/313 [==============================] - 12s 37ms/step - loss: 3.4378 - policy_loss: 2.6802 - value_loss: 0.6885 - policy_categorical_accuracy: 0.3657 - value_mse: 0.1192
+Epoch 84/100: time=12.28s, loss=3.4378, policy_loss=2.6802, value_loss=0.6885, policy_categorical_accuracy=0.3657, value_mse=0.1192
+313/313 [==============================] - 12s 37ms/step - loss: 3.4085 - policy_loss: 2.6516 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3686 - value_mse: 0.1192
+Epoch 85/100: time=12.26s, loss=3.4085, policy_loss=2.6516, value_loss=0.6874, policy_categorical_accuracy=0.3686, value_mse=0.1192
+313/313 [==============================] - 12s 37ms/step - loss: 3.4075 - policy_loss: 2.6510 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3720 - value_mse: 0.1195
+Epoch 86/100: time=12.31s, loss=3.4075, policy_loss=2.6510, value_loss=0.6869, policy_categorical_accuracy=0.3720, value_mse=0.1195
+313/313 [==============================] - 947s 3s/step - loss: 3.4389 - policy_loss: 2.6823 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3693 - value_mse: 0.1183
+Epoch 87/100: time=947.43s, loss=3.4389, policy_loss=2.6823, value_loss=0.6872, policy_categorical_accuracy=0.3693, value_mse=0.1183
+313/313 [==============================] - 12s 37ms/step - loss: 3.3586 - policy_loss: 2.6021 - value_loss: 0.6875 - policy_categorical_accuracy: 0.3749 - value_mse: 0.1201
+Epoch 88/100: time=12.33s, loss=3.3586, policy_loss=2.6021, value_loss=0.6875, policy_categorical_accuracy=0.3749, value_mse=0.1201
+313/313 [==============================] - 12s 38ms/step - loss: 3.3924 - policy_loss: 2.6353 - value_loss: 0.6885 - policy_categorical_accuracy: 0.3627 - value_mse: 0.1186
+Epoch 89/100: time=12.42s, loss=3.3924, policy_loss=2.6353, value_loss=0.6885, policy_categorical_accuracy=0.3627, value_mse=0.1186
+313/313 [==============================] - 12s 37ms/step - loss: 3.3766 - policy_loss: 2.6219 - value_loss: 0.6865 - policy_categorical_accuracy: 0.3744 - value_mse: 0.1186
+Epoch 90/100: time=12.35s, loss=3.3766, policy_loss=2.6219, value_loss=0.6865, policy_categorical_accuracy=0.3744, value_mse=0.1186
+313/313 [==============================] - 253s 811ms/step - loss: 3.3876 - policy_loss: 2.6341 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3671 - value_mse: 0.1188
+Epoch 91/100: time=253.55s, loss=3.3876, policy_loss=2.6341, value_loss=0.6859, policy_categorical_accuracy=0.3671, value_mse=0.1188
+313/313 [==============================] - 12s 37ms/step - loss: 3.3866 - policy_loss: 2.6326 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3752 - value_mse: 0.1177
+Epoch 92/100: time=12.32s, loss=3.3866, policy_loss=2.6326, value_loss=0.6870, policy_categorical_accuracy=0.3752, value_mse=0.1177
+313/313 [==============================] - 12s 38ms/step - loss: 3.3473 - policy_loss: 2.5945 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3779 - value_mse: 0.1185
+Epoch 93/100: time=12.62s, loss=3.3473, policy_loss=2.5945, value_loss=0.6864, policy_categorical_accuracy=0.3779, value_mse=0.1185
+313/313 [==============================] - 1056s 3s/step - loss: 3.3607 - policy_loss: 2.6094 - value_loss: 0.6854 - policy_categorical_accuracy: 0.3760 - value_mse: 0.1193
+Epoch 94/100: time=1056.56s, loss=3.3607, policy_loss=2.6094, value_loss=0.6854, policy_categorical_accuracy=0.3760, value_mse=0.1193
+313/313 [==============================] - 12s 37ms/step - loss: 3.3492 - policy_loss: 2.5981 - value_loss: 0.6856 - policy_categorical_accuracy: 0.3760 - value_mse: 0.1161
+Epoch 95/100: time=12.22s, loss=3.3492, policy_loss=2.5981, value_loss=0.6856, policy_categorical_accuracy=0.3760, value_mse=0.1161
+313/313 [==============================] - 12s 37ms/step - loss: 3.3007 - policy_loss: 2.5503 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3790 - value_mse: 0.1178
+Epoch 96/100: time=12.29s, loss=3.3007, policy_loss=2.5503, value_loss=0.6852, policy_categorical_accuracy=0.3790, value_mse=0.1178
+313/313 [==============================] - 12s 37ms/step - loss: 3.2859 - policy_loss: 2.5351 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3922 - value_mse: 0.1194
+Epoch 97/100: time=12.29s, loss=3.2859, policy_loss=2.5351, value_loss=0.6859, policy_categorical_accuracy=0.3922, value_mse=0.1194
+313/313 [==============================] - 28s 88ms/step - loss: 3.3075 - policy_loss: 2.5567 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3832 - value_mse: 0.1197
+Epoch 98/100: time=28.20s, loss=3.3075, policy_loss=2.5567, value_loss=0.6860, policy_categorical_accuracy=0.3832, value_mse=0.1197
+313/313 [==============================] - 12s 38ms/step - loss: 3.3269 - policy_loss: 2.5754 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3817 - value_mse: 0.1186
+Epoch 99/100: time=12.36s, loss=3.3269, policy_loss=2.5754, value_loss=0.6869, policy_categorical_accuracy=0.3817, value_mse=0.1186
+313/313 [==============================] - 12s 37ms/step - loss: 3.3467 - policy_loss: 2.5954 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3776 - value_mse: 0.1186
+Epoch 100/100: time=12.32s, loss=3.3467, policy_loss=2.5954, value_loss=0.6864, policy_categorical_accuracy=0.3776, value_mse=0.1186
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 7s 22ms/step - loss: 3.4024 - policy_loss: 2.6463 - value_loss: 0.6904 - policy_categorical_accuracy: 0.3679 - value_mse: 0.1209
+Validation  Epoch {i}/{epochs}:, loss=3.4024, policy_loss=2.6463, value_loss=0.6904, policy_categorical_accuracy=0.3679, value_mse=0.1209
+Best Model at epoch 100 : loss=3.402406930923462, policy_loss=2.6463, value_loss=0.6904
+
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 5 — Epoch 100:
+  - loss                          : 3.4024
+  - policy_loss                   : 2.6463
+  - value_loss                    : 0.6904
+  - policy_categorical_accuracy   : 0.3679
+  - value_mse                     : 0.1209
+  - Time: 4872.8181
+-------------------- Model MobileNet - Nb CosineDecay Cycle is 7 --------------------
+Model: "model_3"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_4 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d_18 (Conv2D)          (None, 19, 19, 64)           1984      ['input_4[0][0]']
+
+ batch_normalization_24 (Ba  (None, 19, 19, 64)           256       ['conv2d_18[0][0]']
+ tchNormalization)
+
+ activation_24 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_24[0][0]
+                                                                    ']
+
+ conv2d_19 (Conv2D)          (None, 19, 19, 256)          16384     ['activation_24[0][0]']
+
+ batch_normalization_25 (Ba  (None, 19, 19, 256)          1024      ['conv2d_19[0][0]']
+ tchNormalization)
+
+ activation_25 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_25[0][0]
+                                                                    ']
+
+ depthwise_conv2d_6 (Depthw  (None, 19, 19, 256)          2304      ['activation_25[0][0]']
+ iseConv2D)
+
+ batch_normalization_26 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_6[0][0]']
+ tchNormalization)
+
+ activation_26 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_26[0][0]
+                                                                    ']
+
+ global_average_pooling2d_9  (None, 256)                  0         ['activation_26[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_6 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_9[0
+                                                                    ][0]']
+
+ dense_15 (Dense)            (None, 1, 1, 16)             4096      ['reshape_6[0][0]']
+
+ dense_16 (Dense)            (None, 1, 1, 256)            4096      ['dense_15[0][0]']
+
+ multiply_6 (Multiply)       (None, 19, 19, 256)          0         ['activation_26[0][0]',
+                                                                     'dense_16[0][0]']
+
+ conv2d_20 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_6[0][0]']
+
+ batch_normalization_27 (Ba  (None, 19, 19, 64)           256       ['conv2d_20[0][0]']
+ tchNormalization)
+
+ activation_27 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_27[0][0]
+                                                                    ']
+
+ add_6 (Add)                 (None, 19, 19, 64)           0         ['activation_27[0][0]',
+                                                                     'activation_24[0][0]']
+
+ conv2d_21 (Conv2D)          (None, 19, 19, 256)          16384     ['add_6[0][0]']
+
+ batch_normalization_28 (Ba  (None, 19, 19, 256)          1024      ['conv2d_21[0][0]']
+ tchNormalization)
+
+ activation_28 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_28[0][0]
+                                                                    ']
+
+ depthwise_conv2d_7 (Depthw  (None, 19, 19, 256)          2304      ['activation_28[0][0]']
+ iseConv2D)
+
+ batch_normalization_29 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_7[0][0]']
+ tchNormalization)
+
+ activation_29 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_29[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 256)                  0         ['activation_29[0][0]']
+ 0 (GlobalAveragePooling2D)
+
+ reshape_7 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_10[
+                                                                    0][0]']
+
+ dense_17 (Dense)            (None, 1, 1, 16)             4096      ['reshape_7[0][0]']
+
+ dense_18 (Dense)            (None, 1, 1, 256)            4096      ['dense_17[0][0]']
+
+ multiply_7 (Multiply)       (None, 19, 19, 256)          0         ['activation_29[0][0]',
+                                                                     'dense_18[0][0]']
+
+ conv2d_22 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_7[0][0]']
+
+ batch_normalization_30 (Ba  (None, 19, 19, 64)           256       ['conv2d_22[0][0]']
+ tchNormalization)
+
+ activation_30 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_30[0][0]
+                                                                    ']
+
+ add_7 (Add)                 (None, 19, 19, 64)           0         ['activation_30[0][0]',
+                                                                     'add_6[0][0]']
+
+ global_average_pooling2d_1  (None, 64)                   0         ['add_7[0][0]']
+ 1 (GlobalAveragePooling2D)
+
+ conv2d_23 (Conv2D)          (None, 19, 19, 1)            64        ['add_7[0][0]']
+
+ dense_19 (Dense)            (None, 50)                   3250      ['global_average_pooling2d_11[
+                                                                    0][0]']
+
+ batch_normalization_31 (Ba  (None, 19, 19, 1)            4         ['conv2d_23[0][0]']
+ tchNormalization)
+
+ activation_31 (Activation)  (None, 50)                   0         ['dense_19[0][0]']
+
+ flatten_3 (Flatten)         (None, 361)                  0         ['batch_normalization_31[0][0]
+                                                                    ']
+
+ dropout_3 (Dropout)         (None, 50)                   0         ['activation_31[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten_3[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout_3[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+313/313 [==============================] - 210s 668ms/step - loss: 4.7565 - policy_loss: 3.8810 - value_loss: 0.7266 - policy_categorical_accuracy: 0.2042 - value_mse: 0.1344
+Epoch 1/100: time=210.33s, loss=4.7565, policy_loss=3.8810, value_loss=0.7266, policy_categorical_accuracy=0.2042, value_mse=0.1344
+313/313 [==============================] - 12s 39ms/step - loss: 4.1258 - policy_loss: 3.2840 - value_loss: 0.6994 - policy_categorical_accuracy: 0.2783 - value_mse: 0.1257
+Epoch 2/100: time=12.85s, loss=4.1258, policy_loss=3.2840, value_loss=0.6994, policy_categorical_accuracy=0.2783, value_mse=0.1257
+313/313 [==============================] - 12s 38ms/step - loss: 3.9685 - policy_loss: 3.1399 - value_loss: 0.6936 - policy_categorical_accuracy: 0.2977 - value_mse: 0.1204
+Epoch 3/100: time=12.40s, loss=3.9685, policy_loss=3.1399, value_loss=0.6936, policy_categorical_accuracy=0.2977, value_mse=0.1204
+313/313 [==============================] - 12s 38ms/step - loss: 3.8527 - policy_loss: 3.0350 - value_loss: 0.6900 - policy_categorical_accuracy: 0.3165 - value_mse: 0.1206
+Epoch 4/100: time=12.48s, loss=3.8527, policy_loss=3.0350, value_loss=0.6900, policy_categorical_accuracy=0.3165, value_mse=0.1206
+313/313 [==============================] - 12s 37ms/step - loss: 3.8087 - policy_loss: 2.9984 - value_loss: 0.6893 - policy_categorical_accuracy: 0.3201 - value_mse: 0.1207
+Epoch 5/100: time=12.23s, loss=3.8087, policy_loss=2.9984, value_loss=0.6893, policy_categorical_accuracy=0.3201, value_mse=0.1207
+313/313 [==============================] - 12s 38ms/step - loss: 3.7580 - policy_loss: 2.9535 - value_loss: 0.6891 - policy_categorical_accuracy: 0.3265 - value_mse: 0.1187
+Epoch 6/100: time=12.63s, loss=3.7580, policy_loss=2.9535, value_loss=0.6891, policy_categorical_accuracy=0.3265, value_mse=0.1187
+313/313 [==============================] - 12s 37ms/step - loss: 3.7199 - policy_loss: 2.9190 - value_loss: 0.6902 - policy_categorical_accuracy: 0.3249 - value_mse: 0.1195
+Epoch 7/100: time=12.36s, loss=3.7199, policy_loss=2.9190, value_loss=0.6902, policy_categorical_accuracy=0.3249, value_mse=0.1195
+313/313 [==============================] - 12s 37ms/step - loss: 3.7080 - policy_loss: 2.9123 - value_loss: 0.6888 - policy_categorical_accuracy: 0.3346 - value_mse: 0.1175
+Epoch 8/100: time=12.33s, loss=3.7080, policy_loss=2.9123, value_loss=0.6888, policy_categorical_accuracy=0.3346, value_mse=0.1175
+313/313 [==============================] - 12s 38ms/step - loss: 3.6983 - policy_loss: 2.9068 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3263 - value_mse: 0.1186
+Epoch 9/100: time=12.38s, loss=3.6983, policy_loss=2.9068, value_loss=0.6877, policy_categorical_accuracy=0.3263, value_mse=0.1186
+313/313 [==============================] - 12s 38ms/step - loss: 3.6166 - policy_loss: 2.8269 - value_loss: 0.6883 - policy_categorical_accuracy: 0.3460 - value_mse: 0.1186
+Epoch 10/100: time=12.37s, loss=3.6166, policy_loss=2.8269, value_loss=0.6883, policy_categorical_accuracy=0.3460, value_mse=0.1186
+313/313 [==============================] - 12s 38ms/step - loss: 3.6101 - policy_loss: 2.8233 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3479 - value_mse: 0.1189
+Epoch 11/100: time=12.40s, loss=3.6101, policy_loss=2.8233, value_loss=0.6870, policy_categorical_accuracy=0.3479, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.6327 - policy_loss: 2.8480 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3433 - value_mse: 0.1182
+Epoch 12/100: time=12.39s, loss=3.6327, policy_loss=2.8480, value_loss=0.6859, policy_categorical_accuracy=0.3433, value_mse=0.1182
+313/313 [==============================] - 12s 38ms/step - loss: 3.5897 - policy_loss: 2.8056 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3470 - value_mse: 0.1173
+Epoch 13/100: time=12.44s, loss=3.5897, policy_loss=2.8056, value_loss=0.6859, policy_categorical_accuracy=0.3470, value_mse=0.1173
+313/313 [==============================] - 12s 38ms/step - loss: 3.6239 - policy_loss: 2.8395 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3380 - value_mse: 0.1171
+Epoch 14/100: time=12.57s, loss=3.6239, policy_loss=2.8395, value_loss=0.6864, policy_categorical_accuracy=0.3380, value_mse=0.1171
+313/313 [==============================] - 12s 38ms/step - loss: 3.7052 - policy_loss: 2.9210 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3312 - value_mse: 0.1200
+Epoch 15/100: time=12.51s, loss=3.7052, policy_loss=2.9210, value_loss=0.6869, policy_categorical_accuracy=0.3312, value_mse=0.1200
+313/313 [==============================] - 12s 38ms/step - loss: 3.7040 - policy_loss: 2.9195 - value_loss: 0.6902 - policy_categorical_accuracy: 0.3339 - value_mse: 0.1202
+Epoch 16/100: time=12.56s, loss=3.7040, policy_loss=2.9195, value_loss=0.6902, policy_categorical_accuracy=0.3339, value_mse=0.1202
+313/313 [==============================] - 12s 38ms/step - loss: 3.6527 - policy_loss: 2.8710 - value_loss: 0.6900 - policy_categorical_accuracy: 0.3370 - value_mse: 0.1193
+Epoch 17/100: time=12.52s, loss=3.6527, policy_loss=2.8710, value_loss=0.6900, policy_categorical_accuracy=0.3370, value_mse=0.1193
+313/313 [==============================] - 12s 38ms/step - loss: 3.6213 - policy_loss: 2.8441 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3398 - value_mse: 0.1183
+Epoch 18/100: time=12.52s, loss=3.6213, policy_loss=2.8441, value_loss=0.6880, policy_categorical_accuracy=0.3398, value_mse=0.1183
+313/313 [==============================] - 12s 39ms/step - loss: 3.6262 - policy_loss: 2.8512 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3465 - value_mse: 0.1189
+Epoch 19/100: time=12.79s, loss=3.6262, policy_loss=2.8512, value_loss=0.6880, policy_categorical_accuracy=0.3465, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.6165 - policy_loss: 2.8435 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3395 - value_mse: 0.1214
+Epoch 20/100: time=12.55s, loss=3.6165, policy_loss=2.8435, value_loss=0.6880, policy_categorical_accuracy=0.3395, value_mse=0.1214
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 25ms/step - loss: 3.5806 - policy_loss: 2.8109 - value_loss: 0.6857 - policy_categorical_accuracy: 0.3479 - value_mse: 0.1186
+Validation  Epoch {i}/{epochs}:, loss=3.5806, policy_loss=2.8109, value_loss=0.6857, policy_categorical_accuracy=0.3479, value_mse=0.1186
+313/313 [==============================] - 12s 38ms/step - loss: 3.5765 - policy_loss: 2.8059 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3460 - value_mse: 0.1190
+Epoch 21/100: time=12.47s, loss=3.5765, policy_loss=2.8059, value_loss=0.6874, policy_categorical_accuracy=0.3460, value_mse=0.1190
+313/313 [==============================] - 12s 38ms/step - loss: 3.5341 - policy_loss: 2.7648 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3525 - value_mse: 0.1194
+Epoch 22/100: time=12.43s, loss=3.5341, policy_loss=2.7648, value_loss=0.6876, policy_categorical_accuracy=0.3525, value_mse=0.1194
+313/313 [==============================] - 12s 38ms/step - loss: 3.5228 - policy_loss: 2.7564 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3538 - value_mse: 0.1191
+Epoch 23/100: time=12.45s, loss=3.5228, policy_loss=2.7564, value_loss=0.6860, policy_categorical_accuracy=0.3538, value_mse=0.1191
+313/313 [==============================] - 12s 38ms/step - loss: 3.4988 - policy_loss: 2.7323 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3580 - value_mse: 0.1219
+Epoch 24/100: time=12.48s, loss=3.4988, policy_loss=2.7323, value_loss=0.6872, policy_categorical_accuracy=0.3580, value_mse=0.1219
+313/313 [==============================] - 12s 38ms/step - loss: 3.5037 - policy_loss: 2.7402 - value_loss: 0.6851 - policy_categorical_accuracy: 0.3583 - value_mse: 0.1173
+Epoch 25/100: time=12.67s, loss=3.5037, policy_loss=2.7402, value_loss=0.6851, policy_categorical_accuracy=0.3583, value_mse=0.1173
+313/313 [==============================] - 12s 38ms/step - loss: 3.5184 - policy_loss: 2.7545 - value_loss: 0.6861 - policy_categorical_accuracy: 0.3539 - value_mse: 0.1192
+Epoch 26/100: time=12.59s, loss=3.5184, policy_loss=2.7545, value_loss=0.6861, policy_categorical_accuracy=0.3539, value_mse=0.1192
+313/313 [==============================] - 12s 38ms/step - loss: 3.4738 - policy_loss: 2.7108 - value_loss: 0.6856 - policy_categorical_accuracy: 0.3605 - value_mse: 0.1193
+Epoch 27/100: time=12.58s, loss=3.4738, policy_loss=2.7108, value_loss=0.6856, policy_categorical_accuracy=0.3605, value_mse=0.1193
+313/313 [==============================] - 12s 38ms/step - loss: 3.4920 - policy_loss: 2.7282 - value_loss: 0.6865 - policy_categorical_accuracy: 0.3602 - value_mse: 0.1177
+Epoch 28/100: time=12.53s, loss=3.4920, policy_loss=2.7282, value_loss=0.6865, policy_categorical_accuracy=0.3602, value_mse=0.1177
+313/313 [==============================] - 12s 38ms/step - loss: 3.5523 - policy_loss: 2.7872 - value_loss: 0.6876 - policy_categorical_accuracy: 0.3481 - value_mse: 0.1184
+Epoch 29/100: time=12.64s, loss=3.5523, policy_loss=2.7872, value_loss=0.6876, policy_categorical_accuracy=0.3481, value_mse=0.1184
+313/313 [==============================] - 12s 38ms/step - loss: 3.5921 - policy_loss: 2.8255 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3414 - value_mse: 0.1188
+Epoch 30/100: time=12.60s, loss=3.5921, policy_loss=2.8255, value_loss=0.6887, policy_categorical_accuracy=0.3414, value_mse=0.1188
+313/313 [==============================] - 12s 38ms/step - loss: 3.5664 - policy_loss: 2.7994 - value_loss: 0.6892 - policy_categorical_accuracy: 0.3471 - value_mse: 0.1186
+Epoch 31/100: time=12.48s, loss=3.5664, policy_loss=2.7994, value_loss=0.6892, policy_categorical_accuracy=0.3471, value_mse=0.1186
+313/313 [==============================] - 12s 38ms/step - loss: 3.5540 - policy_loss: 2.7887 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3510 - value_mse: 0.1200
+Epoch 32/100: time=12.45s, loss=3.5540, policy_loss=2.7887, value_loss=0.6878, policy_categorical_accuracy=0.3510, value_mse=0.1200
+313/313 [==============================] - 12s 38ms/step - loss: 3.5322 - policy_loss: 2.7679 - value_loss: 0.6873 - policy_categorical_accuracy: 0.3578 - value_mse: 0.1191
+Epoch 33/100: time=12.47s, loss=3.5322, policy_loss=2.7679, value_loss=0.6873, policy_categorical_accuracy=0.3578, value_mse=0.1191
+313/313 [==============================] - 12s 39ms/step - loss: 3.5089 - policy_loss: 2.7458 - value_loss: 0.6866 - policy_categorical_accuracy: 0.3570 - value_mse: 0.1192
+Epoch 34/100: time=12.75s, loss=3.5089, policy_loss=2.7458, value_loss=0.6866, policy_categorical_accuracy=0.3570, value_mse=0.1192
+313/313 [==============================] - 12s 38ms/step - loss: 3.5245 - policy_loss: 2.7618 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3511 - value_mse: 0.1202
+Epoch 35/100: time=12.46s, loss=3.5245, policy_loss=2.7618, value_loss=0.6868, policy_categorical_accuracy=0.3511, value_mse=0.1202
+313/313 [==============================] - 12s 38ms/step - loss: 3.5053 - policy_loss: 2.7457 - value_loss: 0.6845 - policy_categorical_accuracy: 0.3612 - value_mse: 0.1195
+Epoch 36/100: time=12.64s, loss=3.5053, policy_loss=2.7457, value_loss=0.6845, policy_categorical_accuracy=0.3612, value_mse=0.1195
+313/313 [==============================] - 12s 38ms/step - loss: 3.4883 - policy_loss: 2.7317 - value_loss: 0.6823 - policy_categorical_accuracy: 0.3579 - value_mse: 0.1162
+Epoch 37/100: time=12.63s, loss=3.4883, policy_loss=2.7317, value_loss=0.6823, policy_categorical_accuracy=0.3579, value_mse=0.1162
+313/313 [==============================] - 12s 38ms/step - loss: 3.4534 - policy_loss: 2.6973 - value_loss: 0.6826 - policy_categorical_accuracy: 0.3594 - value_mse: 0.1166
+Epoch 38/100: time=12.62s, loss=3.4534, policy_loss=2.6973, value_loss=0.6826, policy_categorical_accuracy=0.3594, value_mse=0.1166
+313/313 [==============================] - 12s 39ms/step - loss: 3.4654 - policy_loss: 2.7116 - value_loss: 0.6810 - policy_categorical_accuracy: 0.3553 - value_mse: 0.1153
+Epoch 39/100: time=12.74s, loss=3.4654, policy_loss=2.7116, value_loss=0.6810, policy_categorical_accuracy=0.3553, value_mse=0.1153
+313/313 [==============================] - 12s 38ms/step - loss: 3.4119 - policy_loss: 2.6595 - value_loss: 0.6801 - policy_categorical_accuracy: 0.3695 - value_mse: 0.1170
+Epoch 40/100: time=12.59s, loss=3.4119, policy_loss=2.6595, value_loss=0.6801, policy_categorical_accuracy=0.3695, value_mse=0.1170
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 25ms/step - loss: 3.4095 - policy_loss: 2.6627 - value_loss: 0.6748 - policy_categorical_accuracy: 0.3641 - value_mse: 0.1133
+Validation  Epoch {i}/{epochs}:, loss=3.4095, policy_loss=2.6627, value_loss=0.6748, policy_categorical_accuracy=0.3641, value_mse=0.1133
+313/313 [==============================] - 12s 39ms/step - loss: 3.4374 - policy_loss: 2.6861 - value_loss: 0.6794 - policy_categorical_accuracy: 0.3568 - value_mse: 0.1166
+Epoch 41/100: time=12.69s, loss=3.4374, policy_loss=2.6861, value_loss=0.6794, policy_categorical_accuracy=0.3568, value_mse=0.1166
+313/313 [==============================] - 12s 38ms/step - loss: 3.3987 - policy_loss: 2.6489 - value_loss: 0.6780 - policy_categorical_accuracy: 0.3697 - value_mse: 0.1139
+Epoch 42/100: time=12.63s, loss=3.3987, policy_loss=2.6489, value_loss=0.6780, policy_categorical_accuracy=0.3697, value_mse=0.1139
+313/313 [==============================] - 12s 39ms/step - loss: 3.4125 - policy_loss: 2.6606 - value_loss: 0.6802 - policy_categorical_accuracy: 0.3703 - value_mse: 0.1123
+Epoch 43/100: time=12.69s, loss=3.4125, policy_loss=2.6606, value_loss=0.6802, policy_categorical_accuracy=0.3703, value_mse=0.1123
+313/313 [==============================] - 12s 38ms/step - loss: 3.4852 - policy_loss: 2.7275 - value_loss: 0.6849 - policy_categorical_accuracy: 0.3604 - value_mse: 0.1184
+Epoch 44/100: time=12.64s, loss=3.4852, policy_loss=2.7275, value_loss=0.6849, policy_categorical_accuracy=0.3604, value_mse=0.1184
+313/313 [==============================] - 12s 38ms/step - loss: 3.5365 - policy_loss: 2.7817 - value_loss: 0.6814 - policy_categorical_accuracy: 0.3501 - value_mse: 0.1149
+Epoch 45/100: time=12.59s, loss=3.5365, policy_loss=2.7817, value_loss=0.6814, policy_categorical_accuracy=0.3501, value_mse=0.1149
+313/313 [==============================] - 12s 39ms/step - loss: 3.4831 - policy_loss: 2.7264 - value_loss: 0.6832 - policy_categorical_accuracy: 0.3515 - value_mse: 0.1182
+Epoch 46/100: time=12.77s, loss=3.4831, policy_loss=2.7264, value_loss=0.6832, policy_categorical_accuracy=0.3515, value_mse=0.1182
+313/313 [==============================] - 12s 38ms/step - loss: 3.4899 - policy_loss: 2.7341 - value_loss: 0.6823 - policy_categorical_accuracy: 0.3575 - value_mse: 0.1155
+Epoch 47/100: time=12.68s, loss=3.4899, policy_loss=2.7341, value_loss=0.6823, policy_categorical_accuracy=0.3575, value_mse=0.1155
+313/313 [==============================] - 12s 38ms/step - loss: 3.4745 - policy_loss: 2.7202 - value_loss: 0.6813 - policy_categorical_accuracy: 0.3600 - value_mse: 0.1147
+Epoch 48/100: time=12.60s, loss=3.4745, policy_loss=2.7202, value_loss=0.6813, policy_categorical_accuracy=0.3600, value_mse=0.1147
+313/313 [==============================] - 12s 39ms/step - loss: 3.4588 - policy_loss: 2.7043 - value_loss: 0.6819 - policy_categorical_accuracy: 0.3664 - value_mse: 0.1175
+Epoch 49/100: time=12.87s, loss=3.4588, policy_loss=2.7043, value_loss=0.6819, policy_categorical_accuracy=0.3664, value_mse=0.1175
+313/313 [==============================] - 12s 38ms/step - loss: 3.4693 - policy_loss: 2.7185 - value_loss: 0.6788 - policy_categorical_accuracy: 0.3604 - value_mse: 0.1136
+Epoch 50/100: time=12.60s, loss=3.4693, policy_loss=2.7185, value_loss=0.6788, policy_categorical_accuracy=0.3604, value_mse=0.1136
+313/313 [==============================] - 12s 39ms/step - loss: 3.4391 - policy_loss: 2.6882 - value_loss: 0.6797 - policy_categorical_accuracy: 0.3616 - value_mse: 0.1149
+Epoch 51/100: time=12.75s, loss=3.4391, policy_loss=2.6882, value_loss=0.6797, policy_categorical_accuracy=0.3616, value_mse=0.1149
+313/313 [==============================] - 12s 38ms/step - loss: 3.4033 - policy_loss: 2.6551 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3701 - value_mse: 0.1144
+Epoch 52/100: time=12.65s, loss=3.4033, policy_loss=2.6551, value_loss=0.6778, policy_categorical_accuracy=0.3701, value_mse=0.1144
+313/313 [==============================] - 12s 39ms/step - loss: 3.3686 - policy_loss: 2.6210 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1147
+Epoch 53/100: time=12.69s, loss=3.3686, policy_loss=2.6210, value_loss=0.6778, policy_categorical_accuracy=0.3710, value_mse=0.1147
+313/313 [==============================] - 12s 39ms/step - loss: 3.3715 - policy_loss: 2.6268 - value_loss: 0.6754 - policy_categorical_accuracy: 0.3744 - value_mse: 0.1143
+Epoch 54/100: time=12.85s, loss=3.3715, policy_loss=2.6268, value_loss=0.6754, policy_categorical_accuracy=0.3744, value_mse=0.1143
+313/313 [==============================] - 12s 39ms/step - loss: 3.3853 - policy_loss: 2.6399 - value_loss: 0.6764 - policy_categorical_accuracy: 0.3768 - value_mse: 0.1150
+Epoch 55/100: time=12.70s, loss=3.3853, policy_loss=2.6399, value_loss=0.6764, policy_categorical_accuracy=0.3768, value_mse=0.1150
+313/313 [==============================] - 12s 39ms/step - loss: 3.3393 - policy_loss: 2.5945 - value_loss: 0.6759 - policy_categorical_accuracy: 0.3817 - value_mse: 0.1138
+Epoch 56/100: time=12.72s, loss=3.3393, policy_loss=2.5945, value_loss=0.6759, policy_categorical_accuracy=0.3817, value_mse=0.1138
+313/313 [==============================] - 12s 39ms/step - loss: 3.3844 - policy_loss: 2.6410 - value_loss: 0.6747 - policy_categorical_accuracy: 0.3766 - value_mse: 0.1120
+Epoch 57/100: time=12.73s, loss=3.3844, policy_loss=2.6410, value_loss=0.6747, policy_categorical_accuracy=0.3766, value_mse=0.1120
+313/313 [==============================] - 12s 38ms/step - loss: 3.4615 - policy_loss: 2.7124 - value_loss: 0.6794 - policy_categorical_accuracy: 0.3629 - value_mse: 0.1151
+Epoch 58/100: time=12.62s, loss=3.4615, policy_loss=2.7124, value_loss=0.6794, policy_categorical_accuracy=0.3629, value_mse=0.1151
+313/313 [==============================] - 12s 39ms/step - loss: 3.4382 - policy_loss: 2.6859 - value_loss: 0.6815 - policy_categorical_accuracy: 0.3604 - value_mse: 0.1161
+Epoch 59/100: time=12.85s, loss=3.4382, policy_loss=2.6859, value_loss=0.6815, policy_categorical_accuracy=0.3604, value_mse=0.1161
+313/313 [==============================] - 12s 38ms/step - loss: 3.4578 - policy_loss: 2.7043 - value_loss: 0.6820 - policy_categorical_accuracy: 0.3601 - value_mse: 0.1175
+Epoch 60/100: time=12.66s, loss=3.4578, policy_loss=2.7043, value_loss=0.6820, policy_categorical_accuracy=0.3601, value_mse=0.1175
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 25ms/step - loss: 3.4787 - policy_loss: 2.7210 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3524 - value_mse: 0.1187
+Validation  Epoch {i}/{epochs}:, loss=3.4787, policy_loss=2.7210, value_loss=0.6860, policy_categorical_accuracy=0.3524, value_mse=0.1187
+313/313 [==============================] - 12s 39ms/step - loss: 3.4418 - policy_loss: 2.6893 - value_loss: 0.6807 - policy_categorical_accuracy: 0.3668 - value_mse: 0.1143
+Epoch 61/100: time=12.68s, loss=3.4418, policy_loss=2.6893, value_loss=0.6807, policy_categorical_accuracy=0.3668, value_mse=0.1143
+313/313 [==============================] - 12s 38ms/step - loss: 3.4801 - policy_loss: 2.7291 - value_loss: 0.6793 - policy_categorical_accuracy: 0.3591 - value_mse: 0.1140
+Epoch 62/100: time=12.65s, loss=3.4801, policy_loss=2.7291, value_loss=0.6793, policy_categorical_accuracy=0.3591, value_mse=0.1140
+313/313 [==============================] - 12s 39ms/step - loss: 3.4311 - policy_loss: 2.6801 - value_loss: 0.6797 - policy_categorical_accuracy: 0.3668 - value_mse: 0.1150
+Epoch 63/100: time=12.87s, loss=3.4311, policy_loss=2.6801, value_loss=0.6797, policy_categorical_accuracy=0.3668, value_mse=0.1150
+313/313 [==============================] - 12s 38ms/step - loss: 3.3921 - policy_loss: 2.6452 - value_loss: 0.6760 - policy_categorical_accuracy: 0.3701 - value_mse: 0.1160
+Epoch 64/100: time=12.61s, loss=3.3921, policy_loss=2.6452, value_loss=0.6760, policy_categorical_accuracy=0.3701, value_mse=0.1160
+313/313 [==============================] - 12s 38ms/step - loss: 3.3872 - policy_loss: 2.6419 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3680 - value_mse: 0.1139
+Epoch 65/100: time=12.55s, loss=3.3872, policy_loss=2.6419, value_loss=0.6750, policy_categorical_accuracy=0.3680, value_mse=0.1139
+313/313 [==============================] - 12s 39ms/step - loss: 3.4486 - policy_loss: 2.6999 - value_loss: 0.6790 - policy_categorical_accuracy: 0.3576 - value_mse: 0.1128
+Epoch 66/100: time=12.76s, loss=3.4486, policy_loss=2.6999, value_loss=0.6790, policy_categorical_accuracy=0.3576, value_mse=0.1128
+313/313 [==============================] - 12s 38ms/step - loss: 3.3638 - policy_loss: 2.6193 - value_loss: 0.6754 - policy_categorical_accuracy: 0.3723 - value_mse: 0.1153
+Epoch 67/100: time=12.66s, loss=3.3638, policy_loss=2.6193, value_loss=0.6754, policy_categorical_accuracy=0.3723, value_mse=0.1153
+313/313 [==============================] - 12s 38ms/step - loss: 3.3539 - policy_loss: 2.6093 - value_loss: 0.6761 - policy_categorical_accuracy: 0.3747 - value_mse: 0.1152
+Epoch 68/100: time=12.62s, loss=3.3539, policy_loss=2.6093, value_loss=0.6761, policy_categorical_accuracy=0.3747, value_mse=0.1152
+313/313 [==============================] - 12s 38ms/step - loss: 3.3572 - policy_loss: 2.6144 - value_loss: 0.6747 - policy_categorical_accuracy: 0.3783 - value_mse: 0.1133
+Epoch 69/100: time=12.58s, loss=3.3572, policy_loss=2.6144, value_loss=0.6747, policy_categorical_accuracy=0.3783, value_mse=0.1133
+313/313 [==============================] - 12s 38ms/step - loss: 3.3642 - policy_loss: 2.6212 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3711 - value_mse: 0.1129
+Epoch 70/100: time=12.59s, loss=3.3642, policy_loss=2.6212, value_loss=0.6750, policy_categorical_accuracy=0.3711, value_mse=0.1129
+313/313 [==============================] - 12s 38ms/step - loss: 3.3781 - policy_loss: 2.6346 - value_loss: 0.6755 - policy_categorical_accuracy: 0.3710 - value_mse: 0.1115
+Epoch 71/100: time=12.58s, loss=3.3781, policy_loss=2.6346, value_loss=0.6755, policy_categorical_accuracy=0.3710, value_mse=0.1115
+313/313 [==============================] - 12s 38ms/step - loss: 3.4222 - policy_loss: 2.6737 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3622 - value_mse: 0.1161
+Epoch 72/100: time=12.57s, loss=3.4222, policy_loss=2.6737, value_loss=0.6798, policy_categorical_accuracy=0.3622, value_mse=0.1161
+313/313 [==============================] - 12s 38ms/step - loss: 3.4342 - policy_loss: 2.6831 - value_loss: 0.6810 - policy_categorical_accuracy: 0.3688 - value_mse: 0.1167
+Epoch 73/100: time=12.56s, loss=3.4342, policy_loss=2.6831, value_loss=0.6810, policy_categorical_accuracy=0.3688, value_mse=0.1167
+313/313 [==============================] - 12s 38ms/step - loss: 3.4461 - policy_loss: 2.6974 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3581 - value_mse: 0.1130
+Epoch 74/100: time=12.61s, loss=3.4461, policy_loss=2.6974, value_loss=0.6778, policy_categorical_accuracy=0.3581, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.4470 - policy_loss: 2.6977 - value_loss: 0.6780 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1142
+Epoch 75/100: time=12.64s, loss=3.4470, policy_loss=2.6977, value_loss=0.6780, policy_categorical_accuracy=0.3598, value_mse=0.1142
+313/313 [==============================] - 12s 38ms/step - loss: 3.4118 - policy_loss: 2.6621 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3638 - value_mse: 0.1143
+Epoch 76/100: time=12.59s, loss=3.4118, policy_loss=2.6621, value_loss=0.6783, policy_categorical_accuracy=0.3638, value_mse=0.1143
+313/313 [==============================] - 12s 38ms/step - loss: 3.4064 - policy_loss: 2.6567 - value_loss: 0.6785 - policy_categorical_accuracy: 0.3620 - value_mse: 0.1161
+Epoch 77/100: time=12.55s, loss=3.4064, policy_loss=2.6567, value_loss=0.6785, policy_categorical_accuracy=0.3620, value_mse=0.1161
+313/313 [==============================] - 12s 38ms/step - loss: 3.3818 - policy_loss: 2.6326 - value_loss: 0.6785 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1161
+Epoch 78/100: time=12.61s, loss=3.3818, policy_loss=2.6326, value_loss=0.6785, policy_categorical_accuracy=0.3670, value_mse=0.1161
+313/313 [==============================] - 12s 38ms/step - loss: 3.4093 - policy_loss: 2.6640 - value_loss: 0.6752 - policy_categorical_accuracy: 0.3700 - value_mse: 0.1144
+Epoch 79/100: time=12.62s, loss=3.4093, policy_loss=2.6640, value_loss=0.6752, policy_categorical_accuracy=0.3700, value_mse=0.1144
+313/313 [==============================] - 12s 38ms/step - loss: 3.3618 - policy_loss: 2.6145 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3703 - value_mse: 0.1140
+Epoch 80/100: time=12.59s, loss=3.3618, policy_loss=2.6145, value_loss=0.6778, policy_categorical_accuracy=0.3703, value_mse=0.1140
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 25ms/step - loss: 3.3566 - policy_loss: 2.6169 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1114
+Validation  Epoch {i}/{epochs}:, loss=3.3566, policy_loss=2.6169, value_loss=0.6705, policy_categorical_accuracy=0.3690, value_mse=0.1114
+313/313 [==============================] - 12s 38ms/step - loss: 3.3519 - policy_loss: 2.6060 - value_loss: 0.6771 - policy_categorical_accuracy: 0.3748 - value_mse: 0.1148
+Epoch 81/100: time=12.56s, loss=3.3519, policy_loss=2.6060, value_loss=0.6771, policy_categorical_accuracy=0.3748, value_mse=0.1148
+313/313 [==============================] - 12s 38ms/step - loss: 3.3520 - policy_loss: 2.6094 - value_loss: 0.6743 - policy_categorical_accuracy: 0.3738 - value_mse: 0.1127
+Epoch 82/100: time=12.60s, loss=3.3520, policy_loss=2.6094, value_loss=0.6743, policy_categorical_accuracy=0.3738, value_mse=0.1127
+313/313 [==============================] - 12s 38ms/step - loss: 3.3162 - policy_loss: 2.5751 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3825 - value_mse: 0.1136
+Epoch 83/100: time=12.64s, loss=3.3162, policy_loss=2.5751, value_loss=0.6732, policy_categorical_accuracy=0.3825, value_mse=0.1136
+313/313 [==============================] - 12s 38ms/step - loss: 3.3435 - policy_loss: 2.6016 - value_loss: 0.6743 - policy_categorical_accuracy: 0.3763 - value_mse: 0.1123
+Epoch 84/100: time=12.59s, loss=3.3435, policy_loss=2.6016, value_loss=0.6743, policy_categorical_accuracy=0.3763, value_mse=0.1123
+313/313 [==============================] - 12s 38ms/step - loss: 3.3121 - policy_loss: 2.5706 - value_loss: 0.6739 - policy_categorical_accuracy: 0.3804 - value_mse: 0.1128
+Epoch 85/100: time=12.57s, loss=3.3121, policy_loss=2.5706, value_loss=0.6739, policy_categorical_accuracy=0.3804, value_mse=0.1128
+313/313 [==============================] - 12s 38ms/step - loss: 3.3620 - policy_loss: 2.6176 - value_loss: 0.6765 - policy_categorical_accuracy: 0.3741 - value_mse: 0.1144
+Epoch 86/100: time=12.68s, loss=3.3620, policy_loss=2.6176, value_loss=0.6765, policy_categorical_accuracy=0.3741, value_mse=0.1144
+313/313 [==============================] - 12s 38ms/step - loss: 3.4587 - policy_loss: 2.7115 - value_loss: 0.6774 - policy_categorical_accuracy: 0.3621 - value_mse: 0.1134
+Epoch 87/100: time=12.63s, loss=3.4587, policy_loss=2.7115, value_loss=0.6774, policy_categorical_accuracy=0.3621, value_mse=0.1134
+313/313 [==============================] - 12s 38ms/step - loss: 3.3864 - policy_loss: 2.6384 - value_loss: 0.6774 - policy_categorical_accuracy: 0.3691 - value_mse: 0.1151
+Epoch 88/100: time=12.56s, loss=3.3864, policy_loss=2.6384, value_loss=0.6774, policy_categorical_accuracy=0.3691, value_mse=0.1151
+313/313 [==============================] - 12s 38ms/step - loss: 3.4229 - policy_loss: 2.6725 - value_loss: 0.6795 - policy_categorical_accuracy: 0.3587 - value_mse: 0.1142
+Epoch 89/100: time=12.63s, loss=3.4229, policy_loss=2.6725, value_loss=0.6795, policy_categorical_accuracy=0.3587, value_mse=0.1142
+313/313 [==============================] - 12s 38ms/step - loss: 3.4080 - policy_loss: 2.6620 - value_loss: 0.6749 - policy_categorical_accuracy: 0.3657 - value_mse: 0.1130
+Epoch 90/100: time=12.68s, loss=3.4080, policy_loss=2.6620, value_loss=0.6749, policy_categorical_accuracy=0.3657, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.4149 - policy_loss: 2.6646 - value_loss: 0.6791 - policy_categorical_accuracy: 0.3648 - value_mse: 0.1155
+Epoch 91/100: time=12.64s, loss=3.4149, policy_loss=2.6646, value_loss=0.6791, policy_categorical_accuracy=0.3648, value_mse=0.1155
+313/313 [==============================] - 12s 38ms/step - loss: 3.4103 - policy_loss: 2.6623 - value_loss: 0.6772 - policy_categorical_accuracy: 0.3676 - value_mse: 0.1130
+Epoch 92/100: time=12.56s, loss=3.4103, policy_loss=2.6623, value_loss=0.6772, policy_categorical_accuracy=0.3676, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.3686 - policy_loss: 2.6218 - value_loss: 0.6767 - policy_categorical_accuracy: 0.3722 - value_mse: 0.1138
+Epoch 93/100: time=12.58s, loss=3.3686, policy_loss=2.6218, value_loss=0.6767, policy_categorical_accuracy=0.3722, value_mse=0.1138
+313/313 [==============================] - 12s 39ms/step - loss: 3.3724 - policy_loss: 2.6309 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3734 - value_mse: 0.1129
+Epoch 94/100: time=12.70s, loss=3.3724, policy_loss=2.6309, value_loss=0.6721, policy_categorical_accuracy=0.3734, value_mse=0.1129
+313/313 [==============================] - 12s 38ms/step - loss: 3.3645 - policy_loss: 2.6214 - value_loss: 0.6744 - policy_categorical_accuracy: 0.3701 - value_mse: 0.1108
+Epoch 95/100: time=12.67s, loss=3.3645, policy_loss=2.6214, value_loss=0.6744, policy_categorical_accuracy=0.3701, value_mse=0.1108
+313/313 [==============================] - 12s 39ms/step - loss: 3.3109 - policy_loss: 2.5710 - value_loss: 0.6717 - policy_categorical_accuracy: 0.3777 - value_mse: 0.1113
+Epoch 96/100: time=12.70s, loss=3.3109, policy_loss=2.5710, value_loss=0.6717, policy_categorical_accuracy=0.3777, value_mse=0.1113
+313/313 [==============================] - 12s 38ms/step - loss: 3.2883 - policy_loss: 2.5495 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3841 - value_mse: 0.1123
+Epoch 97/100: time=12.58s, loss=3.2883, policy_loss=2.5495, value_loss=0.6710, policy_categorical_accuracy=0.3841, value_mse=0.1123
+313/313 [==============================] - 12s 38ms/step - loss: 3.3024 - policy_loss: 2.5640 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3833 - value_mse: 0.1125
+Epoch 98/100: time=12.64s, loss=3.3024, policy_loss=2.5640, value_loss=0.6709, policy_categorical_accuracy=0.3833, value_mse=0.1125
+313/313 [==============================] - 12s 39ms/step - loss: 3.3325 - policy_loss: 2.5914 - value_loss: 0.6736 - policy_categorical_accuracy: 0.3750 - value_mse: 0.1122
+Epoch 99/100: time=12.79s, loss=3.3325, policy_loss=2.5914, value_loss=0.6736, policy_categorical_accuracy=0.3750, value_mse=0.1122
+313/313 [==============================] - 12s 38ms/step - loss: 3.3461 - policy_loss: 2.6063 - value_loss: 0.6723 - policy_categorical_accuracy: 0.3746 - value_mse: 0.1119
+Epoch 100/100: time=12.55s, loss=3.3461, policy_loss=2.6063, value_loss=0.6723, policy_categorical_accuracy=0.3746, value_mse=0.1119
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 25ms/step - loss: 3.3983 - policy_loss: 2.6558 - value_loss: 0.6742 - policy_categorical_accuracy: 0.3644 - value_mse: 0.1132
+Validation  Epoch {i}/{epochs}:, loss=3.3983, policy_loss=2.6558, value_loss=0.6742, policy_categorical_accuracy=0.3644, value_mse=0.1132
+Best Model at epoch 80 : loss=3.3565895557403564, policy_loss=2.6169, value_loss=0.6705
+
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 7 — Epoch 100:
+  - loss                          : 3.3983
+  - policy_loss                   : 2.6558
+  - value_loss                    : 0.6742
+  - policy_categorical_accuracy   : 0.3644
+  - value_mse                     : 0.1132
+  - Time: 1503.0349
+-------------------- Model MobileNet - Nb CosineDecay Cycle is 10 --------------------
+Model: "model_4"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_5 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d_24 (Conv2D)          (None, 19, 19, 64)           1984      ['input_5[0][0]']
+
+ batch_normalization_32 (Ba  (None, 19, 19, 64)           256       ['conv2d_24[0][0]']
+ tchNormalization)
+
+ activation_32 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_32[0][0]
+                                                                    ']
+
+ conv2d_25 (Conv2D)          (None, 19, 19, 256)          16384     ['activation_32[0][0]']
+
+ batch_normalization_33 (Ba  (None, 19, 19, 256)          1024      ['conv2d_25[0][0]']
+ tchNormalization)
+
+ activation_33 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_33[0][0]
+                                                                    ']
+
+ depthwise_conv2d_8 (Depthw  (None, 19, 19, 256)          2304      ['activation_33[0][0]']
+ iseConv2D)
+
+ batch_normalization_34 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_8[0][0]']
+ tchNormalization)
+
+ activation_34 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_34[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 256)                  0         ['activation_34[0][0]']
+ 2 (GlobalAveragePooling2D)
+
+ reshape_8 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_12[
+                                                                    0][0]']
+
+ dense_20 (Dense)            (None, 1, 1, 16)             4096      ['reshape_8[0][0]']
+
+ dense_21 (Dense)            (None, 1, 1, 256)            4096      ['dense_20[0][0]']
+
+ multiply_8 (Multiply)       (None, 19, 19, 256)          0         ['activation_34[0][0]',
+                                                                     'dense_21[0][0]']
+
+ conv2d_26 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_8[0][0]']
+
+ batch_normalization_35 (Ba  (None, 19, 19, 64)           256       ['conv2d_26[0][0]']
+ tchNormalization)
+
+ activation_35 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_35[0][0]
+                                                                    ']
+
+ add_8 (Add)                 (None, 19, 19, 64)           0         ['activation_35[0][0]',
+                                                                     'activation_32[0][0]']
+
+ conv2d_27 (Conv2D)          (None, 19, 19, 256)          16384     ['add_8[0][0]']
+
+ batch_normalization_36 (Ba  (None, 19, 19, 256)          1024      ['conv2d_27[0][0]']
+ tchNormalization)
+
+ activation_36 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_36[0][0]
+                                                                    ']
+
+ depthwise_conv2d_9 (Depthw  (None, 19, 19, 256)          2304      ['activation_36[0][0]']
+ iseConv2D)
+
+ batch_normalization_37 (Ba  (None, 19, 19, 256)          1024      ['depthwise_conv2d_9[0][0]']
+ tchNormalization)
+
+ activation_37 (Activation)  (None, 19, 19, 256)          0         ['batch_normalization_37[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 256)                  0         ['activation_37[0][0]']
+ 3 (GlobalAveragePooling2D)
+
+ reshape_9 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_13[
+                                                                    0][0]']
+
+ dense_22 (Dense)            (None, 1, 1, 16)             4096      ['reshape_9[0][0]']
+
+ dense_23 (Dense)            (None, 1, 1, 256)            4096      ['dense_22[0][0]']
+
+ multiply_9 (Multiply)       (None, 19, 19, 256)          0         ['activation_37[0][0]',
+                                                                     'dense_23[0][0]']
+
+ conv2d_28 (Conv2D)          (None, 19, 19, 64)           16384     ['multiply_9[0][0]']
+
+ batch_normalization_38 (Ba  (None, 19, 19, 64)           256       ['conv2d_28[0][0]']
+ tchNormalization)
+
+ activation_38 (Activation)  (None, 19, 19, 64)           0         ['batch_normalization_38[0][0]
+                                                                    ']
+
+ add_9 (Add)                 (None, 19, 19, 64)           0         ['activation_38[0][0]',
+                                                                     'add_8[0][0]']
+
+ global_average_pooling2d_1  (None, 64)                   0         ['add_9[0][0]']
+ 4 (GlobalAveragePooling2D)
+
+ conv2d_29 (Conv2D)          (None, 19, 19, 1)            64        ['add_9[0][0]']
+
+ dense_24 (Dense)            (None, 50)                   3250      ['global_average_pooling2d_14[
+                                                                    0][0]']
+
+ batch_normalization_39 (Ba  (None, 19, 19, 1)            4         ['conv2d_29[0][0]']
+ tchNormalization)
+
+ activation_39 (Activation)  (None, 50)                   0         ['dense_24[0][0]']
+
+ flatten_4 (Flatten)         (None, 361)                  0         ['batch_normalization_39[0][0]
+                                                                    ']
+
+ dropout_4 (Dropout)         (None, 50)                   0         ['activation_39[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten_4[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout_4[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+getValidation
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 13s 38ms/step - loss: 4.7658 - policy_loss: 3.8767 - value_loss: 0.7403 - policy_categorical_accuracy: 0.2051 - value_mse: 0.1394
+Epoch 1/100: time=13.90s, loss=4.7658, policy_loss=3.8767, value_loss=0.7403, policy_categorical_accuracy=0.2051, value_mse=0.1394
+313/313 [==============================] - 12s 38ms/step - loss: 4.1530 - policy_loss: 3.3089 - value_loss: 0.7020 - policy_categorical_accuracy: 0.2796 - value_mse: 0.1268
+Epoch 2/100: time=12.61s, loss=4.1530, policy_loss=3.3089, value_loss=0.7020, policy_categorical_accuracy=0.2796, value_mse=0.1268
+313/313 [==============================] - 12s 38ms/step - loss: 3.9769 - policy_loss: 3.1462 - value_loss: 0.6955 - policy_categorical_accuracy: 0.2945 - value_mse: 0.1213
+Epoch 3/100: time=12.52s, loss=3.9769, policy_loss=3.1462, value_loss=0.6955, policy_categorical_accuracy=0.2945, value_mse=0.1213
+313/313 [==============================] - 12s 39ms/step - loss: 3.8615 - policy_loss: 3.0404 - value_loss: 0.6922 - policy_categorical_accuracy: 0.3165 - value_mse: 0.1216
+Epoch 4/100: time=12.95s, loss=3.8615, policy_loss=3.0404, value_loss=0.6922, policy_categorical_accuracy=0.3165, value_mse=0.1216
+313/313 [==============================] - 12s 39ms/step - loss: 3.8039 - policy_loss: 2.9902 - value_loss: 0.6903 - policy_categorical_accuracy: 0.3190 - value_mse: 0.1212
+Epoch 5/100: time=12.95s, loss=3.8039, policy_loss=2.9902, value_loss=0.6903, policy_categorical_accuracy=0.3190, value_mse=0.1212
+313/313 [==============================] - 12s 39ms/step - loss: 3.7492 - policy_loss: 2.9408 - value_loss: 0.6895 - policy_categorical_accuracy: 0.3284 - value_mse: 0.1189
+Epoch 6/100: time=12.92s, loss=3.7492, policy_loss=2.9408, value_loss=0.6895, policy_categorical_accuracy=0.3284, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.6982 - policy_loss: 2.8933 - value_loss: 0.6892 - policy_categorical_accuracy: 0.3311 - value_mse: 0.1190
+Epoch 7/100: time=12.67s, loss=3.6982, policy_loss=2.8933, value_loss=0.6892, policy_categorical_accuracy=0.3311, value_mse=0.1190
+313/313 [==============================] - 12s 39ms/step - loss: 3.6981 - policy_loss: 2.8963 - value_loss: 0.6881 - policy_categorical_accuracy: 0.3366 - value_mse: 0.1172
+Epoch 8/100: time=12.87s, loss=3.6981, policy_loss=2.8963, value_loss=0.6881, policy_categorical_accuracy=0.3366, value_mse=0.1172
+313/313 [==============================] - 12s 39ms/step - loss: 3.6994 - policy_loss: 2.8990 - value_loss: 0.6878 - policy_categorical_accuracy: 0.3288 - value_mse: 0.1186
+Epoch 9/100: time=12.81s, loss=3.6994, policy_loss=2.8990, value_loss=0.6878, policy_categorical_accuracy=0.3288, value_mse=0.1186
+313/313 [==============================] - 12s 39ms/step - loss: 3.6382 - policy_loss: 2.8378 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3470 - value_mse: 0.1185
+Epoch 10/100: time=12.86s, loss=3.6382, policy_loss=2.8378, value_loss=0.6882, policy_categorical_accuracy=0.3470, value_mse=0.1185
+313/313 [==============================] - 12s 39ms/step - loss: 3.7721 - policy_loss: 2.9719 - value_loss: 0.6904 - policy_categorical_accuracy: 0.3244 - value_mse: 0.1205
+Epoch 11/100: time=12.88s, loss=3.7721, policy_loss=2.9719, value_loss=0.6904, policy_categorical_accuracy=0.3244, value_mse=0.1205
+313/313 [==============================] - 12s 39ms/step - loss: 3.7788 - policy_loss: 2.9840 - value_loss: 0.6899 - policy_categorical_accuracy: 0.3277 - value_mse: 0.1201
+Epoch 12/100: time=12.96s, loss=3.7788, policy_loss=2.9840, value_loss=0.6899, policy_categorical_accuracy=0.3277, value_mse=0.1201
+313/313 [==============================] - 12s 39ms/step - loss: 3.7045 - policy_loss: 2.9163 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3290 - value_mse: 0.1182
+Epoch 13/100: time=12.79s, loss=3.7045, policy_loss=2.9163, value_loss=0.6877, policy_categorical_accuracy=0.3290, value_mse=0.1182
+313/313 [==============================] - 13s 40ms/step - loss: 3.7111 - policy_loss: 2.9255 - value_loss: 0.6887 - policy_categorical_accuracy: 0.3238 - value_mse: 0.1183
+Epoch 14/100: time=13.12s, loss=3.7111, policy_loss=2.9255, value_loss=0.6887, policy_categorical_accuracy=0.3238, value_mse=0.1183
+313/313 [==============================] - 12s 39ms/step - loss: 3.6728 - policy_loss: 2.8940 - value_loss: 0.6849 - policy_categorical_accuracy: 0.3337 - value_mse: 0.1190
+Epoch 15/100: time=12.88s, loss=3.6728, policy_loss=2.8940, value_loss=0.6849, policy_categorical_accuracy=0.3337, value_mse=0.1190
+313/313 [==============================] - 12s 39ms/step - loss: 3.6264 - policy_loss: 2.8480 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3479 - value_mse: 0.1186
+Epoch 16/100: time=12.79s, loss=3.6264, policy_loss=2.8480, value_loss=0.6869, policy_categorical_accuracy=0.3479, value_mse=0.1186
+313/313 [==============================] - 12s 39ms/step - loss: 3.5622 - policy_loss: 2.7849 - value_loss: 0.6877 - policy_categorical_accuracy: 0.3488 - value_mse: 0.1181
+Epoch 17/100: time=12.78s, loss=3.5622, policy_loss=2.7849, value_loss=0.6877, policy_categorical_accuracy=0.3488, value_mse=0.1181
+313/313 [==============================] - 12s 39ms/step - loss: 3.5345 - policy_loss: 2.7601 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3547 - value_mse: 0.1173
+Epoch 18/100: time=12.76s, loss=3.5345, policy_loss=2.7601, value_loss=0.6860, policy_categorical_accuracy=0.3547, value_mse=0.1173
+313/313 [==============================] - 12s 39ms/step - loss: 3.5477 - policy_loss: 2.7747 - value_loss: 0.6853 - policy_categorical_accuracy: 0.3584 - value_mse: 0.1176
+Epoch 19/100: time=12.84s, loss=3.5477, policy_loss=2.7747, value_loss=0.6853, policy_categorical_accuracy=0.3584, value_mse=0.1176
+313/313 [==============================] - 12s 39ms/step - loss: 3.5502 - policy_loss: 2.7768 - value_loss: 0.6859 - policy_categorical_accuracy: 0.3480 - value_mse: 0.1204
+Epoch 20/100: time=12.82s, loss=3.5502, policy_loss=2.7768, value_loss=0.6859, policy_categorical_accuracy=0.3480, value_mse=0.1204
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 26ms/step - loss: 3.6110 - policy_loss: 2.8393 - value_loss: 0.6843 - policy_categorical_accuracy: 0.3403 - value_mse: 0.1180
+Validation  Epoch {i}/{epochs}:, loss=3.6110, policy_loss=2.8393, value_loss=0.6843, policy_categorical_accuracy=0.3403, value_mse=0.1180
+313/313 [==============================] - 12s 38ms/step - loss: 3.6485 - policy_loss: 2.8726 - value_loss: 0.6889 - policy_categorical_accuracy: 0.3312 - value_mse: 0.1198
+Epoch 21/100: time=12.58s, loss=3.6485, policy_loss=2.8726, value_loss=0.6889, policy_categorical_accuracy=0.3312, value_mse=0.1198
+313/313 [==============================] - 12s 38ms/step - loss: 3.6269 - policy_loss: 2.8529 - value_loss: 0.6882 - policy_categorical_accuracy: 0.3419 - value_mse: 0.1197
+Epoch 22/100: time=12.53s, loss=3.6269, policy_loss=2.8529, value_loss=0.6882, policy_categorical_accuracy=0.3419, value_mse=0.1197
+313/313 [==============================] - 12s 38ms/step - loss: 3.5973 - policy_loss: 2.8265 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3424 - value_mse: 0.1195
+Epoch 23/100: time=12.48s, loss=3.5973, policy_loss=2.8265, value_loss=0.6868, policy_categorical_accuracy=0.3424, value_mse=0.1195
+313/313 [==============================] - 12s 38ms/step - loss: 3.5595 - policy_loss: 2.7896 - value_loss: 0.6872 - policy_categorical_accuracy: 0.3487 - value_mse: 0.1218
+Epoch 24/100: time=12.52s, loss=3.5595, policy_loss=2.7896, value_loss=0.6872, policy_categorical_accuracy=0.3487, value_mse=0.1218
+313/313 [==============================] - 12s 38ms/step - loss: 3.5618 - policy_loss: 2.7957 - value_loss: 0.6848 - policy_categorical_accuracy: 0.3471 - value_mse: 0.1172
+Epoch 25/100: time=12.69s, loss=3.5618, policy_loss=2.7957, value_loss=0.6848, policy_categorical_accuracy=0.3471, value_mse=0.1172
+313/313 [==============================] - 12s 39ms/step - loss: 3.5644 - policy_loss: 2.7992 - value_loss: 0.6853 - policy_categorical_accuracy: 0.3434 - value_mse: 0.1188
+Epoch 26/100: time=12.68s, loss=3.5644, policy_loss=2.7992, value_loss=0.6853, policy_categorical_accuracy=0.3434, value_mse=0.1188
+313/313 [==============================] - 12s 38ms/step - loss: 3.5124 - policy_loss: 2.7493 - value_loss: 0.6844 - policy_categorical_accuracy: 0.3531 - value_mse: 0.1188
+Epoch 27/100: time=12.62s, loss=3.5124, policy_loss=2.7493, value_loss=0.6844, policy_categorical_accuracy=0.3531, value_mse=0.1188
+313/313 [==============================] - 12s 38ms/step - loss: 3.5119 - policy_loss: 2.7499 - value_loss: 0.6842 - policy_categorical_accuracy: 0.3537 - value_mse: 0.1166
+Epoch 28/100: time=12.50s, loss=3.5119, policy_loss=2.7499, value_loss=0.6842, policy_categorical_accuracy=0.3537, value_mse=0.1166
+313/313 [==============================] - 12s 39ms/step - loss: 3.5093 - policy_loss: 2.7480 - value_loss: 0.6839 - policy_categorical_accuracy: 0.3514 - value_mse: 0.1166
+Epoch 29/100: time=12.70s, loss=3.5093, policy_loss=2.7480, value_loss=0.6839, policy_categorical_accuracy=0.3514, value_mse=0.1166
+313/313 [==============================] - 12s 38ms/step - loss: 3.4917 - policy_loss: 2.7298 - value_loss: 0.6846 - policy_categorical_accuracy: 0.3526 - value_mse: 0.1168
+Epoch 30/100: time=12.66s, loss=3.4917, policy_loss=2.7298, value_loss=0.6846, policy_categorical_accuracy=0.3526, value_mse=0.1168
+313/313 [==============================] - 12s 38ms/step - loss: 3.5825 - policy_loss: 2.8177 - value_loss: 0.6870 - policy_categorical_accuracy: 0.3450 - value_mse: 0.1175
+Epoch 31/100: time=12.63s, loss=3.5825, policy_loss=2.8177, value_loss=0.6870, policy_categorical_accuracy=0.3450, value_mse=0.1175
+313/313 [==============================] - 12s 38ms/step - loss: 3.5708 - policy_loss: 2.8062 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3504 - value_mse: 0.1195
+Epoch 32/100: time=12.60s, loss=3.5708, policy_loss=2.8062, value_loss=0.6868, policy_categorical_accuracy=0.3504, value_mse=0.1195
+313/313 [==============================] - 12s 38ms/step - loss: 3.5407 - policy_loss: 2.7773 - value_loss: 0.6860 - policy_categorical_accuracy: 0.3545 - value_mse: 0.1185
+Epoch 33/100: time=12.63s, loss=3.5407, policy_loss=2.7773, value_loss=0.6860, policy_categorical_accuracy=0.3545, value_mse=0.1185
+313/313 [==============================] - 12s 38ms/step - loss: 3.5114 - policy_loss: 2.7494 - value_loss: 0.6852 - policy_categorical_accuracy: 0.3525 - value_mse: 0.1186
+Epoch 34/100: time=12.64s, loss=3.5114, policy_loss=2.7494, value_loss=0.6852, policy_categorical_accuracy=0.3525, value_mse=0.1186
+313/313 [==============================] - 12s 38ms/step - loss: 3.5167 - policy_loss: 2.7569 - value_loss: 0.6842 - policy_categorical_accuracy: 0.3549 - value_mse: 0.1189
+Epoch 35/100: time=12.62s, loss=3.5167, policy_loss=2.7569, value_loss=0.6842, policy_categorical_accuracy=0.3549, value_mse=0.1189
+313/313 [==============================] - 12s 38ms/step - loss: 3.4913 - policy_loss: 2.7337 - value_loss: 0.6829 - policy_categorical_accuracy: 0.3588 - value_mse: 0.1188
+Epoch 36/100: time=12.65s, loss=3.4913, policy_loss=2.7337, value_loss=0.6829, policy_categorical_accuracy=0.3588, value_mse=0.1188
+313/313 [==============================] - 12s 38ms/step - loss: 3.4740 - policy_loss: 2.7182 - value_loss: 0.6820 - policy_categorical_accuracy: 0.3603 - value_mse: 0.1161
+Epoch 37/100: time=12.50s, loss=3.4740, policy_loss=2.7182, value_loss=0.6820, policy_categorical_accuracy=0.3603, value_mse=0.1161
+313/313 [==============================] - 12s 38ms/step - loss: 3.4479 - policy_loss: 2.6917 - value_loss: 0.6831 - policy_categorical_accuracy: 0.3647 - value_mse: 0.1168
+Epoch 38/100: time=12.63s, loss=3.4479, policy_loss=2.6917, value_loss=0.6831, policy_categorical_accuracy=0.3647, value_mse=0.1168
+313/313 [==============================] - 12s 39ms/step - loss: 3.4660 - policy_loss: 2.7129 - value_loss: 0.6803 - policy_categorical_accuracy: 0.3585 - value_mse: 0.1150
+Epoch 39/100: time=12.72s, loss=3.4660, policy_loss=2.7129, value_loss=0.6803, policy_categorical_accuracy=0.3585, value_mse=0.1150
+313/313 [==============================] - 12s 38ms/step - loss: 3.4139 - policy_loss: 2.6601 - value_loss: 0.6811 - policy_categorical_accuracy: 0.3726 - value_mse: 0.1175
+Epoch 40/100: time=12.64s, loss=3.4139, policy_loss=2.6601, value_loss=0.6811, policy_categorical_accuracy=0.3726, value_mse=0.1175
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 26ms/step - loss: 3.5154 - policy_loss: 2.7594 - value_loss: 0.6832 - policy_categorical_accuracy: 0.3543 - value_mse: 0.1170
+Validation  Epoch {i}/{epochs}:, loss=3.5154, policy_loss=2.7594, value_loss=0.6832, policy_categorical_accuracy=0.3543, value_mse=0.1170
+313/313 [==============================] - 12s 38ms/step - loss: 3.5608 - policy_loss: 2.8027 - value_loss: 0.6844 - policy_categorical_accuracy: 0.3435 - value_mse: 0.1190
+Epoch 41/100: time=12.61s, loss=3.5608, policy_loss=2.8027, value_loss=0.6844, policy_categorical_accuracy=0.3435, value_mse=0.1190
+313/313 [==============================] - 12s 38ms/step - loss: 3.5274 - policy_loss: 2.7694 - value_loss: 0.6837 - policy_categorical_accuracy: 0.3520 - value_mse: 0.1167
+Epoch 42/100: time=12.62s, loss=3.5274, policy_loss=2.7694, value_loss=0.6837, policy_categorical_accuracy=0.3520, value_mse=0.1167
+313/313 [==============================] - 12s 38ms/step - loss: 3.4905 - policy_loss: 2.7325 - value_loss: 0.6839 - policy_categorical_accuracy: 0.3521 - value_mse: 0.1141
+Epoch 43/100: time=12.62s, loss=3.4905, policy_loss=2.7325, value_loss=0.6839, policy_categorical_accuracy=0.3521, value_mse=0.1141
+313/313 [==============================] - 12s 38ms/step - loss: 3.4618 - policy_loss: 2.7063 - value_loss: 0.6818 - policy_categorical_accuracy: 0.3609 - value_mse: 0.1170
+Epoch 44/100: time=12.58s, loss=3.4618, policy_loss=2.7063, value_loss=0.6818, policy_categorical_accuracy=0.3609, value_mse=0.1170
+313/313 [==============================] - 12s 38ms/step - loss: 3.4986 - policy_loss: 2.7460 - value_loss: 0.6796 - policy_categorical_accuracy: 0.3597 - value_mse: 0.1142
+Epoch 45/100: time=12.67s, loss=3.4986, policy_loss=2.7460, value_loss=0.6796, policy_categorical_accuracy=0.3597, value_mse=0.1142
+313/313 [==============================] - 12s 39ms/step - loss: 3.4360 - policy_loss: 2.6844 - value_loss: 0.6794 - policy_categorical_accuracy: 0.3635 - value_mse: 0.1164
+Epoch 46/100: time=12.82s, loss=3.4360, policy_loss=2.6844, value_loss=0.6794, policy_categorical_accuracy=0.3635, value_mse=0.1164
+313/313 [==============================] - 12s 38ms/step - loss: 3.4170 - policy_loss: 2.6674 - value_loss: 0.6782 - policy_categorical_accuracy: 0.3707 - value_mse: 0.1135
+Epoch 47/100: time=12.63s, loss=3.4170, policy_loss=2.6674, value_loss=0.6782, policy_categorical_accuracy=0.3707, value_mse=0.1135
+313/313 [==============================] - 12s 38ms/step - loss: 3.4061 - policy_loss: 2.6570 - value_loss: 0.6783 - policy_categorical_accuracy: 0.3680 - value_mse: 0.1134
+Epoch 48/100: time=12.57s, loss=3.4061, policy_loss=2.6570, value_loss=0.6783, policy_categorical_accuracy=0.3680, value_mse=0.1134
+313/313 [==============================] - 12s 39ms/step - loss: 3.3907 - policy_loss: 2.6429 - value_loss: 0.6773 - policy_categorical_accuracy: 0.3734 - value_mse: 0.1153
+Epoch 49/100: time=12.76s, loss=3.3907, policy_loss=2.6429, value_loss=0.6773, policy_categorical_accuracy=0.3734, value_mse=0.1153
+313/313 [==============================] - 12s 38ms/step - loss: 3.4361 - policy_loss: 2.6882 - value_loss: 0.6775 - policy_categorical_accuracy: 0.3609 - value_mse: 0.1130
+Epoch 50/100: time=12.62s, loss=3.4361, policy_loss=2.6882, value_loss=0.6775, policy_categorical_accuracy=0.3609, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.5025 - policy_loss: 2.7493 - value_loss: 0.6818 - policy_categorical_accuracy: 0.3562 - value_mse: 0.1160
+Epoch 51/100: time=12.58s, loss=3.5025, policy_loss=2.7493, value_loss=0.6818, policy_categorical_accuracy=0.3562, value_mse=0.1160
+313/313 [==============================] - 12s 38ms/step - loss: 3.4800 - policy_loss: 2.7277 - value_loss: 0.6802 - policy_categorical_accuracy: 0.3564 - value_mse: 0.1156
+Epoch 52/100: time=12.55s, loss=3.4800, policy_loss=2.7277, value_loss=0.6802, policy_categorical_accuracy=0.3564, value_mse=0.1156
+313/313 [==============================] - 12s 38ms/step - loss: 3.4590 - policy_loss: 2.7044 - value_loss: 0.6823 - policy_categorical_accuracy: 0.3566 - value_mse: 0.1169
+Epoch 53/100: time=12.55s, loss=3.4590, policy_loss=2.7044, value_loss=0.6823, policy_categorical_accuracy=0.3566, value_mse=0.1169
+313/313 [==============================] - 12s 38ms/step - loss: 3.4517 - policy_loss: 2.6997 - value_loss: 0.6797 - policy_categorical_accuracy: 0.3574 - value_mse: 0.1165
+Epoch 54/100: time=12.60s, loss=3.4517, policy_loss=2.6997, value_loss=0.6797, policy_categorical_accuracy=0.3574, value_mse=0.1165
+313/313 [==============================] - 12s 38ms/step - loss: 3.4484 - policy_loss: 2.6977 - value_loss: 0.6791 - policy_categorical_accuracy: 0.3666 - value_mse: 0.1163
+Epoch 55/100: time=12.55s, loss=3.4484, policy_loss=2.6977, value_loss=0.6791, policy_categorical_accuracy=0.3666, value_mse=0.1163
+313/313 [==============================] - 12s 38ms/step - loss: 3.3952 - policy_loss: 2.6474 - value_loss: 0.6770 - policy_categorical_accuracy: 0.3703 - value_mse: 0.1143
+Epoch 56/100: time=12.61s, loss=3.3952, policy_loss=2.6474, value_loss=0.6770, policy_categorical_accuracy=0.3703, value_mse=0.1143
+313/313 [==============================] - 12s 38ms/step - loss: 3.4083 - policy_loss: 2.6630 - value_loss: 0.6752 - policy_categorical_accuracy: 0.3716 - value_mse: 0.1123
+Epoch 57/100: time=12.62s, loss=3.4083, policy_loss=2.6630, value_loss=0.6752, policy_categorical_accuracy=0.3716, value_mse=0.1123
+313/313 [==============================] - 12s 38ms/step - loss: 3.3675 - policy_loss: 2.6226 - value_loss: 0.6753 - policy_categorical_accuracy: 0.3774 - value_mse: 0.1132
+Epoch 58/100: time=12.53s, loss=3.3675, policy_loss=2.6226, value_loss=0.6753, policy_categorical_accuracy=0.3774, value_mse=0.1132
+313/313 [==============================] - 12s 39ms/step - loss: 3.3419 - policy_loss: 2.5980 - value_loss: 0.6746 - policy_categorical_accuracy: 0.3733 - value_mse: 0.1129
+Epoch 59/100: time=12.69s, loss=3.3419, policy_loss=2.5980, value_loss=0.6746, policy_categorical_accuracy=0.3733, value_mse=0.1129
+313/313 [==============================] - 12s 38ms/step - loss: 3.3725 - policy_loss: 2.6285 - value_loss: 0.6748 - policy_categorical_accuracy: 0.3724 - value_mse: 0.1141
+Epoch 60/100: time=12.53s, loss=3.3725, policy_loss=2.6285, value_loss=0.6748, policy_categorical_accuracy=0.3724, value_mse=0.1141
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 26ms/step - loss: 3.4350 - policy_loss: 2.6951 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3587 - value_mse: 0.1113
+Validation  Epoch {i}/{epochs}:, loss=3.4350, policy_loss=2.6951, value_loss=0.6705, policy_categorical_accuracy=0.3587, value_mse=0.1113
+313/313 [==============================] - 12s 38ms/step - loss: 3.4582 - policy_loss: 2.7082 - value_loss: 0.6797 - policy_categorical_accuracy: 0.3633 - value_mse: 0.1137
+Epoch 61/100: time=12.60s, loss=3.4582, policy_loss=2.7082, value_loss=0.6797, policy_categorical_accuracy=0.3633, value_mse=0.1137
+313/313 [==============================] - 12s 38ms/step - loss: 3.4957 - policy_loss: 2.7449 - value_loss: 0.6795 - policy_categorical_accuracy: 0.3523 - value_mse: 0.1141
+Epoch 62/100: time=12.51s, loss=3.4957, policy_loss=2.7449, value_loss=0.6795, policy_categorical_accuracy=0.3523, value_mse=0.1141
+313/313 [==============================] - 12s 39ms/step - loss: 3.4541 - policy_loss: 2.7033 - value_loss: 0.6792 - policy_categorical_accuracy: 0.3654 - value_mse: 0.1149
+Epoch 63/100: time=12.68s, loss=3.4541, policy_loss=2.7033, value_loss=0.6792, policy_categorical_accuracy=0.3654, value_mse=0.1149
+313/313 [==============================] - 12s 38ms/step - loss: 3.4161 - policy_loss: 2.6697 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3688 - value_mse: 0.1156
+Epoch 64/100: time=12.55s, loss=3.4161, policy_loss=2.6697, value_loss=0.6750, policy_categorical_accuracy=0.3688, value_mse=0.1156
+313/313 [==============================] - 12s 38ms/step - loss: 3.3969 - policy_loss: 2.6507 - value_loss: 0.6754 - policy_categorical_accuracy: 0.3664 - value_mse: 0.1141
+Epoch 65/100: time=12.55s, loss=3.3969, policy_loss=2.6507, value_loss=0.6754, policy_categorical_accuracy=0.3664, value_mse=0.1141
+313/313 [==============================] - 12s 38ms/step - loss: 3.4569 - policy_loss: 2.7090 - value_loss: 0.6777 - policy_categorical_accuracy: 0.3572 - value_mse: 0.1123
+Epoch 66/100: time=12.67s, loss=3.4569, policy_loss=2.7090, value_loss=0.6777, policy_categorical_accuracy=0.3572, value_mse=0.1123
+313/313 [==============================] - 12s 39ms/step - loss: 3.3652 - policy_loss: 2.6208 - value_loss: 0.6749 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1150
+Epoch 67/100: time=12.69s, loss=3.3652, policy_loss=2.6208, value_loss=0.6749, policy_categorical_accuracy=0.3696, value_mse=0.1150
+313/313 [==============================] - 12s 38ms/step - loss: 3.3579 - policy_loss: 2.6146 - value_loss: 0.6743 - policy_categorical_accuracy: 0.3759 - value_mse: 0.1143
+Epoch 68/100: time=12.55s, loss=3.3579, policy_loss=2.6146, value_loss=0.6743, policy_categorical_accuracy=0.3759, value_mse=0.1143
+313/313 [==============================] - 12s 39ms/step - loss: 3.3554 - policy_loss: 2.6138 - value_loss: 0.6729 - policy_categorical_accuracy: 0.3753 - value_mse: 0.1126
+Epoch 69/100: time=12.76s, loss=3.3554, policy_loss=2.6138, value_loss=0.6729, policy_categorical_accuracy=0.3753, value_mse=0.1126
+313/313 [==============================] - 12s 38ms/step - loss: 3.3879 - policy_loss: 2.6440 - value_loss: 0.6753 - policy_categorical_accuracy: 0.3659 - value_mse: 0.1130
+Epoch 70/100: time=12.64s, loss=3.3879, policy_loss=2.6440, value_loss=0.6753, policy_categorical_accuracy=0.3659, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.4907 - policy_loss: 2.7397 - value_loss: 0.6810 - policy_categorical_accuracy: 0.3568 - value_mse: 0.1141
+Epoch 71/100: time=12.66s, loss=3.4907, policy_loss=2.7397, value_loss=0.6810, policy_categorical_accuracy=0.3568, value_mse=0.1141
+313/313 [==============================] - 12s 38ms/step - loss: 3.4463 - policy_loss: 2.6953 - value_loss: 0.6803 - policy_categorical_accuracy: 0.3614 - value_mse: 0.1164
+Epoch 72/100: time=12.55s, loss=3.4463, policy_loss=2.6953, value_loss=0.6803, policy_categorical_accuracy=0.3614, value_mse=0.1164
+313/313 [==============================] - 12s 38ms/step - loss: 3.4339 - policy_loss: 2.6831 - value_loss: 0.6798 - policy_categorical_accuracy: 0.3657 - value_mse: 0.1162
+Epoch 73/100: time=12.50s, loss=3.4339, policy_loss=2.6831, value_loss=0.6798, policy_categorical_accuracy=0.3657, value_mse=0.1162
+313/313 [==============================] - 12s 38ms/step - loss: 3.4182 - policy_loss: 2.6709 - value_loss: 0.6767 - policy_categorical_accuracy: 0.3656 - value_mse: 0.1124
+Epoch 74/100: time=12.65s, loss=3.4182, policy_loss=2.6709, value_loss=0.6767, policy_categorical_accuracy=0.3656, value_mse=0.1124
+313/313 [==============================] - 12s 38ms/step - loss: 3.4127 - policy_loss: 2.6673 - value_loss: 0.6751 - policy_categorical_accuracy: 0.3621 - value_mse: 0.1130
+Epoch 75/100: time=12.58s, loss=3.4127, policy_loss=2.6673, value_loss=0.6751, policy_categorical_accuracy=0.3621, value_mse=0.1130
+313/313 [==============================] - 12s 38ms/step - loss: 3.3707 - policy_loss: 2.6276 - value_loss: 0.6735 - policy_categorical_accuracy: 0.3745 - value_mse: 0.1121
+Epoch 76/100: time=12.58s, loss=3.3707, policy_loss=2.6276, value_loss=0.6735, policy_categorical_accuracy=0.3745, value_mse=0.1121
+313/313 [==============================] - 12s 38ms/step - loss: 3.3651 - policy_loss: 2.6212 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3696 - value_mse: 0.1143
+Epoch 77/100: time=12.58s, loss=3.3651, policy_loss=2.6212, value_loss=0.6750, policy_categorical_accuracy=0.3696, value_mse=0.1143
+313/313 [==============================] - 12s 38ms/step - loss: 3.3366 - policy_loss: 2.5945 - value_loss: 0.6738 - policy_categorical_accuracy: 0.3742 - value_mse: 0.1140
+Epoch 78/100: time=12.55s, loss=3.3366, policy_loss=2.5945, value_loss=0.6738, policy_categorical_accuracy=0.3742, value_mse=0.1140
+313/313 [==============================] - 12s 38ms/step - loss: 3.3566 - policy_loss: 2.6191 - value_loss: 0.6694 - policy_categorical_accuracy: 0.3766 - value_mse: 0.1117
+Epoch 79/100: time=12.61s, loss=3.3566, policy_loss=2.6191, value_loss=0.6694, policy_categorical_accuracy=0.3766, value_mse=0.1117
+313/313 [==============================] - 12s 38ms/step - loss: 3.3445 - policy_loss: 2.6043 - value_loss: 0.6722 - policy_categorical_accuracy: 0.3733 - value_mse: 0.1112
+Epoch 80/100: time=12.59s, loss=3.3445, policy_loss=2.6043, value_loss=0.6722, policy_categorical_accuracy=0.3733, value_mse=0.1112
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 26ms/step - loss: 3.4199 - policy_loss: 2.6731 - value_loss: 0.6781 - policy_categorical_accuracy: 0.3600 - value_mse: 0.1143
+Validation  Epoch {i}/{epochs}:, loss=3.4199, policy_loss=2.6731, value_loss=0.6781, policy_categorical_accuracy=0.3600, value_mse=0.1143
+313/313 [==============================] - 12s 38ms/step - loss: 3.4400 - policy_loss: 2.6924 - value_loss: 0.6778 - policy_categorical_accuracy: 0.3626 - value_mse: 0.1153
+Epoch 81/100: time=12.57s, loss=3.4400, policy_loss=2.6924, value_loss=0.6778, policy_categorical_accuracy=0.3626, value_mse=0.1153
+313/313 [==============================] - 12s 38ms/step - loss: 3.4423 - policy_loss: 2.6949 - value_loss: 0.6767 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1138
+Epoch 82/100: time=12.52s, loss=3.4423, policy_loss=2.6949, value_loss=0.6767, policy_categorical_accuracy=0.3598, value_mse=0.1138
+313/313 [==============================] - 12s 38ms/step - loss: 3.3956 - policy_loss: 2.6480 - value_loss: 0.6768 - policy_categorical_accuracy: 0.3744 - value_mse: 0.1153
+Epoch 83/100: time=12.65s, loss=3.3956, policy_loss=2.6480, value_loss=0.6768, policy_categorical_accuracy=0.3744, value_mse=0.1153
+313/313 [==============================] - 12s 38ms/step - loss: 3.4196 - policy_loss: 2.6710 - value_loss: 0.6781 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1141
+Epoch 84/100: time=12.51s, loss=3.4196, policy_loss=2.6710, value_loss=0.6781, policy_categorical_accuracy=0.3655, value_mse=0.1141
+313/313 [==============================] - 12s 38ms/step - loss: 3.3771 - policy_loss: 2.6320 - value_loss: 0.6750 - policy_categorical_accuracy: 0.3695 - value_mse: 0.1133
+Epoch 85/100: time=12.52s, loss=3.3771, policy_loss=2.6320, value_loss=0.6750, policy_categorical_accuracy=0.3695, value_mse=0.1133
+313/313 [==============================] - 12s 38ms/step - loss: 3.3538 - policy_loss: 2.6116 - value_loss: 0.6729 - policy_categorical_accuracy: 0.3766 - value_mse: 0.1128
+Epoch 86/100: time=12.61s, loss=3.3538, policy_loss=2.6116, value_loss=0.6729, policy_categorical_accuracy=0.3766, value_mse=0.1128
+313/313 [==============================] - 12s 38ms/step - loss: 3.3824 - policy_loss: 2.6431 - value_loss: 0.6707 - policy_categorical_accuracy: 0.3736 - value_mse: 0.1104
+Epoch 87/100: time=12.57s, loss=3.3824, policy_loss=2.6431, value_loss=0.6707, policy_categorical_accuracy=0.3736, value_mse=0.1104
+313/313 [==============================] - 12s 38ms/step - loss: 3.3081 - policy_loss: 2.5653 - value_loss: 0.6746 - policy_categorical_accuracy: 0.3768 - value_mse: 0.1139
+Epoch 88/100: time=12.54s, loss=3.3081, policy_loss=2.5653, value_loss=0.6746, policy_categorical_accuracy=0.3768, value_mse=0.1139
+313/313 [==============================] - 12s 38ms/step - loss: 3.3259 - policy_loss: 2.5864 - value_loss: 0.6717 - policy_categorical_accuracy: 0.3684 - value_mse: 0.1106
+Epoch 89/100: time=12.68s, loss=3.3259, policy_loss=2.5864, value_loss=0.6717, policy_categorical_accuracy=0.3684, value_mse=0.1106
+313/313 [==============================] - 12s 38ms/step - loss: 3.3465 - policy_loss: 2.6093 - value_loss: 0.6693 - policy_categorical_accuracy: 0.3747 - value_mse: 0.1105
+Epoch 90/100: time=12.58s, loss=3.3465, policy_loss=2.6093, value_loss=0.6693, policy_categorical_accuracy=0.3747, value_mse=0.1105
+313/313 [==============================] - 12s 38ms/step - loss: 3.4385 - policy_loss: 2.6923 - value_loss: 0.6765 - policy_categorical_accuracy: 0.3611 - value_mse: 0.1144
+Epoch 91/100: time=12.56s, loss=3.4385, policy_loss=2.6923, value_loss=0.6765, policy_categorical_accuracy=0.3611, value_mse=0.1144
+313/313 [==============================] - 12s 38ms/step - loss: 3.4453 - policy_loss: 2.6960 - value_loss: 0.6790 - policy_categorical_accuracy: 0.3636 - value_mse: 0.1139
+Epoch 92/100: time=12.52s, loss=3.4453, policy_loss=2.6960, value_loss=0.6790, policy_categorical_accuracy=0.3636, value_mse=0.1139
+313/313 [==============================] - 12s 38ms/step - loss: 3.4044 - policy_loss: 2.6575 - value_loss: 0.6762 - policy_categorical_accuracy: 0.3670 - value_mse: 0.1135
+Epoch 93/100: time=12.56s, loss=3.4044, policy_loss=2.6575, value_loss=0.6762, policy_categorical_accuracy=0.3670, value_mse=0.1135
+313/313 [==============================] - 12s 39ms/step - loss: 3.4178 - policy_loss: 2.6742 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3641 - value_mse: 0.1135
+Epoch 94/100: time=12.75s, loss=3.4178, policy_loss=2.6742, value_loss=0.6732, policy_categorical_accuracy=0.3641, value_mse=0.1135
+313/313 [==============================] - 12s 38ms/step - loss: 3.3905 - policy_loss: 2.6474 - value_loss: 0.6732 - policy_categorical_accuracy: 0.3687 - value_mse: 0.1102
+Epoch 95/100: time=12.55s, loss=3.3905, policy_loss=2.6474, value_loss=0.6732, policy_categorical_accuracy=0.3687, value_mse=0.1102
+313/313 [==============================] - 12s 38ms/step - loss: 3.3323 - policy_loss: 2.5905 - value_loss: 0.6726 - policy_categorical_accuracy: 0.3724 - value_mse: 0.1118
+Epoch 96/100: time=12.58s, loss=3.3323, policy_loss=2.5905, value_loss=0.6726, policy_categorical_accuracy=0.3724, value_mse=0.1118
+313/313 [==============================] - 12s 38ms/step - loss: 3.3072 - policy_loss: 2.5686 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3854 - value_mse: 0.1120
+Epoch 97/100: time=12.59s, loss=3.3072, policy_loss=2.5686, value_loss=0.6701, policy_categorical_accuracy=0.3854, value_mse=0.1120
+313/313 [==============================] - 12s 38ms/step - loss: 3.3209 - policy_loss: 2.5828 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3801 - value_mse: 0.1121
+Epoch 98/100: time=12.57s, loss=3.3209, policy_loss=2.5828, value_loss=0.6700, policy_categorical_accuracy=0.3801, value_mse=0.1121
+313/313 [==============================] - 12s 38ms/step - loss: 3.3343 - policy_loss: 2.5979 - value_loss: 0.6687 - policy_categorical_accuracy: 0.3715 - value_mse: 0.1099
+Epoch 99/100: time=12.63s, loss=3.3343, policy_loss=2.5979, value_loss=0.6687, policy_categorical_accuracy=0.3715, value_mse=0.1099
+313/313 [==============================] - 12s 38ms/step - loss: 3.3388 - policy_loss: 2.6001 - value_loss: 0.6709 - policy_categorical_accuracy: 0.3777 - value_mse: 0.1113
+Epoch 100/100: time=12.51s, loss=3.3388, policy_loss=2.6001, value_loss=0.6709, policy_categorical_accuracy=0.3777, value_mse=0.1113
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 8s 26ms/step - loss: 3.3919 - policy_loss: 2.6540 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3642 - value_mse: 0.1110
+Validation  Epoch {i}/{epochs}:, loss=3.3919, policy_loss=2.6540, value_loss=0.6695, policy_categorical_accuracy=0.3642, value_mse=0.1110
+Best Model at epoch 100 : loss=3.3919355869293213, policy_loss=2.6540, value_loss=0.6695
+
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 10 — Epoch 100:
+  - loss                          : 3.3919
+  - policy_loss                   : 2.6540
+  - value_loss                    : 0.6695
+  - policy_categorical_accuracy   : 0.3642
+  - value_mse                     : 0.1110
+  - Time: 1312.7751
+
+Process finished with exit code 0

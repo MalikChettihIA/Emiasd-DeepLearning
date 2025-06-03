@@ -1,0 +1,731 @@
+/Users/malikchettih/.pyenv/versions/3.9.21/bin/python /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_testN10000.py
+Python version sys.version_info(major=3, minor=9, micro=21, releaselevel='final', serial=0)
+Tensorflow version 2.15.0
+-------------------- Test GoMobileNet N 10000 --------------------
+2025-05-02 17:36:03.483129: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M4 Pro
+2025-05-02 17:36:03.483146: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 48.00 GB
+2025-05-02 17:36:03.483150: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 18.00 GB
+2025-05-02 17:36:03.483177: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2025-05-02 17:36:03.483192: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_1 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d (Conv2D)             (None, 19, 19, 64)           1984      ['input_1[0][0]']
+
+ batch_normalization (Batch  (None, 19, 19, 64)           256       ['conv2d[0][0]']
+ Normalization)
+
+ activation (Activation)     (None, 19, 19, 64)           0         ['batch_normalization[0][0]']
+
+ conv2d_1 (Conv2D)           (None, 19, 19, 256)          16384     ['activation[0][0]']
+
+ batch_normalization_1 (Bat  (None, 19, 19, 256)          1024      ['conv2d_1[0][0]']
+ chNormalization)
+
+ activation_1 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_1[0][0]'
+                                                                    ]
+
+ depthwise_conv2d (Depthwis  (None, 19, 19, 256)          2304      ['activation_1[0][0]']
+ eConv2D)
+
+ batch_normalization_2 (Bat  (None, 19, 19, 256)          1024      ['depthwise_conv2d[0][0]']
+ chNormalization)
+
+ activation_2 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_2[0][0]'
+                                                                    ]
+
+ global_average_pooling2d (  (None, 256)                  0         ['activation_2[0][0]']
+ GlobalAveragePooling2D)
+
+ reshape (Reshape)           (None, 1, 1, 256)            0         ['global_average_pooling2d[0][
+                                                                    0]']
+
+ dense (Dense)               (None, 1, 1, 16)             4096      ['reshape[0][0]']
+
+ dense_1 (Dense)             (None, 1, 1, 256)            4096      ['dense[0][0]']
+
+ multiply (Multiply)         (None, 19, 19, 256)          0         ['activation_2[0][0]',
+                                                                     'dense_1[0][0]']
+
+ conv2d_2 (Conv2D)           (None, 19, 19, 64)           16384     ['multiply[0][0]']
+
+ batch_normalization_3 (Bat  (None, 19, 19, 64)           256       ['conv2d_2[0][0]']
+ chNormalization)
+
+ activation_3 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_3[0][0]'
+                                                                    ]
+
+ add (Add)                   (None, 19, 19, 64)           0         ['activation_3[0][0]',
+                                                                     'activation[0][0]']
+
+ conv2d_3 (Conv2D)           (None, 19, 19, 256)          16384     ['add[0][0]']
+
+ batch_normalization_4 (Bat  (None, 19, 19, 256)          1024      ['conv2d_3[0][0]']
+ chNormalization)
+
+ activation_4 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_4[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_1 (Depthw  (None, 19, 19, 256)          2304      ['activation_4[0][0]']
+ iseConv2D)
+
+ batch_normalization_5 (Bat  (None, 19, 19, 256)          1024      ['depthwise_conv2d_1[0][0]']
+ chNormalization)
+
+ activation_5 (Activation)   (None, 19, 19, 256)          0         ['batch_normalization_5[0][0]'
+                                                                    ]
+
+ global_average_pooling2d_1  (None, 256)                  0         ['activation_5[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_1 (Reshape)         (None, 1, 1, 256)            0         ['global_average_pooling2d_1[0
+                                                                    ][0]']
+
+ dense_2 (Dense)             (None, 1, 1, 16)             4096      ['reshape_1[0][0]']
+
+ dense_3 (Dense)             (None, 1, 1, 256)            4096      ['dense_2[0][0]']
+
+ multiply_1 (Multiply)       (None, 19, 19, 256)          0         ['activation_5[0][0]',
+                                                                     'dense_3[0][0]']
+
+ conv2d_4 (Conv2D)           (None, 19, 19, 64)           16384     ['multiply_1[0][0]']
+
+ batch_normalization_6 (Bat  (None, 19, 19, 64)           256       ['conv2d_4[0][0]']
+ chNormalization)
+
+ activation_6 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_6[0][0]'
+                                                                    ]
+
+ add_1 (Add)                 (None, 19, 19, 64)           0         ['activation_6[0][0]',
+                                                                     'add[0][0]']
+
+ global_average_pooling2d_2  (None, 64)                   0         ['add_1[0][0]']
+  (GlobalAveragePooling2D)
+
+ conv2d_5 (Conv2D)           (None, 19, 19, 1)            64        ['add_1[0][0]']
+
+ dense_4 (Dense)             (None, 50)                   3250      ['global_average_pooling2d_2[0
+                                                                    ][0]']
+
+ batch_normalization_7 (Bat  (None, 19, 19, 1)            4         ['conv2d_5[0][0]']
+ chNormalization)
+
+ activation_7 (Activation)   (None, 50)                   0         ['dense_4[0][0]']
+
+ flatten (Flatten)           (None, 361)                  0         ['batch_normalization_7[0][0]'
+                                                                    ]
+
+ dropout (Dropout)           (None, 50)                   0         ['activation_7[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout[0][0]']
+
+==================================================================================================
+Total params: 96745 (377.91 KB)
+Trainable params: 94311 (368.40 KB)
+Non-trainable params: 2434 (9.51 KB)
+__________________________________________________________________________________________________
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+nbPositionsSGF = 102208897
+nbPositionsSGF = 102208897
+loading validation.data
+2025-05-02 17:36:25.409814: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+Epoch 1 - LR: 0.05000000074505806
+Epoch 1/250: time=12.38s, loss=4.5374, policy_loss=3.6418, value_loss=0.7427, policy_categorical_accuracy=0.2264, value_mse=0.1402
+Epoch 2 - LR: 0.05000000074505806
+Epoch 2/250: time=11.06s, loss=4.1029, policy_loss=3.2083, value_loss=0.7414, policy_categorical_accuracy=0.2887, value_mse=0.1432
+Epoch 3 - LR: 0.05000000074505806
+Epoch 3/250: time=11.21s, loss=3.9858, policy_loss=3.0964, value_loss=0.7381, policy_categorical_accuracy=0.3030, value_mse=0.1395
+Epoch 4 - LR: 0.05000000074505806
+Epoch 4/250: time=11.24s, loss=3.9048, policy_loss=3.0142, value_loss=0.7419, policy_categorical_accuracy=0.3227, value_mse=0.1434
+Epoch 5 - LR: 0.05000000074505806
+Epoch 5/250: time=11.39s, loss=3.8698, policy_loss=2.9860, value_loss=0.7380, policy_categorical_accuracy=0.3165, value_mse=0.1423
+Epoch 6 - LR: 0.05000000074505806
+Epoch 6/250: time=11.26s, loss=3.8327, policy_loss=2.9512, value_loss=0.7388, policy_categorical_accuracy=0.3245, value_mse=0.1406
+Epoch 7 - LR: 0.05000000074505806
+Epoch 7/250: time=11.31s, loss=3.8018, policy_loss=2.9224, value_loss=0.7397, policy_categorical_accuracy=0.3235, value_mse=0.1412
+Epoch 8 - LR: 0.05000000074505806
+Epoch 8/250: time=11.45s, loss=3.8111, policy_loss=2.9378, value_loss=0.7366, policy_categorical_accuracy=0.3265, value_mse=0.1389
+Epoch 9 - LR: 0.05000000074505806
+Epoch 9/250: time=11.35s, loss=3.8083, policy_loss=2.9395, value_loss=0.7350, policy_categorical_accuracy=0.3228, value_mse=0.1398
+Epoch 10 - LR: 0.05000000074505806
+Epoch 10/250: time=11.57s, loss=3.7413, policy_loss=2.8740, value_loss=0.7362, policy_categorical_accuracy=0.3356, value_mse=0.1403
+Epoch 11 - LR: 0.05000000074505806
+Epoch 11/250: time=11.49s, loss=3.7388, policy_loss=2.8771, value_loss=0.7330, policy_categorical_accuracy=0.3314, value_mse=0.1397
+Epoch 12 - LR: 0.05000000074505806
+Epoch 12/250: time=11.48s, loss=3.7629, policy_loss=2.9037, value_loss=0.7329, policy_categorical_accuracy=0.3289, value_mse=0.1395
+Epoch 13 - LR: 0.05000000074505806
+Epoch 13/250: time=11.41s, loss=3.7071, policy_loss=2.8526, value_loss=0.7306, policy_categorical_accuracy=0.3401, value_mse=0.1376
+Epoch 14 - LR: 0.05000000074505806
+Epoch 14/250: time=11.31s, loss=3.7394, policy_loss=2.8868, value_loss=0.7307, policy_categorical_accuracy=0.3301, value_mse=0.1374
+Epoch 15 - LR: 0.05000000074505806
+Epoch 15/250: time=11.48s, loss=3.7258, policy_loss=2.8797, value_loss=0.7263, policy_categorical_accuracy=0.3387, value_mse=0.1382
+Epoch 16 - LR: 0.05000000074505806
+Epoch 16/250: time=11.26s, loss=3.7014, policy_loss=2.8570, value_loss=0.7267, policy_categorical_accuracy=0.3429, value_mse=0.1367
+Epoch 17 - LR: 0.05000000074505806
+Epoch 17/250: time=11.43s, loss=3.6506, policy_loss=2.8082, value_loss=0.7265, policy_categorical_accuracy=0.3446, value_mse=0.1358
+Epoch 18 - LR: 0.05000000074505806
+Epoch 18/250: time=11.35s, loss=3.6441, policy_loss=2.8047, value_loss=0.7251, policy_categorical_accuracy=0.3458, value_mse=0.1353
+Epoch 19 - LR: 0.05000000074505806
+Epoch 19/250: time=11.35s, loss=3.6586, policy_loss=2.8216, value_loss=0.7243, policy_categorical_accuracy=0.3455, value_mse=0.1356
+Epoch 20 - LR: 0.05000000074505806
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.7999, value_loss=0.6935
+Saving new best model at epoch 20 with val_loss=3.6035
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+Epoch 20/250: time=18.93s, loss=3.6488, policy_loss=2.8175, value_loss=0.7203, policy_categorical_accuracy=0.3412, value_mse=0.1364
+Epoch 21 - LR: 0.05000000074505806
+Epoch 21/250: time=11.32s, loss=3.6392, policy_loss=2.8069, value_loss=0.7228, policy_categorical_accuracy=0.3453, value_mse=0.1354
+Epoch 22 - LR: 0.05000000074505806
+Epoch 22/250: time=11.33s, loss=3.6080, policy_loss=2.7788, value_loss=0.7208, policy_categorical_accuracy=0.3525, value_mse=0.1351
+Epoch 23 - LR: 0.05000000074505806
+Epoch 23/250: time=11.37s, loss=3.6092, policy_loss=2.7823, value_loss=0.7197, policy_categorical_accuracy=0.3503, value_mse=0.1351
+Epoch 24 - LR: 0.05000000074505806
+Epoch 24/250: time=11.32s, loss=3.5867, policy_loss=2.7612, value_loss=0.7195, policy_categorical_accuracy=0.3524, value_mse=0.1370
+Epoch 25 - LR: 0.05000000074505806
+Epoch 25/250: time=11.44s, loss=3.6124, policy_loss=2.7901, value_loss=0.7171, policy_categorical_accuracy=0.3427, value_mse=0.1325
+Epoch 26 - LR: 0.05000000074505806
+Epoch 26/250: time=11.52s, loss=3.6304, policy_loss=2.8097, value_loss=0.7167, policy_categorical_accuracy=0.3432, value_mse=0.1336
+Epoch 27 - LR: 0.05000000074505806
+Epoch 27/250: time=11.45s, loss=3.5931, policy_loss=2.7741, value_loss=0.7160, policy_categorical_accuracy=0.3460, value_mse=0.1338
+Epoch 28 - LR: 0.05000000074505806
+Epoch 28/250: time=11.45s, loss=3.6117, policy_loss=2.7925, value_loss=0.7167, policy_categorical_accuracy=0.3456, value_mse=0.1320
+Epoch 29 - LR: 0.05000000074505806
+Epoch 29/250: time=11.58s, loss=3.6158, policy_loss=2.8004, value_loss=0.7135, policy_categorical_accuracy=0.3391, value_mse=0.1307
+Epoch 30 - LR: 0.05000000074505806
+Epoch 30/250: time=11.65s, loss=3.5958, policy_loss=2.7813, value_loss=0.7132, policy_categorical_accuracy=0.3480, value_mse=0.1305
+Epoch 31 - LR: 0.05000000074505806
+Epoch 31/250: time=11.56s, loss=3.5679, policy_loss=2.7543, value_loss=0.7129, policy_categorical_accuracy=0.3555, value_mse=0.1299
+Epoch 32 - LR: 0.05000000074505806
+Epoch 32/250: time=11.58s, loss=3.5592, policy_loss=2.7489, value_loss=0.7100, policy_categorical_accuracy=0.3551, value_mse=0.1306
+Epoch 33 - LR: 0.05000000074505806
+Epoch 33/250: time=11.51s, loss=3.5594, policy_loss=2.7488, value_loss=0.7104, policy_categorical_accuracy=0.3550, value_mse=0.1302
+Epoch 34 - LR: 0.05000000074505806
+Epoch 34/250: time=11.53s, loss=3.5477, policy_loss=2.7396, value_loss=0.7082, policy_categorical_accuracy=0.3538, value_mse=0.1296
+Epoch 35 - LR: 0.05000000074505806
+Epoch 35/250: time=11.77s, loss=3.5637, policy_loss=2.7551, value_loss=0.7092, policy_categorical_accuracy=0.3504, value_mse=0.1309
+Epoch 36 - LR: 0.05000000074505806
+Epoch 36/250: time=11.58s, loss=3.5597, policy_loss=2.7522, value_loss=0.7083, policy_categorical_accuracy=0.3582, value_mse=0.1310
+Epoch 37 - LR: 0.05000000074505806
+Epoch 37/250: time=11.56s, loss=3.5745, policy_loss=2.7667, value_loss=0.7090, policy_categorical_accuracy=0.3543, value_mse=0.1291
+Epoch 38 - LR: 0.05000000074505806
+Epoch 38/250: time=11.50s, loss=3.5472, policy_loss=2.7405, value_loss=0.7082, policy_categorical_accuracy=0.3584, value_mse=0.1289
+Epoch 39 - LR: 0.05000000074505806
+Epoch 39/250: time=11.57s, loss=3.5872, policy_loss=2.7822, value_loss=0.7066, policy_categorical_accuracy=0.3446, value_mse=0.1277
+Epoch 40 - LR: 0.05000000074505806
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.7210, value_loss=0.7004
+Saving new best model at epoch 40 with val_loss=3.5196
+Epoch 40/250: time=18.81s, loss=3.5288, policy_loss=2.7260, value_loss=0.7046, policy_categorical_accuracy=0.3639, value_mse=0.1289
+Epoch 41 - LR: 0.05000000074505806
+Epoch 41/250: time=11.47s, loss=3.5659, policy_loss=2.7624, value_loss=0.7055, policy_categorical_accuracy=0.3475, value_mse=0.1293
+Epoch 42 - LR: 0.05000000074505806
+Epoch 42/250: time=11.52s, loss=3.5289, policy_loss=2.7261, value_loss=0.7049, policy_categorical_accuracy=0.3555, value_mse=0.1269
+Epoch 43 - LR: 0.05000000074505806
+Epoch 43/250: time=11.56s, loss=3.5151, policy_loss=2.7136, value_loss=0.7039, policy_categorical_accuracy=0.3597, value_mse=0.1239
+Epoch 44 - LR: 0.05000000074505806
+Epoch 44/250: time=11.58s, loss=3.4932, policy_loss=2.6925, value_loss=0.7033, policy_categorical_accuracy=0.3612, value_mse=0.1274
+Epoch 45 - LR: 0.05000000074505806
+Epoch 45/250: time=11.66s, loss=3.5475, policy_loss=2.7462, value_loss=0.7038, policy_categorical_accuracy=0.3601, value_mse=0.1259
+Epoch 46 - LR: 0.05000000074505806
+Epoch 46/250: time=11.58s, loss=3.4996, policy_loss=2.6994, value_loss=0.7028, policy_categorical_accuracy=0.3605, value_mse=0.1278
+Epoch 47 - LR: 0.05000000074505806
+Epoch 47/250: time=11.55s, loss=3.5118, policy_loss=2.7118, value_loss=0.7026, policy_categorical_accuracy=0.3619, value_mse=0.1254
+Epoch 48 - LR: 0.05000000074505806
+Epoch 48/250: time=11.52s, loss=3.5119, policy_loss=2.7120, value_loss=0.7029, policy_categorical_accuracy=0.3577, value_mse=0.1252
+Epoch 49 - LR: 0.05000000074505806
+Epoch 49/250: time=11.51s, loss=3.5112, policy_loss=2.7113, value_loss=0.7030, policy_categorical_accuracy=0.3651, value_mse=0.1278
+Epoch 50 - LR: 0.05000000074505806
+Epoch 50/250: time=11.68s, loss=3.5389, policy_loss=2.7399, value_loss=0.7019, policy_categorical_accuracy=0.3506, value_mse=0.1249
+Epoch 51 - LR: 0.05000000074505806
+Epoch 51/250: time=11.55s, loss=3.5182, policy_loss=2.7196, value_loss=0.7018, policy_categorical_accuracy=0.3614, value_mse=0.1259
+Epoch 52 - LR: 0.05000000074505806
+Epoch 52/250: time=11.52s, loss=3.4950, policy_loss=2.6968, value_loss=0.7016, policy_categorical_accuracy=0.3603, value_mse=0.1261
+Epoch 53 - LR: 0.05000000074505806
+Epoch 53/250: time=11.56s, loss=3.4870, policy_loss=2.6886, value_loss=0.7016, policy_categorical_accuracy=0.3642, value_mse=0.1263
+Epoch 54 - LR: 0.05000000074505806
+Epoch 54/250: time=11.46s, loss=3.4994, policy_loss=2.7018, value_loss=0.7007, policy_categorical_accuracy=0.3596, value_mse=0.1268
+Epoch 55 - LR: 0.05000000074505806
+Epoch 55/250: time=11.52s, loss=3.5127, policy_loss=2.7153, value_loss=0.7005, policy_categorical_accuracy=0.3662, value_mse=0.1268
+Epoch 56 - LR: 0.05000000074505806
+Epoch 56/250: time=11.50s, loss=3.4723, policy_loss=2.6756, value_loss=0.6997, policy_categorical_accuracy=0.3674, value_mse=0.1254
+Epoch 57 - LR: 0.05000000074505806
+Epoch 57/250: time=11.46s, loss=3.5061, policy_loss=2.7104, value_loss=0.6988, policy_categorical_accuracy=0.3610, value_mse=0.1239
+Epoch 58 - LR: 0.05000000074505806
+Epoch 58/250: time=11.50s, loss=3.4859, policy_loss=2.6893, value_loss=0.6996, policy_categorical_accuracy=0.3668, value_mse=0.1251
+Epoch 59 - LR: 0.05000000074505806
+Epoch 59/250: time=11.51s, loss=3.4479, policy_loss=2.6523, value_loss=0.6987, policy_categorical_accuracy=0.3638, value_mse=0.1246
+Epoch 60 - LR: 0.05000000074505806
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.6864, value_loss=0.6926
+Saving new best model at epoch 60 with val_loss=3.4758
+Epoch 60/250: time=18.80s, loss=3.4723, policy_loss=2.6763, value_loss=0.6992, policy_categorical_accuracy=0.3624, value_mse=0.1260
+Epoch 61 - LR: 0.05000000074505806
+Epoch 61/250: time=11.43s, loss=3.4671, policy_loss=2.6726, value_loss=0.6977, policy_categorical_accuracy=0.3660, value_mse=0.1226
+Epoch 62 - LR: 0.05000000074505806
+Epoch 62/250: time=11.42s, loss=3.5016, policy_loss=2.7056, value_loss=0.6993, policy_categorical_accuracy=0.3529, value_mse=0.1238
+Epoch 63 - LR: 0.05000000074505806
+Epoch 63/250: time=11.55s, loss=3.4905, policy_loss=2.6955, value_loss=0.6979, policy_categorical_accuracy=0.3607, value_mse=0.1240
+Epoch 64 - LR: 0.05000000074505806
+Epoch 64/250: time=11.45s, loss=3.4546, policy_loss=2.6596, value_loss=0.6980, policy_categorical_accuracy=0.3674, value_mse=0.1268
+Epoch 65 - LR: 0.05000000074505806
+Epoch 65/250: time=11.57s, loss=3.4637, policy_loss=2.6689, value_loss=0.6976, policy_categorical_accuracy=0.3653, value_mse=0.1250
+Epoch 66 - LR: 0.05000000074505806
+Epoch 66/250: time=11.48s, loss=3.5338, policy_loss=2.7385, value_loss=0.6980, policy_categorical_accuracy=0.3502, value_mse=0.1221
+Epoch 67 - LR: 0.05000000074505806
+Epoch 67/250: time=11.45s, loss=3.4530, policy_loss=2.6581, value_loss=0.6974, policy_categorical_accuracy=0.3610, value_mse=0.1260
+Epoch 68 - LR: 0.05000000074505806
+Epoch 68/250: time=11.49s, loss=3.4658, policy_loss=2.6713, value_loss=0.6969, policy_categorical_accuracy=0.3639, value_mse=0.1254
+
+Epoch 70: ReduceLROnPlateau reducing learning rate to 0.02500000037252903.
+Epoch 69 - LR: 0.02500000037252903
+Epoch 69/250: time=11.48s, loss=3.4720, policy_loss=2.6770, value_loss=0.6974, policy_categorical_accuracy=0.3647, value_mse=0.1244
+Epoch 70 - LR: 0.02500000037252903
+Epoch 70/250: time=11.58s, loss=3.4439, policy_loss=2.6518, value_loss=0.6950, policy_categorical_accuracy=0.3659, value_mse=0.1226
+Epoch 71 - LR: 0.02500000037252903
+Epoch 71/250: time=11.45s, loss=3.4503, policy_loss=2.6591, value_loss=0.6955, policy_categorical_accuracy=0.3701, value_mse=0.1213
+Epoch 72 - LR: 0.02500000037252903
+Epoch 72/250: time=11.51s, loss=3.4130, policy_loss=2.6232, value_loss=0.6953, policy_categorical_accuracy=0.3693, value_mse=0.1237
+Epoch 73 - LR: 0.02500000037252903
+Epoch 73/250: time=11.45s, loss=3.3960, policy_loss=2.6080, value_loss=0.6946, policy_categorical_accuracy=0.3762, value_mse=0.1235
+Epoch 74 - LR: 0.02500000037252903
+Epoch 74/250: time=11.40s, loss=3.4060, policy_loss=2.6193, value_loss=0.6943, policy_categorical_accuracy=0.3691, value_mse=0.1211
+Epoch 75 - LR: 0.02500000037252903
+Epoch 75/250: time=11.55s, loss=3.4122, policy_loss=2.6263, value_loss=0.6944, policy_categorical_accuracy=0.3644, value_mse=0.1223
+Epoch 76 - LR: 0.02500000037252903
+Epoch 76/250: time=11.53s, loss=3.3916, policy_loss=2.6065, value_loss=0.6946, policy_categorical_accuracy=0.3785, value_mse=0.1223
+Epoch 77 - LR: 0.02500000037252903
+Epoch 77/250: time=11.52s, loss=3.3886, policy_loss=2.6047, value_loss=0.6943, policy_categorical_accuracy=0.3712, value_mse=0.1238
+Epoch 78 - LR: 0.02500000037252903
+Epoch 78/250: time=11.48s, loss=3.3809, policy_loss=2.5973, value_loss=0.6948, policy_categorical_accuracy=0.3743, value_mse=0.1241
+Epoch 79 - LR: 0.02500000037252903
+Epoch 79/250: time=11.52s, loss=3.4145, policy_loss=2.6316, value_loss=0.6948, policy_categorical_accuracy=0.3729, value_mse=0.1239
+Epoch 80 - LR: 0.02500000037252903
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.6178, value_loss=0.6929
+Saving new best model at epoch 80 with val_loss=3.3979
+Epoch 80/250: time=18.77s, loss=3.3851, policy_loss=2.6033, value_loss=0.6943, policy_categorical_accuracy=0.3733, value_mse=0.1220
+Epoch 81 - LR: 0.02500000037252903
+Epoch 81/250: time=11.30s, loss=3.3950, policy_loss=2.6140, value_loss=0.6941, policy_categorical_accuracy=0.3727, value_mse=0.1232
+Epoch 82 - LR: 0.02500000037252903
+Epoch 82/250: time=11.40s, loss=3.4017, policy_loss=2.6207, value_loss=0.6945, policy_categorical_accuracy=0.3682, value_mse=0.1225
+Epoch 83 - LR: 0.02500000037252903
+Epoch 83/250: time=11.53s, loss=3.3762, policy_loss=2.5954, value_loss=0.6949, policy_categorical_accuracy=0.3789, value_mse=0.1241
+Epoch 84 - LR: 0.02500000037252903
+Epoch 84/250: time=11.45s, loss=3.4047, policy_loss=2.6248, value_loss=0.6945, policy_categorical_accuracy=0.3706, value_mse=0.1222
+Epoch 85 - LR: 0.02500000037252903
+Epoch 85/250: time=11.44s, loss=3.3738, policy_loss=2.5941, value_loss=0.6948, policy_categorical_accuracy=0.3741, value_mse=0.1229
+Epoch 86 - LR: 0.02500000037252903
+Epoch 86/250: time=11.46s, loss=3.3776, policy_loss=2.5992, value_loss=0.6938, policy_categorical_accuracy=0.3780, value_mse=0.1229
+Epoch 87 - LR: 0.02500000037252903
+Epoch 87/250: time=11.56s, loss=3.4206, policy_loss=2.6420, value_loss=0.6945, policy_categorical_accuracy=0.3734, value_mse=0.1218
+Epoch 88 - LR: 0.02500000037252903
+Epoch 88/250: time=11.50s, loss=3.3426, policy_loss=2.5646, value_loss=0.6943, policy_categorical_accuracy=0.3762, value_mse=0.1235
+Epoch 89 - LR: 0.02500000037252903
+Epoch 89/250: time=11.42s, loss=3.3777, policy_loss=2.6004, value_loss=0.6940, policy_categorical_accuracy=0.3689, value_mse=0.1213
+Epoch 90 - LR: 0.02500000037252903
+Epoch 90/250: time=11.61s, loss=3.3848, policy_loss=2.6074, value_loss=0.6943, policy_categorical_accuracy=0.3734, value_mse=0.1225
+Epoch 91 - LR: 0.02500000037252903
+Epoch 91/250: time=11.56s, loss=3.4036, policy_loss=2.6264, value_loss=0.6943, policy_categorical_accuracy=0.3669, value_mse=0.1230
+Epoch 92 - LR: 0.02500000037252903
+Epoch 92/250: time=11.50s, loss=3.4157, policy_loss=2.6386, value_loss=0.6945, policy_categorical_accuracy=0.3707, value_mse=0.1214
+Epoch 93 - LR: 0.02500000037252903
+Epoch 93/250: time=11.50s, loss=3.3727, policy_loss=2.5958, value_loss=0.6946, policy_categorical_accuracy=0.3766, value_mse=0.1226
+Epoch 94 - LR: 0.02500000037252903
+Epoch 94/250: time=11.41s, loss=3.4039, policy_loss=2.6275, value_loss=0.6944, policy_categorical_accuracy=0.3720, value_mse=0.1237
+Epoch 95 - LR: 0.02500000037252903
+Epoch 95/250: time=11.56s, loss=3.4016, policy_loss=2.6249, value_loss=0.6949, policy_categorical_accuracy=0.3714, value_mse=0.1207
+Epoch 96 - LR: 0.02500000037252903
+Epoch 96/250: time=11.55s, loss=3.3592, policy_loss=2.5836, value_loss=0.6940, policy_categorical_accuracy=0.3695, value_mse=0.1222
+Epoch 97 - LR: 0.02500000037252903
+Epoch 97/250: time=11.52s, loss=3.3498, policy_loss=2.5741, value_loss=0.6944, policy_categorical_accuracy=0.3880, value_mse=0.1236
+
+Epoch 99: ReduceLROnPlateau reducing learning rate to 0.012500000186264515.
+Epoch 98 - LR: 0.012500000186264515
+Epoch 98/250: time=11.47s, loss=3.3746, policy_loss=2.5992, value_loss=0.6941, policy_categorical_accuracy=0.3770, value_mse=0.1237
+Epoch 99 - LR: 0.012500000186264515
+Epoch 99/250: time=11.54s, loss=3.3693, policy_loss=2.5946, value_loss=0.6938, policy_categorical_accuracy=0.3768, value_mse=0.1220
+Epoch 100 - LR: 0.012500000186264515
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.5616, value_loss=0.6930
+Saving new best model at epoch 100 with val_loss=3.3346
+Epoch 100/250: time=18.73s, loss=3.3489, policy_loss=2.5749, value_loss=0.6936, policy_categorical_accuracy=0.3788, value_mse=0.1222
+Epoch 101 - LR: 0.012500000186264515
+Epoch 101/250: time=11.49s, loss=3.3396, policy_loss=2.5660, value_loss=0.6939, policy_categorical_accuracy=0.3808, value_mse=0.1229
+Epoch 102 - LR: 0.012500000186264515
+Epoch 102/250: time=11.40s, loss=3.3468, policy_loss=2.5739, value_loss=0.6939, policy_categorical_accuracy=0.3779, value_mse=0.1238
+Epoch 103 - LR: 0.012500000186264515
+Epoch 103/250: time=11.60s, loss=3.3203, policy_loss=2.5483, value_loss=0.6934, policy_categorical_accuracy=0.3832, value_mse=0.1208
+Epoch 104 - LR: 0.012500000186264515
+Epoch 104/250: time=11.49s, loss=3.3330, policy_loss=2.5612, value_loss=0.6938, policy_categorical_accuracy=0.3815, value_mse=0.1222
+Epoch 105 - LR: 0.012500000186264515
+Epoch 105/250: time=11.57s, loss=3.3327, policy_loss=2.5616, value_loss=0.6936, policy_categorical_accuracy=0.3793, value_mse=0.1198
+Epoch 106 - LR: 0.012500000186264515
+Epoch 106/250: time=11.54s, loss=3.3365, policy_loss=2.5659, value_loss=0.6935, policy_categorical_accuracy=0.3837, value_mse=0.1231
+Epoch 107 - LR: 0.012500000186264515
+Epoch 107/250: time=11.52s, loss=3.3294, policy_loss=2.5594, value_loss=0.6934, policy_categorical_accuracy=0.3779, value_mse=0.1224
+Epoch 108 - LR: 0.012500000186264515
+Epoch 108/250: time=11.47s, loss=3.3021, policy_loss=2.5324, value_loss=0.6936, policy_categorical_accuracy=0.3847, value_mse=0.1217
+Epoch 109 - LR: 0.012500000186264515
+Epoch 109/250: time=11.50s, loss=3.3554, policy_loss=2.5860, value_loss=0.6937, policy_categorical_accuracy=0.3752, value_mse=0.1214
+Epoch 110 - LR: 0.012500000186264515
+Epoch 110/250: time=11.58s, loss=3.3259, policy_loss=2.5573, value_loss=0.6934, policy_categorical_accuracy=0.3820, value_mse=0.1196
+Epoch 111 - LR: 0.012500000186264515
+Epoch 111/250: time=11.60s, loss=3.3133, policy_loss=2.5451, value_loss=0.6934, policy_categorical_accuracy=0.3793, value_mse=0.1220
+Epoch 112 - LR: 0.012500000186264515
+Epoch 112/250: time=11.49s, loss=3.3183, policy_loss=2.5502, value_loss=0.6937, policy_categorical_accuracy=0.3816, value_mse=0.1228
+Epoch 113 - LR: 0.012500000186264515
+Epoch 113/250: time=11.50s, loss=3.3392, policy_loss=2.5717, value_loss=0.6934, policy_categorical_accuracy=0.3810, value_mse=0.1222
+Epoch 114 - LR: 0.012500000186264515
+Epoch 114/250: time=11.34s, loss=3.3152, policy_loss=2.5480, value_loss=0.6936, policy_categorical_accuracy=0.3879, value_mse=0.1214
+Epoch 115 - LR: 0.012500000186264515
+Epoch 115/250: time=11.55s, loss=3.3518, policy_loss=2.5853, value_loss=0.6931, policy_categorical_accuracy=0.3752, value_mse=0.1207
+Epoch 116 - LR: 0.012500000186264515
+Epoch 116/250: time=11.61s, loss=3.3134, policy_loss=2.5471, value_loss=0.6934, policy_categorical_accuracy=0.3830, value_mse=0.1222
+Epoch 117 - LR: 0.012500000186264515
+Epoch 117/250: time=11.39s, loss=3.3212, policy_loss=2.5553, value_loss=0.6933, policy_categorical_accuracy=0.3806, value_mse=0.1214
+
+Epoch 119: ReduceLROnPlateau reducing learning rate to 0.0062500000931322575.
+Epoch 118 - LR: 0.0062500000931322575
+Epoch 118/250: time=11.50s, loss=3.3074, policy_loss=2.5420, value_loss=0.6931, policy_categorical_accuracy=0.3865, value_mse=0.1229
+Epoch 119 - LR: 0.0062500000931322575
+Epoch 119/250: time=11.54s, loss=3.2774, policy_loss=2.5122, value_loss=0.6931, policy_categorical_accuracy=0.3859, value_mse=0.1214
+Epoch 120 - LR: 0.0062500000931322575
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.5227, value_loss=0.6933
+Saving new best model at epoch 120 with val_loss=3.2874
+Epoch 120/250: time=18.72s, loss=3.3057, policy_loss=2.5411, value_loss=0.6930, policy_categorical_accuracy=0.3853, value_mse=0.1224
+Epoch 121 - LR: 0.0062500000931322575
+Epoch 121/250: time=11.51s, loss=3.3200, policy_loss=2.5554, value_loss=0.6932, policy_categorical_accuracy=0.3840, value_mse=0.1205
+Epoch 122 - LR: 0.0062500000931322575
+Epoch 122/250: time=11.40s, loss=3.2947, policy_loss=2.5305, value_loss=0.6933, policy_categorical_accuracy=0.3849, value_mse=0.1219
+Epoch 123 - LR: 0.0062500000931322575
+Epoch 123/250: time=11.48s, loss=3.2696, policy_loss=2.5060, value_loss=0.6930, policy_categorical_accuracy=0.3807, value_mse=0.1234
+Epoch 124 - LR: 0.0062500000931322575
+Epoch 124/250: time=11.48s, loss=3.3142, policy_loss=2.5507, value_loss=0.6931, policy_categorical_accuracy=0.3857, value_mse=0.1202
+Epoch 125 - LR: 0.0062500000931322575
+Epoch 125/250: time=11.52s, loss=3.2623, policy_loss=2.4989, value_loss=0.6934, policy_categorical_accuracy=0.3924, value_mse=0.1203
+Epoch 126 - LR: 0.0062500000931322575
+Epoch 126/250: time=11.58s, loss=3.3115, policy_loss=2.5487, value_loss=0.6931, policy_categorical_accuracy=0.3735, value_mse=0.1211
+Epoch 127 - LR: 0.0062500000931322575
+Epoch 127/250: time=11.43s, loss=3.2751, policy_loss=2.5124, value_loss=0.6933, policy_categorical_accuracy=0.3831, value_mse=0.1217
+Epoch 128 - LR: 0.0062500000931322575
+Epoch 128/250: time=11.40s, loss=3.2936, policy_loss=2.5316, value_loss=0.6929, policy_categorical_accuracy=0.3848, value_mse=0.1201
+Epoch 129 - LR: 0.0062500000931322575
+Epoch 129/250: time=11.50s, loss=3.2919, policy_loss=2.5297, value_loss=0.6934, policy_categorical_accuracy=0.3854, value_mse=0.1212
+Epoch 130 - LR: 0.0062500000931322575
+Epoch 130/250: time=11.62s, loss=3.2514, policy_loss=2.4895, value_loss=0.6934, policy_categorical_accuracy=0.3946, value_mse=0.1232
+Epoch 131 - LR: 0.0062500000931322575
+Epoch 131/250: time=11.67s, loss=3.2621, policy_loss=2.5010, value_loss=0.6929, policy_categorical_accuracy=0.3932, value_mse=0.1214
+Epoch 132 - LR: 0.0062500000931322575
+Epoch 132/250: time=11.53s, loss=3.3143, policy_loss=2.5532, value_loss=0.6932, policy_categorical_accuracy=0.3838, value_mse=0.1212
+Epoch 133 - LR: 0.0062500000931322575
+Epoch 133/250: time=11.51s, loss=3.3001, policy_loss=2.5393, value_loss=0.6930, policy_categorical_accuracy=0.3886, value_mse=0.1222
+Epoch 134 - LR: 0.0062500000931322575
+Epoch 134/250: time=11.56s, loss=3.2986, policy_loss=2.5380, value_loss=0.6932, policy_categorical_accuracy=0.3867, value_mse=0.1205
+Epoch 135 - LR: 0.0062500000931322575
+Epoch 135/250: time=11.61s, loss=3.2916, policy_loss=2.5316, value_loss=0.6929, policy_categorical_accuracy=0.3826, value_mse=0.1207
+Epoch 136 - LR: 0.0062500000931322575
+Epoch 136/250: time=11.59s, loss=3.2825, policy_loss=2.5224, value_loss=0.6932, policy_categorical_accuracy=0.3874, value_mse=0.1226
+Epoch 137 - LR: 0.0062500000931322575
+Epoch 137/250: time=11.52s, loss=3.2987, policy_loss=2.5387, value_loss=0.6933, policy_categorical_accuracy=0.3810, value_mse=0.1199
+Epoch 138 - LR: 0.0062500000931322575
+Epoch 138/250: time=11.48s, loss=3.2563, policy_loss=2.4970, value_loss=0.6929, policy_categorical_accuracy=0.3878, value_mse=0.1240
+Epoch 139 - LR: 0.0062500000931322575
+Epoch 139/250: time=11.51s, loss=3.2943, policy_loss=2.5353, value_loss=0.6928, policy_categorical_accuracy=0.3844, value_mse=0.1221
+
+Epoch 141: ReduceLROnPlateau reducing learning rate to 0.0031250000465661287.
+Epoch 140 - LR: 0.0031250000465661287
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.5124, value_loss=0.6930
+Saving new best model at epoch 140 with val_loss=3.2712
+Epoch 140/250: time=18.76s, loss=3.2821, policy_loss=2.5231, value_loss=0.6931, policy_categorical_accuracy=0.3929, value_mse=0.1202
+Epoch 141 - LR: 0.0031250000465661287
+Epoch 141/250: time=11.54s, loss=3.2520, policy_loss=2.4938, value_loss=0.6925, policy_categorical_accuracy=0.3962, value_mse=0.1209
+Epoch 142 - LR: 0.0031250000465661287
+Epoch 142/250: time=11.52s, loss=3.2469, policy_loss=2.4886, value_loss=0.6928, policy_categorical_accuracy=0.3963, value_mse=0.1195
+Epoch 143 - LR: 0.0031250000465661287
+Epoch 143/250: time=11.57s, loss=3.2336, policy_loss=2.4757, value_loss=0.6926, policy_categorical_accuracy=0.3919, value_mse=0.1218
+Epoch 144 - LR: 0.0031250000465661287
+Epoch 144/250: time=11.37s, loss=3.2470, policy_loss=2.4887, value_loss=0.6931, policy_categorical_accuracy=0.3897, value_mse=0.1225
+Epoch 145 - LR: 0.0031250000465661287
+Epoch 145/250: time=11.51s, loss=3.2819, policy_loss=2.5240, value_loss=0.6929, policy_categorical_accuracy=0.3876, value_mse=0.1214
+Epoch 146 - LR: 0.0031250000465661287
+Epoch 146/250: time=11.50s, loss=3.2821, policy_loss=2.5241, value_loss=0.6932, policy_categorical_accuracy=0.3832, value_mse=0.1222
+Epoch 147 - LR: 0.0031250000465661287
+Epoch 147/250: time=11.30s, loss=3.2801, policy_loss=2.5223, value_loss=0.6932, policy_categorical_accuracy=0.3900, value_mse=0.1227
+Epoch 148 - LR: 0.0031250000465661287
+Epoch 148/250: time=11.46s, loss=3.2633, policy_loss=2.5059, value_loss=0.6930, policy_categorical_accuracy=0.3868, value_mse=0.1230
+Epoch 149 - LR: 0.0031250000465661287
+Epoch 149/250: time=11.53s, loss=3.2723, policy_loss=2.5151, value_loss=0.6930, policy_categorical_accuracy=0.3845, value_mse=0.1215
+Epoch 150 - LR: 0.0031250000465661287
+Epoch 150/250: time=11.57s, loss=3.2362, policy_loss=2.4794, value_loss=0.6927, policy_categorical_accuracy=0.3922, value_mse=0.1227
+Epoch 151 - LR: 0.0031250000465661287
+Epoch 151/250: time=11.40s, loss=3.2616, policy_loss=2.5048, value_loss=0.6930, policy_categorical_accuracy=0.3917, value_mse=0.1213
+Epoch 152 - LR: 0.0031250000465661287
+Epoch 152/250: time=11.33s, loss=3.2699, policy_loss=2.5133, value_loss=0.6928, policy_categorical_accuracy=0.3917, value_mse=0.1222
+
+Epoch 154: ReduceLROnPlateau reducing learning rate to 0.0015625000232830644.
+Epoch 153 - LR: 0.0015625000232830644
+Epoch 153/250: time=11.46s, loss=3.2378, policy_loss=2.4818, value_loss=0.6924, policy_categorical_accuracy=0.3912, value_mse=0.1224
+Epoch 154 - LR: 0.0015625000232830644
+Epoch 154/250: time=11.39s, loss=3.2571, policy_loss=2.5005, value_loss=0.6933, policy_categorical_accuracy=0.3863, value_mse=0.1223
+Epoch 155 - LR: 0.0015625000232830644
+Epoch 155/250: time=11.52s, loss=3.2715, policy_loss=2.5158, value_loss=0.6924, policy_categorical_accuracy=0.3892, value_mse=0.1199
+Epoch 156 - LR: 0.0015625000232830644
+Epoch 156/250: time=11.47s, loss=3.2891, policy_loss=2.5328, value_loss=0.6931, policy_categorical_accuracy=0.3847, value_mse=0.1220
+Epoch 157 - LR: 0.0015625000232830644
+Epoch 157/250: time=11.43s, loss=3.2330, policy_loss=2.4769, value_loss=0.6929, policy_categorical_accuracy=0.3987, value_mse=0.1220
+Epoch 158 - LR: 0.0015625000232830644
+Epoch 158/250: time=11.47s, loss=3.2636, policy_loss=2.5075, value_loss=0.6931, policy_categorical_accuracy=0.3930, value_mse=0.1219
+Epoch 159 - LR: 0.0015625000232830644
+Epoch 159/250: time=11.49s, loss=3.2409, policy_loss=2.4850, value_loss=0.6930, policy_categorical_accuracy=0.3963, value_mse=0.1220
+Epoch 160 - LR: 0.0015625000232830644
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.4872, value_loss=0.6929
+Saving new best model at epoch 160 with val_loss=3.2429
+Epoch 160/250: time=18.80s, loss=3.2540, policy_loss=2.4983, value_loss=0.6929, policy_categorical_accuracy=0.3839, value_mse=0.1248
+Epoch 161 - LR: 0.0015625000232830644
+Epoch 161/250: time=11.44s, loss=3.2347, policy_loss=2.4788, value_loss=0.6932, policy_categorical_accuracy=0.3917, value_mse=0.1218
+Epoch 162 - LR: 0.0015625000232830644
+Epoch 162/250: time=11.36s, loss=3.2173, policy_loss=2.4618, value_loss=0.6929, policy_categorical_accuracy=0.3923, value_mse=0.1207
+Epoch 163 - LR: 0.0015625000232830644
+Epoch 163/250: time=11.49s, loss=3.2389, policy_loss=2.4834, value_loss=0.6930, policy_categorical_accuracy=0.3912, value_mse=0.1204
+Epoch 164 - LR: 0.0015625000232830644
+Epoch 164/250: time=11.30s, loss=3.2088, policy_loss=2.4535, value_loss=0.6930, policy_categorical_accuracy=0.3943, value_mse=0.1217
+Epoch 165 - LR: 0.0015625000232830644
+Epoch 165/250: time=11.38s, loss=3.2481, policy_loss=2.4927, value_loss=0.6930, policy_categorical_accuracy=0.3997, value_mse=0.1218
+Epoch 166 - LR: 0.0015625000232830644
+Epoch 166/250: time=11.50s, loss=3.2199, policy_loss=2.4647, value_loss=0.6930, policy_categorical_accuracy=0.3973, value_mse=0.1227
+Epoch 167 - LR: 0.0015625000232830644
+Epoch 167/250: time=11.30s, loss=3.2507, policy_loss=2.4956, value_loss=0.6929, policy_categorical_accuracy=0.3864, value_mse=0.1216
+Epoch 168 - LR: 0.0015625000232830644
+Epoch 168/250: time=11.36s, loss=3.2635, policy_loss=2.5088, value_loss=0.6927, policy_categorical_accuracy=0.3868, value_mse=0.1209
+Epoch 169 - LR: 0.0015625000232830644
+Epoch 169/250: time=11.51s, loss=3.2570, policy_loss=2.5021, value_loss=0.6930, policy_categorical_accuracy=0.3893, value_mse=0.1222
+Epoch 170 - LR: 0.0015625000232830644
+Epoch 170/250: time=11.56s, loss=3.2480, policy_loss=2.4931, value_loss=0.6931, policy_categorical_accuracy=0.3888, value_mse=0.1214
+Epoch 171 - LR: 0.0015625000232830644
+Epoch 171/250: time=11.51s, loss=3.2009, policy_loss=2.4462, value_loss=0.6929, policy_categorical_accuracy=0.3992, value_mse=0.1236
+Epoch 172 - LR: 0.0015625000232830644
+Epoch 172/250: time=11.51s, loss=3.2608, policy_loss=2.5060, value_loss=0.6932, policy_categorical_accuracy=0.3857, value_mse=0.1219
+Epoch 173 - LR: 0.0015625000232830644
+Epoch 173/250: time=11.42s, loss=3.2400, policy_loss=2.4855, value_loss=0.6929, policy_categorical_accuracy=0.3936, value_mse=0.1227
+Epoch 174 - LR: 0.0015625000232830644
+Epoch 174/250: time=11.45s, loss=3.1880, policy_loss=2.4335, value_loss=0.6931, policy_categorical_accuracy=0.4025, value_mse=0.1228
+Epoch 175 - LR: 0.0015625000232830644
+Epoch 175/250: time=11.64s, loss=3.2288, policy_loss=2.4743, value_loss=0.6931, policy_categorical_accuracy=0.3961, value_mse=0.1201
+Epoch 176 - LR: 0.0015625000232830644
+Epoch 176/250: time=11.53s, loss=3.2142, policy_loss=2.4600, value_loss=0.6930, policy_categorical_accuracy=0.3978, value_mse=0.1219
+Epoch 177 - LR: 0.0015625000232830644
+Epoch 177/250: time=11.47s, loss=3.2417, policy_loss=2.4880, value_loss=0.6926, policy_categorical_accuracy=0.3856, value_mse=0.1199
+Epoch 178 - LR: 0.0015625000232830644
+Epoch 178/250: time=11.50s, loss=3.2606, policy_loss=2.5063, value_loss=0.6933, policy_categorical_accuracy=0.3956, value_mse=0.1205
+Epoch 179 - LR: 0.0015625000232830644
+Epoch 179/250: time=11.46s, loss=3.2333, policy_loss=2.4794, value_loss=0.6929, policy_categorical_accuracy=0.3892, value_mse=0.1217
+Epoch 180 - LR: 0.0015625000232830644
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.4841, value_loss=0.6930
+Saving new best model at epoch 180 with val_loss=3.2378
+Epoch 180/250: time=18.82s, loss=3.2406, policy_loss=2.4866, value_loss=0.6931, policy_categorical_accuracy=0.3912, value_mse=0.1206
+Epoch 181 - LR: 0.0015625000232830644
+Epoch 181/250: time=11.52s, loss=3.2397, policy_loss=2.4858, value_loss=0.6931, policy_categorical_accuracy=0.3990, value_mse=0.1217
+Epoch 182 - LR: 0.0015625000232830644
+Epoch 182/250: time=11.43s, loss=3.2425, policy_loss=2.4891, value_loss=0.6928, policy_categorical_accuracy=0.3955, value_mse=0.1221
+Epoch 183 - LR: 0.0015625000232830644
+Epoch 183/250: time=11.61s, loss=3.2583, policy_loss=2.5046, value_loss=0.6931, policy_categorical_accuracy=0.3850, value_mse=0.1231
+
+Epoch 185: ReduceLROnPlateau reducing learning rate to 0.0007812500116415322.
+Epoch 184 - LR: 0.0007812500116415322
+Epoch 184/250: time=11.54s, loss=3.2333, policy_loss=2.4800, value_loss=0.6928, policy_categorical_accuracy=0.3957, value_mse=0.1218
+Epoch 185 - LR: 0.0007812500116415322
+Epoch 185/250: time=11.50s, loss=3.2482, policy_loss=2.4948, value_loss=0.6930, policy_categorical_accuracy=0.3911, value_mse=0.1203
+Epoch 186 - LR: 0.0007812500116415322
+Epoch 186/250: time=11.51s, loss=3.2224, policy_loss=2.4691, value_loss=0.6929, policy_categorical_accuracy=0.3877, value_mse=0.1203
+Epoch 187 - LR: 0.0007812500116415322
+Epoch 187/250: time=11.53s, loss=3.2221, policy_loss=2.4689, value_loss=0.6928, policy_categorical_accuracy=0.3935, value_mse=0.1219
+Epoch 188 - LR: 0.0007812500116415322
+Epoch 188/250: time=11.53s, loss=3.2667, policy_loss=2.5135, value_loss=0.6929, policy_categorical_accuracy=0.3906, value_mse=0.1213
+Epoch 189 - LR: 0.0007812500116415322
+Epoch 189/250: time=11.57s, loss=3.2114, policy_loss=2.4585, value_loss=0.6928, policy_categorical_accuracy=0.3981, value_mse=0.1213
+Epoch 190 - LR: 0.0007812500116415322
+Epoch 190/250: time=11.62s, loss=3.2311, policy_loss=2.4778, value_loss=0.6932, policy_categorical_accuracy=0.3968, value_mse=0.1213
+Epoch 191 - LR: 0.0007812500116415322
+Epoch 191/250: time=11.51s, loss=3.2307, policy_loss=2.4776, value_loss=0.6930, policy_categorical_accuracy=0.3973, value_mse=0.1216
+Epoch 192 - LR: 0.0007812500116415322
+Epoch 192/250: time=11.44s, loss=3.2093, policy_loss=2.4562, value_loss=0.6931, policy_categorical_accuracy=0.3940, value_mse=0.1205
+Epoch 193 - LR: 0.0007812500116415322
+Epoch 193/250: time=11.56s, loss=3.2376, policy_loss=2.4849, value_loss=0.6927, policy_categorical_accuracy=0.3942, value_mse=0.1217
+
+Epoch 195: ReduceLROnPlateau reducing learning rate to 0.0003906250058207661.
+Epoch 194 - LR: 0.0003906250058207661
+Epoch 194/250: time=11.46s, loss=3.2400, policy_loss=2.4870, value_loss=0.6931, policy_categorical_accuracy=0.3953, value_mse=0.1228
+Epoch 195 - LR: 0.0003906250058207661
+Epoch 195/250: time=11.59s, loss=3.2620, policy_loss=2.5091, value_loss=0.6930, policy_categorical_accuracy=0.3918, value_mse=0.1200
+Epoch 196 - LR: 0.0003906250058207661
+Epoch 196/250: time=11.53s, loss=3.2628, policy_loss=2.5099, value_loss=0.6931, policy_categorical_accuracy=0.3886, value_mse=0.1199
+Epoch 197 - LR: 0.0003906250058207661
+Epoch 197/250: time=11.56s, loss=3.2044, policy_loss=2.4517, value_loss=0.6928, policy_categorical_accuracy=0.4002, value_mse=0.1234
+Epoch 198 - LR: 0.0003906250058207661
+Epoch 198/250: time=11.45s, loss=3.2424, policy_loss=2.4897, value_loss=0.6928, policy_categorical_accuracy=0.3924, value_mse=0.1195
+Epoch 199 - LR: 0.0003906250058207661
+Epoch 199/250: time=11.53s, loss=3.2094, policy_loss=2.4568, value_loss=0.6929, policy_categorical_accuracy=0.3981, value_mse=0.1207
+Epoch 200 - LR: 0.0003906250058207661
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.4728, value_loss=0.6930
+Saving new best model at epoch 200 with val_loss=3.2255
+Epoch 200/250: time=18.97s, loss=3.1951, policy_loss=2.4428, value_loss=0.6925, policy_categorical_accuracy=0.3990, value_mse=0.1231
+Epoch 201 - LR: 0.0003906250058207661
+Epoch 201/250: time=11.30s, loss=3.2260, policy_loss=2.4732, value_loss=0.6930, policy_categorical_accuracy=0.3927, value_mse=0.1201
+Epoch 202 - LR: 0.0003906250058207661
+Epoch 202/250: time=11.47s, loss=3.2400, policy_loss=2.4874, value_loss=0.6929, policy_categorical_accuracy=0.3949, value_mse=0.1222
+Epoch 203 - LR: 0.0003906250058207661
+Epoch 203/250: time=11.59s, loss=3.2263, policy_loss=2.4739, value_loss=0.6928, policy_categorical_accuracy=0.3943, value_mse=0.1217
+
+Epoch 205: ReduceLROnPlateau reducing learning rate to 0.00019531250291038305.
+Epoch 204 - LR: 0.00019531250291038305
+Epoch 204/250: time=11.52s, loss=3.2331, policy_loss=2.4805, value_loss=0.6930, policy_categorical_accuracy=0.3961, value_mse=0.1227
+Epoch 205 - LR: 0.00019531250291038305
+Epoch 205/250: time=11.60s, loss=3.2162, policy_loss=2.4636, value_loss=0.6930, policy_categorical_accuracy=0.4025, value_mse=0.1218
+Epoch 206 - LR: 0.00019531250291038305
+Epoch 206/250: time=11.59s, loss=3.2404, policy_loss=2.4878, value_loss=0.6930, policy_categorical_accuracy=0.3821, value_mse=0.1234
+Epoch 207 - LR: 0.00019531250291038305
+Epoch 207/250: time=11.51s, loss=3.2004, policy_loss=2.4480, value_loss=0.6928, policy_categorical_accuracy=0.3999, value_mse=0.1207
+Epoch 208 - LR: 0.00019531250291038305
+Epoch 208/250: time=11.51s, loss=3.2224, policy_loss=2.4697, value_loss=0.6931, policy_categorical_accuracy=0.3926, value_mse=0.1230
+Epoch 209 - LR: 0.00019531250291038305
+Epoch 209/250: time=11.46s, loss=3.2266, policy_loss=2.4740, value_loss=0.6930, policy_categorical_accuracy=0.3900, value_mse=0.1212
+Epoch 210 - LR: 0.00019531250291038305
+Epoch 210/250: time=11.58s, loss=3.2301, policy_loss=2.4774, value_loss=0.6931, policy_categorical_accuracy=0.3918, value_mse=0.1219
+Epoch 211 - LR: 0.00019531250291038305
+Epoch 211/250: time=11.71s, loss=3.2430, policy_loss=2.4904, value_loss=0.6931, policy_categorical_accuracy=0.3873, value_mse=0.1213
+Epoch 212 - LR: 0.00019531250291038305
+Epoch 212/250: time=11.51s, loss=3.2005, policy_loss=2.4481, value_loss=0.6929, policy_categorical_accuracy=0.4030, value_mse=0.1214
+Epoch 213 - LR: 0.00019531250291038305
+Epoch 213/250: time=11.46s, loss=3.2636, policy_loss=2.5110, value_loss=0.6930, policy_categorical_accuracy=0.3876, value_mse=0.1211
+
+Epoch 215: ReduceLROnPlateau reducing learning rate to 9.765625145519152e-05.
+Epoch 214 - LR: 9.765625145519152e-05
+Epoch 214/250: time=11.59s, loss=3.2198, policy_loss=2.4672, value_loss=0.6931, policy_categorical_accuracy=0.3961, value_mse=0.1239
+Epoch 215 - LR: 9.765625145519152e-05
+Epoch 215/250: time=11.59s, loss=3.2245, policy_loss=2.4723, value_loss=0.6927, policy_categorical_accuracy=0.3940, value_mse=0.1211
+Epoch 216 - LR: 9.765625145519152e-05
+Epoch 216/250: time=11.53s, loss=3.2436, policy_loss=2.4911, value_loss=0.6930, policy_categorical_accuracy=0.3891, value_mse=0.1250
+Epoch 217 - LR: 9.765625145519152e-05
+Epoch 217/250: time=11.49s, loss=3.2179, policy_loss=2.4655, value_loss=0.6929, policy_categorical_accuracy=0.4014, value_mse=0.1199
+Epoch 218 - LR: 9.765625145519152e-05
+Epoch 218/250: time=11.52s, loss=3.1688, policy_loss=2.4164, value_loss=0.6929, policy_categorical_accuracy=0.4071, value_mse=0.1230
+Epoch 219 - LR: 9.765625145519152e-05
+Epoch 219/250: time=11.44s, loss=3.1927, policy_loss=2.4405, value_loss=0.6928, policy_categorical_accuracy=0.4009, value_mse=0.1216
+Epoch 220 - LR: 9.765625145519152e-05
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.4700, value_loss=0.6929
+Saving new best model at epoch 220 with val_loss=3.2224
+Epoch 220/250: time=18.83s, loss=3.2255, policy_loss=2.4731, value_loss=0.6929, policy_categorical_accuracy=0.3959, value_mse=0.1226
+Epoch 221 - LR: 9.765625145519152e-05
+Epoch 221/250: time=11.49s, loss=3.2154, policy_loss=2.4630, value_loss=0.6930, policy_categorical_accuracy=0.3972, value_mse=0.1220
+Epoch 222 - LR: 9.765625145519152e-05
+Epoch 222/250: time=11.51s, loss=3.2512, policy_loss=2.4988, value_loss=0.6930, policy_categorical_accuracy=0.3889, value_mse=0.1220
+Epoch 223 - LR: 9.765625145519152e-05
+Epoch 223/250: time=11.49s, loss=3.2562, policy_loss=2.5038, value_loss=0.6930, policy_categorical_accuracy=0.3895, value_mse=0.1218
+Epoch 224 - LR: 9.765625145519152e-05
+Epoch 224/250: time=11.44s, loss=3.2281, policy_loss=2.4759, value_loss=0.6927, policy_categorical_accuracy=0.3909, value_mse=0.1203
+Epoch 225 - LR: 9.765625145519152e-05
+Epoch 225/250: time=11.54s, loss=3.2341, policy_loss=2.4815, value_loss=0.6932, policy_categorical_accuracy=0.3877, value_mse=0.1190
+Epoch 226 - LR: 9.765625145519152e-05
+Epoch 226/250: time=11.55s, loss=3.2521, policy_loss=2.4998, value_loss=0.6929, policy_categorical_accuracy=0.3936, value_mse=0.1221
+Epoch 227 - LR: 9.765625145519152e-05
+Epoch 227/250: time=11.56s, loss=3.2223, policy_loss=2.4702, value_loss=0.6927, policy_categorical_accuracy=0.3950, value_mse=0.1228
+
+Epoch 229: ReduceLROnPlateau reducing learning rate to 4.882812572759576e-05.
+Epoch 228 - LR: 4.882812572759576e-05
+Epoch 228/250: time=11.50s, loss=3.2172, policy_loss=2.4650, value_loss=0.6927, policy_categorical_accuracy=0.3921, value_mse=0.1219
+Epoch 229 - LR: 4.882812572759576e-05
+Epoch 229/250: time=11.49s, loss=3.1872, policy_loss=2.4352, value_loss=0.6926, policy_categorical_accuracy=0.4077, value_mse=0.1207
+Epoch 230 - LR: 4.882812572759576e-05
+Epoch 230/250: time=11.62s, loss=3.2182, policy_loss=2.4660, value_loss=0.6928, policy_categorical_accuracy=0.3929, value_mse=0.1229
+Epoch 231 - LR: 4.882812572759576e-05
+Epoch 231/250: time=11.52s, loss=3.2173, policy_loss=2.4650, value_loss=0.6929, policy_categorical_accuracy=0.3975, value_mse=0.1205
+Epoch 232 - LR: 4.882812572759576e-05
+Epoch 232/250: time=11.51s, loss=3.2354, policy_loss=2.4834, value_loss=0.6926, policy_categorical_accuracy=0.3895, value_mse=0.1201
+Epoch 233 - LR: 4.882812572759576e-05
+Epoch 233/250: time=11.47s, loss=3.1998, policy_loss=2.4477, value_loss=0.6928, policy_categorical_accuracy=0.3948, value_mse=0.1234
+Epoch 234 - LR: 4.882812572759576e-05
+Epoch 234/250: time=11.51s, loss=3.2353, policy_loss=2.4829, value_loss=0.6930, policy_categorical_accuracy=0.4002, value_mse=0.1208
+Epoch 235 - LR: 4.882812572759576e-05
+Epoch 235/250: time=11.61s, loss=3.2110, policy_loss=2.4585, value_loss=0.6932, policy_categorical_accuracy=0.3946, value_mse=0.1213
+Epoch 236 - LR: 4.882812572759576e-05
+Epoch 236/250: time=11.56s, loss=3.2327, policy_loss=2.4804, value_loss=0.6929, policy_categorical_accuracy=0.3937, value_mse=0.1219
+Epoch 237 - LR: 4.882812572759576e-05
+Epoch 237/250: time=11.51s, loss=3.2075, policy_loss=2.4551, value_loss=0.6930, policy_categorical_accuracy=0.3932, value_mse=0.1224
+
+Epoch 239: ReduceLROnPlateau reducing learning rate to 2.441406286379788e-05.
+Epoch 238 - LR: 2.441406286379788e-05
+Epoch 238/250: time=11.39s, loss=3.1946, policy_loss=2.4424, value_loss=0.6929, policy_categorical_accuracy=0.4041, value_mse=0.1210
+Epoch 239 - LR: 2.441406286379788e-05
+Epoch 239/250: time=11.54s, loss=3.1817, policy_loss=2.4292, value_loss=0.6931, policy_categorical_accuracy=0.4004, value_mse=0.1216
+Epoch 240 - LR: 2.441406286379788e-05
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+Validation: policy_loss=2.4691, value_loss=0.6929
+Saving new best model at epoch 240 with val_loss=3.2214
+Epoch 240/250: time=18.74s, loss=3.1970, policy_loss=2.4445, value_loss=0.6932, policy_categorical_accuracy=0.4024, value_mse=0.1227
+Epoch 241 - LR: 2.441406286379788e-05
+Epoch 241/250: time=11.44s, loss=3.2436, policy_loss=2.4914, value_loss=0.6928, policy_categorical_accuracy=0.3919, value_mse=0.1208
+Epoch 242 - LR: 2.441406286379788e-05
+Epoch 242/250: time=11.44s, loss=3.2194, policy_loss=2.4669, value_loss=0.6932, policy_categorical_accuracy=0.3922, value_mse=0.1225
+Epoch 243 - LR: 2.441406286379788e-05
+Epoch 243/250: time=11.52s, loss=3.2468, policy_loss=2.4945, value_loss=0.6929, policy_categorical_accuracy=0.3852, value_mse=0.1202
+Epoch 244 - LR: 2.441406286379788e-05
+Epoch 244/250: time=11.33s, loss=3.2190, policy_loss=2.4666, value_loss=0.6931, policy_categorical_accuracy=0.3963, value_mse=0.1235
+Epoch 245 - LR: 2.441406286379788e-05
+Epoch 245/250: time=11.51s, loss=3.2507, policy_loss=2.4983, value_loss=0.6931, policy_categorical_accuracy=0.3837, value_mse=0.1217
+Epoch 246 - LR: 2.441406286379788e-05
+Epoch 246/250: time=11.43s, loss=3.2335, policy_loss=2.4810, value_loss=0.6931, policy_categorical_accuracy=0.3892, value_mse=0.1217
+Epoch 247 - LR: 2.441406286379788e-05
+Epoch 247/250: time=11.28s, loss=3.1881, policy_loss=2.4355, value_loss=0.6933, policy_categorical_accuracy=0.4013, value_mse=0.1221
+
+Epoch 249: ReduceLROnPlateau reducing learning rate to 1.220703143189894e-05.
+Epoch 248 - LR: 1.220703143189894e-05
+Epoch 248/250: time=11.44s, loss=3.2428, policy_loss=2.4903, value_loss=0.6932, policy_categorical_accuracy=0.3864, value_mse=0.1225
+Epoch 249 - LR: 1.220703143189894e-05
+Epoch 249/250: time=11.50s, loss=3.2144, policy_loss=2.4619, value_loss=0.6931, policy_categorical_accuracy=0.3992, value_mse=0.1219
+Epoch 250 - LR: 1.220703143189894e-05
+Epoch 250/250: time=11.53s, loss=3.2427, policy_loss=2.4903, value_loss=0.6931, policy_categorical_accuracy=0.3924, value_mse=0.1223
+
+📊 Validation Results for Model MobileNet - N is 10000 — Epoch 250:
+  - loss                          : 3.2214
+  - policy_loss                   : 2.4691
+  - value_loss                    : 0.6929
+  - policy_categorical_accuracy   : 0.3883
+  - value_mse                     : 0.1222
+  - Time: 2981.6792
+
+Process finished with exit code 0
+
+    reduce_lr = ReduceLROnPlateau(
+        monitor='policy_loss',
+        factor=0.5,
+        patience=10,
+        min_lr=1e-5,
+        verbose=1
+    )
+    reduce_lr.model = model

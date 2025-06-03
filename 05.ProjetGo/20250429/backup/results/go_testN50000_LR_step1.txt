@@ -1,0 +1,727 @@
+/Users/malikchettih/.pyenv/versions/3.9.21/bin/python /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_testMixNet.py
+Python version sys.version_info(major=3, minor=9, micro=21, releaselevel='final', serial=0)
+Tensorflow version 2.15.0
+-------------------- Test GoMobileNet N 50000 --------------------
+2025-05-03 23:55:41.219869: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M4 Pro
+2025-05-03 23:55:41.219887: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 48.00 GB
+2025-05-03 23:55:41.219893: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 18.00 GB
+2025-05-03 23:55:41.219916: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2025-05-03 23:55:41.219929: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_1 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d (Conv2D)             (None, 19, 19, 64)           1984      ['input_1[0][0]']
+
+ batch_normalization (Batch  (None, 19, 19, 64)           256       ['conv2d[0][0]']
+ Normalization)
+
+ activation (Activation)     (None, 19, 19, 64)           0         ['batch_normalization[0][0]']
+
+ conv2d_1 (Conv2D)           (None, 19, 19, 384)          24576     ['activation[0][0]']
+
+ batch_normalization_1 (Bat  (None, 19, 19, 384)          1536      ['conv2d_1[0][0]']
+ chNormalization)
+
+ activation_1 (Activation)   (None, 19, 19, 384)          0         ['batch_normalization_1[0][0]'
+                                                                    ]
+
+ depthwise_conv2d (Depthwis  (None, 19, 19, 384)          3456      ['activation_1[0][0]']
+ eConv2D)
+
+ depthwise_conv2d_1 (Depthw  (None, 19, 19, 384)          9600      ['activation_1[0][0]']
+ iseConv2D)
+
+ tf.__operators__.getitem (  (None, 19, 19, 32)           0         ['depthwise_conv2d[0][0]']
+ SlicingOpLambda)
+
+ tf.__operators__.getitem_1  (None, 19, 19, 32)           0         ['depthwise_conv2d_1[0][0]']
+  (SlicingOpLambda)
+
+ concatenate (Concatenate)   (None, 19, 19, 64)           0         ['tf.__operators__.getitem[0][
+                                                                    0]',
+                                                                     'tf.__operators__.getitem_1[0
+                                                                    ][0]']
+
+ batch_normalization_2 (Bat  (None, 19, 19, 64)           256       ['concatenate[0][0]']
+ chNormalization)
+
+ global_average_pooling2d (  (None, 64)                   0         ['batch_normalization_2[0][0]'
+ GlobalAveragePooling2D)                                            ]
+
+ reshape (Reshape)           (None, 1, 1, 64)             0         ['global_average_pooling2d[0][
+                                                                    0]']
+
+ dense (Dense)               (None, 1, 1, 4)              256       ['reshape[0][0]']
+
+ dense_1 (Dense)             (None, 1, 1, 64)             256       ['dense[0][0]']
+
+ multiply (Multiply)         (None, 19, 19, 64)           0         ['batch_normalization_2[0][0]'
+                                                                    , 'dense_1[0][0]']
+
+ conv2d_2 (Conv2D)           (None, 19, 19, 64)           4096      ['multiply[0][0]']
+
+ batch_normalization_3 (Bat  (None, 19, 19, 64)           256       ['conv2d_2[0][0]']
+ chNormalization)
+
+ activation_2 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_3[0][0]'
+                                                                    ]
+
+ add (Add)                   (None, 19, 19, 64)           0         ['activation_2[0][0]',
+                                                                     'activation[0][0]']
+
+ conv2d_3 (Conv2D)           (None, 19, 19, 384)          24576     ['add[0][0]']
+
+ batch_normalization_4 (Bat  (None, 19, 19, 384)          1536      ['conv2d_3[0][0]']
+ chNormalization)
+
+ activation_3 (Activation)   (None, 19, 19, 384)          0         ['batch_normalization_4[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_2 (Depthw  (None, 19, 19, 384)          3456      ['activation_3[0][0]']
+ iseConv2D)
+
+ depthwise_conv2d_3 (Depthw  (None, 19, 19, 384)          9600      ['activation_3[0][0]']
+ iseConv2D)
+
+ tf.__operators__.getitem_2  (None, 19, 19, 32)           0         ['depthwise_conv2d_2[0][0]']
+  (SlicingOpLambda)
+
+ tf.__operators__.getitem_3  (None, 19, 19, 32)           0         ['depthwise_conv2d_3[0][0]']
+  (SlicingOpLambda)
+
+ concatenate_1 (Concatenate  (None, 19, 19, 64)           0         ['tf.__operators__.getitem_2[0
+ )                                                                  ][0]',
+                                                                     'tf.__operators__.getitem_3[0
+                                                                    ][0]']
+
+ batch_normalization_5 (Bat  (None, 19, 19, 64)           256       ['concatenate_1[0][0]']
+ chNormalization)
+
+ global_average_pooling2d_1  (None, 64)                   0         ['batch_normalization_5[0][0]'
+  (GlobalAveragePooling2D)                                          ]
+
+ reshape_1 (Reshape)         (None, 1, 1, 64)             0         ['global_average_pooling2d_1[0
+                                                                    ][0]']
+
+ dense_2 (Dense)             (None, 1, 1, 4)              256       ['reshape_1[0][0]']
+
+ dense_3 (Dense)             (None, 1, 1, 64)             256       ['dense_2[0][0]']
+
+ multiply_1 (Multiply)       (None, 19, 19, 64)           0         ['batch_normalization_5[0][0]'
+                                                                    , 'dense_3[0][0]']
+
+ conv2d_4 (Conv2D)           (None, 19, 19, 64)           4096      ['multiply_1[0][0]']
+
+ batch_normalization_6 (Bat  (None, 19, 19, 64)           256       ['conv2d_4[0][0]']
+ chNormalization)
+
+ activation_4 (Activation)   (None, 19, 19, 64)           0         ['batch_normalization_6[0][0]'
+                                                                    ]
+
+ add_1 (Add)                 (None, 19, 19, 64)           0         ['activation_4[0][0]',
+                                                                     'add[0][0]']
+
+ global_average_pooling2d_2  (None, 64)                   0         ['add_1[0][0]']
+  (GlobalAveragePooling2D)
+
+ conv2d_5 (Conv2D)           (None, 19, 19, 1)            64        ['add_1[0][0]']
+
+ dense_4 (Dense)             (None, 50)                   3250      ['global_average_pooling2d_2[0
+                                                                    ][0]']
+
+ batch_normalization_7 (Bat  (None, 19, 19, 1)            4         ['conv2d_5[0][0]']
+ chNormalization)
+
+ activation_5 (Activation)   (None, 50)                   0         ['dense_4[0][0]']
+
+ flatten (Flatten)           (None, 361)                  0         ['batch_normalization_7[0][0]'
+                                                                    ]
+
+ dropout (Dropout)           (None, 50)                   0         ['activation_5[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['dropout[0][0]']
+
+==================================================================================================
+Total params: 94185 (367.91 KB)
+Trainable params: 92007 (359.40 KB)
+Non-trainable params: 2178 (8.51 KB)
+__________________________________________________________________________________________________
+getValidation
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+nbPositionsSGF = 102208897
+nbPositionsSGF = 102208897
+loading validation.data
+2025-05-03 23:56:06.531467: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+Epoch 1 - LR: 0.05000000074505806
+Epoch 1/250: time=85.54s, loss=4.0764, policy_loss=3.1665, value_loss=0.7070, policy_categorical_accuracy=0.2851, value_mse=0.1274
+Epoch 2 - LR: 0.05000000074505806
+Epoch 2/250: time=83.86s, loss=3.7698, policy_loss=2.8793, value_loss=0.7069, policy_categorical_accuracy=0.3255, value_mse=0.1277
+Epoch 3 - LR: 0.05000000074505806
+Epoch 3/250: time=84.64s, loss=3.6845, policy_loss=2.8146, value_loss=0.7051, policy_categorical_accuracy=0.3359, value_mse=0.1273
+Epoch 4 - LR: 0.05000000074505806
+Epoch 4/250: time=85.04s, loss=3.6186, policy_loss=2.7648, value_loss=0.7036, policy_categorical_accuracy=0.3436, value_mse=0.1281
+Epoch 5 - LR: 0.05000000074505806
+Epoch 5/250: time=85.17s, loss=3.6120, policy_loss=2.7714, value_loss=0.7016, policy_categorical_accuracy=0.3414, value_mse=0.1259
+Epoch 6 - LR: 0.05000000074505806
+Epoch 6/250: time=85.21s, loss=3.5764, policy_loss=2.7445, value_loss=0.7004, policy_categorical_accuracy=0.3456, value_mse=0.1253
+Epoch 7 - LR: 0.05000000074505806
+Epoch 7/250: time=84.93s, loss=3.5655, policy_loss=2.7400, value_loss=0.6995, policy_categorical_accuracy=0.3454, value_mse=0.1255
+Epoch 8 - LR: 0.05000000074505806
+Epoch 8/250: time=84.09s, loss=3.5288, policy_loss=2.7083, value_loss=0.6983, policy_categorical_accuracy=0.3506, value_mse=0.1244
+Epoch 9 - LR: 0.05000000074505806
+Epoch 9/250: time=83.75s, loss=3.5249, policy_loss=2.7080, value_loss=0.6973, policy_categorical_accuracy=0.3504, value_mse=0.1237
+Epoch 10 - LR: 0.05000000074505806
+Epoch 10/250: time=85.36s, loss=3.5194, policy_loss=2.7046, value_loss=0.6967, policy_categorical_accuracy=0.3511, value_mse=0.1236
+Epoch 11 - LR: 0.05000000074505806
+Epoch 11/250: time=84.75s, loss=3.4920, policy_loss=2.6786, value_loss=0.6960, policy_categorical_accuracy=0.3561, value_mse=0.1235
+Epoch 12 - LR: 0.05000000074505806
+Epoch 12/250: time=84.70s, loss=3.4988, policy_loss=2.6862, value_loss=0.6958, policy_categorical_accuracy=0.3563, value_mse=0.1234
+Epoch 13 - LR: 0.05000000074505806
+Epoch 13/250: time=85.02s, loss=3.4981, policy_loss=2.6855, value_loss=0.6953, policy_categorical_accuracy=0.3535, value_mse=0.1235
+Epoch 14 - LR: 0.05000000074505806
+Epoch 14/250: time=85.02s, loss=3.4996, policy_loss=2.6871, value_loss=0.6948, policy_categorical_accuracy=0.3528, value_mse=0.1224
+Epoch 15 - LR: 0.05000000074505806
+Epoch 15/250: time=85.60s, loss=3.4750, policy_loss=2.6625, value_loss=0.6944, policy_categorical_accuracy=0.3569, value_mse=0.1232
+Epoch 16 - LR: 0.05000000074505806
+Epoch 16/250: time=85.41s, loss=3.4810, policy_loss=2.6678, value_loss=0.6944, policy_categorical_accuracy=0.3578, value_mse=0.1228
+Epoch 17 - LR: 0.05000000074505806
+Epoch 17/250: time=85.85s, loss=3.4693, policy_loss=2.6559, value_loss=0.6941, policy_categorical_accuracy=0.3573, value_mse=0.1224
+Epoch 18 - LR: 0.05000000074505806
+Epoch 18/250: time=85.49s, loss=3.4829, policy_loss=2.6695, value_loss=0.6942, policy_categorical_accuracy=0.3545, value_mse=0.1226
+Epoch 19 - LR: 0.05000000074505806
+Epoch 19/250: time=85.04s, loss=3.4635, policy_loss=2.6499, value_loss=0.6938, policy_categorical_accuracy=0.3584, value_mse=0.1222
+Epoch 20 - LR: 0.05000000074505806
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.532320022583008, policy_loss=2.7164, value_loss=0.6955
+Epoch 20/250: time=137.30s, loss=3.4660, policy_loss=2.6521, value_loss=0.6939, policy_categorical_accuracy=0.3551, value_mse=0.1224
+Epoch 21 - LR: 0.05000000074505806
+Epoch 21/250: time=84.12s, loss=3.4689, policy_loss=2.6543, value_loss=0.6936, policy_categorical_accuracy=0.3573, value_mse=0.1217
+Epoch 22 - LR: 0.05000000074505806
+Epoch 22/250: time=85.42s, loss=3.4562, policy_loss=2.6406, value_loss=0.6938, policy_categorical_accuracy=0.3616, value_mse=0.1218
+Epoch 23 - LR: 0.05000000074505806
+Epoch 23/250: time=85.53s, loss=3.4568, policy_loss=2.6414, value_loss=0.6935, policy_categorical_accuracy=0.3596, value_mse=0.1219
+Epoch 24 - LR: 0.05000000074505806
+Epoch 24/250: time=85.35s, loss=3.4691, policy_loss=2.6529, value_loss=0.6936, policy_categorical_accuracy=0.3572, value_mse=0.1219
+Epoch 25 - LR: 0.05000000074505806
+Epoch 25/250: time=86.53s, loss=3.4535, policy_loss=2.6368, value_loss=0.6936, policy_categorical_accuracy=0.3587, value_mse=0.1211
+Epoch 26 - LR: 0.05000000074505806
+Epoch 26/250: time=85.23s, loss=3.4547, policy_loss=2.6376, value_loss=0.6936, policy_categorical_accuracy=0.3632, value_mse=0.1219
+Epoch 27 - LR: 0.05000000074505806
+Epoch 27/250: time=85.25s, loss=3.4543, policy_loss=2.6368, value_loss=0.6935, policy_categorical_accuracy=0.3583, value_mse=0.1221
+Epoch 28 - LR: 0.05000000074505806
+Epoch 28/250: time=85.16s, loss=3.4331, policy_loss=2.6155, value_loss=0.6933, policy_categorical_accuracy=0.3648, value_mse=0.1212
+Epoch 29 - LR: 0.05000000074505806
+Epoch 29/250: time=84.76s, loss=3.4632, policy_loss=2.6458, value_loss=0.6935, policy_categorical_accuracy=0.3583, value_mse=0.1224
+Epoch 30 - LR: 0.05000000074505806
+Epoch 30/250: time=85.80s, loss=3.4412, policy_loss=2.6237, value_loss=0.6932, policy_categorical_accuracy=0.3622, value_mse=0.1224
+Epoch 31 - LR: 0.05000000074505806
+Epoch 31/250: time=85.29s, loss=3.4597, policy_loss=2.6418, value_loss=0.6933, policy_categorical_accuracy=0.3626, value_mse=0.1217
+Epoch 32 - LR: 0.05000000074505806
+Epoch 32/250: time=85.61s, loss=3.4323, policy_loss=2.6138, value_loss=0.6935, policy_categorical_accuracy=0.3608, value_mse=0.1222
+Epoch 33 - LR: 0.05000000074505806
+Epoch 33/250: time=85.42s, loss=3.4512, policy_loss=2.6325, value_loss=0.6934, policy_categorical_accuracy=0.3566, value_mse=0.1221
+Epoch 34 - LR: 0.05000000074505806
+Epoch 34/250: time=85.32s, loss=3.4284, policy_loss=2.6092, value_loss=0.6936, policy_categorical_accuracy=0.3646, value_mse=0.1227
+Epoch 35 - LR: 0.05000000074505806
+Epoch 35/250: time=85.98s, loss=3.4327, policy_loss=2.6136, value_loss=0.6936, policy_categorical_accuracy=0.3654, value_mse=0.1211
+Epoch 36 - LR: 0.05000000074505806
+Epoch 36/250: time=85.87s, loss=3.4430, policy_loss=2.6238, value_loss=0.6935, policy_categorical_accuracy=0.3631, value_mse=0.1221
+Epoch 37 - LR: 0.05000000074505806
+Epoch 37/250: time=85.57s, loss=3.4310, policy_loss=2.6120, value_loss=0.6934, policy_categorical_accuracy=0.3631, value_mse=0.1213
+Epoch 38 - LR: 0.05000000074505806
+Epoch 38/250: time=85.52s, loss=3.4379, policy_loss=2.6184, value_loss=0.6935, policy_categorical_accuracy=0.3620, value_mse=0.1218
+Epoch 39 - LR: 0.05000000074505806
+Epoch 39/250: time=84.97s, loss=3.4395, policy_loss=2.6200, value_loss=0.6934, policy_categorical_accuracy=0.3616, value_mse=0.1210
+Epoch 40 - LR: 0.05000000074505806
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.503133773803711, policy_loss=2.6847, value_loss=0.6929
+Epoch 40/250: time=138.90s, loss=3.4337, policy_loss=2.6148, value_loss=0.6933, policy_categorical_accuracy=0.3627, value_mse=0.1222
+Epoch 41 - LR: 0.05000000074505806
+Epoch 41/250: time=84.94s, loss=3.4335, policy_loss=2.6144, value_loss=0.6934, policy_categorical_accuracy=0.3621, value_mse=0.1222
+Epoch 42 - LR: 0.05000000074505806
+Epoch 42/250: time=85.01s, loss=3.4428, policy_loss=2.6236, value_loss=0.6935, policy_categorical_accuracy=0.3618, value_mse=0.1222
+Epoch 43 - LR: 0.05000000074505806
+Epoch 43/250: time=85.01s, loss=3.4186, policy_loss=2.5995, value_loss=0.6933, policy_categorical_accuracy=0.3660, value_mse=0.1223
+Epoch 44 - LR: 0.05000000074505806
+Epoch 44/250: time=85.77s, loss=3.4416, policy_loss=2.6220, value_loss=0.6934, policy_categorical_accuracy=0.3611, value_mse=0.1220
+Epoch 45 - LR: 0.05000000074505806
+Epoch 45/250: time=85.46s, loss=3.4371, policy_loss=2.6170, value_loss=0.6933, policy_categorical_accuracy=0.3611, value_mse=0.1216
+Epoch 46 - LR: 0.05000000074505806
+Epoch 46/250: time=85.57s, loss=3.4265, policy_loss=2.6064, value_loss=0.6933, policy_categorical_accuracy=0.3632, value_mse=0.1218
+Epoch 47 - LR: 0.05000000074505806
+Epoch 47/250: time=85.27s, loss=3.4113, policy_loss=2.5910, value_loss=0.6934, policy_categorical_accuracy=0.3675, value_mse=0.1218
+Epoch 48 - LR: 0.05000000074505806
+Epoch 48/250: time=85.06s, loss=3.4358, policy_loss=2.6156, value_loss=0.6935, policy_categorical_accuracy=0.3611, value_mse=0.1222
+Epoch 49 - LR: 0.05000000074505806
+Epoch 49/250: time=85.69s, loss=3.4304, policy_loss=2.6099, value_loss=0.6936, policy_categorical_accuracy=0.3617, value_mse=0.1222
+Epoch 50 - LR: 0.05000000074505806
+Epoch 50/250: time=85.57s, loss=3.4347, policy_loss=2.6149, value_loss=0.6933, policy_categorical_accuracy=0.3658, value_mse=0.1211
+Epoch 51 - LR: 0.05000000074505806
+Epoch 51/250: time=85.38s, loss=3.4278, policy_loss=2.6074, value_loss=0.6934, policy_categorical_accuracy=0.3636, value_mse=0.1221
+Epoch 52 - LR: 0.05000000074505806
+Epoch 52/250: time=85.18s, loss=3.4187, policy_loss=2.5983, value_loss=0.6934, policy_categorical_accuracy=0.3633, value_mse=0.1224
+Epoch 53 - LR: 0.05000000074505806
+Epoch 53/250: time=85.72s, loss=3.4130, policy_loss=2.5922, value_loss=0.6936, policy_categorical_accuracy=0.3663, value_mse=0.1223
+Epoch 54 - LR: 0.05000000074505806
+Epoch 54/250: time=85.36s, loss=3.4271, policy_loss=2.6065, value_loss=0.6932, policy_categorical_accuracy=0.3647, value_mse=0.1213
+Epoch 55 - LR: 0.05000000074505806
+Epoch 55/250: time=85.90s, loss=3.4355, policy_loss=2.6149, value_loss=0.6935, policy_categorical_accuracy=0.3642, value_mse=0.1225
+Epoch 56 - LR: 0.05000000074505806
+Epoch 56/250: time=85.43s, loss=3.4161, policy_loss=2.5960, value_loss=0.6934, policy_categorical_accuracy=0.3647, value_mse=0.1222
+Epoch 57 - LR: 0.05000000074505806
+Epoch 57/250: time=85.48s, loss=3.4309, policy_loss=2.6114, value_loss=0.6933, policy_categorical_accuracy=0.3634, value_mse=0.1221
+Epoch 58 - LR: 0.05000000074505806
+Epoch 58/250: time=85.47s, loss=3.4245, policy_loss=2.6044, value_loss=0.6935, policy_categorical_accuracy=0.3663, value_mse=0.1210
+Epoch 59 - LR: 0.05000000074505806
+Epoch 59/250: time=85.33s, loss=3.4222, policy_loss=2.6021, value_loss=0.6933, policy_categorical_accuracy=0.3671, value_mse=0.1218
+Epoch 60 - LR: 0.05000000074505806
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.4158825874328613, policy_loss=2.5952, value_loss=0.6928
+Epoch 60/250: time=138.04s, loss=3.4179, policy_loss=2.5970, value_loss=0.6935, policy_categorical_accuracy=0.3640, value_mse=0.1221
+Epoch 61 - LR: 0.05000000074505806
+Epoch 61/250: time=85.09s, loss=3.4214, policy_loss=2.6002, value_loss=0.6935, policy_categorical_accuracy=0.3653, value_mse=0.1221
+Epoch 62 - LR: 0.05000000074505806
+Epoch 62/250: time=85.45s, loss=3.4213, policy_loss=2.6001, value_loss=0.6935, policy_categorical_accuracy=0.3661, value_mse=0.1222
+Epoch 63 - LR: 0.05000000074505806
+Epoch 63/250: time=85.44s, loss=3.4215, policy_loss=2.6010, value_loss=0.6934, policy_categorical_accuracy=0.3650, value_mse=0.1225
+Epoch 64 - LR: 0.05000000074505806
+Epoch 64/250: time=85.29s, loss=3.4249, policy_loss=2.6046, value_loss=0.6936, policy_categorical_accuracy=0.3635, value_mse=0.1226
+Epoch 65 - LR: 0.05000000074505806
+Epoch 65/250: time=86.12s, loss=3.4198, policy_loss=2.5992, value_loss=0.6934, policy_categorical_accuracy=0.3644, value_mse=0.1220
+Epoch 66 - LR: 0.05000000074505806
+Epoch 66/250: time=85.61s, loss=3.4086, policy_loss=2.5883, value_loss=0.6934, policy_categorical_accuracy=0.3706, value_mse=0.1210
+Epoch 67 - LR: 0.05000000074505806
+Epoch 67/250: time=85.04s, loss=3.4247, policy_loss=2.6042, value_loss=0.6932, policy_categorical_accuracy=0.3627, value_mse=0.1214
+Epoch 68 - LR: 0.05000000074505806
+Epoch 68/250: time=85.16s, loss=3.4315, policy_loss=2.6116, value_loss=0.6934, policy_categorical_accuracy=0.3621, value_mse=0.1211
+Epoch 69 - LR: 0.05000000074505806
+Epoch 69/250: time=85.51s, loss=3.4111, policy_loss=2.5914, value_loss=0.6934, policy_categorical_accuracy=0.3660, value_mse=0.1215
+Epoch 70 - LR: 0.05000000074505806
+Epoch 70/250: time=85.84s, loss=3.4137, policy_loss=2.5937, value_loss=0.6935, policy_categorical_accuracy=0.3670, value_mse=0.1217
+Epoch 71 - LR: 0.05000000074505806
+Epoch 71/250: time=85.56s, loss=3.4275, policy_loss=2.6065, value_loss=0.6935, policy_categorical_accuracy=0.3638, value_mse=0.1218
+Epoch 72 - LR: 0.05000000074505806
+Epoch 72/250: time=84.89s, loss=3.4090, policy_loss=2.5879, value_loss=0.6933, policy_categorical_accuracy=0.3663, value_mse=0.1223
+Epoch 73 - LR: 0.05000000074505806
+Epoch 73/250: time=85.23s, loss=3.4319, policy_loss=2.6107, value_loss=0.6936, policy_categorical_accuracy=0.3617, value_mse=0.1219
+Epoch 74 - LR: 0.05000000074505806
+Epoch 74/250: time=85.01s, loss=3.3906, policy_loss=2.5700, value_loss=0.6934, policy_categorical_accuracy=0.3711, value_mse=0.1218
+Epoch 75 - LR: 0.05000000074505806
+Epoch 75/250: time=85.67s, loss=3.4198, policy_loss=2.5991, value_loss=0.6936, policy_categorical_accuracy=0.3660, value_mse=0.1226
+Epoch 76 - LR: 0.05000000074505806
+Epoch 76/250: time=84.85s, loss=3.4240, policy_loss=2.6031, value_loss=0.6935, policy_categorical_accuracy=0.3643, value_mse=0.1221
+Epoch 77 - LR: 0.05000000074505806
+Epoch 77/250: time=85.76s, loss=3.4244, policy_loss=2.6030, value_loss=0.6935, policy_categorical_accuracy=0.3602, value_mse=0.1222
+Epoch 78 - LR: 0.05000000074505806
+Epoch 78/250: time=85.13s, loss=3.4176, policy_loss=2.5964, value_loss=0.6935, policy_categorical_accuracy=0.3643, value_mse=0.1208
+Epoch 79 - LR: 0.05000000074505806
+Epoch 79/250: time=85.30s, loss=3.4119, policy_loss=2.5905, value_loss=0.6936, policy_categorical_accuracy=0.3674, value_mse=0.1223
+Epoch 80 - LR: 0.05000000074505806
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.43855619430542, policy_loss=2.6172, value_loss=0.6930
+Epoch 80/250: time=138.45s, loss=3.4053, policy_loss=2.5837, value_loss=0.6934, policy_categorical_accuracy=0.3687, value_mse=0.1219
+Epoch 81 - LR: 0.05000000074505806
+Epoch 81/250: time=85.43s, loss=3.4025, policy_loss=2.5809, value_loss=0.6933, policy_categorical_accuracy=0.3698, value_mse=0.1217
+Epoch 82 - LR: 0.05000000074505806
+Epoch 82/250: time=85.44s, loss=3.4325, policy_loss=2.6111, value_loss=0.6932, policy_categorical_accuracy=0.3623, value_mse=0.1222
+Epoch 83 - LR: 0.05000000074505806
+Epoch 83/250: time=85.14s, loss=3.4077, policy_loss=2.5859, value_loss=0.6934, policy_categorical_accuracy=0.3683, value_mse=0.1215
+Epoch 84 - LR: 0.05000000074505806
+Epoch 84/250: time=85.58s, loss=3.4103, policy_loss=2.5888, value_loss=0.6934, policy_categorical_accuracy=0.3672, value_mse=0.1219
+Epoch 85 - LR: 0.05000000074505806
+Epoch 85/250: time=85.40s, loss=3.4123, policy_loss=2.5912, value_loss=0.6933, policy_categorical_accuracy=0.3677, value_mse=0.1216
+Epoch 86 - LR: 0.05000000074505806
+Epoch 86/250: time=85.04s, loss=3.4026, policy_loss=2.5813, value_loss=0.6935, policy_categorical_accuracy=0.3681, value_mse=0.1227
+Epoch 87 - LR: 0.05000000074505806
+Epoch 87/250: time=85.10s, loss=3.4125, policy_loss=2.5914, value_loss=0.6935, policy_categorical_accuracy=0.3657, value_mse=0.1215
+Epoch 88 - LR: 0.05000000074505806
+Epoch 88/250: time=85.30s, loss=3.4249, policy_loss=2.6036, value_loss=0.6935, policy_categorical_accuracy=0.3621, value_mse=0.1220
+Epoch 89 - LR: 0.05000000074505806
+Epoch 89/250: time=84.77s, loss=3.4265, policy_loss=2.6049, value_loss=0.6934, policy_categorical_accuracy=0.3649, value_mse=0.1221
+Epoch 90 - LR: 0.05000000074505806
+Epoch 90/250: time=85.83s, loss=3.4104, policy_loss=2.5893, value_loss=0.6933, policy_categorical_accuracy=0.3698, value_mse=0.1230
+Epoch 91 - LR: 0.05000000074505806
+Epoch 91/250: time=85.31s, loss=3.4016, policy_loss=2.5805, value_loss=0.6934, policy_categorical_accuracy=0.3669, value_mse=0.1221
+Epoch 92 - LR: 0.05000000074505806
+Epoch 92/250: time=85.50s, loss=3.4030, policy_loss=2.5817, value_loss=0.6933, policy_categorical_accuracy=0.3692, value_mse=0.1229
+Epoch 93 - LR: 0.05000000074505806
+Epoch 93/250: time=85.07s, loss=3.4260, policy_loss=2.6047, value_loss=0.6933, policy_categorical_accuracy=0.3598, value_mse=0.1217
+Epoch 94 - LR: 0.05000000074505806
+Epoch 94/250: time=85.49s, loss=3.4203, policy_loss=2.5987, value_loss=0.6934, policy_categorical_accuracy=0.3620, value_mse=0.1214
+Epoch 95 - LR: 0.05000000074505806
+Epoch 95/250: time=85.98s, loss=3.4027, policy_loss=2.5808, value_loss=0.6934, policy_categorical_accuracy=0.3668, value_mse=0.1227
+Epoch 96 - LR: 0.05000000074505806
+Epoch 96/250: time=86.11s, loss=3.4129, policy_loss=2.5908, value_loss=0.6934, policy_categorical_accuracy=0.3638, value_mse=0.1223
+Epoch 97 - LR: 0.05000000074505806
+Epoch 97/250: time=85.57s, loss=3.4009, policy_loss=2.5793, value_loss=0.6933, policy_categorical_accuracy=0.3668, value_mse=0.1221
+Epoch 98 - LR: 0.05000000074505806
+Epoch 98/250: time=85.64s, loss=3.4035, policy_loss=2.5819, value_loss=0.6935, policy_categorical_accuracy=0.3673, value_mse=0.1219
+Epoch 99 - LR: 0.05000000074505806
+Epoch 99/250: time=85.24s, loss=3.4111, policy_loss=2.5890, value_loss=0.6934, policy_categorical_accuracy=0.3673, value_mse=0.1225
+Epoch 100 - LR: 0.004999999888241291
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.4547841548919678, policy_loss=2.6343, value_loss=0.6928
+Epoch 100/250: time=139.48s, loss=3.4108, policy_loss=2.5893, value_loss=0.6935, policy_categorical_accuracy=0.3678, value_mse=0.1224
+Epoch 101 - LR: 0.004999999888241291
+Epoch 101/250: time=85.17s, loss=3.3094, policy_loss=2.4903, value_loss=0.6931, policy_categorical_accuracy=0.3819, value_mse=0.1217
+Epoch 102 - LR: 0.004999999888241291
+Epoch 102/250: time=86.01s, loss=3.2857, policy_loss=2.4703, value_loss=0.6929, policy_categorical_accuracy=0.3846, value_mse=0.1220
+Epoch 103 - LR: 0.004999999888241291
+Epoch 103/250: time=84.71s, loss=3.2863, policy_loss=2.4740, value_loss=0.6930, policy_categorical_accuracy=0.3840, value_mse=0.1213
+Epoch 104 - LR: 0.004999999888241291
+Epoch 104/250: time=85.11s, loss=3.2680, policy_loss=2.4589, value_loss=0.6930, policy_categorical_accuracy=0.3862, value_mse=0.1222
+Epoch 105 - LR: 0.004999999888241291
+Epoch 105/250: time=85.82s, loss=3.2707, policy_loss=2.4644, value_loss=0.6931, policy_categorical_accuracy=0.3861, value_mse=0.1222
+Epoch 106 - LR: 0.004999999888241291
+Epoch 106/250: time=85.48s, loss=3.2484, policy_loss=2.4452, value_loss=0.6930, policy_categorical_accuracy=0.3891, value_mse=0.1218
+Epoch 107 - LR: 0.004999999888241291
+Epoch 107/250: time=85.35s, loss=3.2439, policy_loss=2.4433, value_loss=0.6931, policy_categorical_accuracy=0.3890, value_mse=0.1217
+Epoch 108 - LR: 0.004999999888241291
+Epoch 108/250: time=84.91s, loss=3.2477, policy_loss=2.4498, value_loss=0.6931, policy_categorical_accuracy=0.3839, value_mse=0.1223
+Epoch 109 - LR: 0.004999999888241291
+Epoch 109/250: time=85.45s, loss=3.2374, policy_loss=2.4421, value_loss=0.6929, policy_categorical_accuracy=0.3883, value_mse=0.1217
+Epoch 110 - LR: 0.004999999888241291
+Epoch 110/250: time=85.12s, loss=3.2334, policy_loss=2.4404, value_loss=0.6930, policy_categorical_accuracy=0.3868, value_mse=0.1215
+Epoch 111 - LR: 0.004999999888241291
+Epoch 111/250: time=84.65s, loss=3.2382, policy_loss=2.4476, value_loss=0.6929, policy_categorical_accuracy=0.3870, value_mse=0.1223
+Epoch 112 - LR: 0.004999999888241291
+Epoch 112/250: time=85.17s, loss=3.2395, policy_loss=2.4512, value_loss=0.6929, policy_categorical_accuracy=0.3857, value_mse=0.1223
+Epoch 113 - LR: 0.004999999888241291
+Epoch 113/250: time=85.63s, loss=3.2335, policy_loss=2.4471, value_loss=0.6931, policy_categorical_accuracy=0.3873, value_mse=0.1220
+Epoch 114 - LR: 0.004999999888241291
+Epoch 114/250: time=85.59s, loss=3.2212, policy_loss=2.4368, value_loss=0.6930, policy_categorical_accuracy=0.3901, value_mse=0.1214
+Epoch 115 - LR: 0.004999999888241291
+Epoch 115/250: time=86.10s, loss=3.2213, policy_loss=2.4389, value_loss=0.6931, policy_categorical_accuracy=0.3885, value_mse=0.1217
+Epoch 116 - LR: 0.004999999888241291
+Epoch 116/250: time=85.95s, loss=3.2099, policy_loss=2.4293, value_loss=0.6930, policy_categorical_accuracy=0.3918, value_mse=0.1216
+Epoch 117 - LR: 0.004999999888241291
+Epoch 117/250: time=85.73s, loss=3.2154, policy_loss=2.4367, value_loss=0.6930, policy_categorical_accuracy=0.3899, value_mse=0.1211
+Epoch 118 - LR: 0.004999999888241291
+Epoch 118/250: time=85.44s, loss=3.2150, policy_loss=2.4379, value_loss=0.6930, policy_categorical_accuracy=0.3898, value_mse=0.1219
+Epoch 119 - LR: 0.004999999888241291
+Epoch 119/250: time=85.33s, loss=3.2155, policy_loss=2.4400, value_loss=0.6929, policy_categorical_accuracy=0.3904, value_mse=0.1220
+Epoch 120 - LR: 0.004999999888241291
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.213594913482666, policy_loss=2.4404, value_loss=0.6928
+Epoch 120/250: time=137.53s, loss=3.2007, policy_loss=2.4267, value_loss=0.6930, policy_categorical_accuracy=0.3906, value_mse=0.1215
+Epoch 121 - LR: 0.004999999888241291
+Epoch 121/250: time=85.21s, loss=3.2105, policy_loss=2.4379, value_loss=0.6930, policy_categorical_accuracy=0.3889, value_mse=0.1213
+Epoch 122 - LR: 0.004999999888241291
+Epoch 122/250: time=85.41s, loss=3.1936, policy_loss=2.4225, value_loss=0.6929, policy_categorical_accuracy=0.3912, value_mse=0.1211
+Epoch 123 - LR: 0.004999999888241291
+Epoch 123/250: time=84.84s, loss=3.2043, policy_loss=2.4343, value_loss=0.6930, policy_categorical_accuracy=0.3901, value_mse=0.1217
+Epoch 124 - LR: 0.004999999888241291
+Epoch 124/250: time=85.57s, loss=3.1983, policy_loss=2.4296, value_loss=0.6930, policy_categorical_accuracy=0.3876, value_mse=0.1224
+Epoch 125 - LR: 0.004999999888241291
+Epoch 125/250: time=85.68s, loss=3.2017, policy_loss=2.4341, value_loss=0.6930, policy_categorical_accuracy=0.3908, value_mse=0.1216
+Epoch 126 - LR: 0.004999999888241291
+Epoch 126/250: time=85.48s, loss=3.2112, policy_loss=2.4447, value_loss=0.6931, policy_categorical_accuracy=0.3866, value_mse=0.1216
+Epoch 127 - LR: 0.004999999888241291
+Epoch 127/250: time=85.73s, loss=3.2097, policy_loss=2.4443, value_loss=0.6930, policy_categorical_accuracy=0.3873, value_mse=0.1217
+Epoch 128 - LR: 0.004999999888241291
+Epoch 128/250: time=84.81s, loss=3.2083, policy_loss=2.4439, value_loss=0.6930, policy_categorical_accuracy=0.3873, value_mse=0.1217
+Epoch 129 - LR: 0.004999999888241291
+Epoch 129/250: time=85.66s, loss=3.1900, policy_loss=2.4267, value_loss=0.6929, policy_categorical_accuracy=0.3901, value_mse=0.1213
+Epoch 130 - LR: 0.004999999888241291
+Epoch 130/250: time=85.52s, loss=3.2093, policy_loss=2.4468, value_loss=0.6929, policy_categorical_accuracy=0.3885, value_mse=0.1218
+Epoch 131 - LR: 0.004999999888241291
+Epoch 131/250: time=85.98s, loss=3.2045, policy_loss=2.4428, value_loss=0.6931, policy_categorical_accuracy=0.3890, value_mse=0.1221
+Epoch 132 - LR: 0.004999999888241291
+Epoch 132/250: time=85.54s, loss=3.1834, policy_loss=2.4225, value_loss=0.6931, policy_categorical_accuracy=0.3910, value_mse=0.1224
+Epoch 133 - LR: 0.004999999888241291
+Epoch 133/250: time=85.35s, loss=3.1945, policy_loss=2.4345, value_loss=0.6930, policy_categorical_accuracy=0.3906, value_mse=0.1212
+Epoch 134 - LR: 0.004999999888241291
+Epoch 134/250: time=84.80s, loss=3.1935, policy_loss=2.4342, value_loss=0.6930, policy_categorical_accuracy=0.3917, value_mse=0.1214
+Epoch 135 - LR: 0.004999999888241291
+Epoch 135/250: time=85.55s, loss=3.1864, policy_loss=2.4278, value_loss=0.6929, policy_categorical_accuracy=0.3903, value_mse=0.1219
+Epoch 136 - LR: 0.004999999888241291
+Epoch 136/250: time=85.24s, loss=3.2049, policy_loss=2.4469, value_loss=0.6930, policy_categorical_accuracy=0.3851, value_mse=0.1224
+Epoch 137 - LR: 0.004999999888241291
+Epoch 137/250: time=85.49s, loss=3.2092, policy_loss=2.4519, value_loss=0.6930, policy_categorical_accuracy=0.3860, value_mse=0.1212
+Epoch 138 - LR: 0.004999999888241291
+Epoch 138/250: time=85.35s, loss=3.1894, policy_loss=2.4328, value_loss=0.6929, policy_categorical_accuracy=0.3876, value_mse=0.1216
+Epoch 139 - LR: 0.004999999888241291
+Epoch 139/250: time=85.42s, loss=3.1829, policy_loss=2.4266, value_loss=0.6930, policy_categorical_accuracy=0.3912, value_mse=0.1212
+Epoch 140 - LR: 0.004999999888241291
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.1973378658294678, policy_loss=2.4420, value_loss=0.6929
+Epoch 140/250: time=137.50s, loss=3.1800, policy_loss=2.4244, value_loss=0.6929, policy_categorical_accuracy=0.3882, value_mse=0.1217
+Epoch 141 - LR: 0.004999999888241291
+Epoch 141/250: time=84.64s, loss=3.1895, policy_loss=2.4343, value_loss=0.6930, policy_categorical_accuracy=0.3895, value_mse=0.1214
+Epoch 142 - LR: 0.004999999888241291
+Epoch 142/250: time=85.51s, loss=3.1902, policy_loss=2.4356, value_loss=0.6930, policy_categorical_accuracy=0.3855, value_mse=0.1217
+Epoch 143 - LR: 0.004999999888241291
+Epoch 143/250: time=84.84s, loss=3.1879, policy_loss=2.4337, value_loss=0.6930, policy_categorical_accuracy=0.3919, value_mse=0.1226
+Epoch 144 - LR: 0.004999999888241291
+Epoch 144/250: time=85.32s, loss=3.1831, policy_loss=2.4292, value_loss=0.6930, policy_categorical_accuracy=0.3920, value_mse=0.1211
+Epoch 145 - LR: 0.004999999888241291
+Epoch 145/250: time=85.56s, loss=3.1921, policy_loss=2.4387, value_loss=0.6930, policy_categorical_accuracy=0.3876, value_mse=0.1213
+Epoch 146 - LR: 0.004999999888241291
+Epoch 146/250: time=85.92s, loss=3.2009, policy_loss=2.4477, value_loss=0.6930, policy_categorical_accuracy=0.3878, value_mse=0.1215
+Epoch 147 - LR: 0.004999999888241291
+Epoch 147/250: time=85.47s, loss=3.1866, policy_loss=2.4339, value_loss=0.6929, policy_categorical_accuracy=0.3907, value_mse=0.1225
+Epoch 148 - LR: 0.004999999888241291
+Epoch 148/250: time=85.37s, loss=3.1912, policy_loss=2.4387, value_loss=0.6931, policy_categorical_accuracy=0.3875, value_mse=0.1216
+Epoch 149 - LR: 0.004999999888241291
+Epoch 149/250: time=84.66s, loss=3.1967, policy_loss=2.4445, value_loss=0.6930, policy_categorical_accuracy=0.3889, value_mse=0.1212
+Epoch 150 - LR: 0.0005000000237487257
+Epoch 150/250: time=85.29s, loss=3.1839, policy_loss=2.4320, value_loss=0.6930, policy_categorical_accuracy=0.3894, value_mse=0.1219
+Epoch 151 - LR: 0.0005000000237487257
+Epoch 151/250: time=85.12s, loss=3.1852, policy_loss=2.4336, value_loss=0.6930, policy_categorical_accuracy=0.3879, value_mse=0.1209
+Epoch 152 - LR: 0.0005000000237487257
+Epoch 152/250: time=84.76s, loss=3.1619, policy_loss=2.4104, value_loss=0.6930, policy_categorical_accuracy=0.3940, value_mse=0.1224
+Epoch 153 - LR: 0.0005000000237487257
+Epoch 153/250: time=85.34s, loss=3.1433, policy_loss=2.3919, value_loss=0.6930, policy_categorical_accuracy=0.3970, value_mse=0.1215
+Epoch 154 - LR: 0.0005000000237487257
+Epoch 154/250: time=85.31s, loss=3.1473, policy_loss=2.3962, value_loss=0.6929, policy_categorical_accuracy=0.3966, value_mse=0.1213
+Epoch 155 - LR: 0.0005000000237487257
+Epoch 155/250: time=86.07s, loss=3.1518, policy_loss=2.4009, value_loss=0.6929, policy_categorical_accuracy=0.3935, value_mse=0.1217
+Epoch 156 - LR: 0.0005000000237487257
+Epoch 156/250: time=85.84s, loss=3.1488, policy_loss=2.3980, value_loss=0.6930, policy_categorical_accuracy=0.3973, value_mse=0.1221
+Epoch 157 - LR: 0.0005000000237487257
+Epoch 157/250: time=85.30s, loss=3.1311, policy_loss=2.3804, value_loss=0.6930, policy_categorical_accuracy=0.3987, value_mse=0.1224
+Epoch 158 - LR: 0.0005000000237487257
+Epoch 158/250: time=85.38s, loss=3.1403, policy_loss=2.3899, value_loss=0.6928, policy_categorical_accuracy=0.3963, value_mse=0.1220
+Epoch 159 - LR: 0.0005000000237487257
+Epoch 159/250: time=85.10s, loss=3.1326, policy_loss=2.3823, value_loss=0.6929, policy_categorical_accuracy=0.3986, value_mse=0.1214
+Epoch 160 - LR: 0.0005000000237487257
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.1426854133605957, policy_loss=2.3927, value_loss=0.6928
+Epoch 160/250: time=137.81s, loss=3.1400, policy_loss=2.3899, value_loss=0.6929, policy_categorical_accuracy=0.3951, value_mse=0.1213
+Epoch 161 - LR: 0.0005000000237487257
+Epoch 161/250: time=85.36s, loss=3.1420, policy_loss=2.3920, value_loss=0.6930, policy_categorical_accuracy=0.3976, value_mse=0.1219
+Epoch 162 - LR: 0.0005000000237487257
+Epoch 162/250: time=85.07s, loss=3.1385, policy_loss=2.3886, value_loss=0.6929, policy_categorical_accuracy=0.3963, value_mse=0.1209
+Epoch 163 - LR: 0.0005000000237487257
+Epoch 163/250: time=84.76s, loss=3.1290, policy_loss=2.3793, value_loss=0.6929, policy_categorical_accuracy=0.3984, value_mse=0.1212
+Epoch 164 - LR: 0.0005000000237487257
+Epoch 164/250: time=85.00s, loss=3.1455, policy_loss=2.3959, value_loss=0.6929, policy_categorical_accuracy=0.3949, value_mse=0.1210
+Epoch 165 - LR: 0.0005000000237487257
+Epoch 165/250: time=85.41s, loss=3.1405, policy_loss=2.3911, value_loss=0.6929, policy_categorical_accuracy=0.3968, value_mse=0.1207
+Epoch 166 - LR: 0.0005000000237487257
+Epoch 166/250: time=85.24s, loss=3.1339, policy_loss=2.3846, value_loss=0.6929, policy_categorical_accuracy=0.3986, value_mse=0.1228
+Epoch 167 - LR: 0.0005000000237487257
+Epoch 167/250: time=85.13s, loss=3.1273, policy_loss=2.3781, value_loss=0.6930, policy_categorical_accuracy=0.3982, value_mse=0.1220
+Epoch 168 - LR: 0.0005000000237487257
+Epoch 168/250: time=84.98s, loss=3.1481, policy_loss=2.3991, value_loss=0.6930, policy_categorical_accuracy=0.3965, value_mse=0.1212
+Epoch 169 - LR: 0.0005000000237487257
+Epoch 169/250: time=85.24s, loss=3.1266, policy_loss=2.3777, value_loss=0.6931, policy_categorical_accuracy=0.3981, value_mse=0.1229
+Epoch 170 - LR: 0.0005000000237487257
+Epoch 170/250: time=85.41s, loss=3.1410, policy_loss=2.3924, value_loss=0.6929, policy_categorical_accuracy=0.3962, value_mse=0.1221
+Epoch 171 - LR: 0.0005000000237487257
+Epoch 171/250: time=85.77s, loss=3.1474, policy_loss=2.3988, value_loss=0.6930, policy_categorical_accuracy=0.3969, value_mse=0.1214
+Epoch 172 - LR: 0.0005000000237487257
+Epoch 172/250: time=85.46s, loss=3.1367, policy_loss=2.3884, value_loss=0.6928, policy_categorical_accuracy=0.3965, value_mse=0.1218
+Epoch 173 - LR: 0.0005000000237487257
+Epoch 173/250: time=84.94s, loss=3.1363, policy_loss=2.3880, value_loss=0.6930, policy_categorical_accuracy=0.3968, value_mse=0.1209
+Epoch 174 - LR: 0.0005000000237487257
+Epoch 174/250: time=85.10s, loss=3.1123, policy_loss=2.3643, value_loss=0.6929, policy_categorical_accuracy=0.3994, value_mse=0.1222
+Epoch 175 - LR: 0.0005000000237487257
+Epoch 175/250: time=85.56s, loss=3.1270, policy_loss=2.3790, value_loss=0.6930, policy_categorical_accuracy=0.3987, value_mse=0.1217
+Epoch 176 - LR: 0.0005000000237487257
+Epoch 176/250: time=85.47s, loss=3.1157, policy_loss=2.3677, value_loss=0.6931, policy_categorical_accuracy=0.4001, value_mse=0.1226
+Epoch 177 - LR: 0.0005000000237487257
+Epoch 177/250: time=85.53s, loss=3.1401, policy_loss=2.3925, value_loss=0.6930, policy_categorical_accuracy=0.3964, value_mse=0.1213
+Epoch 178 - LR: 0.0005000000237487257
+Epoch 178/250: time=85.13s, loss=3.1312, policy_loss=2.3836, value_loss=0.6930, policy_categorical_accuracy=0.3970, value_mse=0.1215
+Epoch 179 - LR: 0.0005000000237487257
+Epoch 179/250: time=85.05s, loss=3.1340, policy_loss=2.3867, value_loss=0.6929, policy_categorical_accuracy=0.3978, value_mse=0.1215
+Epoch 180 - LR: 0.0005000000237487257
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.132888078689575, policy_loss=2.3858, value_loss=0.6928
+Epoch 180/250: time=137.24s, loss=3.1225, policy_loss=2.3752, value_loss=0.6930, policy_categorical_accuracy=0.3991, value_mse=0.1221
+Epoch 181 - LR: 0.0005000000237487257
+Epoch 181/250: time=84.70s, loss=3.1239, policy_loss=2.3768, value_loss=0.6929, policy_categorical_accuracy=0.3975, value_mse=0.1216
+Epoch 182 - LR: 0.0005000000237487257
+Epoch 182/250: time=84.93s, loss=3.1296, policy_loss=2.3826, value_loss=0.6930, policy_categorical_accuracy=0.3974, value_mse=0.1212
+Epoch 183 - LR: 0.0005000000237487257
+Epoch 183/250: time=85.08s, loss=3.1208, policy_loss=2.3739, value_loss=0.6930, policy_categorical_accuracy=0.3966, value_mse=0.1220
+Epoch 184 - LR: 0.0005000000237487257
+Epoch 184/250: time=85.24s, loss=3.1228, policy_loss=2.3761, value_loss=0.6930, policy_categorical_accuracy=0.4010, value_mse=0.1222
+Epoch 185 - LR: 0.0005000000237487257
+Epoch 185/250: time=85.30s, loss=3.1269, policy_loss=2.3803, value_loss=0.6930, policy_categorical_accuracy=0.3992, value_mse=0.1212
+Epoch 186 - LR: 0.0005000000237487257
+Epoch 186/250: time=85.54s, loss=3.1273, policy_loss=2.3809, value_loss=0.6929, policy_categorical_accuracy=0.4011, value_mse=0.1218
+Epoch 187 - LR: 0.0005000000237487257
+Epoch 187/250: time=85.35s, loss=3.1322, policy_loss=2.3858, value_loss=0.6930, policy_categorical_accuracy=0.3980, value_mse=0.1208
+Epoch 188 - LR: 0.0005000000237487257
+Epoch 188/250: time=85.29s, loss=3.1270, policy_loss=2.3809, value_loss=0.6930, policy_categorical_accuracy=0.3994, value_mse=0.1215
+Epoch 189 - LR: 0.0005000000237487257
+Epoch 189/250: time=85.33s, loss=3.1301, policy_loss=2.3841, value_loss=0.6929, policy_categorical_accuracy=0.3969, value_mse=0.1217
+Epoch 190 - LR: 0.0005000000237487257
+Epoch 190/250: time=85.45s, loss=3.1295, policy_loss=2.3836, value_loss=0.6929, policy_categorical_accuracy=0.3990, value_mse=0.1219
+Epoch 191 - LR: 0.0005000000237487257
+Epoch 191/250: time=85.09s, loss=3.1317, policy_loss=2.3860, value_loss=0.6929, policy_categorical_accuracy=0.3983, value_mse=0.1216
+Epoch 192 - LR: 0.0005000000237487257
+Epoch 192/250: time=85.30s, loss=3.1276, policy_loss=2.3821, value_loss=0.6929, policy_categorical_accuracy=0.4028, value_mse=0.1220
+Epoch 193 - LR: 0.0005000000237487257
+Epoch 193/250: time=85.41s, loss=3.1355, policy_loss=2.3901, value_loss=0.6929, policy_categorical_accuracy=0.3970, value_mse=0.1216
+Epoch 194 - LR: 0.0005000000237487257
+Epoch 194/250: time=85.70s, loss=3.1227, policy_loss=2.3773, value_loss=0.6930, policy_categorical_accuracy=0.4016, value_mse=0.1216
+Epoch 195 - LR: 0.0005000000237487257
+Epoch 195/250: time=85.48s, loss=3.1186, policy_loss=2.3735, value_loss=0.6929, policy_categorical_accuracy=0.3998, value_mse=0.1212
+Epoch 196 - LR: 0.0005000000237487257
+Epoch 196/250: time=85.19s, loss=3.1304, policy_loss=2.3853, value_loss=0.6930, policy_categorical_accuracy=0.3974, value_mse=0.1215
+Epoch 197 - LR: 0.0005000000237487257
+Epoch 197/250: time=85.07s, loss=3.1180, policy_loss=2.3730, value_loss=0.6930, policy_categorical_accuracy=0.3997, value_mse=0.1217
+Epoch 198 - LR: 0.0005000000237487257
+Epoch 198/250: time=84.88s, loss=3.1074, policy_loss=2.3627, value_loss=0.6929, policy_categorical_accuracy=0.4021, value_mse=0.1215
+Epoch 199 - LR: 0.0005000000237487257
+Epoch 199/250: time=85.05s, loss=3.1313, policy_loss=2.3866, value_loss=0.6930, policy_categorical_accuracy=0.3961, value_mse=0.1218
+Epoch 200 - LR: 4.999999873689376e-05
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.1276965141296387, policy_loss=2.3833, value_loss=0.6929
+Epoch 200/250: time=138.01s, loss=3.1258, policy_loss=2.3813, value_loss=0.6929, policy_categorical_accuracy=0.3960, value_mse=0.1217
+Epoch 201 - LR: 4.999999873689376e-05
+Epoch 201/250: time=84.92s, loss=3.1318, policy_loss=2.3873, value_loss=0.6929, policy_categorical_accuracy=0.3985, value_mse=0.1217
+Epoch 202 - LR: 4.999999873689376e-05
+Epoch 202/250: time=85.21s, loss=3.1241, policy_loss=2.3797, value_loss=0.6929, policy_categorical_accuracy=0.3979, value_mse=0.1208
+Epoch 203 - LR: 4.999999873689376e-05
+Epoch 203/250: time=84.85s, loss=3.1199, policy_loss=2.3754, value_loss=0.6930, policy_categorical_accuracy=0.4008, value_mse=0.1215
+Epoch 204 - LR: 4.999999873689376e-05
+Epoch 204/250: time=84.74s, loss=3.1200, policy_loss=2.3757, value_loss=0.6928, policy_categorical_accuracy=0.3993, value_mse=0.1216
+Epoch 205 - LR: 4.999999873689376e-05
+Epoch 205/250: time=85.89s, loss=3.1243, policy_loss=2.3798, value_loss=0.6930, policy_categorical_accuracy=0.3975, value_mse=0.1220
+Epoch 206 - LR: 4.999999873689376e-05
+Epoch 206/250: time=85.79s, loss=3.1288, policy_loss=2.3845, value_loss=0.6928, policy_categorical_accuracy=0.3980, value_mse=0.1214
+Epoch 207 - LR: 4.999999873689376e-05
+Epoch 207/250: time=85.64s, loss=3.1240, policy_loss=2.3796, value_loss=0.6930, policy_categorical_accuracy=0.3981, value_mse=0.1218
+Epoch 208 - LR: 4.999999873689376e-05
+Epoch 208/250: time=85.39s, loss=3.1088, policy_loss=2.3645, value_loss=0.6928, policy_categorical_accuracy=0.4017, value_mse=0.1216
+Epoch 209 - LR: 4.999999873689376e-05
+Epoch 209/250: time=85.07s, loss=3.1174, policy_loss=2.3730, value_loss=0.6929, policy_categorical_accuracy=0.3982, value_mse=0.1214
+Epoch 210 - LR: 4.999999873689376e-05
+Epoch 210/250: time=85.53s, loss=3.1114, policy_loss=2.3670, value_loss=0.6930, policy_categorical_accuracy=0.4022, value_mse=0.1213
+Epoch 211 - LR: 4.999999873689376e-05
+Epoch 211/250: time=85.46s, loss=3.1260, policy_loss=2.3817, value_loss=0.6929, policy_categorical_accuracy=0.3974, value_mse=0.1211
+Epoch 212 - LR: 4.999999873689376e-05
+Epoch 212/250: time=84.70s, loss=3.1267, policy_loss=2.3825, value_loss=0.6929, policy_categorical_accuracy=0.3995, value_mse=0.1212
+Epoch 213 - LR: 4.999999873689376e-05
+Epoch 213/250: time=85.35s, loss=3.1200, policy_loss=2.3757, value_loss=0.6929, policy_categorical_accuracy=0.3991, value_mse=0.1223
+Epoch 214 - LR: 4.999999873689376e-05
+Epoch 214/250: time=85.23s, loss=3.1371, policy_loss=2.3928, value_loss=0.6930, policy_categorical_accuracy=0.3957, value_mse=0.1216
+Epoch 215 - LR: 4.999999873689376e-05
+Epoch 215/250: time=85.65s, loss=3.1209, policy_loss=2.3767, value_loss=0.6929, policy_categorical_accuracy=0.3984, value_mse=0.1210
+Epoch 216 - LR: 4.999999873689376e-05
+Epoch 216/250: time=85.00s, loss=3.1065, policy_loss=2.3624, value_loss=0.6928, policy_categorical_accuracy=0.3992, value_mse=0.1219
+Epoch 217 - LR: 4.999999873689376e-05
+Epoch 217/250: time=84.98s, loss=3.1129, policy_loss=2.3687, value_loss=0.6929, policy_categorical_accuracy=0.4017, value_mse=0.1224
+Epoch 218 - LR: 4.999999873689376e-05
+Epoch 218/250: time=84.99s, loss=3.1227, policy_loss=2.3785, value_loss=0.6929, policy_categorical_accuracy=0.3984, value_mse=0.1218
+Epoch 219 - LR: 4.999999873689376e-05
+Epoch 219/250: time=85.28s, loss=3.1178, policy_loss=2.3736, value_loss=0.6930, policy_categorical_accuracy=0.3997, value_mse=0.1217
+Epoch 220 - LR: 4.999999873689376e-05
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.12296462059021, policy_loss=2.3789, value_loss=0.6928
+Epoch 220/250: time=137.78s, loss=3.1326, policy_loss=2.3885, value_loss=0.6929, policy_categorical_accuracy=0.3948, value_mse=0.1216
+Epoch 221 - LR: 4.999999873689376e-05
+Epoch 221/250: time=85.09s, loss=3.1186, policy_loss=2.3743, value_loss=0.6931, policy_categorical_accuracy=0.3992, value_mse=0.1217
+Epoch 222 - LR: 4.999999873689376e-05
+Epoch 222/250: time=84.95s, loss=3.1207, policy_loss=2.3766, value_loss=0.6929, policy_categorical_accuracy=0.3998, value_mse=0.1215
+Epoch 223 - LR: 4.999999873689376e-05
+Epoch 223/250: time=85.14s, loss=3.1198, policy_loss=2.3758, value_loss=0.6929, policy_categorical_accuracy=0.3978, value_mse=0.1213
+Epoch 224 - LR: 4.999999873689376e-05
+Epoch 224/250: time=84.99s, loss=3.0960, policy_loss=2.3518, value_loss=0.6930, policy_categorical_accuracy=0.4051, value_mse=0.1213
+Epoch 225 - LR: 4.999999873689376e-05
+Epoch 225/250: time=85.30s, loss=3.1218, policy_loss=2.3778, value_loss=0.6928, policy_categorical_accuracy=0.4032, value_mse=0.1222
+Epoch 226 - LR: 4.999999873689376e-05
+Epoch 226/250: time=85.31s, loss=3.1068, policy_loss=2.3627, value_loss=0.6929, policy_categorical_accuracy=0.4014, value_mse=0.1217
+Epoch 227 - LR: 4.999999873689376e-05
+Epoch 227/250: time=85.33s, loss=3.1260, policy_loss=2.3818, value_loss=0.6930, policy_categorical_accuracy=0.3992, value_mse=0.1217
+Epoch 228 - LR: 4.999999873689376e-05
+Epoch 228/250: time=84.79s, loss=3.1286, policy_loss=2.3846, value_loss=0.6929, policy_categorical_accuracy=0.3976, value_mse=0.1214
+Epoch 229 - LR: 4.999999873689376e-05
+Epoch 229/250: time=84.81s, loss=3.1236, policy_loss=2.3796, value_loss=0.6929, policy_categorical_accuracy=0.4005, value_mse=0.1211
+Epoch 230 - LR: 4.999999873689376e-05
+Epoch 230/250: time=85.41s, loss=3.1291, policy_loss=2.3851, value_loss=0.6929, policy_categorical_accuracy=0.3984, value_mse=0.1216
+Epoch 231 - LR: 4.999999873689376e-05
+Epoch 231/250: time=85.28s, loss=3.1275, policy_loss=2.3834, value_loss=0.6930, policy_categorical_accuracy=0.3966, value_mse=0.1218
+Epoch 232 - LR: 4.999999873689376e-05
+Epoch 232/250: time=85.33s, loss=3.1221, policy_loss=2.3782, value_loss=0.6928, policy_categorical_accuracy=0.3996, value_mse=0.1221
+Epoch 233 - LR: 4.999999873689376e-05
+Epoch 233/250: time=84.60s, loss=3.1089, policy_loss=2.3648, value_loss=0.6929, policy_categorical_accuracy=0.3999, value_mse=0.1217
+Epoch 234 - LR: 4.999999873689376e-05
+Epoch 234/250: time=85.04s, loss=3.1190, policy_loss=2.3751, value_loss=0.6929, policy_categorical_accuracy=0.3988, value_mse=0.1215
+Epoch 235 - LR: 4.999999873689376e-05
+Epoch 235/250: time=85.06s, loss=3.1247, policy_loss=2.3807, value_loss=0.6930, policy_categorical_accuracy=0.3966, value_mse=0.1213
+Epoch 236 - LR: 4.999999873689376e-05
+Epoch 236/250: time=85.40s, loss=3.1008, policy_loss=2.3568, value_loss=0.6929, policy_categorical_accuracy=0.3995, value_mse=0.1219
+Epoch 237 - LR: 4.999999873689376e-05
+Epoch 237/250: time=84.94s, loss=3.1209, policy_loss=2.3769, value_loss=0.6930, policy_categorical_accuracy=0.3988, value_mse=0.1221
+Epoch 238 - LR: 4.999999873689376e-05
+Epoch 238/250: time=85.02s, loss=3.1111, policy_loss=2.3671, value_loss=0.6930, policy_categorical_accuracy=0.4017, value_mse=0.1222
+Epoch 239 - LR: 4.999999873689376e-05
+Epoch 239/250: time=85.18s, loss=3.1196, policy_loss=2.3758, value_loss=0.6929, policy_categorical_accuracy=0.3983, value_mse=0.1209
+Epoch 240 - LR: 4.999999873689376e-05
+r.shape = (50000, 19, 19, 31)
+nbExamples = 50000
+Validation: loss=3.1217050552368164, policy_loss=2.3779, value_loss=0.6929
+Epoch 240/250: time=138.07s, loss=3.1225, policy_loss=2.3786, value_loss=0.6930, policy_categorical_accuracy=0.3989, value_mse=0.1221
+Epoch 241 - LR: 4.999999873689376e-05
+Epoch 241/250: time=84.67s, loss=3.1324, policy_loss=2.3885, value_loss=0.6929, policy_categorical_accuracy=0.3979, value_mse=0.1215
+Epoch 242 - LR: 4.999999873689376e-05
+Epoch 242/250: time=85.20s, loss=3.1258, policy_loss=2.3819, value_loss=0.6929, policy_categorical_accuracy=0.3976, value_mse=0.1225
+Epoch 243 - LR: 4.999999873689376e-05
+Epoch 243/250: time=84.95s, loss=3.1257, policy_loss=2.3819, value_loss=0.6928, policy_categorical_accuracy=0.3991, value_mse=0.1221
+Epoch 244 - LR: 4.999999873689376e-05
+Epoch 244/250: time=84.98s, loss=3.1297, policy_loss=2.3859, value_loss=0.6929, policy_categorical_accuracy=0.3971, value_mse=0.1222
+Epoch 245 - LR: 4.999999873689376e-05
+Epoch 245/250: time=85.61s, loss=3.1227, policy_loss=2.3789, value_loss=0.6930, policy_categorical_accuracy=0.4005, value_mse=0.1213
+Epoch 246 - LR: 4.999999873689376e-05
+Epoch 246/250: time=85.25s, loss=3.1117, policy_loss=2.3678, value_loss=0.6930, policy_categorical_accuracy=0.4014, value_mse=0.1214
+Epoch 247 - LR: 4.999999873689376e-05
+Epoch 247/250: time=85.66s, loss=3.1213, policy_loss=2.3775, value_loss=0.6929, policy_categorical_accuracy=0.3985, value_mse=0.1215
+Epoch 248 - LR: 4.999999873689376e-05
+Epoch 248/250: time=85.05s, loss=3.1231, policy_loss=2.3794, value_loss=0.6928, policy_categorical_accuracy=0.4015, value_mse=0.1214
+Epoch 249 - LR: 4.999999873689376e-05
+Epoch 249/250: time=84.89s, loss=3.1243, policy_loss=2.3805, value_loss=0.6930, policy_categorical_accuracy=0.3991, value_mse=0.1215
+Epoch 250 - LR: 4.999999873689376e-05
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+Epoch 250/250: time=86.04s, loss=3.1049, policy_loss=2.3612, value_loss=0.6928, policy_categorical_accuracy=0.4019, value_mse=0.1223
+Best Model at epoch 240 : loss=3.1217050552368164, policy_loss=2.3779, value_loss=0.6929
+
+📊 Validation Results for Model MixNet - N is 50000 — Epoch 250:
+  - loss                          : 3.1217
+  - policy_loss                   : 2.3779
+  - value_loss                    : 0.6929
+  - policy_categorical_accuracy   : 0.3976
+  - value_mse                     : 0.1219
+  - Time: 21976.4854
+
+Process finished with exit code 0
+
+def get_fixed_lr_optimizer(initial_lr=0.005):
+    return optimizers.legacy.SGD(
+        learning_rate=initial_lr,
+        momentum=0.9,
+        nesterov=True,
+        clipnorm=1.0
+    )
+
+def lr_schedule(epoch):
+    if epoch < 100:
+        return 5e-2  # 0.05
+    elif epoch < 150:
+        return 5e-3  # 0.005
+    elif epoch < 200:
+        return 5e-4  # 0.0005
+    else:
+        return 5e-5  # 0.00005

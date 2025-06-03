@@ -1,0 +1,39 @@
+📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 1 — Epoch 100:
+  - loss                          : 3.3660
+  - policy_loss                   : 2.6217
+  - value_loss                    : 0.6872
+  - policy_categorical_accuracy   : 0.3662
+  - value_mse                     : 0.1193
+  - Time: 1200.3673
+
+  📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 3 — Epoch 100:
+  - loss                          : 3.4393
+  - policy_loss                   : 2.6866
+  - value_loss                    : 0.6851
+  - policy_categorical_accuracy   : 0.3637
+  - value_mse                     : 0.1182
+  - Time: 1207.0434
+
+  📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 5 — Epoch 100:
+  - loss                          : 3.4024
+  - policy_loss                   : 2.6463
+  - value_loss                    : 0.6904
+  - policy_categorical_accuracy   : 0.3679
+  - value_mse                     : 0.1209
+  - Time: 4872.8181
+
+  📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 7 — Epoch 100:
+  - loss                          : 3.3983
+  - policy_loss                   : 2.6558
+  - value_loss                    : 0.6742
+  - policy_categorical_accuracy   : 0.3644
+  - value_mse                     : 0.1132
+  - Time: 1503.0349
+
+  📊 Validation Results for Model MobileNet - Nb CosineDecay Cycle is 10 — Epoch 100:
+  - loss                          : 3.3919
+  - policy_loss                   : 2.6540
+  - value_loss                    : 0.6695
+  - policy_categorical_accuracy   : 0.3642
+  - value_mse                     : 0.1110
+  - Time: 1312.7751
