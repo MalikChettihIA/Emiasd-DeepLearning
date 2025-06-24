@@ -1,0 +1,15 @@
+{"time":"2025-06-22T21:14:34.953439+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250622_211434-2380iek5/logs/debug-core.log"}
+{"time":"2025-06-22T21:14:35.216853+02:00","level":"INFO","msg":"stream: created new stream","id":"2380iek5"}
+{"time":"2025-06-22T21:14:35.216885+02:00","level":"INFO","msg":"stream: started","id":"2380iek5"}
+{"time":"2025-06-22T21:14:35.216899+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:14:35.216906+02:00","level":"INFO","msg":"sender: started","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:14:35.216919+02:00","level":"INFO","msg":"handler: started","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:14:35.428833+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-22T21:22:26.00567+02:00","level":"INFO","msg":"stream: closing","id":"2380iek5"}
+{"time":"2025-06-22T21:22:26.005828+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-22T21:22:26.00599+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-22T21:22:26.523246+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-22T21:22:26.754934+02:00","level":"INFO","msg":"handler: closed","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:22:26.754988+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:22:26.754966+02:00","level":"INFO","msg":"sender: closed","stream_id":"2380iek5"}
+{"time":"2025-06-22T21:22:26.755279+02:00","level":"INFO","msg":"stream: closed","id":"2380iek5"}

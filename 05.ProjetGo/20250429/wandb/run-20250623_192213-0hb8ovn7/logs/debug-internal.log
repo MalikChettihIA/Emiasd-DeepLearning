@@ -1,0 +1,19 @@
+{"time":"2025-06-23T19:22:13.913079+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_192213-0hb8ovn7/logs/debug-core.log"}
+{"time":"2025-06-23T19:22:14.327126+02:00","level":"INFO","msg":"stream: created new stream","id":"0hb8ovn7"}
+{"time":"2025-06-23T19:22:14.327155+02:00","level":"INFO","msg":"stream: started","id":"0hb8ovn7"}
+{"time":"2025-06-23T19:22:14.327165+02:00","level":"INFO","msg":"handler: started","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T19:22:14.327164+02:00","level":"INFO","msg":"sender: started","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T19:22:14.327175+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T19:22:14.687126+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T20:45:58.835638+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-23T20:45:58.835668+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-23T20:45:58.835679+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact go_mobilenet_epoch_100","runtime_seconds":27.554200541,"subtasks":[{"desc":"model_epoch_100.h5","runtime_seconds":26.491561916,"progress":"1.1MB/1.7MB"}]},{"desc":"uploading history steps 99-99, summary, console lines 472-535","runtime_seconds":13.736038125}],"total_operations":2}}
+{"time":"2025-06-23T20:46:14.614137+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-23T20:46:58.897039+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 99-99, summary, console lines 472-535","runtime_seconds":73.797500292}],"total_operations":1}}
+{"time":"2025-06-23T20:47:58.958911+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 99-99, summary, console lines 472-535","runtime_seconds":133.859476208}],"total_operations":1}}
+{"time":"2025-06-23T20:48:24.407466+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/0hb8ovn7/file_stream\": read tcp 172.20.10.13:60822->35.186.228.49:443: read: operation timed out"}
+{"time":"2025-06-23T20:48:27.267269+02:00","level":"INFO","msg":"stream: closing","id":"0hb8ovn7"}
+{"time":"2025-06-23T20:48:27.267283+02:00","level":"INFO","msg":"handler: closed","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T20:48:27.26729+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T20:48:27.267294+02:00","level":"INFO","msg":"sender: closed","stream_id":"0hb8ovn7"}
+{"time":"2025-06-23T20:48:27.267551+02:00","level":"INFO","msg":"stream: closed","id":"0hb8ovn7"}

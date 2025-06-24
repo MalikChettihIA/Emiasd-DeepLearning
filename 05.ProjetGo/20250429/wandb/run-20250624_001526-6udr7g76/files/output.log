@@ -1,0 +1,10 @@
+🚀 WandB run initialisée: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/6udr7g76
+✅ Gradient tracking configuré
+🔄 Augmentation de données activée: 8 transformations par époque
+getValidation
+2025-06-24 00:15:48,719 - WARNING - At this time, the v2.11+ optimizer `tf.keras.optimizers.AdamW` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.AdamW`.
+
+📊 Époque 1/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 50s 137ms/step - loss: 5.4019 - policy_loss: 4.4000 - value_loss: 0.7314 - policy_categorical_accuracy: 0.1313 - value_mse: 0.1309
+  🔀 Original (T0): loss=5.4019, policy_loss=4.4000, value_loss=0.7314, policy_categorical_accuracy=0.1313, time=50.2s
+  🔀 Rot90°   (T1): loss=4.4710, policy_loss=3.5182, value_loss=0.6922, policy_categorical_accuracy=0.2502, time=42.1s

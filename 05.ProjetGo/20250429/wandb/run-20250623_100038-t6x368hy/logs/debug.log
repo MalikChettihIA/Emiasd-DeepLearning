@@ -1,0 +1,51 @@
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_setup.py:_flush():81] Configure stats pid to 12195
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/.config/wandb/settings
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/settings
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-23 10:00:38,097 INFO    MainThread:12195 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100038-t6x368hy/logs/debug.log
+2025-06-23 10:00:38,098 INFO    MainThread:12195 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100038-t6x368hy/logs/debug-internal.log
+2025-06-23 10:00:38,098 INFO    MainThread:12195 [wandb_init.py:init():831] calling init triggers
+2025-06-23 10:00:38,098 INFO    MainThread:12195 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'model_type': 'MobileNet', 'block_num': 8, 'filters': 32, 'expansion_factor': 4, 'squeeze_excitation': True, 'activation': 'swish', 'dropout_rate': 0.2, 'epochs': 100, 'batch_size': 32, 'initial_lr': 0.02, 'lr_schedule': 'cosine_annealing', 'cosine_cycles': 1, 'policy_weight': 1.0, 'value_weight': 1.0, 'optimizer': 'AdamW', 'clipnorm': 1.0, 'dataset_size': 10000, 'input_shape': [19, 19, 31], 'num_classes': 361, 'data_augmentation': '8-fold_symmetry', 'target_policy_accuracy': 0.55, 'target_value_mse': 0.15, 'framework': 'TensorFlow/Keras', 'python_version': '2.15.0', 'factor': 4, 'se': True, 'drop_out_rate': 0.0, '_wandb': {}}
+2025-06-23 10:00:38,098 INFO    MainThread:12195 [wandb_init.py:init():872] starting backend
+2025-06-23 10:00:38,335 INFO    MainThread:12195 [wandb_init.py:init():875] sending inform_init request
+2025-06-23 10:00:38,366 INFO    MainThread:12195 [wandb_init.py:init():883] backend started and connected
+2025-06-23 10:00:38,371 INFO    MainThread:12195 [wandb_init.py:init():956] updated telemetry
+2025-06-23 10:00:38,388 INFO    MainThread:12195 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-06-23 10:00:45,704 WARNING MainThread:12195 [wandb_init.py:init():1613] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1609, in init
+    return wi.init(run_settings, run_config, run_printer)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 999, in init
+    result = wait_with_progress(
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 24, in wait_with_progress
+    return wait_all_with_progress(
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 87, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/lib/asyncio_compat.py", line 30, in run
+    return future.result()
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/concurrent/futures/_base.py", line 441, in result
+    self._condition.wait(timeout)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/threading.py", line 312, in wait
+    waiter.acquire()
+KeyboardInterrupt
+2025-06-23 10:00:45,705 WARNING MsgRouterThr:12195 [router.py:message_loop():63] [no run ID] message_loop has been closed
+Traceback (most recent call last):
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/interface/router_sock.py", line 27, in _read_message
+    return self._sock_client.read_server_response(timeout=1)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 235, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 220, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/interface/router.py", line 56, in message_loop
+    msg = self._read_message()
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/interface/router_sock.py", line 29, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-06-23 10:00:45,707 INFO    MsgRouterThr:12195 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 2 handles.

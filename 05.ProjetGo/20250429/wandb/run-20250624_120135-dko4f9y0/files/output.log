@@ -1,0 +1,747 @@
+🚀 WandB run initialisée: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/dko4f9y0
+✅ Gradient tracking configuré
+🔄 Augmentation de données activée: 8 transformations par époque
+getValidation
+2025-06-24 12:01:38,118 - WARNING - At this time, the v2.11+ optimizer `tf.keras.optimizers.AdamW` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.AdamW`.
+
+📊 Époque 1/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 19s 53ms/step - loss: 6.2381 - policy_loss: 5.3770 - value_loss: 0.7095 - policy_categorical_accuracy: 0.0258 - value_mse: 0.1276
+  🔀 Original (T0): loss=6.2381, policy_loss=5.3770, value_loss=0.7095, policy_categorical_accuracy=0.0258, value_mse=0.1276, time=19.1s
+  🔀 Rot90°   (T1): loss=5.3127, policy_loss=4.4707, value_loss=0.6910, policy_categorical_accuracy=0.1163, value_mse=0.1194, time=16.3s
+  🔀 Rot180°  (T2): loss=4.9606, policy_loss=4.1201, value_loss=0.6902, policy_categorical_accuracy=0.1717, value_mse=0.1191, time=16.2s
+  🔀 Rot270°  (T3): loss=4.7762, policy_loss=3.9365, value_loss=0.6899, policy_categorical_accuracy=0.1959, value_mse=0.1190, time=16.3s
+📊 WandB: Logged epoch 1 metrics
+
+✅ Époque 1/100 (8 transforms avg): time=68.48s, loss=5.3219, policy_loss=4.4761, value_loss=0.6952, policy_categorical_accuracy=0.1274, value_mse=0.1213
+
+📊 Époque 2/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 4.6759 - policy_loss: 3.8361 - value_loss: 0.6906 - policy_categorical_accuracy: 0.2163 - value_mse: 0.1215
+  🔀 Original (T0): loss=4.6759, policy_loss=3.8361, value_loss=0.6906, policy_categorical_accuracy=0.2163, value_mse=0.1215, time=16.5s
+  🔀 Rot90°   (T1): loss=4.5905, policy_loss=3.7525, value_loss=0.6893, policy_categorical_accuracy=0.2300, value_mse=0.1209, time=16.5s
+  🔀 Rot180°  (T2): loss=4.5031, policy_loss=3.6652, value_loss=0.6896, policy_categorical_accuracy=0.2419, value_mse=0.1211, time=16.7s
+  🔀 Rot270°  (T3): loss=4.4222, policy_loss=3.5856, value_loss=0.6888, policy_categorical_accuracy=0.2500, value_mse=0.1207, time=16.5s
+📊 WandB: Logged epoch 2 metrics
+
+✅ Époque 2/100 (8 transforms avg): time=66.83s, loss=4.5479, policy_loss=3.7098, value_loss=0.6896, policy_categorical_accuracy=0.2345, value_mse=0.1210
+
+📊 Époque 3/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 4.3747 - policy_loss: 3.5405 - value_loss: 0.6869 - policy_categorical_accuracy: 0.2551 - value_mse: 0.1171
+  🔀 Original (T0): loss=4.3747, policy_loss=3.5405, value_loss=0.6869, policy_categorical_accuracy=0.2551, value_mse=0.1171, time=16.6s
+  🔀 Rot90°   (T1): loss=4.3116, policy_loss=3.4785, value_loss=0.6863, policy_categorical_accuracy=0.2601, value_mse=0.1168, time=16.5s
+  🔀 Rot180°  (T2): loss=4.2597, policy_loss=3.4266, value_loss=0.6867, policy_categorical_accuracy=0.2684, value_mse=0.1171, time=16.7s
+  🔀 Rot270°  (T3): loss=4.2102, policy_loss=3.3779, value_loss=0.6864, policy_categorical_accuracy=0.2756, value_mse=0.1169, time=16.5s
+📊 WandB: Logged epoch 3 metrics
+
+✅ Époque 3/100 (8 transforms avg): time=66.91s, loss=4.2891, policy_loss=3.4559, value_loss=0.6865, policy_categorical_accuracy=0.2648, value_mse=0.1170
+
+📊 Époque 4/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 4.1848 - policy_loss: 3.3524 - value_loss: 0.6869 - policy_categorical_accuracy: 0.2818 - value_mse: 0.1190
+  🔀 Original (T0): loss=4.1848, policy_loss=3.3524, value_loss=0.6869, policy_categorical_accuracy=0.2818, value_mse=0.1190, time=16.3s
+  🔀 Rot90°   (T1): loss=4.1448, policy_loss=3.3133, value_loss=0.6863, policy_categorical_accuracy=0.2867, value_mse=0.1187, time=16.6s
+  🔀 Rot180°  (T2): loss=4.1091, policy_loss=3.2786, value_loss=0.6858, policy_categorical_accuracy=0.2934, value_mse=0.1185, time=17.0s
+  🔀 Rot270°  (T3): loss=4.0837, policy_loss=3.2544, value_loss=0.6850, policy_categorical_accuracy=0.2942, value_mse=0.1181, time=16.6s
+📊 WandB: Logged epoch 4 metrics
+
+✅ Époque 4/100 (8 transforms avg): time=67.05s, loss=4.1306, policy_loss=3.2997, value_loss=0.6860, policy_categorical_accuracy=0.2890, value_mse=0.1186
+
+📊 Époque 5/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 4.0688 - policy_loss: 3.2390 - value_loss: 0.6859 - policy_categorical_accuracy: 0.2888 - value_mse: 0.1191
+  🔀 Original (T0): loss=4.0688, policy_loss=3.2390, value_loss=0.6859, policy_categorical_accuracy=0.2888, value_mse=0.1191, time=16.9s
+  🔀 Rot90°   (T1): loss=4.0462, policy_loss=3.2174, value_loss=0.6854, policy_categorical_accuracy=0.2898, value_mse=0.1188, time=16.6s
+  🔀 Rot180°  (T2): loss=4.0192, policy_loss=3.1911, value_loss=0.6851, policy_categorical_accuracy=0.2940, value_mse=0.1187, time=16.4s
+  🔀 Rot270°  (T3): loss=4.0006, policy_loss=3.1725, value_loss=0.6854, policy_categorical_accuracy=0.2991, value_mse=0.1188, time=16.4s
+📊 WandB: Logged epoch 5 metrics
+
+✅ Époque 5/100 (8 transforms avg): time=66.84s, loss=4.0337, policy_loss=3.2050, value_loss=0.6855, policy_categorical_accuracy=0.2929, value_mse=0.1188
+
+📊 Époque 6/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.9888 - policy_loss: 3.1599 - value_loss: 0.6866 - policy_categorical_accuracy: 0.2987 - value_mse: 0.1175
+  🔀 Original (T0): loss=3.9888, policy_loss=3.1599, value_loss=0.6866, policy_categorical_accuracy=0.2987, value_mse=0.1175, time=16.6s
+  🔀 Rot90°   (T1): loss=3.9771, policy_loss=3.1500, value_loss=0.6852, policy_categorical_accuracy=0.3024, value_mse=0.1168, time=16.4s
+  🔀 Rot180°  (T2): loss=3.9483, policy_loss=3.1217, value_loss=0.6851, policy_categorical_accuracy=0.3021, value_mse=0.1168, time=16.3s
+  🔀 Rot270°  (T3): loss=3.9369, policy_loss=3.1100, value_loss=0.6859, policy_categorical_accuracy=0.3054, value_mse=0.1172, time=16.3s
+📊 WandB: Logged epoch 6 metrics
+
+✅ Époque 6/100 (8 transforms avg): time=66.18s, loss=3.9627, policy_loss=3.1354, value_loss=0.6857, policy_categorical_accuracy=0.3022, value_mse=0.1171
+
+📊 Époque 7/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.9317 - policy_loss: 3.1042 - value_loss: 0.6868 - policy_categorical_accuracy: 0.3112 - value_mse: 0.1178
+  🔀 Original (T0): loss=3.9317, policy_loss=3.1042, value_loss=0.6868, policy_categorical_accuracy=0.3112, value_mse=0.1178, time=16.6s
+  🔀 Rot90°   (T1): loss=3.9179, policy_loss=3.0907, value_loss=0.6869, policy_categorical_accuracy=0.3094, value_mse=0.1179, time=16.5s
+  🔀 Rot180°  (T2): loss=3.8982, policy_loss=3.0723, value_loss=0.6860, policy_categorical_accuracy=0.3109, value_mse=0.1174, time=16.4s
+  🔀 Rot270°  (T3): loss=3.8852, policy_loss=3.0595, value_loss=0.6862, policy_categorical_accuracy=0.3115, value_mse=0.1175, time=16.4s
+📊 WandB: Logged epoch 7 metrics
+
+✅ Époque 7/100 (8 transforms avg): time=66.40s, loss=3.9083, policy_loss=3.0817, value_loss=0.6865, policy_categorical_accuracy=0.3108, value_mse=0.1176
+
+📊 Époque 8/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.9146 - policy_loss: 3.0891 - value_loss: 0.6864 - policy_categorical_accuracy: 0.3087 - value_mse: 0.1163
+  🔀 Original (T0): loss=3.9146, policy_loss=3.0891, value_loss=0.6864, policy_categorical_accuracy=0.3087, value_mse=0.1163, time=16.5s
+  🔀 Rot90°   (T1): loss=3.8912, policy_loss=3.0672, value_loss=0.6852, policy_categorical_accuracy=0.3114, value_mse=0.1157, time=16.5s
+  🔀 Rot180°  (T2): loss=3.8867, policy_loss=3.0631, value_loss=0.6851, policy_categorical_accuracy=0.3101, value_mse=0.1157, time=16.7s
+  🔀 Rot270°  (T3): loss=3.8701, policy_loss=3.0476, value_loss=0.6844, policy_categorical_accuracy=0.3157, value_mse=0.1153, time=16.5s
+📊 WandB: Logged epoch 8 metrics
+
+✅ Époque 8/100 (8 transforms avg): time=66.77s, loss=3.8906, policy_loss=3.0668, value_loss=0.6853, policy_categorical_accuracy=0.3115, value_mse=0.1158
+
+📊 Époque 9/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.9023 - policy_loss: 3.0796 - value_loss: 0.6851 - policy_categorical_accuracy: 0.3081 - value_mse: 0.1173
+  🔀 Original (T0): loss=3.9023, policy_loss=3.0796, value_loss=0.6851, policy_categorical_accuracy=0.3081, value_mse=0.1173, time=16.9s
+  🔀 Rot90°   (T1): loss=3.8876, policy_loss=3.0652, value_loss=0.6851, policy_categorical_accuracy=0.3136, value_mse=0.1173, time=16.5s
+  🔀 Rot180°  (T2): loss=3.8781, policy_loss=3.0563, value_loss=0.6848, policy_categorical_accuracy=0.3066, value_mse=0.1172, time=16.5s
+  🔀 Rot270°  (T3): loss=3.8702, policy_loss=3.0489, value_loss=0.6848, policy_categorical_accuracy=0.3114, value_mse=0.1171, time=16.5s
+📊 WandB: Logged epoch 9 metrics
+
+✅ Époque 9/100 (8 transforms avg): time=66.94s, loss=3.8846, policy_loss=3.0625, value_loss=0.6849, policy_categorical_accuracy=0.3099, value_mse=0.1172
+
+📊 Époque 10/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.8284 - policy_loss: 3.0064 - value_loss: 0.6858 - policy_categorical_accuracy: 0.3207 - value_mse: 0.1173
+  🔀 Original (T0): loss=3.8284, policy_loss=3.0064, value_loss=0.6858, policy_categorical_accuracy=0.3207, value_mse=0.1173, time=16.3s
+  🔀 Rot90°   (T1): loss=3.8052, policy_loss=2.9846, value_loss=0.6848, policy_categorical_accuracy=0.3260, value_mse=0.1168, time=16.4s
+  🔀 Rot180°  (T2): loss=3.7937, policy_loss=2.9737, value_loss=0.6845, policy_categorical_accuracy=0.3272, value_mse=0.1167, time=16.8s
+  🔀 Rot270°  (T3): loss=3.7866, policy_loss=2.9668, value_loss=0.6846, policy_categorical_accuracy=0.3261, value_mse=0.1167, time=16.8s
+
+🔍 Analyse complète gradient vanishing (époque 10)...
+⚠️  Gradient WARNING at epoch 10
+   • GRADIENT_VANISHING
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 10 metrics
+
+✅ Époque 10/100 (8 transforms avg): time=67.52s, loss=3.8035, policy_loss=2.9829, value_loss=0.6849, policy_categorical_accuracy=0.3250, value_mse=0.1169
+
+📊 Époque 11/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.8017 - policy_loss: 2.9822 - value_loss: 0.6847 - policy_categorical_accuracy: 0.3203 - value_mse: 0.1178
+  🔀 Original (T0): loss=3.8017, policy_loss=2.9822, value_loss=0.6847, policy_categorical_accuracy=0.3203, value_mse=0.1178, time=16.4s
+  🔀 Rot90°   (T1): loss=3.7921, policy_loss=2.9738, value_loss=0.6838, policy_categorical_accuracy=0.3221, value_mse=0.1173, time=16.9s
+  🔀 Rot180°  (T2): loss=3.7827, policy_loss=2.9653, value_loss=0.6833, policy_categorical_accuracy=0.3259, value_mse=0.1170, time=16.7s
+  🔀 Rot270°  (T3): loss=3.7778, policy_loss=2.9607, value_loss=0.6834, policy_categorical_accuracy=0.3272, value_mse=0.1171, time=16.5s
+📊 WandB: Logged epoch 11 metrics
+
+✅ Époque 11/100 (8 transforms avg): time=67.14s, loss=3.7886, policy_loss=2.9705, value_loss=0.6838, policy_categorical_accuracy=0.3239, value_mse=0.1173
+
+📊 Époque 12/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.8215 - policy_loss: 3.0037 - value_loss: 0.6844 - policy_categorical_accuracy: 0.3222 - value_mse: 0.1174
+  🔀 Original (T0): loss=3.8215, policy_loss=3.0037, value_loss=0.6844, policy_categorical_accuracy=0.3222, value_mse=0.1174, time=16.5s
+  🔀 Rot90°   (T1): loss=3.8117, policy_loss=2.9948, value_loss=0.6838, policy_categorical_accuracy=0.3214, value_mse=0.1171, time=16.5s
+  🔀 Rot180°  (T2): loss=3.7946, policy_loss=2.9796, value_loss=0.6822, policy_categorical_accuracy=0.3240, value_mse=0.1163, time=16.2s
+  🔀 Rot270°  (T3): loss=3.7857, policy_loss=2.9703, value_loss=0.6829, policy_categorical_accuracy=0.3274, value_mse=0.1167, time=16.3s
+📊 WandB: Logged epoch 12 metrics
+
+✅ Époque 12/100 (8 transforms avg): time=66.00s, loss=3.8034, policy_loss=2.9871, value_loss=0.6833, policy_categorical_accuracy=0.3237, value_mse=0.1169
+
+📊 Époque 13/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.7697 - policy_loss: 2.9547 - value_loss: 0.6829 - policy_categorical_accuracy: 0.3259 - value_mse: 0.1158
+  🔀 Original (T0): loss=3.7697, policy_loss=2.9547, value_loss=0.6829, policy_categorical_accuracy=0.3259, value_mse=0.1158, time=16.0s
+  🔀 Rot90°   (T1): loss=3.7551, policy_loss=2.9408, value_loss=0.6824, policy_categorical_accuracy=0.3324, value_mse=0.1156, time=16.5s
+  🔀 Rot180°  (T2): loss=3.7416, policy_loss=2.9285, value_loss=0.6817, policy_categorical_accuracy=0.3293, value_mse=0.1152, time=15.5s
+  🔀 Rot270°  (T3): loss=3.7379, policy_loss=2.9249, value_loss=0.6819, policy_categorical_accuracy=0.3331, value_mse=0.1153, time=17.3s
+📊 WandB: Logged epoch 13 metrics
+
+✅ Époque 13/100 (8 transforms avg): time=65.96s, loss=3.7511, policy_loss=2.9372, value_loss=0.6822, policy_categorical_accuracy=0.3302, value_mse=0.1155
+
+📊 Époque 14/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.7889 - policy_loss: 2.9735 - value_loss: 0.6845 - policy_categorical_accuracy: 0.3213 - value_mse: 0.1162
+  🔀 Original (T0): loss=3.7889, policy_loss=2.9735, value_loss=0.6845, policy_categorical_accuracy=0.3213, value_mse=0.1162, time=16.1s
+  🔀 Rot90°   (T1): loss=3.7638, policy_loss=2.9506, value_loss=0.6828, policy_categorical_accuracy=0.3233, value_mse=0.1153, time=16.4s
+  🔀 Rot180°  (T2): loss=3.7605, policy_loss=2.9471, value_loss=0.6832, policy_categorical_accuracy=0.3251, value_mse=0.1155, time=16.2s
+  🔀 Rot270°  (T3): loss=3.7561, policy_loss=2.9433, value_loss=0.6829, policy_categorical_accuracy=0.3283, value_mse=0.1154, time=16.3s
+📊 WandB: Logged epoch 14 metrics
+
+✅ Époque 14/100 (8 transforms avg): time=65.51s, loss=3.7673, policy_loss=2.9536, value_loss=0.6833, policy_categorical_accuracy=0.3245, value_mse=0.1156
+
+📊 Époque 15/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.7617 - policy_loss: 2.9513 - value_loss: 0.6808 - policy_categorical_accuracy: 0.3282 - value_mse: 0.1170
+  🔀 Original (T0): loss=3.7617, policy_loss=2.9513, value_loss=0.6808, policy_categorical_accuracy=0.3282, value_mse=0.1170, time=16.2s
+  🔀 Rot90°   (T1): loss=3.7443, policy_loss=2.9350, value_loss=0.6800, policy_categorical_accuracy=0.3260, value_mse=0.1166, time=16.5s
+  🔀 Rot180°  (T2): loss=3.7406, policy_loss=2.9318, value_loss=0.6799, policy_categorical_accuracy=0.3303, value_mse=0.1166, time=16.6s
+  🔀 Rot270°  (T3): loss=3.7287, policy_loss=2.9214, value_loss=0.6786, policy_categorical_accuracy=0.3296, value_mse=0.1159, time=16.4s
+📊 WandB: Logged epoch 15 metrics
+
+✅ Époque 15/100 (8 transforms avg): time=66.36s, loss=3.7438, policy_loss=2.9349, value_loss=0.6798, policy_categorical_accuracy=0.3285, value_mse=0.1165
+
+📊 Époque 16/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 55ms/step - loss: 3.7346 - policy_loss: 2.9252 - value_loss: 0.6810 - policy_categorical_accuracy: 0.3313 - value_mse: 0.1157
+  🔀 Original (T0): loss=3.7346, policy_loss=2.9252, value_loss=0.6810, policy_categorical_accuracy=0.3313, value_mse=0.1157, time=17.5s
+  🔀 Rot90°   (T1): loss=3.7285, policy_loss=2.9201, value_loss=0.6804, policy_categorical_accuracy=0.3343, value_mse=0.1154, time=16.7s
+  🔀 Rot180°  (T2): loss=3.7103, policy_loss=2.9029, value_loss=0.6796, policy_categorical_accuracy=0.3373, value_mse=0.1150, time=16.6s
+  🔀 Rot270°  (T3): loss=3.7049, policy_loss=2.8979, value_loss=0.6795, policy_categorical_accuracy=0.3374, value_mse=0.1149, time=16.4s
+📊 WandB: Logged epoch 16 metrics
+
+✅ Époque 16/100 (8 transforms avg): time=67.62s, loss=3.7196, policy_loss=2.9115, value_loss=0.6801, policy_categorical_accuracy=0.3351, value_mse=0.1153
+
+📊 Époque 17/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6938 - policy_loss: 2.8850 - value_loss: 0.6816 - policy_categorical_accuracy: 0.3406 - value_mse: 0.1151
+  🔀 Original (T0): loss=3.6938, policy_loss=2.8850, value_loss=0.6816, policy_categorical_accuracy=0.3406, value_mse=0.1151, time=16.6s
+  🔀 Rot90°   (T1): loss=3.6812, policy_loss=2.8734, value_loss=0.6809, policy_categorical_accuracy=0.3372, value_mse=0.1147, time=16.5s
+  🔀 Rot180°  (T2): loss=3.6771, policy_loss=2.8703, value_loss=0.6802, policy_categorical_accuracy=0.3374, value_mse=0.1144, time=16.3s
+  🔀 Rot270°  (T3): loss=3.6667, policy_loss=2.8608, value_loss=0.6795, policy_categorical_accuracy=0.3418, value_mse=0.1141, time=16.5s
+📊 WandB: Logged epoch 17 metrics
+
+✅ Époque 17/100 (8 transforms avg): time=66.49s, loss=3.6797, policy_loss=2.8724, value_loss=0.6805, policy_categorical_accuracy=0.3392, value_mse=0.1146
+
+📊 Époque 18/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.6694 - policy_loss: 2.8645 - value_loss: 0.6788 - policy_categorical_accuracy: 0.3413 - value_mse: 0.1138
+  🔀 Original (T0): loss=3.6694, policy_loss=2.8645, value_loss=0.6788, policy_categorical_accuracy=0.3413, value_mse=0.1138, time=16.1s
+  🔀 Rot90°   (T1): loss=3.6568, policy_loss=2.8544, value_loss=0.6767, policy_categorical_accuracy=0.3423, value_mse=0.1127, time=16.3s
+  🔀 Rot180°  (T2): loss=3.6519, policy_loss=2.8490, value_loss=0.6773, policy_categorical_accuracy=0.3415, value_mse=0.1131, time=16.8s
+  🔀 Rot270°  (T3): loss=3.6435, policy_loss=2.8413, value_loss=0.6769, policy_categorical_accuracy=0.3419, value_mse=0.1129, time=16.8s
+📊 WandB: Logged epoch 18 metrics
+
+✅ Époque 18/100 (8 transforms avg): time=66.55s, loss=3.6554, policy_loss=2.8523, value_loss=0.6774, policy_categorical_accuracy=0.3418, value_mse=0.1131
+
+📊 Époque 19/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6899 - policy_loss: 2.8856 - value_loss: 0.6792 - policy_categorical_accuracy: 0.3431 - value_mse: 0.1146
+  🔀 Original (T0): loss=3.6899, policy_loss=2.8856, value_loss=0.6792, policy_categorical_accuracy=0.3431, value_mse=0.1146, time=16.4s
+  🔀 Rot90°   (T1): loss=3.6843, policy_loss=2.8809, value_loss=0.6786, policy_categorical_accuracy=0.3435, value_mse=0.1143, time=16.5s
+  🔀 Rot180°  (T2): loss=3.6801, policy_loss=2.8776, value_loss=0.6780, policy_categorical_accuracy=0.3425, value_mse=0.1140, time=16.3s
+  🔀 Rot270°  (T3): loss=3.6654, policy_loss=2.8628, value_loss=0.6784, policy_categorical_accuracy=0.3458, value_mse=0.1142, time=16.7s
+📊 WandB: Logged epoch 19 metrics
+
+✅ Époque 19/100 (8 transforms avg): time=66.44s, loss=3.6799, policy_loss=2.8767, value_loss=0.6785, policy_categorical_accuracy=0.3437, value_mse=0.1143
+
+📊 Époque 20/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.6778 - policy_loss: 2.8761 - value_loss: 0.6776 - policy_categorical_accuracy: 0.3375 - value_mse: 0.1163
+  🔀 Original (T0): loss=3.6778, policy_loss=2.8761, value_loss=0.6776, policy_categorical_accuracy=0.3375, value_mse=0.1163, time=16.2s
+  🔀 Rot90°   (T1): loss=3.6666, policy_loss=2.8652, value_loss=0.6776, policy_categorical_accuracy=0.3373, value_mse=0.1163, time=16.5s
+  🔀 Rot180°  (T2): loss=3.6569, policy_loss=2.8561, value_loss=0.6773, policy_categorical_accuracy=0.3417, value_mse=0.1162, time=16.4s
+  🔀 Rot270°  (T3): loss=3.6515, policy_loss=2.8520, value_loss=0.6762, policy_categorical_accuracy=0.3403, value_mse=0.1157, time=17.1s
+
+🔍 Analyse complète gradient vanishing (époque 20)...
+⚠️  Gradient WARNING at epoch 20
+   • GRADIENT_VANISHING
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 20 metrics
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+📦 Modèle sauvegardé sur WandB: epoch 20
+💾 WandB: Model saved at epoch 20
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 20
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3392
+     ❌ Sous-performance
+   Value MSE: 0.1161
+     ✅ Excellent
+
+====================================================================================
+
+✅ Époque 20/100 (8 transforms avg): time=67.19s, loss=3.6632, policy_loss=2.8624, value_loss=0.6772, policy_categorical_accuracy=0.3392, value_mse=0.1161
+
+🔍 Évaluation sur données de validation (non augmentées)...
+313/313 [==============================] - 7s 22ms/step - loss: 3.6569 - policy_loss: 2.8585 - value_loss: 0.6753 - policy_categorical_accuracy: 0.3425 - value_mse: 0.1136
+✅ WandB: Logged validation metrics for epoch 20
+🔍 Diagnostic: Recorded validation metrics for epoch 20
+📈 Validation Époque 20/100: loss=3.6569, policy_loss=2.8585, value_loss=0.6753, policy_categorical_accuracy=0.3425, value_mse=0.1136
+💾 Nouveau meilleur modèle sauvé : best_model_epoch20_val3.6569_aug8x.h5
+
+📊 Époque 21/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.6581 - policy_loss: 2.8582 - value_loss: 0.6769 - policy_categorical_accuracy: 0.3401 - value_mse: 0.1140
+  🔀 Original (T0): loss=3.6581, policy_loss=2.8582, value_loss=0.6769, policy_categorical_accuracy=0.3401, value_mse=0.1140, time=16.7s
+  🔀 Rot90°   (T1): loss=3.6491, policy_loss=2.8495, value_loss=0.6767, policy_categorical_accuracy=0.3423, value_mse=0.1139, time=16.7s
+  🔀 Rot180°  (T2): loss=3.6388, policy_loss=2.8407, value_loss=0.6755, policy_categorical_accuracy=0.3449, value_mse=0.1133, time=16.5s
+  🔀 Rot270°  (T3): loss=3.6321, policy_loss=2.8351, value_loss=0.6747, policy_categorical_accuracy=0.3439, value_mse=0.1129, time=16.7s
+📊 WandB: Logged epoch 21 metrics
+
+✅ Époque 21/100 (8 transforms avg): time=67.19s, loss=3.6445, policy_loss=2.8459, value_loss=0.6760, policy_categorical_accuracy=0.3428, value_mse=0.1135
+
+📊 Époque 22/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.6170 - policy_loss: 2.8178 - value_loss: 0.6770 - policy_categorical_accuracy: 0.3466 - value_mse: 0.1143
+  🔀 Original (T0): loss=3.6170, policy_loss=2.8178, value_loss=0.6770, policy_categorical_accuracy=0.3466, value_mse=0.1143, time=16.7s
+  🔀 Rot90°   (T1): loss=3.6123, policy_loss=2.8143, value_loss=0.6761, policy_categorical_accuracy=0.3460, value_mse=0.1138, time=16.7s
+  🔀 Rot180°  (T2): loss=3.5985, policy_loss=2.8018, value_loss=0.6750, policy_categorical_accuracy=0.3531, value_mse=0.1133, time=16.7s
+  🔀 Rot270°  (T3): loss=3.5937, policy_loss=2.7967, value_loss=0.6756, policy_categorical_accuracy=0.3496, value_mse=0.1136, time=16.5s
+📊 WandB: Logged epoch 22 metrics
+
+✅ Époque 22/100 (8 transforms avg): time=67.16s, loss=3.6053, policy_loss=2.8076, value_loss=0.6759, policy_categorical_accuracy=0.3488, value_mse=0.1138
+
+📊 Époque 23/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 53ms/step - loss: 3.6305 - policy_loss: 2.8346 - value_loss: 0.6748 - policy_categorical_accuracy: 0.3465 - value_mse: 0.1137
+  🔀 Original (T0): loss=3.6305, policy_loss=2.8346, value_loss=0.6748, policy_categorical_accuracy=0.3465, value_mse=0.1137, time=16.6s
+  🔀 Rot90°   (T1): loss=3.6184, policy_loss=2.8228, value_loss=0.6746, policy_categorical_accuracy=0.3430, value_mse=0.1136, time=16.4s
+  🔀 Rot180°  (T2): loss=3.6092, policy_loss=2.8160, value_loss=0.6725, policy_categorical_accuracy=0.3468, value_mse=0.1127, time=16.2s
+  🔀 Rot270°  (T3): loss=3.6045, policy_loss=2.8108, value_loss=0.6732, policy_categorical_accuracy=0.3466, value_mse=0.1129, time=16.3s
+📊 WandB: Logged epoch 23 metrics
+
+✅ Époque 23/100 (8 transforms avg): time=66.05s, loss=3.6157, policy_loss=2.8210, value_loss=0.6738, policy_categorical_accuracy=0.3457, value_mse=0.1132
+
+📊 Époque 24/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6116 - policy_loss: 2.8138 - value_loss: 0.6775 - policy_categorical_accuracy: 0.3497 - value_mse: 0.1171
+  🔀 Original (T0): loss=3.6116, policy_loss=2.8138, value_loss=0.6775, policy_categorical_accuracy=0.3497, value_mse=0.1171, time=16.5s
+  🔀 Rot90°   (T1): loss=3.5950, policy_loss=2.7990, value_loss=0.6759, policy_categorical_accuracy=0.3515, value_mse=0.1164, time=16.5s
+  🔀 Rot180°  (T2): loss=3.5840, policy_loss=2.7903, value_loss=0.6738, policy_categorical_accuracy=0.3553, value_mse=0.1155, time=16.4s
+  🔀 Rot270°  (T3): loss=3.5795, policy_loss=2.7866, value_loss=0.6733, policy_categorical_accuracy=0.3530, value_mse=0.1152, time=16.9s
+📊 WandB: Logged epoch 24 metrics
+
+✅ Époque 24/100 (8 transforms avg): time=66.78s, loss=3.5925, policy_loss=2.7974, value_loss=0.6751, policy_categorical_accuracy=0.3524, value_mse=0.1160
+
+📊 Époque 25/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.6269 - policy_loss: 2.8347 - value_loss: 0.6728 - policy_categorical_accuracy: 0.3436 - value_mse: 0.1114
+  🔀 Original (T0): loss=3.6269, policy_loss=2.8347, value_loss=0.6728, policy_categorical_accuracy=0.3436, value_mse=0.1114, time=17.0s
+  🔀 Rot90°   (T1): loss=3.6122, policy_loss=2.8205, value_loss=0.6725, policy_categorical_accuracy=0.3462, value_mse=0.1112, time=16.7s
+  🔀 Rot180°  (T2): loss=3.6041, policy_loss=2.8123, value_loss=0.6727, policy_categorical_accuracy=0.3462, value_mse=0.1113, time=17.1s
+  🔀 Rot270°  (T3): loss=3.6001, policy_loss=2.8091, value_loss=0.6722, policy_categorical_accuracy=0.3467, value_mse=0.1111, time=16.5s
+📊 WandB: Logged epoch 25 metrics
+
+✅ Époque 25/100 (8 transforms avg): time=67.96s, loss=3.6108, policy_loss=2.8192, value_loss=0.6725, policy_categorical_accuracy=0.3457, value_mse=0.1112
+
+📊 Époque 26/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.6448 - policy_loss: 2.8528 - value_loss: 0.6735 - policy_categorical_accuracy: 0.3414 - value_mse: 0.1131
+  🔀 Original (T0): loss=3.6448, policy_loss=2.8528, value_loss=0.6735, policy_categorical_accuracy=0.3414, value_mse=0.1131, time=16.7s
+  🔀 Rot90°   (T1): loss=3.6383, policy_loss=2.8468, value_loss=0.6731, policy_categorical_accuracy=0.3432, value_mse=0.1129, time=16.5s
+  🔀 Rot180°  (T2): loss=3.6263, policy_loss=2.8362, value_loss=0.6719, policy_categorical_accuracy=0.3450, value_mse=0.1123, time=16.3s
+  🔀 Rot270°  (T3): loss=3.6244, policy_loss=2.8344, value_loss=0.6720, policy_categorical_accuracy=0.3435, value_mse=0.1124, time=16.7s
+📊 WandB: Logged epoch 26 metrics
+
+✅ Époque 26/100 (8 transforms avg): time=66.86s, loss=3.6335, policy_loss=2.8426, value_loss=0.6726, policy_categorical_accuracy=0.3433, value_mse=0.1126
+
+📊 Époque 27/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6185 - policy_loss: 2.8282 - value_loss: 0.6726 - policy_categorical_accuracy: 0.3402 - value_mse: 0.1131
+  🔀 Original (T0): loss=3.6185, policy_loss=2.8282, value_loss=0.6726, policy_categorical_accuracy=0.3402, value_mse=0.1131, time=16.5s
+  🔀 Rot90°   (T1): loss=3.6002, policy_loss=2.8112, value_loss=0.6714, policy_categorical_accuracy=0.3450, value_mse=0.1125, time=16.5s
+  🔀 Rot180°  (T2): loss=3.5991, policy_loss=2.8111, value_loss=0.6706, policy_categorical_accuracy=0.3430, value_mse=0.1121, time=16.4s
+  🔀 Rot270°  (T3): loss=3.5904, policy_loss=2.8025, value_loss=0.6707, policy_categorical_accuracy=0.3460, value_mse=0.1122, time=16.6s
+📊 WandB: Logged epoch 27 metrics
+
+✅ Époque 27/100 (8 transforms avg): time=66.64s, loss=3.6021, policy_loss=2.8132, value_loss=0.6713, policy_categorical_accuracy=0.3435, value_mse=0.1125
+
+📊 Époque 28/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6233 - policy_loss: 2.8337 - value_loss: 0.6726 - policy_categorical_accuracy: 0.3422 - value_mse: 0.1110
+  🔀 Original (T0): loss=3.6233, policy_loss=2.8337, value_loss=0.6726, policy_categorical_accuracy=0.3422, value_mse=0.1110, time=16.4s
+  🔀 Rot90°   (T1): loss=3.6138, policy_loss=2.8256, value_loss=0.6714, policy_categorical_accuracy=0.3433, value_mse=0.1105, time=16.4s
+  🔀 Rot180°  (T2): loss=3.6070, policy_loss=2.8185, value_loss=0.6718, policy_categorical_accuracy=0.3477, value_mse=0.1107, time=16.9s
+  🔀 Rot270°  (T3): loss=3.5974, policy_loss=2.8110, value_loss=0.6699, policy_categorical_accuracy=0.3467, value_mse=0.1098, time=16.7s
+📊 WandB: Logged epoch 28 metrics
+
+✅ Époque 28/100 (8 transforms avg): time=66.95s, loss=3.6104, policy_loss=2.8222, value_loss=0.6714, policy_categorical_accuracy=0.3450, value_mse=0.1105
+
+📊 Époque 29/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6294 - policy_loss: 2.8414 - value_loss: 0.6718 - policy_categorical_accuracy: 0.3384 - value_mse: 0.1109
+  🔀 Original (T0): loss=3.6294, policy_loss=2.8414, value_loss=0.6718, policy_categorical_accuracy=0.3384, value_mse=0.1109, time=16.5s
+  🔀 Rot90°   (T1): loss=3.6161, policy_loss=2.8284, value_loss=0.6716, policy_categorical_accuracy=0.3372, value_mse=0.1107, time=16.4s
+  🔀 Rot180°  (T2): loss=3.6138, policy_loss=2.8284, value_loss=0.6695, policy_categorical_accuracy=0.3386, value_mse=0.1097, time=16.5s
+  🔀 Rot270°  (T3): loss=3.6071, policy_loss=2.8209, value_loss=0.6705, policy_categorical_accuracy=0.3407, value_mse=0.1103, time=16.7s
+📊 WandB: Logged epoch 29 metrics
+
+✅ Époque 29/100 (8 transforms avg): time=66.78s, loss=3.6166, policy_loss=2.8298, value_loss=0.6708, policy_categorical_accuracy=0.3387, value_mse=0.1104
+
+📊 Époque 30/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.6041 - policy_loss: 2.8164 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3426 - value_mse: 0.1108
+  🔀 Original (T0): loss=3.6041, policy_loss=2.8164, value_loss=0.6721, policy_categorical_accuracy=0.3426, value_mse=0.1108, time=16.5s
+  🔀 Rot90°   (T1): loss=3.5871, policy_loss=2.8001, value_loss=0.6716, policy_categorical_accuracy=0.3482, value_mse=0.1106, time=17.1s
+  🔀 Rot180°  (T2): loss=3.5842, policy_loss=2.7976, value_loss=0.6714, policy_categorical_accuracy=0.3473, value_mse=0.1105, time=17.0s
+  🔀 Rot270°  (T3): loss=3.5770, policy_loss=2.7917, value_loss=0.6703, policy_categorical_accuracy=0.3476, value_mse=0.1100, time=16.8s
+
+🔍 Analyse complète gradient vanishing (époque 30)...
+⚠️  Gradient WARNING at epoch 30
+   • GRADIENT_VANISHING
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 30 metrics
+
+✅ Époque 30/100 (8 transforms avg): time=68.15s, loss=3.5881, policy_loss=2.8015, value_loss=0.6714, policy_categorical_accuracy=0.3464, value_mse=0.1105
+
+📊 Époque 31/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.5916 - policy_loss: 2.8063 - value_loss: 0.6704 - policy_categorical_accuracy: 0.3481 - value_mse: 0.1097
+  🔀 Original (T0): loss=3.5916, policy_loss=2.8063, value_loss=0.6704, policy_categorical_accuracy=0.3481, value_mse=0.1097, time=16.6s
+  🔀 Rot90°   (T1): loss=3.5709, policy_loss=2.7866, value_loss=0.6696, policy_categorical_accuracy=0.3508, value_mse=0.1092, time=16.0s
+  🔀 Rot180°  (T2): loss=3.5625, policy_loss=2.7795, value_loss=0.6685, policy_categorical_accuracy=0.3570, value_mse=0.1087, time=15.8s
+  🔀 Rot270°  (T3): loss=3.5574, policy_loss=2.7737, value_loss=0.6694, policy_categorical_accuracy=0.3524, value_mse=0.1092, time=16.0s
+📊 WandB: Logged epoch 31 metrics
+
+✅ Époque 31/100 (8 transforms avg): time=64.96s, loss=3.5706, policy_loss=2.7865, value_loss=0.6695, policy_categorical_accuracy=0.3521, value_mse=0.1092
+
+📊 Époque 32/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.5725 - policy_loss: 2.7884 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3505 - value_mse: 0.1114
+  🔀 Original (T0): loss=3.5725, policy_loss=2.7884, value_loss=0.6700, policy_categorical_accuracy=0.3505, value_mse=0.1114, time=16.0s
+  🔀 Rot90°   (T1): loss=3.5669, policy_loss=2.7832, value_loss=0.6697, policy_categorical_accuracy=0.3514, value_mse=0.1113, time=16.0s
+  🔀 Rot180°  (T2): loss=3.5533, policy_loss=2.7694, value_loss=0.6700, policy_categorical_accuracy=0.3532, value_mse=0.1114, time=15.9s
+  🔀 Rot270°  (T3): loss=3.5531, policy_loss=2.7701, value_loss=0.6693, policy_categorical_accuracy=0.3522, value_mse=0.1111, time=16.0s
+📊 WandB: Logged epoch 32 metrics
+
+✅ Époque 32/100 (8 transforms avg): time=64.40s, loss=3.5615, policy_loss=2.7778, value_loss=0.6698, policy_categorical_accuracy=0.3518, value_mse=0.1113
+
+📊 Époque 33/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 50ms/step - loss: 3.5680 - policy_loss: 2.7843 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3514 - value_mse: 0.1109
+  🔀 Original (T0): loss=3.5680, policy_loss=2.7843, value_loss=0.6701, policy_categorical_accuracy=0.3514, value_mse=0.1109, time=15.8s
+  🔀 Rot90°   (T1): loss=3.5574, policy_loss=2.7748, value_loss=0.6693, policy_categorical_accuracy=0.3539, value_mse=0.1106, time=16.1s
+  🔀 Rot180°  (T2): loss=3.5546, policy_loss=2.7725, value_loss=0.6689, policy_categorical_accuracy=0.3537, value_mse=0.1103, time=16.3s
+  🔀 Rot270°  (T3): loss=3.5463, policy_loss=2.7665, value_loss=0.6668, policy_categorical_accuracy=0.3564, value_mse=0.1094, time=16.1s
+📊 WandB: Logged epoch 33 metrics
+
+✅ Époque 33/100 (8 transforms avg): time=64.94s, loss=3.5566, policy_loss=2.7745, value_loss=0.6688, policy_categorical_accuracy=0.3538, value_mse=0.1103
+
+📊 Époque 34/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 51ms/step - loss: 3.5525 - policy_loss: 2.7681 - value_loss: 0.6715 - policy_categorical_accuracy: 0.3508 - value_mse: 0.1121
+  🔀 Original (T0): loss=3.5525, policy_loss=2.7681, value_loss=0.6715, policy_categorical_accuracy=0.3508, value_mse=0.1121, time=16.1s
+  🔀 Rot90°   (T1): loss=3.5472, policy_loss=2.7629, value_loss=0.6716, policy_categorical_accuracy=0.3558, value_mse=0.1120, time=16.2s
+  🔀 Rot180°  (T2): loss=3.5334, policy_loss=2.7501, value_loss=0.6707, policy_categorical_accuracy=0.3609, value_mse=0.1116, time=15.9s
+  🔀 Rot270°  (T3): loss=3.5246, policy_loss=2.7416, value_loss=0.6706, policy_categorical_accuracy=0.3538, value_mse=0.1116, time=16.1s
+📊 WandB: Logged epoch 34 metrics
+
+✅ Époque 34/100 (8 transforms avg): time=64.86s, loss=3.5394, policy_loss=2.7557, value_loss=0.6711, policy_categorical_accuracy=0.3553, value_mse=0.1118
+
+📊 Époque 35/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 50ms/step - loss: 3.5778 - policy_loss: 2.7954 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3470 - value_mse: 0.1123
+  🔀 Original (T0): loss=3.5778, policy_loss=2.7954, value_loss=0.6702, policy_categorical_accuracy=0.3470, value_mse=0.1123, time=15.9s
+  🔀 Rot90°   (T1): loss=3.5621, policy_loss=2.7804, value_loss=0.6696, policy_categorical_accuracy=0.3503, value_mse=0.1120, time=16.0s
+  🔀 Rot180°  (T2): loss=3.5535, policy_loss=2.7728, value_loss=0.6688, policy_categorical_accuracy=0.3563, value_mse=0.1116, time=16.7s
+  🔀 Rot270°  (T3): loss=3.5495, policy_loss=2.7697, value_loss=0.6680, policy_categorical_accuracy=0.3516, value_mse=0.1112, time=16.3s
+📊 WandB: Logged epoch 35 metrics
+
+✅ Époque 35/100 (8 transforms avg): time=65.41s, loss=3.5607, policy_loss=2.7796, value_loss=0.6691, policy_categorical_accuracy=0.3513, value_mse=0.1118
+
+📊 Époque 36/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 52ms/step - loss: 3.5666 - policy_loss: 2.7878 - value_loss: 0.6672 - policy_categorical_accuracy: 0.3548 - value_mse: 0.1113
+  🔀 Original (T0): loss=3.5666, policy_loss=2.7878, value_loss=0.6672, policy_categorical_accuracy=0.3548, value_mse=0.1113, time=16.3s
+  🔀 Rot90°   (T1): loss=3.5511, policy_loss=2.7734, value_loss=0.6662, policy_categorical_accuracy=0.3607, value_mse=0.1109, time=16.8s
+  🔀 Rot180°  (T2): loss=3.5493, policy_loss=2.7705, value_loss=0.6675, policy_categorical_accuracy=0.3627, value_mse=0.1115, time=17.2s
+  🔀 Rot270°  (T3): loss=3.5432, policy_loss=2.7646, value_loss=0.6674, policy_categorical_accuracy=0.3564, value_mse=0.1115, time=17.1s
+📊 WandB: Logged epoch 36 metrics
+
+✅ Époque 36/100 (8 transforms avg): time=67.97s, loss=3.5526, policy_loss=2.7741, value_loss=0.6671, policy_categorical_accuracy=0.3586, value_mse=0.1113
+
+📊 Époque 37/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 56ms/step - loss: 3.5676 - policy_loss: 2.7901 - value_loss: 0.6664 - policy_categorical_accuracy: 0.3489 - value_mse: 0.1087
+  🔀 Original (T0): loss=3.5676, policy_loss=2.7901, value_loss=0.6664, policy_categorical_accuracy=0.3489, value_mse=0.1087, time=17.6s
+  🔀 Rot90°   (T1): loss=3.5497, policy_loss=2.7728, value_loss=0.6659, policy_categorical_accuracy=0.3546, value_mse=0.1085, time=17.2s
+  🔀 Rot180°  (T2): loss=3.5435, policy_loss=2.7661, value_loss=0.6666, policy_categorical_accuracy=0.3541, value_mse=0.1088, time=17.0s
+  🔀 Rot270°  (T3): loss=3.5395, policy_loss=2.7630, value_loss=0.6659, policy_categorical_accuracy=0.3620, value_mse=0.1085, time=17.1s
+📊 WandB: Logged epoch 37 metrics
+
+✅ Époque 37/100 (8 transforms avg): time=69.45s, loss=3.5501, policy_loss=2.7730, value_loss=0.6662, policy_categorical_accuracy=0.3549, value_mse=0.1086
+
+📊 Époque 38/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5480 - policy_loss: 2.7682 - value_loss: 0.6693 - policy_categorical_accuracy: 0.3552 - value_mse: 0.1104
+  🔀 Original (T0): loss=3.5480, policy_loss=2.7682, value_loss=0.6693, policy_categorical_accuracy=0.3552, value_mse=0.1104, time=17.1s
+  🔀 Rot90°   (T1): loss=3.5360, policy_loss=2.7577, value_loss=0.6679, policy_categorical_accuracy=0.3526, value_mse=0.1097, time=17.2s
+  🔀 Rot180°  (T2): loss=3.5305, policy_loss=2.7517, value_loss=0.6686, policy_categorical_accuracy=0.3537, value_mse=0.1100, time=17.3s
+  🔀 Rot270°  (T3): loss=3.5268, policy_loss=2.7496, value_loss=0.6670, policy_categorical_accuracy=0.3551, value_mse=0.1092, time=17.3s
+📊 WandB: Logged epoch 38 metrics
+
+✅ Époque 38/100 (8 transforms avg): time=69.47s, loss=3.5353, policy_loss=2.7568, value_loss=0.6682, policy_categorical_accuracy=0.3542, value_mse=0.1098
+
+📊 Époque 39/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5763 - policy_loss: 2.7963 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3459 - value_mse: 0.1102
+  🔀 Original (T0): loss=3.5763, policy_loss=2.7963, value_loss=0.6701, policy_categorical_accuracy=0.3459, value_mse=0.1102, time=17.1s
+  🔀 Rot90°   (T1): loss=3.5677, policy_loss=2.7898, value_loss=0.6681, policy_categorical_accuracy=0.3518, value_mse=0.1093, time=17.2s
+  🔀 Rot180°  (T2): loss=3.5583, policy_loss=2.7816, value_loss=0.6670, policy_categorical_accuracy=0.3482, value_mse=0.1088, time=17.3s
+  🔀 Rot270°  (T3): loss=3.5552, policy_loss=2.7785, value_loss=0.6671, policy_categorical_accuracy=0.3516, value_mse=0.1087, time=16.9s
+📊 WandB: Logged epoch 39 metrics
+
+✅ Époque 39/100 (8 transforms avg): time=69.08s, loss=3.5644, policy_loss=2.7865, value_loss=0.6681, policy_categorical_accuracy=0.3494, value_mse=0.1093
+
+📊 Époque 40/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5208 - policy_loss: 2.7414 - value_loss: 0.6700 - policy_categorical_accuracy: 0.3636 - value_mse: 0.1123
+  🔀 Original (T0): loss=3.5208, policy_loss=2.7414, value_loss=0.6700, policy_categorical_accuracy=0.3636, value_mse=0.1123, time=17.0s
+  🔀 Rot90°   (T1): loss=3.5189, policy_loss=2.7398, value_loss=0.6698, policy_categorical_accuracy=0.3602, value_mse=0.1121, time=16.9s
+  🔀 Rot180°  (T2): loss=3.5095, policy_loss=2.7321, value_loss=0.6682, policy_categorical_accuracy=0.3619, value_mse=0.1114, time=17.8s
+  🔀 Rot270°  (T3): loss=3.5057, policy_loss=2.7293, value_loss=0.6673, policy_categorical_accuracy=0.3629, value_mse=0.1110, time=17.5s
+
+🔍 Analyse complète gradient vanishing (époque 40)...
+⚠️  Gradient WARNING at epoch 40
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 40 metrics
+📦 Modèle sauvegardé sur WandB: epoch 40
+💾 WandB: Model saved at epoch 40
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 40
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3621
+     ❌ Sous-performance
+   Value MSE: 0.1117
+     ✅ Excellent
+
+====================================================================================
+
+✅ Époque 40/100 (8 transforms avg): time=70.20s, loss=3.5137, policy_loss=2.7356, value_loss=0.6688, policy_categorical_accuracy=0.3621, value_mse=0.1117
+
+🔍 Évaluation sur données de validation (non augmentées)...
+313/313 [==============================] - 7s 23ms/step - loss: 3.5247 - policy_loss: 2.7530 - value_loss: 0.6627 - policy_categorical_accuracy: 0.3544 - value_mse: 0.1078
+✅ WandB: Logged validation metrics for epoch 40
+🔍 Diagnostic: Recorded validation metrics for epoch 40
+📈 Validation Époque 40/100: loss=3.5247, policy_loss=2.7530, value_loss=0.6627, policy_categorical_accuracy=0.3544, value_mse=0.1078
+💾 Nouveau meilleur modèle sauvé : best_model_epoch40_val3.5247_aug8x.h5
+
+📊 Époque 41/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 56ms/step - loss: 3.5731 - policy_loss: 2.7972 - value_loss: 0.6669 - policy_categorical_accuracy: 0.3444 - value_mse: 0.1108
+  🔀 Original (T0): loss=3.5731, policy_loss=2.7972, value_loss=0.6669, policy_categorical_accuracy=0.3444, value_mse=0.1108, time=17.6s
+  🔀 Rot90°   (T1): loss=3.5625, policy_loss=2.7860, value_loss=0.6676, policy_categorical_accuracy=0.3452, value_mse=0.1111, time=18.0s
+  🔀 Rot180°  (T2): loss=3.5537, policy_loss=2.7789, value_loss=0.6660, policy_categorical_accuracy=0.3457, value_mse=0.1104, time=17.5s
+  🔀 Rot270°  (T3): loss=3.5513, policy_loss=2.7770, value_loss=0.6657, policy_categorical_accuracy=0.3470, value_mse=0.1102, time=17.1s
+📊 WandB: Logged epoch 41 metrics
+
+✅ Époque 41/100 (8 transforms avg): time=70.72s, loss=3.5601, policy_loss=2.7848, value_loss=0.6666, policy_categorical_accuracy=0.3456, value_mse=0.1106
+
+📊 Époque 42/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5228 - policy_loss: 2.7478 - value_loss: 0.6665 - policy_categorical_accuracy: 0.3594 - value_mse: 0.1086
+  🔀 Original (T0): loss=3.5228, policy_loss=2.7478, value_loss=0.6665, policy_categorical_accuracy=0.3594, value_mse=0.1086, time=16.9s
+  🔀 Rot90°   (T1): loss=3.5207, policy_loss=2.7471, value_loss=0.6652, policy_categorical_accuracy=0.3558, value_mse=0.1080, time=17.5s
+  🔀 Rot180°  (T2): loss=3.5142, policy_loss=2.7393, value_loss=0.6666, policy_categorical_accuracy=0.3581, value_mse=0.1086, time=16.9s
+  🔀 Rot270°  (T3): loss=3.5086, policy_loss=2.7350, value_loss=0.6654, policy_categorical_accuracy=0.3587, value_mse=0.1081, time=16.5s
+📊 WandB: Logged epoch 42 metrics
+
+✅ Époque 42/100 (8 transforms avg): time=68.37s, loss=3.5166, policy_loss=2.7423, value_loss=0.6659, policy_categorical_accuracy=0.3580, value_mse=0.1083
+
+📊 Époque 43/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5193 - policy_loss: 2.7417 - value_loss: 0.6696 - policy_categorical_accuracy: 0.3563 - value_mse: 0.1074
+  🔀 Original (T0): loss=3.5193, policy_loss=2.7417, value_loss=0.6696, policy_categorical_accuracy=0.3563, value_mse=0.1074, time=16.9s
+  🔀 Rot90°   (T1): loss=3.4990, policy_loss=2.7229, value_loss=0.6682, policy_categorical_accuracy=0.3609, value_mse=0.1067, time=17.3s
+  🔀 Rot180°  (T2): loss=3.4936, policy_loss=2.7186, value_loss=0.6672, policy_categorical_accuracy=0.3646, value_mse=0.1063, time=16.9s
+  🔀 Rot270°  (T3): loss=3.4854, policy_loss=2.7111, value_loss=0.6667, policy_categorical_accuracy=0.3645, value_mse=0.1061, time=16.9s
+📊 WandB: Logged epoch 43 metrics
+
+✅ Époque 43/100 (8 transforms avg): time=68.61s, loss=3.4993, policy_loss=2.7236, value_loss=0.6679, policy_categorical_accuracy=0.3616, value_mse=0.1066
+
+📊 Époque 44/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.4993 - policy_loss: 2.7252 - value_loss: 0.6665 - policy_categorical_accuracy: 0.3613 - value_mse: 0.1098
+  🔀 Original (T0): loss=3.4993, policy_loss=2.7252, value_loss=0.6665, policy_categorical_accuracy=0.3613, value_mse=0.1098, time=16.7s
+  🔀 Rot90°   (T1): loss=3.4856, policy_loss=2.7101, value_loss=0.6682, policy_categorical_accuracy=0.3625, value_mse=0.1105, time=17.1s
+  🔀 Rot180°  (T2): loss=3.4835, policy_loss=2.7106, value_loss=0.6656, policy_categorical_accuracy=0.3651, value_mse=0.1093, time=15.9s
+  🔀 Rot270°  (T3): loss=3.4749, policy_loss=2.7016, value_loss=0.6661, policy_categorical_accuracy=0.3674, value_mse=0.1096, time=17.4s
+📊 WandB: Logged epoch 44 metrics
+
+✅ Époque 44/100 (8 transforms avg): time=67.54s, loss=3.4858, policy_loss=2.7119, value_loss=0.6666, policy_categorical_accuracy=0.3641, value_mse=0.1098
+
+📊 Époque 45/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.5470 - policy_loss: 2.7746 - value_loss: 0.6652 - policy_categorical_accuracy: 0.3522 - value_mse: 0.1073
+  🔀 Original (T0): loss=3.5470, policy_loss=2.7746, value_loss=0.6652, policy_categorical_accuracy=0.3522, value_mse=0.1073, time=16.9s
+  🔀 Rot90°   (T1): loss=3.5375, policy_loss=2.7666, value_loss=0.6638, policy_categorical_accuracy=0.3584, value_mse=0.1067, time=17.8s
+  🔀 Rot180°  (T2): loss=3.5297, policy_loss=2.7601, value_loss=0.6627, policy_categorical_accuracy=0.3556, value_mse=0.1063, time=17.1s
+  🔀 Rot270°  (T3): loss=3.5253, policy_loss=2.7555, value_loss=0.6630, policy_categorical_accuracy=0.3557, value_mse=0.1063, time=16.9s
+📊 WandB: Logged epoch 45 metrics
+
+✅ Époque 45/100 (8 transforms avg): time=69.26s, loss=3.5348, policy_loss=2.7642, value_loss=0.6637, policy_categorical_accuracy=0.3555, value_mse=0.1067
+
+📊 Époque 46/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.5031 - policy_loss: 2.7307 - value_loss: 0.6657 - policy_categorical_accuracy: 0.3572 - value_mse: 0.1100
+  🔀 Original (T0): loss=3.5031, policy_loss=2.7307, value_loss=0.6657, policy_categorical_accuracy=0.3572, value_mse=0.1100, time=16.8s
+  🔀 Rot90°   (T1): loss=3.4961, policy_loss=2.7250, value_loss=0.6645, policy_categorical_accuracy=0.3568, value_mse=0.1095, time=16.9s
+  🔀 Rot180°  (T2): loss=3.4893, policy_loss=2.7187, value_loss=0.6641, policy_categorical_accuracy=0.3613, value_mse=0.1093, time=16.7s
+  🔀 Rot270°  (T3): loss=3.4780, policy_loss=2.7068, value_loss=0.6648, policy_categorical_accuracy=0.3613, value_mse=0.1096, time=16.9s
+📊 WandB: Logged epoch 46 metrics
+
+✅ Époque 46/100 (8 transforms avg): time=67.74s, loss=3.4916, policy_loss=2.7203, value_loss=0.6648, policy_categorical_accuracy=0.3591, value_mse=0.1096
+
+📊 Époque 47/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 16s 53ms/step - loss: 3.5229 - policy_loss: 2.7484 - value_loss: 0.6682 - policy_categorical_accuracy: 0.3609 - value_mse: 0.1088
+  🔀 Original (T0): loss=3.5229, policy_loss=2.7484, value_loss=0.6682, policy_categorical_accuracy=0.3609, value_mse=0.1088, time=16.6s
+  🔀 Rot90°   (T1): loss=3.5084, policy_loss=2.7351, value_loss=0.6671, policy_categorical_accuracy=0.3593, value_mse=0.1082, time=16.7s
+  🔀 Rot180°  (T2): loss=3.5049, policy_loss=2.7329, value_loss=0.6659, policy_categorical_accuracy=0.3615, value_mse=0.1077, time=16.7s
+  🔀 Rot270°  (T3): loss=3.4960, policy_loss=2.7248, value_loss=0.6652, policy_categorical_accuracy=0.3653, value_mse=0.1074, time=16.8s
+📊 WandB: Logged epoch 47 metrics
+
+✅ Époque 47/100 (8 transforms avg): time=67.41s, loss=3.5080, policy_loss=2.7353, value_loss=0.6666, policy_categorical_accuracy=0.3617, value_mse=0.1080
+
+📊 Époque 48/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.5057 - policy_loss: 2.7313 - value_loss: 0.6685 - policy_categorical_accuracy: 0.3610 - value_mse: 0.1086
+  🔀 Original (T0): loss=3.5057, policy_loss=2.7313, value_loss=0.6685, policy_categorical_accuracy=0.3610, value_mse=0.1086, time=16.7s
+  🔀 Rot90°   (T1): loss=3.4987, policy_loss=2.7250, value_loss=0.6679, policy_categorical_accuracy=0.3608, value_mse=0.1084, time=17.0s
+  🔀 Rot180°  (T2): loss=3.4897, policy_loss=2.7165, value_loss=0.6676, policy_categorical_accuracy=0.3632, value_mse=0.1082, time=17.0s
+  🔀 Rot270°  (T3): loss=3.4832, policy_loss=2.7111, value_loss=0.6665, policy_categorical_accuracy=0.3659, value_mse=0.1078, time=16.8s
+📊 WandB: Logged epoch 48 metrics
+
+✅ Époque 48/100 (8 transforms avg): time=68.18s, loss=3.4943, policy_loss=2.7210, value_loss=0.6676, policy_categorical_accuracy=0.3627, value_mse=0.1083
+
+📊 Époque 49/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 56ms/step - loss: 3.5081 - policy_loss: 2.7349 - value_loss: 0.6677 - policy_categorical_accuracy: 0.3598 - value_mse: 0.1109
+  🔀 Original (T0): loss=3.5081, policy_loss=2.7349, value_loss=0.6677, policy_categorical_accuracy=0.3598, value_mse=0.1109, time=17.5s
+  🔀 Rot90°   (T1): loss=3.4967, policy_loss=2.7242, value_loss=0.6670, policy_categorical_accuracy=0.3644, value_mse=0.1106, time=16.8s
+  🔀 Rot180°  (T2): loss=3.4932, policy_loss=2.7198, value_loss=0.6681, policy_categorical_accuracy=0.3644, value_mse=0.1111, time=16.6s
+  🔀 Rot270°  (T3): loss=3.4901, policy_loss=2.7188, value_loss=0.6661, policy_categorical_accuracy=0.3666, value_mse=0.1102, time=16.4s
+📊 WandB: Logged epoch 49 metrics
+
+✅ Époque 49/100 (8 transforms avg): time=67.88s, loss=3.4970, policy_loss=2.7244, value_loss=0.6672, policy_categorical_accuracy=0.3638, value_mse=0.1107
+
+📊 Époque 50/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 54ms/step - loss: 3.5391 - policy_loss: 2.7672 - value_loss: 0.6667 - policy_categorical_accuracy: 0.3495 - value_mse: 0.1080
+  🔀 Original (T0): loss=3.5391, policy_loss=2.7672, value_loss=0.6667, policy_categorical_accuracy=0.3495, value_mse=0.1080, time=17.0s
+  🔀 Rot90°   (T1): loss=3.5272, policy_loss=2.7546, value_loss=0.6675, policy_categorical_accuracy=0.3532, value_mse=0.1083, time=16.8s
+  🔀 Rot180°  (T2): loss=3.5236, policy_loss=2.7517, value_loss=0.6669, policy_categorical_accuracy=0.3536, value_mse=0.1081, time=17.1s
+  🔀 Rot270°  (T3): loss=3.5140, policy_loss=2.7423, value_loss=0.6668, policy_categorical_accuracy=0.3557, value_mse=0.1080, time=16.8s
+
+🔍 Analyse complète gradient vanishing (époque 50)...
+⚠️  Gradient WARNING at epoch 50
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 50 metrics
+
+✅ Époque 50/100 (8 transforms avg): time=68.58s, loss=3.5260, policy_loss=2.7540, value_loss=0.6670, policy_categorical_accuracy=0.3530, value_mse=0.1081
+
+📊 Époque 51/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.5260 - policy_loss: 2.7525 - value_loss: 0.6686 - policy_categorical_accuracy: 0.3554 - value_mse: 0.1098
+  🔀 Original (T0): loss=3.5260, policy_loss=2.7525, value_loss=0.6686, policy_categorical_accuracy=0.3554, value_mse=0.1098, time=16.7s
+  🔀 Rot90°   (T1): loss=3.5143, policy_loss=2.7427, value_loss=0.6669, policy_categorical_accuracy=0.3575, value_mse=0.1090, time=16.8s
+  🔀 Rot180°  (T2): loss=3.5031, policy_loss=2.7315, value_loss=0.6670, policy_categorical_accuracy=0.3644, value_mse=0.1091, time=16.8s
+  🔀 Rot270°  (T3): loss=3.5027, policy_loss=2.7314, value_loss=0.6667, policy_categorical_accuracy=0.3610, value_mse=0.1090, time=16.9s
+📊 WandB: Logged epoch 51 metrics
+
+✅ Époque 51/100 (8 transforms avg): time=67.77s, loss=3.5115, policy_loss=2.7395, value_loss=0.6673, policy_categorical_accuracy=0.3596, value_mse=0.1092
+
+📊 Époque 52/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 55ms/step - loss: 3.4934 - policy_loss: 2.7243 - value_loss: 0.6646 - policy_categorical_accuracy: 0.3588 - value_mse: 0.1083
+  🔀 Original (T0): loss=3.4934, policy_loss=2.7243, value_loss=0.6646, policy_categorical_accuracy=0.3588, value_mse=0.1083, time=17.5s
+  🔀 Rot90°   (T1): loss=3.4866, policy_loss=2.7174, value_loss=0.6648, policy_categorical_accuracy=0.3599, value_mse=0.1083, time=17.1s
+  🔀 Rot180°  (T2): loss=3.4750, policy_loss=2.7068, value_loss=0.6639, policy_categorical_accuracy=0.3647, value_mse=0.1080, time=16.5s
+  🔀 Rot270°  (T3): loss=3.4739, policy_loss=2.7048, value_loss=0.6650, policy_categorical_accuracy=0.3677, value_mse=0.1084, time=16.9s
+📊 WandB: Logged epoch 52 metrics
+
+✅ Époque 52/100 (8 transforms avg): time=68.60s, loss=3.4822, policy_loss=2.7133, value_loss=0.6646, policy_categorical_accuracy=0.3628, value_mse=0.1083
+
+📊 Époque 53/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.4874 - policy_loss: 2.7159 - value_loss: 0.6674 - policy_categorical_accuracy: 0.3620 - value_mse: 0.1098
+  🔀 Original (T0): loss=3.4874, policy_loss=2.7159, value_loss=0.6674, policy_categorical_accuracy=0.3620, value_mse=0.1098, time=16.9s
+  🔀 Rot90°   (T1): loss=3.4760, policy_loss=2.7051, value_loss=0.6668, policy_categorical_accuracy=0.3642, value_mse=0.1096, time=17.1s
+  🔀 Rot180°  (T2): loss=3.4677, policy_loss=2.6981, value_loss=0.6657, policy_categorical_accuracy=0.3633, value_mse=0.1091, time=17.5s
+  🔀 Rot270°  (T3): loss=3.4612, policy_loss=2.6907, value_loss=0.6666, policy_categorical_accuracy=0.3671, value_mse=0.1095, time=16.8s
+📊 WandB: Logged epoch 53 metrics
+
+✅ Époque 53/100 (8 transforms avg): time=68.84s, loss=3.4731, policy_loss=2.7025, value_loss=0.6666, policy_categorical_accuracy=0.3641, value_mse=0.1095
+
+📊 Époque 54/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 53ms/step - loss: 3.4815 - policy_loss: 2.7127 - value_loss: 0.6650 - policy_categorical_accuracy: 0.3596 - value_mse: 0.1095
+  🔀 Original (T0): loss=3.4815, policy_loss=2.7127, value_loss=0.6650, policy_categorical_accuracy=0.3596, value_mse=0.1095, time=16.8s
+  🔀 Rot90°   (T1): loss=3.4725, policy_loss=2.7035, value_loss=0.6653, policy_categorical_accuracy=0.3651, value_mse=0.1097, time=16.7s
+  🔀 Rot180°  (T2): loss=3.4648, policy_loss=2.6959, value_loss=0.6652, policy_categorical_accuracy=0.3633, value_mse=0.1096, time=16.6s
+  🔀 Rot270°  (T3): loss=3.4639, policy_loss=2.6959, value_loss=0.6645, policy_categorical_accuracy=0.3614, value_mse=0.1092, time=45.6s
+📊 WandB: Logged epoch 54 metrics
+
+✅ Époque 54/100 (8 transforms avg): time=96.22s, loss=3.4707, policy_loss=2.7020, value_loss=0.6650, policy_categorical_accuracy=0.3624, value_mse=0.1095
+
+📊 Époque 55/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 18s 59ms/step - loss: 3.5072 - policy_loss: 2.7366 - value_loss: 0.6670 - policy_categorical_accuracy: 0.3617 - value_mse: 0.1107
+  🔀 Original (T0): loss=3.5072, policy_loss=2.7366, value_loss=0.6670, policy_categorical_accuracy=0.3617, value_mse=0.1107, time=18.6s
+  🔀 Rot90°   (T1): loss=3.4910, policy_loss=2.7207, value_loss=0.6668, policy_categorical_accuracy=0.3658, value_mse=0.1106, time=16.5s
+  🔀 Rot180°  (T2): loss=3.4870, policy_loss=2.7176, value_loss=0.6660, policy_categorical_accuracy=0.3687, value_mse=0.1102, time=1011.3s
+  🔀 Rot270°  (T3): loss=3.4876, policy_loss=2.7183, value_loss=0.6660, policy_categorical_accuracy=0.3681, value_mse=0.1102, time=15.5s
+📊 WandB: Logged epoch 55 metrics
+
+✅ Époque 55/100 (8 transforms avg): time=1062.37s, loss=3.4932, policy_loss=2.7233, value_loss=0.6665, policy_categorical_accuracy=0.3661, value_mse=0.1104
+
+📊 Époque 56/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 20s 63ms/step - loss: 3.4730 - policy_loss: 2.7040 - value_loss: 0.6658 - policy_categorical_accuracy: 0.3647 - value_mse: 0.1091
+  🔀 Original (T0): loss=3.4730, policy_loss=2.7040, value_loss=0.6658, policy_categorical_accuracy=0.3647, value_mse=0.1091, time=20.0s
+  🔀 Rot90°   (T1): loss=3.4548, policy_loss=2.6859, value_loss=0.6657, policy_categorical_accuracy=0.3656, value_mse=0.1090, time=978.8s
+  🔀 Rot180°  (T2): loss=3.4545, policy_loss=2.6870, value_loss=0.6644, policy_categorical_accuracy=0.3694, value_mse=0.1084, time=18.0s
+  🔀 Rot270°  (T3): loss=3.4497, policy_loss=2.6831, value_loss=0.6635, policy_categorical_accuracy=0.3715, value_mse=0.1081, time=17.4s
+📊 WandB: Logged epoch 56 metrics
+
+✅ Époque 56/100 (8 transforms avg): time=1034.78s, loss=3.4580, policy_loss=2.6900, value_loss=0.6648, policy_categorical_accuracy=0.3678, value_mse=0.1087
+
+📊 Époque 57/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 1025s 3s/step - loss: 3.5009 - policy_loss: 2.7333 - value_loss: 0.6646 - policy_categorical_accuracy: 0.3631 - value_mse: 0.1075
+  🔀 Original (T0): loss=3.5009, policy_loss=2.7333, value_loss=0.6646, policy_categorical_accuracy=0.3631, value_mse=0.1075, time=1025.6s
+  🔀 Rot90°   (T1): loss=3.4898, policy_loss=2.7233, value_loss=0.6636, policy_categorical_accuracy=0.3685, value_mse=0.1070, time=17.1s
+  🔀 Rot180°  (T2): loss=3.4874, policy_loss=2.7214, value_loss=0.6631, policy_categorical_accuracy=0.3659, value_mse=0.1068, time=616.7s
+  🔀 Rot270°  (T3): loss=3.4795, policy_loss=2.7139, value_loss=0.6628, policy_categorical_accuracy=0.3701, value_mse=0.1067, time=17.3s
+📊 WandB: Logged epoch 57 metrics
+
+✅ Époque 57/100 (8 transforms avg): time=1677.25s, loss=3.4894, policy_loss=2.7230, value_loss=0.6636, policy_categorical_accuracy=0.3669, value_mse=0.1070
+
+📊 Époque 58/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 18s 58ms/step - loss: 3.4698 - policy_loss: 2.7023 - value_loss: 0.6647 - policy_categorical_accuracy: 0.3666 - value_mse: 0.1085
+  🔀 Original (T0): loss=3.4698, policy_loss=2.7023, value_loss=0.6647, policy_categorical_accuracy=0.3666, value_mse=0.1085, time=18.3s
+  🔀 Rot90°   (T1): loss=3.4574, policy_loss=2.6905, value_loss=0.6642, policy_categorical_accuracy=0.3705, value_mse=0.1082, time=655.3s
+  🔀 Rot180°  (T2): loss=3.4544, policy_loss=2.6872, value_loss=0.6647, policy_categorical_accuracy=0.3707, value_mse=0.1084, time=18.0s
+  🔀 Rot270°  (T3): loss=3.4519, policy_loss=2.6855, value_loss=0.6639, policy_categorical_accuracy=0.3711, value_mse=0.1080, time=17.5s
+📊 WandB: Logged epoch 58 metrics
+
+✅ Époque 58/100 (8 transforms avg): time=709.59s, loss=3.4584, policy_loss=2.6914, value_loss=0.6644, policy_categorical_accuracy=0.3697, value_mse=0.1083
+
+📊 Époque 59/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 56ms/step - loss: 3.4532 - policy_loss: 2.6845 - value_loss: 0.6662 - policy_categorical_accuracy: 0.3651 - value_mse: 0.1090
+  🔀 Original (T0): loss=3.4532, policy_loss=2.6845, value_loss=0.6662, policy_categorical_accuracy=0.3651, value_mse=0.1090, time=17.6s
+WARNING:tensorflow:Callback method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0539s vs `on_train_batch_end` time: 129.5728s). Check your callbacks.
+2025-06-24 14:30:57,512 - WARNING - Callback method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0539s vs `on_train_batch_end` time: 129.5728s). Check your callbacks.
+  🔀 Rot90°   (T1): loss=3.4402, policy_loss=2.6721, value_loss=0.6657, policy_categorical_accuracy=0.3680, value_mse=0.1088, time=795.3s
+  🔀 Rot180°  (T2): loss=3.4359, policy_loss=2.6680, value_loss=0.6656, policy_categorical_accuracy=0.3675, value_mse=0.1087, time=17.2s
+  🔀 Rot270°  (T3): loss=3.4361, policy_loss=2.6681, value_loss=0.6656, policy_categorical_accuracy=0.3648, value_mse=0.1088, time=663.2s
+📊 WandB: Logged epoch 59 metrics
+
+✅ Époque 59/100 (8 transforms avg): time=1493.89s, loss=3.4413, policy_loss=2.6732, value_loss=0.6658, policy_categorical_accuracy=0.3664, value_mse=0.1088
+
+📊 Époque 60/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 55ms/step - loss: 3.4763 - policy_loss: 2.7091 - value_loss: 0.6650 - policy_categorical_accuracy: 0.3644 - value_mse: 0.1095
+  🔀 Original (T0): loss=3.4763, policy_loss=2.7091, value_loss=0.6650, policy_categorical_accuracy=0.3644, value_mse=0.1095, time=17.4s
+  🔀 Rot90°   (T1): loss=3.4700, policy_loss=2.7040, value_loss=0.6638, policy_categorical_accuracy=0.3614, value_mse=0.1090, time=17.5s
+  🔀 Rot180°  (T2): loss=3.4610, policy_loss=2.6947, value_loss=0.6642, policy_categorical_accuracy=0.3640, value_mse=0.1092, time=623.9s
+  🔀 Rot270°  (T3): loss=3.4568, policy_loss=2.6908, value_loss=0.6640, policy_categorical_accuracy=0.3656, value_mse=0.1092, time=18.0s
+
+🔍 Analyse complète gradient vanishing (époque 60)...
+⚠️  Gradient WARNING at epoch 60
+   • GRADIENT_VANISHING
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 60 metrics
+📦 Modèle sauvegardé sur WandB: epoch 60
+💾 WandB: Model saved at epoch 60
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 60
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3638
+     ❌ Sous-performance
+   Value MSE: 0.1092
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.364 sous le benchmark 0.550
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+
+✅ Époque 60/100 (8 transforms avg): time=678.43s, loss=3.4660, policy_loss=2.6996, value_loss=0.6642, policy_categorical_accuracy=0.3638, value_mse=0.1092
+
+🔍 Évaluation sur données de validation (non augmentées)...
+313/313 [==============================] - 7s 23ms/step - loss: 3.4718 - policy_loss: 2.7100 - value_loss: 0.6598 - policy_categorical_accuracy: 0.3614 - value_mse: 0.1065
+✅ WandB: Logged validation metrics for epoch 60
+🔍 Diagnostic: Recorded validation metrics for epoch 60
+📈 Validation Époque 60/100: loss=3.4718, policy_loss=2.7100, value_loss=0.6598, policy_categorical_accuracy=0.3614, value_mse=0.1065
+💾 Nouveau meilleur modèle sauvé : best_model_epoch60_val3.4718_aug8x.h5
+
+📊 Époque 61/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 19s 60ms/step - loss: 3.4643 - policy_loss: 2.6962 - value_loss: 0.6661 - policy_categorical_accuracy: 0.3629 - value_mse: 0.1074
+  🔀 Original (T0): loss=3.4643, policy_loss=2.6962, value_loss=0.6661, policy_categorical_accuracy=0.3629, value_mse=0.1074, time=18.8s
+  🔀 Rot90°   (T1): loss=3.4576, policy_loss=2.6886, value_loss=0.6670, policy_categorical_accuracy=0.3605, value_mse=0.1078, time=16.2s
+  🔀 Rot180°  (T2): loss=3.4523, policy_loss=2.6849, value_loss=0.6655, policy_categorical_accuracy=0.3650, value_mse=0.1072, time=17.5s
+  🔀 Rot270°  (T3): loss=3.4508, policy_loss=2.6827, value_loss=0.6662, policy_categorical_accuracy=0.3682, value_mse=0.1075, time=16.3s
+📊 WandB: Logged epoch 61 metrics
+
+✅ Époque 61/100 (8 transforms avg): time=69.24s, loss=3.4563, policy_loss=2.6881, value_loss=0.6662, policy_categorical_accuracy=0.3642, value_mse=0.1075
+
+📊 Époque 62/100 - Entraînement sur 8 transformations:
+313/313 [==============================] - 17s 55ms/step - loss: 3.5157 - policy_loss: 2.7468 - value_loss: 0.6671 - policy_categorical_accuracy: 0.3573 - value_mse: 0.1083
+  🔀 Original (T0): loss=3.5157, policy_loss=2.7468, value_loss=0.6671, policy_categorical_accuracy=0.3573, value_mse=0.1083, time=17.4s

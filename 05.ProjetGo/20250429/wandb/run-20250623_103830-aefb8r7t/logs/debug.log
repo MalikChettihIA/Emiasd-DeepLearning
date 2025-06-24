@@ -1,0 +1,28 @@
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_setup.py:_flush():81] Configure stats pid to 16344
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/.config/wandb/settings
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/settings
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_103830-aefb8r7t/logs/debug.log
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_103830-aefb8r7t/logs/debug-internal.log
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_init.py:init():831] calling init triggers
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'model_type': 'MobileNet', 'block_num': 8, 'filters': 32, 'expansion_factor': 4, 'squeeze_excitation': True, 'activation': 'swish', 'dropout_rate': 0.2, 'epochs': 100, 'batch_size': 32, 'initial_lr': 0.02, 'lr_schedule': 'cosine_annealing', 'cosine_cycles': 1, 'policy_weight': 1.0, 'value_weight': 1.0, 'optimizer': 'AdamW', 'clipnorm': 1.0, 'dataset_size': 10000, 'input_shape': [19, 19, 31], 'num_classes': 361, 'data_augmentation': '8-fold_symmetry', 'target_policy_accuracy': 0.55, 'target_value_mse': 0.15, 'framework': 'TensorFlow/Keras', 'python_version': '2.15.0', 'factor': 4, 'se': True, 'drop_out_rate': 0.0, '_wandb': {}}
+2025-06-23 10:38:30,991 INFO    MainThread:16344 [wandb_init.py:init():872] starting backend
+2025-06-23 10:38:31,233 INFO    MainThread:16344 [wandb_init.py:init():875] sending inform_init request
+2025-06-23 10:38:31,260 INFO    MainThread:16344 [wandb_init.py:init():883] backend started and connected
+2025-06-23 10:38:31,264 INFO    MainThread:16344 [wandb_init.py:init():956] updated telemetry
+2025-06-23 10:38:31,283 INFO    MainThread:16344 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-06-23 10:38:31,801 INFO    MainThread:16344 [wandb_init.py:init():1032] starting run threads in backend
+2025-06-23 10:38:31,881 INFO    MainThread:16344 [wandb_run.py:_console_start():2453] atexit reg
+2025-06-23 10:38:31,881 INFO    MainThread:16344 [wandb_run.py:_redirect():2301] redirect: wrap_raw
+2025-06-23 10:38:31,881 INFO    MainThread:16344 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-06-23 10:38:31,881 INFO    MainThread:16344 [wandb_run.py:_redirect():2393] Redirects installed.
+2025-06-23 10:38:31,882 INFO    MainThread:16344 [wandb_init.py:init():1078] run started, returning control to user process
+2025-06-23 11:51:49,646 INFO    MainThread:16344 [wandb_run.py:_finish():2219] finishing run malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/aefb8r7t
+2025-06-23 11:51:49,646 INFO    MainThread:16344 [wandb_run.py:_atexit_cleanup():2418] got exitcode: 0
+2025-06-23 11:51:49,646 INFO    MainThread:16344 [wandb_run.py:_restore():2400] restore
+2025-06-23 11:51:49,646 INFO    MainThread:16344 [wandb_run.py:_restore():2406] restore done
+2025-06-23 11:51:51,166 INFO    MainThread:16344 [wandb_run.py:_footer_history_summary_info():4000] rendering history
+2025-06-23 11:51:51,168 INFO    MainThread:16344 [wandb_run.py:_footer_history_summary_info():4032] rendering summary
+2025-06-23 11:51:51,169 INFO    MainThread:16344 [wandb_run.py:_footer_sync_info():3961] logging synced files

@@ -1,0 +1,7 @@
+{"time":"2025-06-23T10:07:21.023078+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100720-fx02jhg6/logs/debug-core.log"}
+{"time":"2025-06-23T10:07:22.141545+02:00","level":"INFO","msg":"stream: created new stream","id":"fx02jhg6"}
+{"time":"2025-06-23T10:07:22.141581+02:00","level":"INFO","msg":"stream: started","id":"fx02jhg6"}
+{"time":"2025-06-23T10:07:22.141589+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"fx02jhg6"}
+{"time":"2025-06-23T10:07:22.141608+02:00","level":"INFO","msg":"handler: started","stream_id":"fx02jhg6"}
+{"time":"2025-06-23T10:07:22.141593+02:00","level":"INFO","msg":"sender: started","stream_id":"fx02jhg6"}
+{"time":"2025-06-23T10:07:23.420972+02:00","level":"INFO","msg":"Starting system monitor"}

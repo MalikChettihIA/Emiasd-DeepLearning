@@ -1,0 +1,30 @@
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_setup.py:_flush():81] Configure stats pid to 12068
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/.config/wandb/settings
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_setup.py:_flush():81] Loading settings from /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/settings
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100002-23r0emkn/logs/debug.log
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100002-23r0emkn/logs/debug-internal.log
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_init.py:init():831] calling init triggers
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'model_type': 'MobileNet', 'block_num': 8, 'filters': 32, 'expansion_factor': 4, 'squeeze_excitation': True, 'activation': 'swish', 'dropout_rate': 0.2, 'epochs': 100, 'batch_size': 32, 'initial_lr': 0.02, 'lr_schedule': 'cosine_annealing', 'cosine_cycles': 1, 'policy_weight': 1.0, 'value_weight': 1.0, 'optimizer': 'AdamW', 'clipnorm': 1.0, 'dataset_size': 10000, 'input_shape': [19, 19, 31], 'num_classes': 361, 'data_augmentation': '8-fold_symmetry', 'target_policy_accuracy': 0.55, 'target_value_mse': 0.15, 'framework': 'TensorFlow/Keras', 'python_version': '2.15.0', 'factor': 4, 'se': True, 'drop_out_rate': 0.0, '_wandb': {}}
+2025-06-23 10:00:02,021 INFO    MainThread:12068 [wandb_init.py:init():872] starting backend
+2025-06-23 10:00:02,104 WARNING MainThread:12068 [wandb_init.py:init():1613] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1609, in init
+    return wi.init(run_settings, run_config, run_printer)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 874, in init
+    service = self._wl.ensure_service()
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/wandb_setup.py", line 336, in ensure_service
+    self._connection = service_connection.connect_to_service(self._settings)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/lib/service_connection.py", line 37, in connect_to_service
+    return _start_and_connect_service(settings)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/lib/service_connection.py", line 72, in _start_and_connect_service
+    proc.start()
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/service/service.py", line 242, in start
+    self._launch_server()
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/service/service.py", line 234, in _launch_server
+    self._wait_for_ports(fname, proc=internal_proc)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/wandb/sdk/service/service.py", line 110, in _wait_for_ports
+    time.sleep(0.2)
+KeyboardInterrupt

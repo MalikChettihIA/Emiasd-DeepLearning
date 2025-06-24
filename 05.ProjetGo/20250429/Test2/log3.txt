@@ -1,0 +1,2229 @@
+/Users/malikchettih/.pyenv/versions/3.9.21/bin/python /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py
+Python version sys.version_info(major=3, minor=9, micro=21, releaselevel='final', serial=0)
+Tensorflow version 2.15.0
+-------------------- Model GoMobileNet - Nb CosineDecay Cycle is  --------------------
+2025-06-23 18:04:57.378240: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M4 Pro
+2025-06-23 18:04:57.378259: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 48.00 GB
+2025-06-23 18:04:57.378264: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 18.00 GB
+2025-06-23 18:04:57.378288: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2025-06-23 18:04:57.378302: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_1 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d (Conv2D)             (None, 19, 19, 32)           992       ['input_1[0][0]']
+
+ batch_normalization (Batch  (None, 19, 19, 32)           128       ['conv2d[0][0]']
+ Normalization)
+
+ activation (Activation)     (None, 19, 19, 32)           0         ['batch_normalization[0][0]']
+
+ conv2d_1 (Conv2D)           (None, 19, 19, 128)          4096      ['activation[0][0]']
+
+ batch_normalization_1 (Bat  (None, 19, 19, 128)          512       ['conv2d_1[0][0]']
+ chNormalization)
+
+ activation_1 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_1[0][0]'
+                                                                    ]
+
+ depthwise_conv2d (Depthwis  (None, 19, 19, 128)          1152      ['activation_1[0][0]']
+ eConv2D)
+
+ batch_normalization_2 (Bat  (None, 19, 19, 128)          512       ['depthwise_conv2d[0][0]']
+ chNormalization)
+
+ activation_2 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_2[0][0]'
+                                                                    ]
+
+ global_average_pooling2d (  (None, 128)                  0         ['activation_2[0][0]']
+ GlobalAveragePooling2D)
+
+ reshape (Reshape)           (None, 1, 1, 128)            0         ['global_average_pooling2d[0][
+                                                                    0]']
+
+ dense (Dense)               (None, 1, 1, 8)              1024      ['reshape[0][0]']
+
+ dense_1 (Dense)             (None, 1, 1, 128)            1024      ['dense[0][0]']
+
+ multiply (Multiply)         (None, 19, 19, 128)          0         ['activation_2[0][0]',
+                                                                     'dense_1[0][0]']
+
+ conv2d_2 (Conv2D)           (None, 19, 19, 32)           4096      ['multiply[0][0]']
+
+ batch_normalization_3 (Bat  (None, 19, 19, 32)           128       ['conv2d_2[0][0]']
+ chNormalization)
+
+ activation_3 (Activation)   (None, 19, 19, 32)           0         ['batch_normalization_3[0][0]'
+                                                                    ]
+
+ add (Add)                   (None, 19, 19, 32)           0         ['activation_3[0][0]',
+                                                                     'activation[0][0]']
+
+ conv2d_3 (Conv2D)           (None, 19, 19, 128)          4096      ['add[0][0]']
+
+ batch_normalization_4 (Bat  (None, 19, 19, 128)          512       ['conv2d_3[0][0]']
+ chNormalization)
+
+ activation_4 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_4[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_1 (Depthw  (None, 19, 19, 128)          1152      ['activation_4[0][0]']
+ iseConv2D)
+
+ batch_normalization_5 (Bat  (None, 19, 19, 128)          512       ['depthwise_conv2d_1[0][0]']
+ chNormalization)
+
+ activation_5 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_5[0][0]'
+                                                                    ]
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_5[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_1 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_1[0
+                                                                    ][0]']
+
+ dense_2 (Dense)             (None, 1, 1, 8)              1024      ['reshape_1[0][0]']
+
+ dense_3 (Dense)             (None, 1, 1, 128)            1024      ['dense_2[0][0]']
+
+ multiply_1 (Multiply)       (None, 19, 19, 128)          0         ['activation_5[0][0]',
+                                                                     'dense_3[0][0]']
+
+ conv2d_4 (Conv2D)           (None, 19, 19, 32)           4096      ['multiply_1[0][0]']
+
+ batch_normalization_6 (Bat  (None, 19, 19, 32)           128       ['conv2d_4[0][0]']
+ chNormalization)
+
+ activation_6 (Activation)   (None, 19, 19, 32)           0         ['batch_normalization_6[0][0]'
+                                                                    ]
+
+ add_1 (Add)                 (None, 19, 19, 32)           0         ['activation_6[0][0]',
+                                                                     'add[0][0]']
+
+ conv2d_5 (Conv2D)           (None, 19, 19, 128)          4096      ['add_1[0][0]']
+
+ batch_normalization_7 (Bat  (None, 19, 19, 128)          512       ['conv2d_5[0][0]']
+ chNormalization)
+
+ activation_7 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_7[0][0]'
+                                                                    ]
+
+ depthwise_conv2d_2 (Depthw  (None, 19, 19, 128)          1152      ['activation_7[0][0]']
+ iseConv2D)
+
+ batch_normalization_8 (Bat  (None, 19, 19, 128)          512       ['depthwise_conv2d_2[0][0]']
+ chNormalization)
+
+ activation_8 (Activation)   (None, 19, 19, 128)          0         ['batch_normalization_8[0][0]'
+                                                                    ]
+
+ global_average_pooling2d_2  (None, 128)                  0         ['activation_8[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_2 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_2[0
+                                                                    ][0]']
+
+ dense_4 (Dense)             (None, 1, 1, 8)              1024      ['reshape_2[0][0]']
+
+ dense_5 (Dense)             (None, 1, 1, 128)            1024      ['dense_4[0][0]']
+
+ multiply_2 (Multiply)       (None, 19, 19, 128)          0         ['activation_8[0][0]',
+                                                                     'dense_5[0][0]']
+
+ conv2d_6 (Conv2D)           (None, 19, 19, 32)           4096      ['multiply_2[0][0]']
+
+ batch_normalization_9 (Bat  (None, 19, 19, 32)           128       ['conv2d_6[0][0]']
+ chNormalization)
+
+ activation_9 (Activation)   (None, 19, 19, 32)           0         ['batch_normalization_9[0][0]'
+                                                                    ]
+
+ add_2 (Add)                 (None, 19, 19, 32)           0         ['activation_9[0][0]',
+                                                                     'add_1[0][0]']
+
+ conv2d_7 (Conv2D)           (None, 19, 19, 128)          4096      ['add_2[0][0]']
+
+ batch_normalization_10 (Ba  (None, 19, 19, 128)          512       ['conv2d_7[0][0]']
+ tchNormalization)
+
+ activation_10 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_10[0][0]
+                                                                    ']
+
+ depthwise_conv2d_3 (Depthw  (None, 19, 19, 128)          1152      ['activation_10[0][0]']
+ iseConv2D)
+
+ batch_normalization_11 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_3[0][0]']
+ tchNormalization)
+
+ activation_11 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_11[0][0]
+                                                                    ']
+
+ global_average_pooling2d_3  (None, 128)                  0         ['activation_11[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_3 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_3[0
+                                                                    ][0]']
+
+ dense_6 (Dense)             (None, 1, 1, 8)              1024      ['reshape_3[0][0]']
+
+ dense_7 (Dense)             (None, 1, 1, 128)            1024      ['dense_6[0][0]']
+
+ multiply_3 (Multiply)       (None, 19, 19, 128)          0         ['activation_11[0][0]',
+                                                                     'dense_7[0][0]']
+
+ conv2d_8 (Conv2D)           (None, 19, 19, 32)           4096      ['multiply_3[0][0]']
+
+ batch_normalization_12 (Ba  (None, 19, 19, 32)           128       ['conv2d_8[0][0]']
+ tchNormalization)
+
+ activation_12 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_12[0][0]
+                                                                    ']
+
+ add_3 (Add)                 (None, 19, 19, 32)           0         ['activation_12[0][0]',
+                                                                     'add_2[0][0]']
+
+ conv2d_9 (Conv2D)           (None, 19, 19, 128)          4096      ['add_3[0][0]']
+
+ batch_normalization_13 (Ba  (None, 19, 19, 128)          512       ['conv2d_9[0][0]']
+ tchNormalization)
+
+ activation_13 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_13[0][0]
+                                                                    ']
+
+ depthwise_conv2d_4 (Depthw  (None, 19, 19, 128)          1152      ['activation_13[0][0]']
+ iseConv2D)
+
+ batch_normalization_14 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_4[0][0]']
+ tchNormalization)
+
+ activation_14 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_14[0][0]
+                                                                    ']
+
+ global_average_pooling2d_4  (None, 128)                  0         ['activation_14[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_4 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_4[0
+                                                                    ][0]']
+
+ dense_8 (Dense)             (None, 1, 1, 8)              1024      ['reshape_4[0][0]']
+
+ dense_9 (Dense)             (None, 1, 1, 128)            1024      ['dense_8[0][0]']
+
+ multiply_4 (Multiply)       (None, 19, 19, 128)          0         ['activation_14[0][0]',
+                                                                     'dense_9[0][0]']
+
+ conv2d_10 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_4[0][0]']
+
+ batch_normalization_15 (Ba  (None, 19, 19, 32)           128       ['conv2d_10[0][0]']
+ tchNormalization)
+
+ activation_15 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_15[0][0]
+                                                                    ']
+
+ add_4 (Add)                 (None, 19, 19, 32)           0         ['activation_15[0][0]',
+                                                                     'add_3[0][0]']
+
+ conv2d_11 (Conv2D)          (None, 19, 19, 128)          4096      ['add_4[0][0]']
+
+ batch_normalization_16 (Ba  (None, 19, 19, 128)          512       ['conv2d_11[0][0]']
+ tchNormalization)
+
+ activation_16 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_16[0][0]
+                                                                    ']
+
+ depthwise_conv2d_5 (Depthw  (None, 19, 19, 128)          1152      ['activation_16[0][0]']
+ iseConv2D)
+
+ batch_normalization_17 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_5[0][0]']
+ tchNormalization)
+
+ activation_17 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_17[0][0]
+                                                                    ']
+
+ global_average_pooling2d_5  (None, 128)                  0         ['activation_17[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_5 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_5[0
+                                                                    ][0]']
+
+ dense_10 (Dense)            (None, 1, 1, 8)              1024      ['reshape_5[0][0]']
+
+ dense_11 (Dense)            (None, 1, 1, 128)            1024      ['dense_10[0][0]']
+
+ multiply_5 (Multiply)       (None, 19, 19, 128)          0         ['activation_17[0][0]',
+                                                                     'dense_11[0][0]']
+
+ conv2d_12 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_5[0][0]']
+
+ batch_normalization_18 (Ba  (None, 19, 19, 32)           128       ['conv2d_12[0][0]']
+ tchNormalization)
+
+ activation_18 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_18[0][0]
+                                                                    ']
+
+ add_5 (Add)                 (None, 19, 19, 32)           0         ['activation_18[0][0]',
+                                                                     'add_4[0][0]']
+
+ conv2d_13 (Conv2D)          (None, 19, 19, 128)          4096      ['add_5[0][0]']
+
+ batch_normalization_19 (Ba  (None, 19, 19, 128)          512       ['conv2d_13[0][0]']
+ tchNormalization)
+
+ activation_19 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_19[0][0]
+                                                                    ']
+
+ depthwise_conv2d_6 (Depthw  (None, 19, 19, 128)          1152      ['activation_19[0][0]']
+ iseConv2D)
+
+ batch_normalization_20 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_6[0][0]']
+ tchNormalization)
+
+ activation_20 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_20[0][0]
+                                                                    ']
+
+ global_average_pooling2d_6  (None, 128)                  0         ['activation_20[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_6 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_6[0
+                                                                    ][0]']
+
+ dense_12 (Dense)            (None, 1, 1, 8)              1024      ['reshape_6[0][0]']
+
+ dense_13 (Dense)            (None, 1, 1, 128)            1024      ['dense_12[0][0]']
+
+ multiply_6 (Multiply)       (None, 19, 19, 128)          0         ['activation_20[0][0]',
+                                                                     'dense_13[0][0]']
+
+ conv2d_14 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_6[0][0]']
+
+ batch_normalization_21 (Ba  (None, 19, 19, 32)           128       ['conv2d_14[0][0]']
+ tchNormalization)
+
+ activation_21 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_21[0][0]
+                                                                    ']
+
+ add_6 (Add)                 (None, 19, 19, 32)           0         ['activation_21[0][0]',
+                                                                     'add_5[0][0]']
+
+ conv2d_15 (Conv2D)          (None, 19, 19, 128)          4096      ['add_6[0][0]']
+
+ batch_normalization_22 (Ba  (None, 19, 19, 128)          512       ['conv2d_15[0][0]']
+ tchNormalization)
+
+ activation_22 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_22[0][0]
+                                                                    ']
+
+ depthwise_conv2d_7 (Depthw  (None, 19, 19, 128)          1152      ['activation_22[0][0]']
+ iseConv2D)
+
+ batch_normalization_23 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_7[0][0]']
+ tchNormalization)
+
+ activation_23 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_23[0][0]
+                                                                    ']
+
+ global_average_pooling2d_7  (None, 128)                  0         ['activation_23[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_7 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_7[0
+                                                                    ][0]']
+
+ dense_14 (Dense)            (None, 1, 1, 8)              1024      ['reshape_7[0][0]']
+
+ dense_15 (Dense)            (None, 1, 1, 128)            1024      ['dense_14[0][0]']
+
+ multiply_7 (Multiply)       (None, 19, 19, 128)          0         ['activation_23[0][0]',
+                                                                     'dense_15[0][0]']
+
+ conv2d_16 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_7[0][0]']
+
+ batch_normalization_24 (Ba  (None, 19, 19, 32)           128       ['conv2d_16[0][0]']
+ tchNormalization)
+
+ activation_24 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_24[0][0]
+                                                                    ']
+
+ add_7 (Add)                 (None, 19, 19, 32)           0         ['activation_24[0][0]',
+                                                                     'add_6[0][0]']
+
+ conv2d_17 (Conv2D)          (None, 19, 19, 1)            32        ['add_7[0][0]']
+
+ batch_normalization_25 (Ba  (None, 19, 19, 1)            4         ['conv2d_17[0][0]']
+ tchNormalization)
+
+ global_average_pooling2d_8  (None, 32)                   0         ['add_7[0][0]']
+  (GlobalAveragePooling2D)
+
+ activation_25 (Activation)  (None, 19, 19, 1)            0         ['batch_normalization_25[0][0]
+                                                                    ']
+
+ dense_16 (Dense)            (None, 50)                   1650      ['global_average_pooling2d_8[0
+                                                                    ][0]']
+
+ flatten (Flatten)           (None, 361)                  0         ['activation_25[0][0]']
+
+ activation_26 (Activation)  (None, 50)                   0         ['dense_16[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['activation_26[0][0]']
+
+==================================================================================================
+Total params: 103209 (403.16 KB)
+Trainable params: 98535 (384.90 KB)
+Non-trainable params: 4674 (18.26 KB)
+__________________________________________________________________________________________________
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: creating run
+wandb: Tracking run with wandb version 0.20.1
+wandb: Run data is saved locally in /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_180508-v21xct00
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Test2 - mobilenet_block_num8_filters32_e100_lr0.0005_b32_N10000
+wandb: ⭐️ View project at https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training
+wandb: 🚀 View run at https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/v21xct00
+🚀 WandB run initialisée: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/v21xct00
+✅ Gradient tracking configuré
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+nbPositionsSGF = 102208897
+nbPositionsSGF = 102208897
+loading validation.data
+2025-06-23 18:05:51,685 - WARNING - At this time, the v2.11+ optimizer `tf.keras.optimizers.AdamW` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.AdamW`.
+2025-06-23 18:05:54.680009: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+313/313 [==============================] - 50s 136ms/step - loss: 5.8570 - policy_loss: 4.8726 - value_loss: 0.7136 - policy_categorical_accuracy: 0.0817 - value_mse: 0.1281
+📊 WandB: Logged epoch 1 metrics
+Epoch 1/100: time=50.13s, loss=5.8570, policy_loss=4.8726, value_loss=0.7136, policy_categorical_accuracy=0.0817, value_mse=0.1281
+313/313 [==============================] - 42s 133ms/step - loss: 5.0042 - policy_loss: 4.0384 - value_loss: 0.6992 - policy_categorical_accuracy: 0.1848 - value_mse: 0.1256
+📊 WandB: Logged epoch 2 metrics
+Epoch 2/100: time=42.22s, loss=5.0042, policy_loss=4.0384, value_loss=0.6992, policy_categorical_accuracy=0.1848, value_mse=0.1256
+313/313 [==============================] - 43s 137ms/step - loss: 4.6839 - policy_loss: 3.7287 - value_loss: 0.6928 - policy_categorical_accuracy: 0.2286 - value_mse: 0.1200
+📊 WandB: Logged epoch 3 metrics
+Epoch 3/100: time=43.38s, loss=4.6839, policy_loss=3.7287, value_loss=0.6928, policy_categorical_accuracy=0.2286, value_mse=0.1200
+313/313 [==============================] - 43s 136ms/step - loss: 4.4218 - policy_loss: 3.4726 - value_loss: 0.6907 - policy_categorical_accuracy: 0.2660 - value_mse: 0.1208
+📊 WandB: Logged epoch 4 metrics
+Epoch 4/100: time=43.24s, loss=4.4218, policy_loss=3.4726, value_loss=0.6907, policy_categorical_accuracy=0.2660, value_mse=0.1208
+313/313 [==============================] - 43s 138ms/step - loss: 4.2341 - policy_loss: 3.2880 - value_loss: 0.6916 - policy_categorical_accuracy: 0.2838 - value_mse: 0.1218
+📊 WandB: Logged epoch 5 metrics
+Epoch 5/100: time=43.70s, loss=4.2341, policy_loss=3.2880, value_loss=0.6916, policy_categorical_accuracy=0.2838, value_mse=0.1218
+313/313 [==============================] - 43s 138ms/step - loss: 4.1294 - policy_loss: 3.1891 - value_loss: 0.6896 - policy_categorical_accuracy: 0.2913 - value_mse: 0.1190
+📊 WandB: Logged epoch 6 metrics
+Epoch 6/100: time=43.82s, loss=4.1294, policy_loss=3.1891, value_loss=0.6896, policy_categorical_accuracy=0.2913, value_mse=0.1190
+313/313 [==============================] - 43s 136ms/step - loss: 4.0251 - policy_loss: 3.0881 - value_loss: 0.6900 - policy_categorical_accuracy: 0.2951 - value_mse: 0.1193
+📊 WandB: Logged epoch 7 metrics
+Epoch 7/100: time=43.18s, loss=4.0251, policy_loss=3.0881, value_loss=0.6900, policy_categorical_accuracy=0.2951, value_mse=0.1193
+313/313 [==============================] - 42s 135ms/step - loss: 3.9719 - policy_loss: 3.0417 - value_loss: 0.6869 - policy_categorical_accuracy: 0.3105 - value_mse: 0.1166
+📊 WandB: Logged epoch 8 metrics
+Epoch 8/100: time=42.85s, loss=3.9719, policy_loss=3.0417, value_loss=0.6869, policy_categorical_accuracy=0.3105, value_mse=0.1166
+313/313 [==============================] - 43s 136ms/step - loss: 3.9560 - policy_loss: 3.0302 - value_loss: 0.6861 - policy_categorical_accuracy: 0.3060 - value_mse: 0.1178
+📊 WandB: Logged epoch 9 metrics
+Epoch 9/100: time=43.34s, loss=3.9560, policy_loss=3.0302, value_loss=0.6861, policy_categorical_accuracy=0.3060, value_mse=0.1178
+313/313 [==============================] - 43s 138ms/step - loss: 3.8576 - policy_loss: 2.9350 - value_loss: 0.6863 - policy_categorical_accuracy: 0.3246 - value_mse: 0.1175
+
+🔍 Analyse complète gradient vanishing (époque 10)...
+⚠️  Gradient WARNING at epoch 10
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 10 metrics
+Epoch 10/100: time=45.89s, loss=3.8576, policy_loss=2.9350, value_loss=0.6863, policy_categorical_accuracy=0.3246, value_mse=0.1175
+313/313 [==============================] - 42s 135ms/step - loss: 3.8395 - policy_loss: 2.9229 - value_loss: 0.6837 - policy_categorical_accuracy: 0.3300 - value_mse: 0.1173
+📊 WandB: Logged epoch 11 metrics
+Epoch 11/100: time=43.05s, loss=3.8395, policy_loss=2.9229, value_loss=0.6837, policy_categorical_accuracy=0.3300, value_mse=0.1173
+313/313 [==============================] - 43s 137ms/step - loss: 3.8316 - policy_loss: 2.9195 - value_loss: 0.6824 - policy_categorical_accuracy: 0.3236 - value_mse: 0.1164
+📊 WandB: Logged epoch 12 metrics
+Epoch 12/100: time=43.47s, loss=3.8316, policy_loss=2.9195, value_loss=0.6824, policy_categorical_accuracy=0.3236, value_mse=0.1164
+313/313 [==============================] - 42s 136ms/step - loss: 3.7881 - policy_loss: 2.8787 - value_loss: 0.6830 - policy_categorical_accuracy: 0.3320 - value_mse: 0.1158
+📊 WandB: Logged epoch 13 metrics
+Epoch 13/100: time=43.08s, loss=3.7881, policy_loss=2.8787, value_loss=0.6830, policy_categorical_accuracy=0.3320, value_mse=0.1158
+313/313 [==============================] - 43s 138ms/step - loss: 3.7844 - policy_loss: 2.8799 - value_loss: 0.6811 - policy_categorical_accuracy: 0.3227 - value_mse: 0.1145
+📊 WandB: Logged epoch 14 metrics
+Epoch 14/100: time=43.97s, loss=3.7844, policy_loss=2.8799, value_loss=0.6811, policy_categorical_accuracy=0.3227, value_mse=0.1145
+313/313 [==============================] - 44s 142ms/step - loss: 3.7690 - policy_loss: 2.8707 - value_loss: 0.6779 - policy_categorical_accuracy: 0.3309 - value_mse: 0.1156
+📊 WandB: Logged epoch 15 metrics
+Epoch 15/100: time=45.08s, loss=3.7690, policy_loss=2.8707, value_loss=0.6779, policy_categorical_accuracy=0.3309, value_mse=0.1156
+313/313 [==============================] - 43s 139ms/step - loss: 3.7344 - policy_loss: 2.8363 - value_loss: 0.6805 - policy_categorical_accuracy: 0.3376 - value_mse: 0.1154
+📊 WandB: Logged epoch 16 metrics
+Epoch 16/100: time=44.14s, loss=3.7344, policy_loss=2.8363, value_loss=0.6805, policy_categorical_accuracy=0.3376, value_mse=0.1154
+313/313 [==============================] - 44s 139ms/step - loss: 3.6956 - policy_loss: 2.8019 - value_loss: 0.6790 - policy_categorical_accuracy: 0.3450 - value_mse: 0.1139
+📊 WandB: Logged epoch 17 metrics
+Epoch 17/100: time=44.26s, loss=3.6956, policy_loss=2.8019, value_loss=0.6790, policy_categorical_accuracy=0.3450, value_mse=0.1139
+313/313 [==============================] - 44s 139ms/step - loss: 3.6569 - policy_loss: 2.7703 - value_loss: 0.6745 - policy_categorical_accuracy: 0.3413 - value_mse: 0.1119
+📊 WandB: Logged epoch 18 metrics
+Epoch 18/100: time=44.24s, loss=3.6569, policy_loss=2.7703, value_loss=0.6745, policy_categorical_accuracy=0.3413, value_mse=0.1119
+313/313 [==============================] - 43s 139ms/step - loss: 3.6787 - policy_loss: 2.7930 - value_loss: 0.6762 - policy_categorical_accuracy: 0.3475 - value_mse: 0.1131
+📊 WandB: Logged epoch 19 metrics
+Epoch 19/100: time=44.10s, loss=3.6787, policy_loss=2.7930, value_loss=0.6762, policy_categorical_accuracy=0.3475, value_mse=0.1131
+313/313 [==============================] - 43s 137ms/step - loss: 3.6581 - policy_loss: 2.7781 - value_loss: 0.6731 - policy_categorical_accuracy: 0.3387 - value_mse: 0.1143
+
+🔍 Analyse complète gradient vanishing (époque 20)...
+⚠️  Gradient WARNING at epoch 20
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 20 metrics
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+📦 Modèle sauvegardé sur WandB: epoch 20
+💾 WandB: Model saved at epoch 20
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 20
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3387
+     ❌ Sous-performance
+   Value MSE: 0.1143
+     ✅ Excellent
+
+====================================================================================
+Epoch 20/100: time=44.57s, loss=3.6581, policy_loss=2.7781, value_loss=0.6731, policy_categorical_accuracy=0.3387, value_mse=0.1143
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 20s 62ms/step - loss: 3.6483 - policy_loss: 2.7603 - value_loss: 0.6822 - policy_categorical_accuracy: 0.3438 - value_mse: 0.1160
+✅ WandB: Logged validation metrics for epoch 20
+🔍 Diagnostic: Recorded validation metrics for epoch 20
+Validation  Epoch {i}/{epochs}:, loss=3.6483, policy_loss=2.7603, value_loss=0.6822, policy_categorical_accuracy=0.3438, value_mse=0.1160
+313/313 [==============================] - 43s 136ms/step - loss: 3.6352 - policy_loss: 2.7566 - value_loss: 0.6740 - policy_categorical_accuracy: 0.3440 - value_mse: 0.1126
+📊 WandB: Logged epoch 21 metrics
+Epoch 21/100: time=43.32s, loss=3.6352, policy_loss=2.7566, value_loss=0.6740, policy_categorical_accuracy=0.3440, value_mse=0.1126
+313/313 [==============================] - 43s 136ms/step - loss: 3.5994 - policy_loss: 2.7226 - value_loss: 0.6745 - policy_categorical_accuracy: 0.3500 - value_mse: 0.1131
+📊 WandB: Logged epoch 22 metrics
+Epoch 22/100: time=43.31s, loss=3.5994, policy_loss=2.7226, value_loss=0.6745, policy_categorical_accuracy=0.3500, value_mse=0.1131
+313/313 [==============================] - 43s 139ms/step - loss: 3.5938 - policy_loss: 2.7192 - value_loss: 0.6745 - policy_categorical_accuracy: 0.3473 - value_mse: 0.1137
+📊 WandB: Logged epoch 23 metrics
+Epoch 23/100: time=44.07s, loss=3.5938, policy_loss=2.7192, value_loss=0.6745, policy_categorical_accuracy=0.3473, value_mse=0.1137
+313/313 [==============================] - 43s 136ms/step - loss: 3.5697 - policy_loss: 2.6990 - value_loss: 0.6727 - policy_categorical_accuracy: 0.3530 - value_mse: 0.1150
+📊 WandB: Logged epoch 24 metrics
+Epoch 24/100: time=43.29s, loss=3.5697, policy_loss=2.6990, value_loss=0.6727, policy_categorical_accuracy=0.3530, value_mse=0.1150
+313/313 [==============================] - 43s 137ms/step - loss: 3.5921 - policy_loss: 2.7205 - value_loss: 0.6758 - policy_categorical_accuracy: 0.3495 - value_mse: 0.1128
+📊 WandB: Logged epoch 25 metrics
+Epoch 25/100: time=43.57s, loss=3.5921, policy_loss=2.7205, value_loss=0.6758, policy_categorical_accuracy=0.3495, value_mse=0.1128
+313/313 [==============================] - 43s 139ms/step - loss: 3.5954 - policy_loss: 2.7305 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3461 - value_mse: 0.1120
+📊 WandB: Logged epoch 26 metrics
+Epoch 26/100: time=44.10s, loss=3.5954, policy_loss=2.7305, value_loss=0.6710, policy_categorical_accuracy=0.3461, value_mse=0.1120
+313/313 [==============================] - 43s 137ms/step - loss: 3.5649 - policy_loss: 2.7035 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3491 - value_mse: 0.1117
+📊 WandB: Logged epoch 27 metrics
+Epoch 27/100: time=43.62s, loss=3.5649, policy_loss=2.7035, value_loss=0.6695, policy_categorical_accuracy=0.3491, value_mse=0.1117
+313/313 [==============================] - 43s 138ms/step - loss: 3.5744 - policy_loss: 2.7113 - value_loss: 0.6730 - policy_categorical_accuracy: 0.3488 - value_mse: 0.1113
+📊 WandB: Logged epoch 28 metrics
+Epoch 28/100: time=44.00s, loss=3.5744, policy_loss=2.7113, value_loss=0.6730, policy_categorical_accuracy=0.3488, value_mse=0.1113
+313/313 [==============================] - 43s 138ms/step - loss: 3.5727 - policy_loss: 2.7157 - value_loss: 0.6687 - policy_categorical_accuracy: 0.3462 - value_mse: 0.1094
+📊 WandB: Logged epoch 29 metrics
+Epoch 29/100: time=43.79s, loss=3.5727, policy_loss=2.7157, value_loss=0.6687, policy_categorical_accuracy=0.3462, value_mse=0.1094
+313/313 [==============================] - 43s 137ms/step - loss: 3.5364 - policy_loss: 2.6794 - value_loss: 0.6705 - policy_categorical_accuracy: 0.3544 - value_mse: 0.1102
+
+🔍 Analyse complète gradient vanishing (époque 30)...
+⚠️  Gradient WARNING at epoch 30
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 30 metrics
+Epoch 30/100: time=44.01s, loss=3.5364, policy_loss=2.6794, value_loss=0.6705, policy_categorical_accuracy=0.3544, value_mse=0.1102
+313/313 [==============================] - 43s 139ms/step - loss: 3.5340 - policy_loss: 2.6780 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3600 - value_mse: 0.1100
+📊 WandB: Logged epoch 31 metrics
+Epoch 31/100: time=44.06s, loss=3.5340, policy_loss=2.6780, value_loss=0.6710, policy_categorical_accuracy=0.3600, value_mse=0.1100
+313/313 [==============================] - 44s 139ms/step - loss: 3.5182 - policy_loss: 2.6642 - value_loss: 0.6706 - policy_categorical_accuracy: 0.3607 - value_mse: 0.1118
+📊 WandB: Logged epoch 32 metrics
+Epoch 32/100: time=44.20s, loss=3.5182, policy_loss=2.6642, value_loss=0.6706, policy_categorical_accuracy=0.3607, value_mse=0.1118
+313/313 [==============================] - 43s 138ms/step - loss: 3.5045 - policy_loss: 2.6523 - value_loss: 0.6704 - policy_categorical_accuracy: 0.3595 - value_mse: 0.1111
+📊 WandB: Logged epoch 33 metrics
+Epoch 33/100: time=43.88s, loss=3.5045, policy_loss=2.6523, value_loss=0.6704, policy_categorical_accuracy=0.3595, value_mse=0.1111
+313/313 [==============================] - 44s 139ms/step - loss: 3.4956 - policy_loss: 2.6432 - value_loss: 0.6721 - policy_categorical_accuracy: 0.3599 - value_mse: 0.1122
+📊 WandB: Logged epoch 34 metrics
+Epoch 34/100: time=44.20s, loss=3.4956, policy_loss=2.6432, value_loss=0.6721, policy_categorical_accuracy=0.3599, value_mse=0.1122
+313/313 [==============================] - 43s 137ms/step - loss: 3.4956 - policy_loss: 2.6464 - value_loss: 0.6702 - policy_categorical_accuracy: 0.3630 - value_mse: 0.1123
+📊 WandB: Logged epoch 35 metrics
+Epoch 35/100: time=43.46s, loss=3.4956, policy_loss=2.6464, value_loss=0.6702, policy_categorical_accuracy=0.3630, value_mse=0.1123
+313/313 [==============================] - 43s 138ms/step - loss: 3.4997 - policy_loss: 2.6570 - value_loss: 0.6652 - policy_categorical_accuracy: 0.3618 - value_mse: 0.1105
+📊 WandB: Logged epoch 36 metrics
+Epoch 36/100: time=43.79s, loss=3.4997, policy_loss=2.6570, value_loss=0.6652, policy_categorical_accuracy=0.3618, value_mse=0.1105
+313/313 [==============================] - 43s 137ms/step - loss: 3.4901 - policy_loss: 2.6495 - value_loss: 0.6644 - policy_categorical_accuracy: 0.3611 - value_mse: 0.1079
+📊 WandB: Logged epoch 37 metrics
+Epoch 37/100: time=43.50s, loss=3.4901, policy_loss=2.6495, value_loss=0.6644, policy_categorical_accuracy=0.3611, value_mse=0.1079
+313/313 [==============================] - 43s 139ms/step - loss: 3.4708 - policy_loss: 2.6284 - value_loss: 0.6673 - policy_categorical_accuracy: 0.3637 - value_mse: 0.1094
+📊 WandB: Logged epoch 38 metrics
+Epoch 38/100: time=44.07s, loss=3.4708, policy_loss=2.6284, value_loss=0.6673, policy_categorical_accuracy=0.3637, value_mse=0.1094
+313/313 [==============================] - 44s 140ms/step - loss: 3.4915 - policy_loss: 2.6489 - value_loss: 0.6689 - policy_categorical_accuracy: 0.3562 - value_mse: 0.1096
+📊 WandB: Logged epoch 39 metrics
+Epoch 39/100: time=44.49s, loss=3.4915, policy_loss=2.6489, value_loss=0.6689, policy_categorical_accuracy=0.3562, value_mse=0.1096
+313/313 [==============================] - 43s 137ms/step - loss: 3.4430 - policy_loss: 2.6005 - value_loss: 0.6698 - policy_categorical_accuracy: 0.3704 - value_mse: 0.1122
+
+🔍 Analyse complète gradient vanishing (époque 40)...
+⚠️  Gradient WARNING at epoch 40
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 40 metrics
+📦 Modèle sauvegardé sur WandB: epoch 40
+💾 WandB: Model saved at epoch 40
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 40
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3704
+     ❌ Sous-performance
+   Value MSE: 0.1122
+     ✅ Excellent
+
+====================================================================================
+Epoch 40/100: time=44.32s, loss=3.4430, policy_loss=2.6005, value_loss=0.6698, policy_categorical_accuracy=0.3704, value_mse=0.1122
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 61ms/step - loss: 3.4350 - policy_loss: 2.6021 - value_loss: 0.6608 - policy_categorical_accuracy: 0.3675 - value_mse: 0.1071
+✅ WandB: Logged validation metrics for epoch 40
+🔍 Diagnostic: Recorded validation metrics for epoch 40
+Validation  Epoch {i}/{epochs}:, loss=3.4350, policy_loss=2.6021, value_loss=0.6608, policy_categorical_accuracy=0.3675, value_mse=0.1071
+313/313 [==============================] - 43s 138ms/step - loss: 3.4720 - policy_loss: 2.6366 - value_loss: 0.6639 - policy_categorical_accuracy: 0.3542 - value_mse: 0.1093
+📊 WandB: Logged epoch 41 metrics
+Epoch 41/100: time=43.96s, loss=3.4720, policy_loss=2.6366, value_loss=0.6639, policy_categorical_accuracy=0.3542, value_mse=0.1093
+313/313 [==============================] - 44s 139ms/step - loss: 3.4210 - policy_loss: 2.5843 - value_loss: 0.6662 - policy_categorical_accuracy: 0.3739 - value_mse: 0.1085
+📊 WandB: Logged epoch 42 metrics
+Epoch 42/100: time=44.18s, loss=3.4210, policy_loss=2.5843, value_loss=0.6662, policy_categorical_accuracy=0.3739, value_mse=0.1085
+313/313 [==============================] - 44s 139ms/step - loss: 3.4285 - policy_loss: 2.5904 - value_loss: 0.6686 - policy_categorical_accuracy: 0.3720 - value_mse: 0.1071
+📊 WandB: Logged epoch 43 metrics
+Epoch 43/100: time=44.30s, loss=3.4285, policy_loss=2.5904, value_loss=0.6686, policy_categorical_accuracy=0.3720, value_mse=0.1071
+313/313 [==============================] - 44s 141ms/step - loss: 3.4107 - policy_loss: 2.5773 - value_loss: 0.6650 - policy_categorical_accuracy: 0.3788 - value_mse: 0.1092
+📊 WandB: Logged epoch 44 metrics
+Epoch 44/100: time=44.89s, loss=3.4107, policy_loss=2.5773, value_loss=0.6650, policy_categorical_accuracy=0.3788, value_mse=0.1092
+313/313 [==============================] - 45s 145ms/step - loss: 3.4385 - policy_loss: 2.6094 - value_loss: 0.6617 - policy_categorical_accuracy: 0.3651 - value_mse: 0.1061
+📊 WandB: Logged epoch 45 metrics
+Epoch 45/100: time=46.05s, loss=3.4385, policy_loss=2.6094, value_loss=0.6617, policy_categorical_accuracy=0.3651, value_mse=0.1061
+313/313 [==============================] - 44s 142ms/step - loss: 3.4046 - policy_loss: 2.5733 - value_loss: 0.6648 - policy_categorical_accuracy: 0.3709 - value_mse: 0.1097
+📊 WandB: Logged epoch 46 metrics
+Epoch 46/100: time=45.00s, loss=3.4046, policy_loss=2.5733, value_loss=0.6648, policy_categorical_accuracy=0.3709, value_mse=0.1097
+313/313 [==============================] - 44s 139ms/step - loss: 3.4188 - policy_loss: 2.5888 - value_loss: 0.6644 - policy_categorical_accuracy: 0.3715 - value_mse: 0.1071
+📊 WandB: Logged epoch 47 metrics
+Epoch 47/100: time=44.15s, loss=3.4188, policy_loss=2.5888, value_loss=0.6644, policy_categorical_accuracy=0.3715, value_mse=0.1071
+313/313 [==============================] - 45s 144ms/step - loss: 3.4095 - policy_loss: 2.5795 - value_loss: 0.6652 - policy_categorical_accuracy: 0.3718 - value_mse: 0.1073
+📊 WandB: Logged epoch 48 metrics
+Epoch 48/100: time=45.84s, loss=3.4095, policy_loss=2.5795, value_loss=0.6652, policy_categorical_accuracy=0.3718, value_mse=0.1073
+313/313 [==============================] - 48s 153ms/step - loss: 3.4137 - policy_loss: 2.5854 - value_loss: 0.6643 - policy_categorical_accuracy: 0.3722 - value_mse: 0.1093
+📊 WandB: Logged epoch 49 metrics
+Epoch 49/100: time=48.57s, loss=3.4137, policy_loss=2.5854, value_loss=0.6643, policy_categorical_accuracy=0.3722, value_mse=0.1093
+313/313 [==============================] - 44s 140ms/step - loss: 3.4436 - policy_loss: 2.6152 - value_loss: 0.6652 - policy_categorical_accuracy: 0.3655 - value_mse: 0.1073
+
+🔍 Analyse complète gradient vanishing (époque 50)...
+⚠️  Gradient WARNING at epoch 50
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 50 metrics
+Epoch 50/100: time=45.02s, loss=3.4436, policy_loss=2.6152, value_loss=0.6652, policy_categorical_accuracy=0.3655, value_mse=0.1073
+313/313 [==============================] - 44s 140ms/step - loss: 3.4029 - policy_loss: 2.5774 - value_loss: 0.6630 - policy_categorical_accuracy: 0.3689 - value_mse: 0.1074
+📊 WandB: Logged epoch 51 metrics
+Epoch 51/100: time=44.36s, loss=3.4029, policy_loss=2.5774, value_loss=0.6630, policy_categorical_accuracy=0.3689, value_mse=0.1074
+313/313 [==============================] - 44s 141ms/step - loss: 3.3687 - policy_loss: 2.5476 - value_loss: 0.6594 - policy_categorical_accuracy: 0.3717 - value_mse: 0.1061
+📊 WandB: Logged epoch 52 metrics
+Epoch 52/100: time=44.75s, loss=3.3687, policy_loss=2.5476, value_loss=0.6594, policy_categorical_accuracy=0.3717, value_mse=0.1061
+313/313 [==============================] - 44s 140ms/step - loss: 3.3770 - policy_loss: 2.5519 - value_loss: 0.6640 - policy_categorical_accuracy: 0.3759 - value_mse: 0.1084
+📊 WandB: Logged epoch 53 metrics
+Epoch 53/100: time=44.36s, loss=3.3770, policy_loss=2.5519, value_loss=0.6640, policy_categorical_accuracy=0.3759, value_mse=0.1084
+313/313 [==============================] - 44s 141ms/step - loss: 3.3638 - policy_loss: 2.5415 - value_loss: 0.6619 - policy_categorical_accuracy: 0.3723 - value_mse: 0.1083
+📊 WandB: Logged epoch 54 metrics
+Epoch 54/100: time=44.77s, loss=3.3638, policy_loss=2.5415, value_loss=0.6619, policy_categorical_accuracy=0.3723, value_mse=0.1083
+313/313 [==============================] - 44s 139ms/step - loss: 3.3776 - policy_loss: 2.5553 - value_loss: 0.6626 - policy_categorical_accuracy: 0.3778 - value_mse: 0.1088
+📊 WandB: Logged epoch 55 metrics
+Epoch 55/100: time=44.24s, loss=3.3776, policy_loss=2.5553, value_loss=0.6626, policy_categorical_accuracy=0.3778, value_mse=0.1088
+313/313 [==============================] - 44s 141ms/step - loss: 3.3459 - policy_loss: 2.5262 - value_loss: 0.6605 - policy_categorical_accuracy: 0.3810 - value_mse: 0.1068
+📊 WandB: Logged epoch 56 metrics
+Epoch 56/100: time=44.69s, loss=3.3459, policy_loss=2.5262, value_loss=0.6605, policy_categorical_accuracy=0.3810, value_mse=0.1068
+313/313 [==============================] - 44s 141ms/step - loss: 3.3704 - policy_loss: 2.5505 - value_loss: 0.6612 - policy_categorical_accuracy: 0.3826 - value_mse: 0.1062
+📊 WandB: Logged epoch 57 metrics
+Epoch 57/100: time=44.73s, loss=3.3704, policy_loss=2.5505, value_loss=0.6612, policy_categorical_accuracy=0.3826, value_mse=0.1062
+313/313 [==============================] - 44s 139ms/step - loss: 3.3301 - policy_loss: 2.5117 - value_loss: 0.6603 - policy_categorical_accuracy: 0.3794 - value_mse: 0.1066
+📊 WandB: Logged epoch 58 metrics
+Epoch 58/100: time=44.26s, loss=3.3301, policy_loss=2.5117, value_loss=0.6603, policy_categorical_accuracy=0.3794, value_mse=0.1066
+313/313 [==============================] - 44s 140ms/step - loss: 3.3109 - policy_loss: 2.4917 - value_loss: 0.6615 - policy_categorical_accuracy: 0.3824 - value_mse: 0.1070
+📊 WandB: Logged epoch 59 metrics
+Epoch 59/100: time=44.49s, loss=3.3109, policy_loss=2.4917, value_loss=0.6615, policy_categorical_accuracy=0.3824, value_mse=0.1070
+313/313 [==============================] - 43s 137ms/step - loss: 3.3409 - policy_loss: 2.5237 - value_loss: 0.6600 - policy_categorical_accuracy: 0.3778 - value_mse: 0.1074
+
+🔍 Analyse complète gradient vanishing (époque 60)...
+⚠️  Gradient WARNING at epoch 60
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 60 metrics
+📦 Modèle sauvegardé sur WandB: epoch 60
+💾 WandB: Model saved at epoch 60
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 60
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3778
+     ❌ Sous-performance
+   Value MSE: 0.1074
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.378 sous le benchmark 0.550
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+Epoch 60/100: time=44.54s, loss=3.3409, policy_loss=2.5237, value_loss=0.6600, policy_categorical_accuracy=0.3778, value_mse=0.1074
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 21s 68ms/step - loss: 3.3373 - policy_loss: 2.5264 - value_loss: 0.6540 - policy_categorical_accuracy: 0.3755 - value_mse: 0.1042
+✅ WandB: Logged validation metrics for epoch 60
+🔍 Diagnostic: Recorded validation metrics for epoch 60
+Validation  Epoch {i}/{epochs}:, loss=3.3373, policy_loss=2.5264, value_loss=0.6540, policy_categorical_accuracy=0.3755, value_mse=0.1042
+313/313 [==============================] - 46s 146ms/step - loss: 3.3276 - policy_loss: 2.5099 - value_loss: 0.6611 - policy_categorical_accuracy: 0.3829 - value_mse: 0.1053
+📊 WandB: Logged epoch 61 metrics
+Epoch 61/100: time=46.33s, loss=3.3276, policy_loss=2.5099, value_loss=0.6611, policy_categorical_accuracy=0.3829, value_mse=0.1053
+313/313 [==============================] - 43s 137ms/step - loss: 3.3690 - policy_loss: 2.5522 - value_loss: 0.6606 - policy_categorical_accuracy: 0.3674 - value_mse: 0.1055
+📊 WandB: Logged epoch 62 metrics
+Epoch 62/100: time=43.53s, loss=3.3690, policy_loss=2.5522, value_loss=0.6606, policy_categorical_accuracy=0.3674, value_mse=0.1055
+313/313 [==============================] - 43s 137ms/step - loss: 3.3528 - policy_loss: 2.5345 - value_loss: 0.6626 - policy_categorical_accuracy: 0.3792 - value_mse: 0.1074
+📊 WandB: Logged epoch 63 metrics
+Epoch 63/100: time=43.61s, loss=3.3528, policy_loss=2.5345, value_loss=0.6626, policy_categorical_accuracy=0.3792, value_mse=0.1074
+313/313 [==============================] - 43s 138ms/step - loss: 3.3408 - policy_loss: 2.5285 - value_loss: 0.6570 - policy_categorical_accuracy: 0.3793 - value_mse: 0.1076
+📊 WandB: Logged epoch 64 metrics
+Epoch 64/100: time=43.97s, loss=3.3408, policy_loss=2.5285, value_loss=0.6570, policy_categorical_accuracy=0.3793, value_mse=0.1076
+313/313 [==============================] - 44s 141ms/step - loss: 3.3200 - policy_loss: 2.5084 - value_loss: 0.6565 - policy_categorical_accuracy: 0.3762 - value_mse: 0.1058
+📊 WandB: Logged epoch 65 metrics
+Epoch 65/100: time=44.76s, loss=3.3200, policy_loss=2.5084, value_loss=0.6565, policy_categorical_accuracy=0.3762, value_mse=0.1058
+313/313 [==============================] - 44s 139ms/step - loss: 3.3844 - policy_loss: 2.5668 - value_loss: 0.6629 - policy_categorical_accuracy: 0.3702 - value_mse: 0.1055
+📊 WandB: Logged epoch 66 metrics
+Epoch 66/100: time=44.22s, loss=3.3844, policy_loss=2.5668, value_loss=0.6629, policy_categorical_accuracy=0.3702, value_mse=0.1055
+313/313 [==============================] - 43s 138ms/step - loss: 3.3190 - policy_loss: 2.5029 - value_loss: 0.6617 - policy_categorical_accuracy: 0.3796 - value_mse: 0.1091
+📊 WandB: Logged epoch 67 metrics
+Epoch 67/100: time=43.86s, loss=3.3190, policy_loss=2.5029, value_loss=0.6617, policy_categorical_accuracy=0.3796, value_mse=0.1091
+313/313 [==============================] - 43s 137ms/step - loss: 3.3129 - policy_loss: 2.5003 - value_loss: 0.6586 - policy_categorical_accuracy: 0.3838 - value_mse: 0.1073
+📊 WandB: Logged epoch 68 metrics
+Epoch 68/100: time=43.62s, loss=3.3129, policy_loss=2.5003, value_loss=0.6586, policy_categorical_accuracy=0.3838, value_mse=0.1073
+313/313 [==============================] - 43s 139ms/step - loss: 3.3362 - policy_loss: 2.5206 - value_loss: 0.6618 - policy_categorical_accuracy: 0.3779 - value_mse: 0.1076
+📊 WandB: Logged epoch 69 metrics
+Epoch 69/100: time=44.08s, loss=3.3362, policy_loss=2.5206, value_loss=0.6618, policy_categorical_accuracy=0.3779, value_mse=0.1076
+313/313 [==============================] - 43s 137ms/step - loss: 3.3421 - policy_loss: 2.5270 - value_loss: 0.6617 - policy_categorical_accuracy: 0.3798 - value_mse: 0.1070
+
+🔍 Analyse complète gradient vanishing (époque 70)...
+⚠️  Gradient WARNING at epoch 70
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 70 metrics
+Epoch 70/100: time=44.19s, loss=3.3421, policy_loss=2.5270, value_loss=0.6617, policy_categorical_accuracy=0.3798, value_mse=0.1070
+313/313 [==============================] - 43s 138ms/step - loss: 3.3402 - policy_loss: 2.5261 - value_loss: 0.6610 - policy_categorical_accuracy: 0.3822 - value_mse: 0.1049
+📊 WandB: Logged epoch 71 metrics
+Epoch 71/100: time=43.78s, loss=3.3402, policy_loss=2.5261, value_loss=0.6610, policy_categorical_accuracy=0.3822, value_mse=0.1049
+313/313 [==============================] - 44s 139ms/step - loss: 3.3159 - policy_loss: 2.5021 - value_loss: 0.6608 - policy_categorical_accuracy: 0.3787 - value_mse: 0.1075
+📊 WandB: Logged epoch 72 metrics
+Epoch 72/100: time=44.24s, loss=3.3159, policy_loss=2.5021, value_loss=0.6608, policy_categorical_accuracy=0.3787, value_mse=0.1075
+313/313 [==============================] - 44s 139ms/step - loss: 3.3049 - policy_loss: 2.4936 - value_loss: 0.6586 - policy_categorical_accuracy: 0.3837 - value_mse: 0.1066
+📊 WandB: Logged epoch 73 metrics
+Epoch 73/100: time=44.29s, loss=3.3049, policy_loss=2.4936, value_loss=0.6586, policy_categorical_accuracy=0.3837, value_mse=0.1066
+313/313 [==============================] - 45s 144ms/step - loss: 3.3103 - policy_loss: 2.5008 - value_loss: 0.6570 - policy_categorical_accuracy: 0.3797 - value_mse: 0.1037
+📊 WandB: Logged epoch 74 metrics
+Epoch 74/100: time=45.61s, loss=3.3103, policy_loss=2.5008, value_loss=0.6570, policy_categorical_accuracy=0.3797, value_mse=0.1037
+313/313 [==============================] - 44s 141ms/step - loss: 3.2959 - policy_loss: 2.4861 - value_loss: 0.6575 - policy_categorical_accuracy: 0.3800 - value_mse: 0.1052
+📊 WandB: Logged epoch 75 metrics
+Epoch 75/100: time=44.64s, loss=3.2959, policy_loss=2.4861, value_loss=0.6575, policy_categorical_accuracy=0.3800, value_mse=0.1052
+313/313 [==============================] - 45s 142ms/step - loss: 3.2988 - policy_loss: 2.4881 - value_loss: 0.6586 - policy_categorical_accuracy: 0.3851 - value_mse: 0.1054
+📊 WandB: Logged epoch 76 metrics
+Epoch 76/100: time=45.22s, loss=3.2988, policy_loss=2.4881, value_loss=0.6586, policy_categorical_accuracy=0.3851, value_mse=0.1054
+313/313 [==============================] - 44s 140ms/step - loss: 3.3044 - policy_loss: 2.4917 - value_loss: 0.6607 - policy_categorical_accuracy: 0.3772 - value_mse: 0.1081
+📊 WandB: Logged epoch 77 metrics
+Epoch 77/100: time=44.40s, loss=3.3044, policy_loss=2.4917, value_loss=0.6607, policy_categorical_accuracy=0.3772, value_mse=0.1081
+313/313 [==============================] - 44s 142ms/step - loss: 3.2775 - policy_loss: 2.4713 - value_loss: 0.6544 - policy_categorical_accuracy: 0.3877 - value_mse: 0.1053
+📊 WandB: Logged epoch 78 metrics
+Epoch 78/100: time=44.95s, loss=3.2775, policy_loss=2.4713, value_loss=0.6544, policy_categorical_accuracy=0.3877, value_mse=0.1053
+313/313 [==============================] - 44s 140ms/step - loss: 3.2995 - policy_loss: 2.4972 - value_loss: 0.6507 - policy_categorical_accuracy: 0.3814 - value_mse: 0.1036
+📊 WandB: Logged epoch 79 metrics
+Epoch 79/100: time=44.56s, loss=3.2995, policy_loss=2.4972, value_loss=0.6507, policy_categorical_accuracy=0.3814, value_mse=0.1036
+313/313 [==============================] - 43s 139ms/step - loss: 3.2942 - policy_loss: 2.4860 - value_loss: 0.6566 - policy_categorical_accuracy: 0.3850 - value_mse: 0.1043
+
+🔍 Analyse complète gradient vanishing (époque 80)...
+⚠️  Gradient WARNING at epoch 80
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 80 metrics
+📦 Modèle sauvegardé sur WandB: epoch 80
+💾 WandB: Model saved at epoch 80
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 80
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3850
+     ❌ Sous-performance
+   Value MSE: 0.1043
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.385 sous le benchmark 0.550
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+Epoch 80/100: time=45.11s, loss=3.2942, policy_loss=2.4860, value_loss=0.6566, policy_categorical_accuracy=0.3850, value_mse=0.1043
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 62ms/step - loss: 3.2806 - policy_loss: 2.4782 - value_loss: 0.6509 - policy_categorical_accuracy: 0.3853 - value_mse: 0.1029
+✅ WandB: Logged validation metrics for epoch 80
+🔍 Diagnostic: Recorded validation metrics for epoch 80
+Validation  Epoch {i}/{epochs}:, loss=3.2806, policy_loss=2.4782, value_loss=0.6509, policy_categorical_accuracy=0.3853, value_mse=0.1029
+313/313 [==============================] - 48s 155ms/step - loss: 3.2945 - policy_loss: 2.4892 - value_loss: 0.6538 - policy_categorical_accuracy: 0.3785 - value_mse: 0.1046
+📊 WandB: Logged epoch 81 metrics
+Epoch 81/100: time=49.10s, loss=3.2945, policy_loss=2.4892, value_loss=0.6538, policy_categorical_accuracy=0.3785, value_mse=0.1046
+313/313 [==============================] - 46s 146ms/step - loss: 3.2974 - policy_loss: 2.4928 - value_loss: 0.6532 - policy_categorical_accuracy: 0.3799 - value_mse: 0.1034
+📊 WandB: Logged epoch 82 metrics
+Epoch 82/100: time=46.44s, loss=3.2974, policy_loss=2.4928, value_loss=0.6532, policy_categorical_accuracy=0.3799, value_mse=0.1034
+313/313 [==============================] - 45s 142ms/step - loss: 3.2763 - policy_loss: 2.4703 - value_loss: 0.6547 - policy_categorical_accuracy: 0.3929 - value_mse: 0.1053
+📊 WandB: Logged epoch 83 metrics
+Epoch 83/100: time=45.18s, loss=3.2763, policy_loss=2.4703, value_loss=0.6547, policy_categorical_accuracy=0.3929, value_mse=0.1053
+313/313 [==============================] - 44s 139ms/step - loss: 3.3027 - policy_loss: 2.4938 - value_loss: 0.6578 - policy_categorical_accuracy: 0.3771 - value_mse: 0.1049
+📊 WandB: Logged epoch 84 metrics
+Epoch 84/100: time=44.22s, loss=3.3027, policy_loss=2.4938, value_loss=0.6578, policy_categorical_accuracy=0.3771, value_mse=0.1049
+313/313 [==============================] - 43s 138ms/step - loss: 3.2651 - policy_loss: 2.4587 - value_loss: 0.6552 - policy_categorical_accuracy: 0.3877 - value_mse: 0.1045
+📊 WandB: Logged epoch 85 metrics
+Epoch 85/100: time=43.75s, loss=3.2651, policy_loss=2.4587, value_loss=0.6552, policy_categorical_accuracy=0.3877, value_mse=0.1045
+313/313 [==============================] - 44s 139ms/step - loss: 3.2739 - policy_loss: 2.4685 - value_loss: 0.6543 - policy_categorical_accuracy: 0.3911 - value_mse: 0.1046
+📊 WandB: Logged epoch 86 metrics
+Epoch 86/100: time=44.21s, loss=3.2739, policy_loss=2.4685, value_loss=0.6543, policy_categorical_accuracy=0.3911, value_mse=0.1046
+313/313 [==============================] - 43s 139ms/step - loss: 3.3170 - policy_loss: 2.5126 - value_loss: 0.6534 - policy_categorical_accuracy: 0.3793 - value_mse: 0.1028
+📊 WandB: Logged epoch 87 metrics
+Epoch 87/100: time=44.09s, loss=3.3170, policy_loss=2.5126, value_loss=0.6534, policy_categorical_accuracy=0.3793, value_mse=0.1028
+313/313 [==============================] - 43s 139ms/step - loss: 3.2561 - policy_loss: 2.4476 - value_loss: 0.6576 - policy_categorical_accuracy: 0.3874 - value_mse: 0.1064
+📊 WandB: Logged epoch 88 metrics
+Epoch 88/100: time=44.02s, loss=3.2561, policy_loss=2.4476, value_loss=0.6576, policy_categorical_accuracy=0.3874, value_mse=0.1064
+313/313 [==============================] - 44s 141ms/step - loss: 3.2822 - policy_loss: 2.4765 - value_loss: 0.6548 - policy_categorical_accuracy: 0.3752 - value_mse: 0.1031
+📊 WandB: Logged epoch 89 metrics
+Epoch 89/100: time=44.70s, loss=3.2822, policy_loss=2.4765, value_loss=0.6548, policy_categorical_accuracy=0.3752, value_mse=0.1031
+313/313 [==============================] - 44s 140ms/step - loss: 3.2925 - policy_loss: 2.4899 - value_loss: 0.6517 - policy_categorical_accuracy: 0.3817 - value_mse: 0.1026
+
+🔍 Analyse complète gradient vanishing (époque 90)...
+⚠️  Gradient WARNING at epoch 90
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 90 metrics
+Epoch 90/100: time=44.91s, loss=3.2925, policy_loss=2.4899, value_loss=0.6517, policy_categorical_accuracy=0.3817, value_mse=0.1026
+313/313 [==============================] - 43s 138ms/step - loss: 3.2939 - policy_loss: 2.4862 - value_loss: 0.6569 - policy_categorical_accuracy: 0.3775 - value_mse: 0.1054
+📊 WandB: Logged epoch 91 metrics
+Epoch 91/100: time=43.97s, loss=3.2939, policy_loss=2.4862, value_loss=0.6569, policy_categorical_accuracy=0.3775, value_mse=0.1054
+313/313 [==============================] - 43s 137ms/step - loss: 3.3167 - policy_loss: 2.5127 - value_loss: 0.6532 - policy_categorical_accuracy: 0.3813 - value_mse: 0.1024
+📊 WandB: Logged epoch 92 metrics
+Epoch 92/100: time=43.66s, loss=3.3167, policy_loss=2.5127, value_loss=0.6532, policy_categorical_accuracy=0.3813, value_mse=0.1024
+313/313 [==============================] - 44s 142ms/step - loss: 3.2885 - policy_loss: 2.4821 - value_loss: 0.6556 - policy_categorical_accuracy: 0.3818 - value_mse: 0.1044
+📊 WandB: Logged epoch 93 metrics
+Epoch 93/100: time=45.10s, loss=3.2885, policy_loss=2.4821, value_loss=0.6556, policy_categorical_accuracy=0.3818, value_mse=0.1044
+313/313 [==============================] - 44s 142ms/step - loss: 3.3096 - policy_loss: 2.5083 - value_loss: 0.6506 - policy_categorical_accuracy: 0.3824 - value_mse: 0.1034
+📊 WandB: Logged epoch 94 metrics
+Epoch 94/100: time=45.08s, loss=3.3096, policy_loss=2.5083, value_loss=0.6506, policy_categorical_accuracy=0.3824, value_mse=0.1034
+313/313 [==============================] - 44s 141ms/step - loss: 3.3017 - policy_loss: 2.4935 - value_loss: 0.6574 - policy_categorical_accuracy: 0.3769 - value_mse: 0.1033
+📊 WandB: Logged epoch 95 metrics
+Epoch 95/100: time=44.93s, loss=3.3017, policy_loss=2.4935, value_loss=0.6574, policy_categorical_accuracy=0.3769, value_mse=0.1033
+313/313 [==============================] - 45s 143ms/step - loss: 3.2560 - policy_loss: 2.4532 - value_loss: 0.6520 - policy_categorical_accuracy: 0.3853 - value_mse: 0.1026
+📊 WandB: Logged epoch 96 metrics
+Epoch 96/100: time=45.39s, loss=3.2560, policy_loss=2.4532, value_loss=0.6520, policy_categorical_accuracy=0.3853, value_mse=0.1026
+313/313 [==============================] - 43s 138ms/step - loss: 3.2585 - policy_loss: 2.4565 - value_loss: 0.6513 - policy_categorical_accuracy: 0.3907 - value_mse: 0.1035
+📊 WandB: Logged epoch 97 metrics
+Epoch 97/100: time=43.79s, loss=3.2585, policy_loss=2.4565, value_loss=0.6513, policy_categorical_accuracy=0.3907, value_mse=0.1035
+313/313 [==============================] - 44s 142ms/step - loss: 3.2791 - policy_loss: 2.4741 - value_loss: 0.6543 - policy_categorical_accuracy: 0.3901 - value_mse: 0.1052
+📊 WandB: Logged epoch 98 metrics
+Epoch 98/100: time=44.96s, loss=3.2791, policy_loss=2.4741, value_loss=0.6543, policy_categorical_accuracy=0.3901, value_mse=0.1052
+313/313 [==============================] - 44s 142ms/step - loss: 3.2906 - policy_loss: 2.4854 - value_loss: 0.6545 - policy_categorical_accuracy: 0.3811 - value_mse: 0.1038
+📊 WandB: Logged epoch 99 metrics
+Epoch 99/100: time=45.12s, loss=3.2906, policy_loss=2.4854, value_loss=0.6545, policy_categorical_accuracy=0.3811, value_mse=0.1038
+313/313 [==============================] - 43s 138ms/step - loss: 3.3055 - policy_loss: 2.4966 - value_loss: 0.6582 - policy_categorical_accuracy: 0.3789 - value_mse: 0.1057
+
+🔍 Analyse complète gradient vanishing (époque 100)...
+⚠️  Gradient WARNING at epoch 100
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 100 metrics
+📦 Modèle sauvegardé sur WandB: epoch 100
+💾 WandB: Model saved at epoch 100
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 100
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3789
+     ❌ Sous-performance
+   Value MSE: 0.1057
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.379 sous le benchmark 0.550
+   🟡 GRADIENT_VANISHING: Très peu d'amélioration sur 20 époques
+   🟠 ARCHITECTURE_BUG: Convergence anormalement lente - vérifier bottleneck_block
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+   🔧 Vérifier les connexions résiduelles
+   🔧 Utiliser l'activation Swish au lieu de ReLU
+   🔧 Réduire la profondeur du réseau
+   🚨 CRITIQUE: Corriger le bug dans _bottleneck_block
+   🔧 Vérifier: expansion = int(input_filters * factor)
+   🔧 Tester avec un ResNet simple pour comparaison
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/convergence_diagnostics.py:439: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/convergence_diagnostics.py:442: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+2025-06-23 19:21:20,058 - INFO - Diagnostic plots saved to diagnostics_epoch_100.png
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+📊 Diagnostic plots saved: diagnostics_epoch_100.png
+Epoch 100/100: time=46.22s, loss=3.3055, policy_loss=2.4966, value_loss=0.6582, policy_categorical_accuracy=0.3789, value_mse=0.1057
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 61ms/step - loss: 3.3930 - policy_loss: 2.5395 - value_loss: 0.7030 - policy_categorical_accuracy: 0.3782 - value_mse: 0.1224
+✅ WandB: Logged validation metrics for epoch 100
+🔍 Diagnostic: Recorded validation metrics for epoch 100
+Validation  Epoch {i}/{epochs}:, loss=3.3930, policy_loss=2.5395, value_loss=0.7030, policy_categorical_accuracy=0.3782, value_mse=0.1224
+Best Model at epoch 80 : loss=3.2805516719818115, policy_loss=2.4782, value_loss=0.6509
+
+🏁 FINAL DIAGNOSTIC REPORT:
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3789
+     ❌ Sous-performance
+   Value MSE: 0.1057
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.379 sous le benchmark 0.550
+   🟡 GRADIENT_VANISHING: Très peu d'amélioration sur 20 époques
+   🟠 ARCHITECTURE_BUG: Convergence anormalement lente - vérifier bottleneck_block
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+   🔧 Vérifier les connexions résiduelles
+   🔧 Utiliser l'activation Swish au lieu de ReLU
+   🔧 Réduire la profondeur du réseau
+   🚨 CRITIQUE: Corriger le bug dans _bottleneck_block
+   🔧 Vérifier: expansion = int(input_filters * factor)
+   🔧 Tester avec un ResNet simple pour comparaison
+
+====================================================================================
+wandb: uploading artifact go_mobilenet_epoch_100; uploading output.log; uploading wandb-summary.json; uploading media/images/learning_rate_schedule_104_0bd01f37499dfba09f28.png; uploading config.yaml
+wandb: uploading artifact go_mobilenet_epoch_100; uploading output.log; uploading media/images/learning_rate_schedule_104_0bd01f37499dfba09f28.png; uploading config.yaml
+wandb: uploading artifact go_mobilenet_epoch_100; uploading output.log
+wandb: uploading artifact go_mobilenet_epoch_100
+wandb:
+wandb:
+wandb: Run history:
+wandb:              activation/avg_dead_ratio ▅▄▁▆▆▇▃▂▄█
+wandb:              activation/max_dead_ratio ▁▄▃▅▆▇█▇▆▇
+wandb:            diagnostics/critical_issues ▁
+wandb:               diagnostics/health_score ▁
+wandb:                diagnostics/high_issues ▁
+wandb:               diagnostics/issues_count ▁
+wandb:    diagnostics/policy_current_accuracy ▁
+wandb:    diagnostics/policy_improvement_rate ▁
+wandb:        diagnostics/policy_max_accuracy ▁
+wandb:     diagnostics/value_convergence_rate ▁
+wandb:          diagnostics/value_current_mse ▁
+wandb:              diagnostics/value_min_mse ▁
+wandb:             final/best_validation_loss ▁
+wandb:                 final/epochs_completed ▁
+wandb:              final/total_training_time ▁
+wandb:             gradient_health/num_issues █▅▅▁▁▅▁▅▁▅
+wandb:                 gradient_health/status ▁▁▁▁▁▁▁▁▁▁
+wandb:                     gradients/max_norm █▃▂▂▁▃▄▃▄▁
+wandb:                    gradients/mean_norm ▄▁▄▂▄▅▅██▅
+wandb:                     gradients/min_norm █▃▁▁▁▁▁▁▁▁
+wandb:                   gradients/norm_ratio ▁▁▁▁▂▂█▄▆▄
+wandb:                     model/layers_count ▁
+wandb:         model/non_trainable_parameters ▁
+wandb:                 model/total_parameters ▁
+wandb:             model/trainable_parameters ▁
+wandb:             optimization/learning_rate ███████▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:                           system/epoch ▁▁▁▁▂▂▂▂▂▂▂▂▃▃▃▃▄▄▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇████
+wandb:                  timing/epoch_duration ▁▂▃▃▅▃▄▃▃▂▂▃▃▃▃▃▅▅▃▄▄▃▅▂▃▂▃▃▃▄▄█▄▃▃▂▄▄▃▅
+wandb:                   timing/total_elapsed ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▇▇▇▇▇███
+wandb:                            train/epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇███
+wandb:                             train/loss █▇▅▅▅▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/policy_categorical_accuracy ▁▃▄▅▆▆▆▇▇▇▇▇▇▇██████████▇███████████████
+wandb:                      train/policy_loss █▆▅▄▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                       train/value_loss █▆▆▅▅▅▅▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂▁▂▁▁▁▁
+wandb:                        train/value_mse ▇█▇▇▆▆▆▅▅▅▄▄▅▅▄▄▃▂▄▃▃▃▃▂▂▃▃▂▃▁▂▂▂▁▂▂▁▁▂▂
+wandb: validation/policy_categorical_accuracy ▁▅▆█▇
+wandb:                 validation/policy_loss █▄▂▁▃
+wandb:                  validation/total_loss █▄▂▁▃
+wandb:                  validation/value_loss ▅▂▁▁█
+wandb:                   validation/value_mse ▆▃▁▁█
+wandb:
+wandb: Run summary:
+wandb:              activation/avg_dead_ratio 0.3897
+wandb:              activation/max_dead_ratio 0.57
+wandb:            diagnostics/critical_issues 0
+wandb:               diagnostics/health_score 3
+wandb:              diagnostics/health_status WARNING
+wandb:                diagnostics/high_issues 2
+wandb:               diagnostics/issues_count 3
+wandb:    diagnostics/policy_benchmark_status POOR
+wandb:    diagnostics/policy_current_accuracy 0.3789
+wandb:    diagnostics/policy_improvement_rate 0.00014
+wandb:        diagnostics/policy_max_accuracy 0.3929
+wandb:    diagnostics/policy_plateau_detected True
+wandb:     diagnostics/value_convergence_rate -3e-05
+wandb:          diagnostics/value_current_mse 0.1057
+wandb:              diagnostics/value_min_mse 0.10237
+wandb:  diagnostics/value_stagnation_detected True
+wandb:             final/best_validation_loss 3.28055
+wandb:                 final/epochs_completed 100
+wandb:              final/total_training_time 4568.21374
+wandb:             gradient_health/num_issues 7
+wandb:                 gradient_health/status 0.5
+wandb:                     gradients/max_norm 1.8605
+wandb:                    gradients/mean_norm 0.3143
+wandb:                     gradients/min_norm 2e-05
+wandb:                   gradients/norm_ratio 84849.12986
+wandb:                     model/layers_count 133
+wandb:         model/non_trainable_parameters 4674
+wandb:                 model/total_parameters 103209
+wandb:             model/trainable_parameters 98535
+wandb:             optimization/learning_rate 0.0005
+wandb:                           system/epoch 100
+wandb:                  timing/epoch_duration 46.21785
+wandb:                   timing/total_elapsed 4548.24068
+wandb:                            train/epoch 100
+wandb:                             train/loss 3.3055
+wandb:      train/policy_categorical_accuracy 0.3789
+wandb:                      train/policy_loss 2.4966
+wandb:                       train/value_loss 0.65818
+wandb:                        train/value_mse 0.1057
+wandb: validation/policy_categorical_accuracy 0.3782
+wandb:                 validation/policy_loss 2.53952
+wandb:                  validation/total_loss 3.39301
+wandb:                  validation/value_loss 0.70298
+wandb:                   validation/value_mse 0.12239
+wandb:
+wandb: 🚀 View run Test2 - mobilenet_block_num8_filters32_e100_lr0.0005_b32_N10000 at: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/v21xct00
+wandb: ⭐️ View project at: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training
+wandb: Synced 5 W&B file(s), 1 media file(s), 10 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250623_180508-v21xct00/logs
+✅ Run WandB terminée
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+📈 Graphique sauvegardé: gradient_analysis.png
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+
+📊 Validation Results for Model GoMobileNet block_num=8 , filters=32, initial_lr=0.0005 — Epoch 100:
+  - loss                          : 3.3930
+  - policy_loss                   : 2.5395
+  - value_loss                    : 0.7030
+  - policy_categorical_accuracy   : 0.3782
+  - value_mse                     : 0.1224
+  - Time: 4568.2137
+Model: "model_11"
+__________________________________________________________________________________________________
+ Layer (type)                Output Shape                 Param #   Connected to
+==================================================================================================
+ input_2 (InputLayer)        [(None, 19, 19, 31)]         0         []
+
+ conv2d_18 (Conv2D)          (None, 19, 19, 32)           992       ['input_2[0][0]']
+
+ batch_normalization_26 (Ba  (None, 19, 19, 32)           128       ['conv2d_18[0][0]']
+ tchNormalization)
+
+ activation_27 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_26[0][0]
+                                                                    ']
+
+ conv2d_19 (Conv2D)          (None, 19, 19, 128)          4096      ['activation_27[0][0]']
+
+ batch_normalization_27 (Ba  (None, 19, 19, 128)          512       ['conv2d_19[0][0]']
+ tchNormalization)
+
+ activation_28 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_27[0][0]
+                                                                    ']
+
+ depthwise_conv2d_8 (Depthw  (None, 19, 19, 128)          1152      ['activation_28[0][0]']
+ iseConv2D)
+
+ batch_normalization_28 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_8[0][0]']
+ tchNormalization)
+
+ activation_29 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_28[0][0]
+                                                                    ']
+
+ global_average_pooling2d_9  (None, 128)                  0         ['activation_29[0][0]']
+  (GlobalAveragePooling2D)
+
+ reshape_8 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_9[0
+                                                                    ][0]']
+
+ dense_17 (Dense)            (None, 1, 1, 8)              1024      ['reshape_8[0][0]']
+
+ dense_18 (Dense)            (None, 1, 1, 128)            1024      ['dense_17[0][0]']
+
+ multiply_8 (Multiply)       (None, 19, 19, 128)          0         ['activation_29[0][0]',
+                                                                     'dense_18[0][0]']
+
+ conv2d_20 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_8[0][0]']
+
+ batch_normalization_29 (Ba  (None, 19, 19, 32)           128       ['conv2d_20[0][0]']
+ tchNormalization)
+
+ activation_30 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_29[0][0]
+                                                                    ']
+
+ add_8 (Add)                 (None, 19, 19, 32)           0         ['activation_30[0][0]',
+                                                                     'activation_27[0][0]']
+
+ conv2d_21 (Conv2D)          (None, 19, 19, 128)          4096      ['add_8[0][0]']
+
+ batch_normalization_30 (Ba  (None, 19, 19, 128)          512       ['conv2d_21[0][0]']
+ tchNormalization)
+
+ activation_31 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_30[0][0]
+                                                                    ']
+
+ depthwise_conv2d_9 (Depthw  (None, 19, 19, 128)          1152      ['activation_31[0][0]']
+ iseConv2D)
+
+ batch_normalization_31 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_9[0][0]']
+ tchNormalization)
+
+ activation_32 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_31[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_32[0][0]']
+ 0 (GlobalAveragePooling2D)
+
+ reshape_9 (Reshape)         (None, 1, 1, 128)            0         ['global_average_pooling2d_10[
+                                                                    0][0]']
+
+ dense_19 (Dense)            (None, 1, 1, 8)              1024      ['reshape_9[0][0]']
+
+ dense_20 (Dense)            (None, 1, 1, 128)            1024      ['dense_19[0][0]']
+
+ multiply_9 (Multiply)       (None, 19, 19, 128)          0         ['activation_32[0][0]',
+                                                                     'dense_20[0][0]']
+
+ conv2d_22 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_9[0][0]']
+
+ batch_normalization_32 (Ba  (None, 19, 19, 32)           128       ['conv2d_22[0][0]']
+ tchNormalization)
+
+ activation_33 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_32[0][0]
+                                                                    ']
+
+ add_9 (Add)                 (None, 19, 19, 32)           0         ['activation_33[0][0]',
+                                                                     'add_8[0][0]']
+
+ conv2d_23 (Conv2D)          (None, 19, 19, 128)          4096      ['add_9[0][0]']
+
+ batch_normalization_33 (Ba  (None, 19, 19, 128)          512       ['conv2d_23[0][0]']
+ tchNormalization)
+
+ activation_34 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_33[0][0]
+                                                                    ']
+
+ depthwise_conv2d_10 (Depth  (None, 19, 19, 128)          1152      ['activation_34[0][0]']
+ wiseConv2D)
+
+ batch_normalization_34 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_10[0][0]']
+ tchNormalization)
+
+ activation_35 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_34[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_35[0][0]']
+ 1 (GlobalAveragePooling2D)
+
+ reshape_10 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_11[
+                                                                    0][0]']
+
+ dense_21 (Dense)            (None, 1, 1, 8)              1024      ['reshape_10[0][0]']
+
+ dense_22 (Dense)            (None, 1, 1, 128)            1024      ['dense_21[0][0]']
+
+ multiply_10 (Multiply)      (None, 19, 19, 128)          0         ['activation_35[0][0]',
+                                                                     'dense_22[0][0]']
+
+ conv2d_24 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_10[0][0]']
+
+ batch_normalization_35 (Ba  (None, 19, 19, 32)           128       ['conv2d_24[0][0]']
+ tchNormalization)
+
+ activation_36 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_35[0][0]
+                                                                    ']
+
+ add_10 (Add)                (None, 19, 19, 32)           0         ['activation_36[0][0]',
+                                                                     'add_9[0][0]']
+
+ conv2d_25 (Conv2D)          (None, 19, 19, 128)          4096      ['add_10[0][0]']
+
+ batch_normalization_36 (Ba  (None, 19, 19, 128)          512       ['conv2d_25[0][0]']
+ tchNormalization)
+
+ activation_37 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_36[0][0]
+                                                                    ']
+
+ depthwise_conv2d_11 (Depth  (None, 19, 19, 128)          1152      ['activation_37[0][0]']
+ wiseConv2D)
+
+ batch_normalization_37 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_11[0][0]']
+ tchNormalization)
+
+ activation_38 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_37[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_38[0][0]']
+ 2 (GlobalAveragePooling2D)
+
+ reshape_11 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_12[
+                                                                    0][0]']
+
+ dense_23 (Dense)            (None, 1, 1, 8)              1024      ['reshape_11[0][0]']
+
+ dense_24 (Dense)            (None, 1, 1, 128)            1024      ['dense_23[0][0]']
+
+ multiply_11 (Multiply)      (None, 19, 19, 128)          0         ['activation_38[0][0]',
+                                                                     'dense_24[0][0]']
+
+ conv2d_26 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_11[0][0]']
+
+ batch_normalization_38 (Ba  (None, 19, 19, 32)           128       ['conv2d_26[0][0]']
+ tchNormalization)
+
+ activation_39 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_38[0][0]
+                                                                    ']
+
+ add_11 (Add)                (None, 19, 19, 32)           0         ['activation_39[0][0]',
+                                                                     'add_10[0][0]']
+
+ conv2d_27 (Conv2D)          (None, 19, 19, 128)          4096      ['add_11[0][0]']
+
+ batch_normalization_39 (Ba  (None, 19, 19, 128)          512       ['conv2d_27[0][0]']
+ tchNormalization)
+
+ activation_40 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_39[0][0]
+                                                                    ']
+
+ depthwise_conv2d_12 (Depth  (None, 19, 19, 128)          1152      ['activation_40[0][0]']
+ wiseConv2D)
+
+ batch_normalization_40 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_12[0][0]']
+ tchNormalization)
+
+ activation_41 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_40[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_41[0][0]']
+ 3 (GlobalAveragePooling2D)
+
+ reshape_12 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_13[
+                                                                    0][0]']
+
+ dense_25 (Dense)            (None, 1, 1, 8)              1024      ['reshape_12[0][0]']
+
+ dense_26 (Dense)            (None, 1, 1, 128)            1024      ['dense_25[0][0]']
+
+ multiply_12 (Multiply)      (None, 19, 19, 128)          0         ['activation_41[0][0]',
+                                                                     'dense_26[0][0]']
+
+ conv2d_28 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_12[0][0]']
+
+ batch_normalization_41 (Ba  (None, 19, 19, 32)           128       ['conv2d_28[0][0]']
+ tchNormalization)
+
+ activation_42 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_41[0][0]
+                                                                    ']
+
+ add_12 (Add)                (None, 19, 19, 32)           0         ['activation_42[0][0]',
+                                                                     'add_11[0][0]']
+
+ conv2d_29 (Conv2D)          (None, 19, 19, 128)          4096      ['add_12[0][0]']
+
+ batch_normalization_42 (Ba  (None, 19, 19, 128)          512       ['conv2d_29[0][0]']
+ tchNormalization)
+
+ activation_43 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_42[0][0]
+                                                                    ']
+
+ depthwise_conv2d_13 (Depth  (None, 19, 19, 128)          1152      ['activation_43[0][0]']
+ wiseConv2D)
+
+ batch_normalization_43 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_13[0][0]']
+ tchNormalization)
+
+ activation_44 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_43[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_44[0][0]']
+ 4 (GlobalAveragePooling2D)
+
+ reshape_13 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_14[
+                                                                    0][0]']
+
+ dense_27 (Dense)            (None, 1, 1, 8)              1024      ['reshape_13[0][0]']
+
+ dense_28 (Dense)            (None, 1, 1, 128)            1024      ['dense_27[0][0]']
+
+ multiply_13 (Multiply)      (None, 19, 19, 128)          0         ['activation_44[0][0]',
+                                                                     'dense_28[0][0]']
+
+ conv2d_30 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_13[0][0]']
+
+ batch_normalization_44 (Ba  (None, 19, 19, 32)           128       ['conv2d_30[0][0]']
+ tchNormalization)
+
+ activation_45 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_44[0][0]
+                                                                    ']
+
+ add_13 (Add)                (None, 19, 19, 32)           0         ['activation_45[0][0]',
+                                                                     'add_12[0][0]']
+
+ conv2d_31 (Conv2D)          (None, 19, 19, 128)          4096      ['add_13[0][0]']
+
+ batch_normalization_45 (Ba  (None, 19, 19, 128)          512       ['conv2d_31[0][0]']
+ tchNormalization)
+
+ activation_46 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_45[0][0]
+                                                                    ']
+
+ depthwise_conv2d_14 (Depth  (None, 19, 19, 128)          1152      ['activation_46[0][0]']
+ wiseConv2D)
+
+ batch_normalization_46 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_14[0][0]']
+ tchNormalization)
+
+ activation_47 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_46[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_47[0][0]']
+ 5 (GlobalAveragePooling2D)
+
+ reshape_14 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_15[
+                                                                    0][0]']
+
+ dense_29 (Dense)            (None, 1, 1, 8)              1024      ['reshape_14[0][0]']
+
+ dense_30 (Dense)            (None, 1, 1, 128)            1024      ['dense_29[0][0]']
+
+ multiply_14 (Multiply)      (None, 19, 19, 128)          0         ['activation_47[0][0]',
+                                                                     'dense_30[0][0]']
+
+ conv2d_32 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_14[0][0]']
+
+ batch_normalization_47 (Ba  (None, 19, 19, 32)           128       ['conv2d_32[0][0]']
+ tchNormalization)
+
+ activation_48 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_47[0][0]
+                                                                    ']
+
+ add_14 (Add)                (None, 19, 19, 32)           0         ['activation_48[0][0]',
+                                                                     'add_13[0][0]']
+
+ conv2d_33 (Conv2D)          (None, 19, 19, 128)          4096      ['add_14[0][0]']
+
+ batch_normalization_48 (Ba  (None, 19, 19, 128)          512       ['conv2d_33[0][0]']
+ tchNormalization)
+
+ activation_49 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_48[0][0]
+                                                                    ']
+
+ depthwise_conv2d_15 (Depth  (None, 19, 19, 128)          1152      ['activation_49[0][0]']
+ wiseConv2D)
+
+ batch_normalization_49 (Ba  (None, 19, 19, 128)          512       ['depthwise_conv2d_15[0][0]']
+ tchNormalization)
+
+ activation_50 (Activation)  (None, 19, 19, 128)          0         ['batch_normalization_49[0][0]
+                                                                    ']
+
+ global_average_pooling2d_1  (None, 128)                  0         ['activation_50[0][0]']
+ 6 (GlobalAveragePooling2D)
+
+ reshape_15 (Reshape)        (None, 1, 1, 128)            0         ['global_average_pooling2d_16[
+                                                                    0][0]']
+
+ dense_31 (Dense)            (None, 1, 1, 8)              1024      ['reshape_15[0][0]']
+
+ dense_32 (Dense)            (None, 1, 1, 128)            1024      ['dense_31[0][0]']
+
+ multiply_15 (Multiply)      (None, 19, 19, 128)          0         ['activation_50[0][0]',
+                                                                     'dense_32[0][0]']
+
+ conv2d_34 (Conv2D)          (None, 19, 19, 32)           4096      ['multiply_15[0][0]']
+
+ batch_normalization_50 (Ba  (None, 19, 19, 32)           128       ['conv2d_34[0][0]']
+ tchNormalization)
+
+ activation_51 (Activation)  (None, 19, 19, 32)           0         ['batch_normalization_50[0][0]
+                                                                    ']
+
+ add_15 (Add)                (None, 19, 19, 32)           0         ['activation_51[0][0]',
+                                                                     'add_14[0][0]']
+
+ conv2d_35 (Conv2D)          (None, 19, 19, 1)            32        ['add_15[0][0]']
+
+ batch_normalization_51 (Ba  (None, 19, 19, 1)            4         ['conv2d_35[0][0]']
+ tchNormalization)
+
+ global_average_pooling2d_1  (None, 32)                   0         ['add_15[0][0]']
+ 7 (GlobalAveragePooling2D)
+
+ activation_52 (Activation)  (None, 19, 19, 1)            0         ['batch_normalization_51[0][0]
+                                                                    ']
+
+ dense_33 (Dense)            (None, 50)                   1650      ['global_average_pooling2d_17[
+                                                                    0][0]']
+
+ flatten_1 (Flatten)         (None, 361)                  0         ['activation_52[0][0]']
+
+ activation_53 (Activation)  (None, 50)                   0         ['dense_33[0][0]']
+
+ policy (Activation)         (None, 361)                  0         ['flatten_1[0][0]']
+
+ value (Dense)               (None, 1)                    51        ['activation_53[0][0]']
+
+==================================================================================================
+Total params: 103209 (403.16 KB)
+Trainable params: 98535 (384.90 KB)
+Non-trainable params: 4674 (18.26 KB)
+__________________________________________________________________________________________________
+wandb: Tracking run with wandb version 0.20.1
+wandb: Run data is saved locally in /Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_192213-0hb8ovn7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Test2 - mobilenet_block_num8_filters32_e100_lr0.0008_b32_N10000
+wandb: ⭐️ View project at https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training
+wandb: 🚀 View run at https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/0hb8ovn7
+🚀 WandB run initialisée: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/0hb8ovn7
+✅ Gradient tracking configuré
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+getValidation
+2025-06-23 19:22:16,132 - WARNING - At this time, the v2.11+ optimizer `tf.keras.optimizers.AdamW` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.AdamW`.
+313/313 [==============================] - 53s 145ms/step - loss: 5.5945 - policy_loss: 4.6075 - value_loss: 0.7161 - policy_categorical_accuracy: 0.1203 - value_mse: 0.1285
+📊 WandB: Logged epoch 1 metrics
+Epoch 1/100: time=53.37s, loss=5.5945, policy_loss=4.6075, value_loss=0.7161, policy_categorical_accuracy=0.1203, value_mse=0.1285
+313/313 [==============================] - 45s 142ms/step - loss: 4.6403 - policy_loss: 3.6782 - value_loss: 0.6978 - policy_categorical_accuracy: 0.2362 - value_mse: 0.1250
+📊 WandB: Logged epoch 2 metrics
+Epoch 2/100: time=45.15s, loss=4.6403, policy_loss=3.6782, value_loss=0.6978, policy_categorical_accuracy=0.2362, value_mse=0.1250
+313/313 [==============================] - 45s 144ms/step - loss: 4.3286 - policy_loss: 3.3774 - value_loss: 0.6936 - policy_categorical_accuracy: 0.2696 - value_mse: 0.1203
+📊 WandB: Logged epoch 3 metrics
+Epoch 3/100: time=45.65s, loss=4.3286, policy_loss=3.3774, value_loss=0.6936, policy_categorical_accuracy=0.2696, value_mse=0.1203
+313/313 [==============================] - 46s 145ms/step - loss: 4.1254 - policy_loss: 3.1819 - value_loss: 0.6924 - policy_categorical_accuracy: 0.3000 - value_mse: 0.1217
+📊 WandB: Logged epoch 4 metrics
+Epoch 4/100: time=46.17s, loss=4.1254, policy_loss=3.1819, value_loss=0.6924, policy_categorical_accuracy=0.3000, value_mse=0.1217
+313/313 [==============================] - 45s 145ms/step - loss: 4.0012 - policy_loss: 3.0661 - value_loss: 0.6903 - policy_categorical_accuracy: 0.3072 - value_mse: 0.1212
+📊 WandB: Logged epoch 5 metrics
+Epoch 5/100: time=45.94s, loss=4.0012, policy_loss=3.0661, value_loss=0.6903, policy_categorical_accuracy=0.3072, value_mse=0.1212
+313/313 [==============================] - 46s 146ms/step - loss: 3.9368 - policy_loss: 3.0067 - value_loss: 0.6915 - policy_categorical_accuracy: 0.3126 - value_mse: 0.1199
+📊 WandB: Logged epoch 6 metrics
+Epoch 6/100: time=46.59s, loss=3.9368, policy_loss=3.0067, value_loss=0.6915, policy_categorical_accuracy=0.3126, value_mse=0.1199
+313/313 [==============================] - 46s 146ms/step - loss: 3.8515 - policy_loss: 2.9279 - value_loss: 0.6910 - policy_categorical_accuracy: 0.3224 - value_mse: 0.1198
+📊 WandB: Logged epoch 7 metrics
+Epoch 7/100: time=46.22s, loss=3.8515, policy_loss=2.9279, value_loss=0.6910, policy_categorical_accuracy=0.3224, value_mse=0.1198
+313/313 [==============================] - 45s 145ms/step - loss: 3.8364 - policy_loss: 2.9187 - value_loss: 0.6908 - policy_categorical_accuracy: 0.3228 - value_mse: 0.1185
+📊 WandB: Logged epoch 8 metrics
+Epoch 8/100: time=46.12s, loss=3.8364, policy_loss=2.9187, value_loss=0.6908, policy_categorical_accuracy=0.3228, value_mse=0.1185
+313/313 [==============================] - 46s 146ms/step - loss: 3.8156 - policy_loss: 2.9045 - value_loss: 0.6898 - policy_categorical_accuracy: 0.3203 - value_mse: 0.1196
+📊 WandB: Logged epoch 9 metrics
+Epoch 9/100: time=46.32s, loss=3.8156, policy_loss=2.9045, value_loss=0.6898, policy_categorical_accuracy=0.3203, value_mse=0.1196
+313/313 [==============================] - 46s 147ms/step - loss: 3.7312 - policy_loss: 2.8232 - value_loss: 0.6919 - policy_categorical_accuracy: 0.3394 - value_mse: 0.1203
+
+🔍 Analyse complète gradient vanishing (époque 10)...
+⚠️  Gradient WARNING at epoch 10
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 10 metrics
+Epoch 10/100: time=48.28s, loss=3.7312, policy_loss=2.8232, value_loss=0.6919, policy_categorical_accuracy=0.3394, value_mse=0.1203
+313/313 [==============================] - 43s 139ms/step - loss: 3.7099 - policy_loss: 2.8095 - value_loss: 0.6895 - policy_categorical_accuracy: 0.3428 - value_mse: 0.1201
+📊 WandB: Logged epoch 11 metrics
+Epoch 11/100: time=44.13s, loss=3.7099, policy_loss=2.8095, value_loss=0.6895, policy_categorical_accuracy=0.3428, value_mse=0.1201
+313/313 [==============================] - 45s 143ms/step - loss: 3.7206 - policy_loss: 2.8252 - value_loss: 0.6895 - policy_categorical_accuracy: 0.3346 - value_mse: 0.1199
+📊 WandB: Logged epoch 12 metrics
+Epoch 12/100: time=45.39s, loss=3.7206, policy_loss=2.8252, value_loss=0.6895, policy_categorical_accuracy=0.3346, value_mse=0.1199
+313/313 [==============================] - 45s 143ms/step - loss: 3.6750 - policy_loss: 2.7863 - value_loss: 0.6874 - policy_categorical_accuracy: 0.3379 - value_mse: 0.1180
+📊 WandB: Logged epoch 13 metrics
+Epoch 13/100: time=45.58s, loss=3.6750, policy_loss=2.7863, value_loss=0.6874, policy_categorical_accuracy=0.3379, value_mse=0.1180
+313/313 [==============================] - 45s 144ms/step - loss: 3.6734 - policy_loss: 2.7887 - value_loss: 0.6879 - policy_categorical_accuracy: 0.3321 - value_mse: 0.1178
+📊 WandB: Logged epoch 14 metrics
+Epoch 14/100: time=45.64s, loss=3.6734, policy_loss=2.7887, value_loss=0.6879, policy_categorical_accuracy=0.3321, value_mse=0.1178
+313/313 [==============================] - 45s 145ms/step - loss: 3.6491 - policy_loss: 2.7703 - value_loss: 0.6862 - policy_categorical_accuracy: 0.3418 - value_mse: 0.1196
+📊 WandB: Logged epoch 15 metrics
+Epoch 15/100: time=45.98s, loss=3.6491, policy_loss=2.7703, value_loss=0.6862, policy_categorical_accuracy=0.3418, value_mse=0.1196
+313/313 [==============================] - 48s 154ms/step - loss: 3.6234 - policy_loss: 2.7470 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3413 - value_mse: 0.1191
+📊 WandB: Logged epoch 16 metrics
+Epoch 16/100: time=48.86s, loss=3.6234, policy_loss=2.7470, value_loss=0.6880, policy_categorical_accuracy=0.3413, value_mse=0.1191
+313/313 [==============================] - 49s 158ms/step - loss: 3.5834 - policy_loss: 2.7109 - value_loss: 0.6880 - policy_categorical_accuracy: 0.3505 - value_mse: 0.1182
+📊 WandB: Logged epoch 17 metrics
+Epoch 17/100: time=50.07s, loss=3.5834, policy_loss=2.7109, value_loss=0.6880, policy_categorical_accuracy=0.3505, value_mse=0.1182
+313/313 [==============================] - 45s 144ms/step - loss: 3.5426 - policy_loss: 2.6767 - value_loss: 0.6851 - policy_categorical_accuracy: 0.3546 - value_mse: 0.1169
+📊 WandB: Logged epoch 18 metrics
+Epoch 18/100: time=45.97s, loss=3.5426, policy_loss=2.6767, value_loss=0.6851, policy_categorical_accuracy=0.3546, value_mse=0.1169
+313/313 [==============================] - 46s 146ms/step - loss: 3.5702 - policy_loss: 2.7076 - value_loss: 0.6855 - policy_categorical_accuracy: 0.3589 - value_mse: 0.1176
+📊 WandB: Logged epoch 19 metrics
+Epoch 19/100: time=46.37s, loss=3.5702, policy_loss=2.7076, value_loss=0.6855, policy_categorical_accuracy=0.3589, value_mse=0.1176
+313/313 [==============================] - 46s 146ms/step - loss: 3.5428 - policy_loss: 2.6847 - value_loss: 0.6844 - policy_categorical_accuracy: 0.3496 - value_mse: 0.1196
+
+🔍 Analyse complète gradient vanishing (époque 20)...
+⚠️  Gradient WARNING at epoch 20
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 20 metrics
+/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+📦 Modèle sauvegardé sur WandB: epoch 20
+💾 WandB: Model saved at epoch 20
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 20
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3496
+     ❌ Sous-performance
+   Value MSE: 0.1196
+     ✅ Excellent
+
+====================================================================================
+Epoch 20/100: time=47.31s, loss=3.5428, policy_loss=2.6847, value_loss=0.6844, policy_categorical_accuracy=0.3496, value_mse=0.1196
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 59ms/step - loss: 3.5172 - policy_loss: 2.6637 - value_loss: 0.6814 - policy_categorical_accuracy: 0.3593 - value_mse: 0.1165
+✅ WandB: Logged validation metrics for epoch 20
+🔍 Diagnostic: Recorded validation metrics for epoch 20
+Validation  Epoch {i}/{epochs}:, loss=3.5172, policy_loss=2.6637, value_loss=0.6814, policy_categorical_accuracy=0.3593, value_mse=0.1165
+313/313 [==============================] - 46s 145ms/step - loss: 3.5194 - policy_loss: 2.6659 - value_loss: 0.6829 - policy_categorical_accuracy: 0.3596 - value_mse: 0.1169
+📊 WandB: Logged epoch 21 metrics
+Epoch 21/100: time=46.16s, loss=3.5194, policy_loss=2.6659, value_loss=0.6829, policy_categorical_accuracy=0.3596, value_mse=0.1169
+313/313 [==============================] - 45s 144ms/step - loss: 3.4942 - policy_loss: 2.6464 - value_loss: 0.6803 - policy_categorical_accuracy: 0.3581 - value_mse: 0.1158
+📊 WandB: Logged epoch 22 metrics
+Epoch 22/100: time=45.87s, loss=3.4942, policy_loss=2.6464, value_loss=0.6803, policy_categorical_accuracy=0.3581, value_mse=0.1158
+313/313 [==============================] - 46s 146ms/step - loss: 3.4867 - policy_loss: 2.6407 - value_loss: 0.6814 - policy_categorical_accuracy: 0.3536 - value_mse: 0.1169
+📊 WandB: Logged epoch 23 metrics
+Epoch 23/100: time=46.29s, loss=3.4867, policy_loss=2.6407, value_loss=0.6814, policy_categorical_accuracy=0.3536, value_mse=0.1169
+313/313 [==============================] - 47s 149ms/step - loss: 3.4692 - policy_loss: 2.6279 - value_loss: 0.6793 - policy_categorical_accuracy: 0.3595 - value_mse: 0.1181
+📊 WandB: Logged epoch 24 metrics
+Epoch 24/100: time=47.44s, loss=3.4692, policy_loss=2.6279, value_loss=0.6793, policy_categorical_accuracy=0.3595, value_mse=0.1181
+313/313 [==============================] - 49s 157ms/step - loss: 3.4711 - policy_loss: 2.6353 - value_loss: 0.6765 - policy_categorical_accuracy: 0.3555 - value_mse: 0.1132
+📊 WandB: Logged epoch 25 metrics
+Epoch 25/100: time=49.89s, loss=3.4711, policy_loss=2.6353, value_loss=0.6765, policy_categorical_accuracy=0.3555, value_mse=0.1132
+313/313 [==============================] - 49s 157ms/step - loss: 3.4877 - policy_loss: 2.6539 - value_loss: 0.6770 - policy_categorical_accuracy: 0.3531 - value_mse: 0.1147
+📊 WandB: Logged epoch 26 metrics
+Epoch 26/100: time=49.85s, loss=3.4877, policy_loss=2.6539, value_loss=0.6770, policy_categorical_accuracy=0.3531, value_mse=0.1147
+313/313 [==============================] - 49s 156ms/step - loss: 3.4443 - policy_loss: 2.6154 - value_loss: 0.6744 - policy_categorical_accuracy: 0.3613 - value_mse: 0.1139
+📊 WandB: Logged epoch 27 metrics
+Epoch 27/100: time=49.65s, loss=3.4443, policy_loss=2.6154, value_loss=0.6744, policy_categorical_accuracy=0.3613, value_mse=0.1139
+313/313 [==============================] - 49s 155ms/step - loss: 3.4574 - policy_loss: 2.6300 - value_loss: 0.6751 - policy_categorical_accuracy: 0.3641 - value_mse: 0.1122
+📊 WandB: Logged epoch 28 metrics
+Epoch 28/100: time=49.41s, loss=3.4574, policy_loss=2.6300, value_loss=0.6751, policy_categorical_accuracy=0.3641, value_mse=0.1122
+313/313 [==============================] - 50s 160ms/step - loss: 3.4678 - policy_loss: 2.6456 - value_loss: 0.6720 - policy_categorical_accuracy: 0.3502 - value_mse: 0.1110
+📊 WandB: Logged epoch 29 metrics
+Epoch 29/100: time=50.81s, loss=3.4678, policy_loss=2.6456, value_loss=0.6720, policy_categorical_accuracy=0.3502, value_mse=0.1110
+313/313 [==============================] - 49s 156ms/step - loss: 3.4162 - policy_loss: 2.5947 - value_loss: 0.6733 - policy_categorical_accuracy: 0.3675 - value_mse: 0.1113
+
+🔍 Analyse complète gradient vanishing (époque 30)...
+⚠️  Gradient WARNING at epoch 30
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 30 metrics
+Epoch 30/100: time=50.28s, loss=3.4162, policy_loss=2.5947, value_loss=0.6733, policy_categorical_accuracy=0.3675, value_mse=0.1113
+313/313 [==============================] - 49s 156ms/step - loss: 3.4094 - policy_loss: 2.5887 - value_loss: 0.6744 - policy_categorical_accuracy: 0.3699 - value_mse: 0.1114
+📊 WandB: Logged epoch 31 metrics
+Epoch 31/100: time=49.49s, loss=3.4094, policy_loss=2.5887, value_loss=0.6744, policy_categorical_accuracy=0.3699, value_mse=0.1114
+313/313 [==============================] - 49s 158ms/step - loss: 3.3911 - policy_loss: 2.5764 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3730 - value_mse: 0.1116
+📊 WandB: Logged epoch 32 metrics
+Epoch 32/100: time=50.22s, loss=3.3911, policy_loss=2.5764, value_loss=0.6703, policy_categorical_accuracy=0.3730, value_mse=0.1116
+313/313 [==============================] - 48s 154ms/step - loss: 3.3776 - policy_loss: 2.5610 - value_loss: 0.6738 - policy_categorical_accuracy: 0.3691 - value_mse: 0.1127
+📊 WandB: Logged epoch 33 metrics
+Epoch 33/100: time=48.88s, loss=3.3776, policy_loss=2.5610, value_loss=0.6738, policy_categorical_accuracy=0.3691, value_mse=0.1127
+313/313 [==============================] - 48s 153ms/step - loss: 3.3633 - policy_loss: 2.5490 - value_loss: 0.6731 - policy_categorical_accuracy: 0.3704 - value_mse: 0.1127
+📊 WandB: Logged epoch 34 metrics
+Epoch 34/100: time=48.77s, loss=3.3633, policy_loss=2.5490, value_loss=0.6731, policy_categorical_accuracy=0.3704, value_mse=0.1127
+313/313 [==============================] - 47s 150ms/step - loss: 3.3804 - policy_loss: 2.5703 - value_loss: 0.6706 - policy_categorical_accuracy: 0.3642 - value_mse: 0.1125
+📊 WandB: Logged epoch 35 metrics
+Epoch 35/100: time=47.62s, loss=3.3804, policy_loss=2.5703, value_loss=0.6706, policy_categorical_accuracy=0.3642, value_mse=0.1125
+313/313 [==============================] - 46s 147ms/step - loss: 3.3719 - policy_loss: 2.5618 - value_loss: 0.6720 - policy_categorical_accuracy: 0.3708 - value_mse: 0.1136
+📊 WandB: Logged epoch 36 metrics
+Epoch 36/100: time=46.58s, loss=3.3719, policy_loss=2.5618, value_loss=0.6720, policy_categorical_accuracy=0.3708, value_mse=0.1136
+313/313 [==============================] - 46s 148ms/step - loss: 3.3561 - policy_loss: 2.5487 - value_loss: 0.6708 - policy_categorical_accuracy: 0.3741 - value_mse: 0.1108
+📊 WandB: Logged epoch 37 metrics
+Epoch 37/100: time=47.07s, loss=3.3561, policy_loss=2.5487, value_loss=0.6708, policy_categorical_accuracy=0.3741, value_mse=0.1108
+313/313 [==============================] - 46s 147ms/step - loss: 3.3412 - policy_loss: 2.5375 - value_loss: 0.6684 - policy_categorical_accuracy: 0.3690 - value_mse: 0.1099
+📊 WandB: Logged epoch 38 metrics
+Epoch 38/100: time=46.57s, loss=3.3412, policy_loss=2.5375, value_loss=0.6684, policy_categorical_accuracy=0.3690, value_mse=0.1099
+313/313 [==============================] - 47s 149ms/step - loss: 3.3546 - policy_loss: 2.5503 - value_loss: 0.6703 - policy_categorical_accuracy: 0.3637 - value_mse: 0.1104
+📊 WandB: Logged epoch 39 metrics
+Epoch 39/100: time=47.47s, loss=3.3546, policy_loss=2.5503, value_loss=0.6703, policy_categorical_accuracy=0.3637, value_mse=0.1104
+313/313 [==============================] - 49s 156ms/step - loss: 3.3009 - policy_loss: 2.5004 - value_loss: 0.6678 - policy_categorical_accuracy: 0.3826 - value_mse: 0.1112
+
+🔍 Analyse complète gradient vanishing (époque 40)...
+⚠️  Gradient WARNING at epoch 40
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 40 metrics
+📦 Modèle sauvegardé sur WandB: epoch 40
+💾 WandB: Model saved at epoch 40
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 40
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 💚 HEALTHY
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3826
+     ❌ Sous-performance
+   Value MSE: 0.1112
+     ✅ Excellent
+
+====================================================================================
+Epoch 40/100: time=50.52s, loss=3.3009, policy_loss=2.5004, value_loss=0.6678, policy_categorical_accuracy=0.3826, value_mse=0.1112
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 20s 64ms/step - loss: 3.2988 - policy_loss: 2.5037 - value_loss: 0.6630 - policy_categorical_accuracy: 0.3759 - value_mse: 0.1081
+✅ WandB: Logged validation metrics for epoch 40
+🔍 Diagnostic: Recorded validation metrics for epoch 40
+Validation  Epoch {i}/{epochs}:, loss=3.2988, policy_loss=2.5037, value_loss=0.6630, policy_categorical_accuracy=0.3759, value_mse=0.1081
+313/313 [==============================] - 50s 159ms/step - loss: 3.3359 - policy_loss: 2.5374 - value_loss: 0.6669 - policy_categorical_accuracy: 0.3641 - value_mse: 0.1108
+📊 WandB: Logged epoch 41 metrics
+Epoch 41/100: time=50.46s, loss=3.3359, policy_loss=2.5374, value_loss=0.6669, policy_categorical_accuracy=0.3641, value_mse=0.1108
+313/313 [==============================] - 50s 159ms/step - loss: 3.3010 - policy_loss: 2.5042 - value_loss: 0.6663 - policy_categorical_accuracy: 0.3753 - value_mse: 0.1086
+📊 WandB: Logged epoch 42 metrics
+Epoch 42/100: time=50.43s, loss=3.3010, policy_loss=2.5042, value_loss=0.6663, policy_categorical_accuracy=0.3753, value_mse=0.1086
+313/313 [==============================] - 49s 158ms/step - loss: 3.2964 - policy_loss: 2.4962 - value_loss: 0.6710 - policy_categorical_accuracy: 0.3827 - value_mse: 0.1081
+📊 WandB: Logged epoch 43 metrics
+Epoch 43/100: time=50.11s, loss=3.2964, policy_loss=2.4962, value_loss=0.6710, policy_categorical_accuracy=0.3827, value_mse=0.1081
+313/313 [==============================] - 49s 158ms/step - loss: 3.2811 - policy_loss: 2.4839 - value_loss: 0.6689 - policy_categorical_accuracy: 0.3859 - value_mse: 0.1109
+📊 WandB: Logged epoch 44 metrics
+Epoch 44/100: time=50.22s, loss=3.2811, policy_loss=2.4839, value_loss=0.6689, policy_categorical_accuracy=0.3859, value_mse=0.1109
+313/313 [==============================] - 49s 158ms/step - loss: 3.2978 - policy_loss: 2.5062 - value_loss: 0.6643 - policy_categorical_accuracy: 0.3779 - value_mse: 0.1071
+📊 WandB: Logged epoch 45 metrics
+Epoch 45/100: time=50.21s, loss=3.2978, policy_loss=2.5062, value_loss=0.6643, policy_categorical_accuracy=0.3779, value_mse=0.1071
+313/313 [==============================] - 50s 159ms/step - loss: 3.2718 - policy_loss: 2.4804 - value_loss: 0.6650 - policy_categorical_accuracy: 0.3758 - value_mse: 0.1097
+📊 WandB: Logged epoch 46 metrics
+Epoch 46/100: time=50.54s, loss=3.2718, policy_loss=2.4804, value_loss=0.6650, policy_categorical_accuracy=0.3758, value_mse=0.1097
+313/313 [==============================] - 50s 159ms/step - loss: 3.2850 - policy_loss: 2.4935 - value_loss: 0.6660 - policy_categorical_accuracy: 0.3871 - value_mse: 0.1079
+📊 WandB: Logged epoch 47 metrics
+Epoch 47/100: time=50.38s, loss=3.2850, policy_loss=2.4935, value_loss=0.6660, policy_categorical_accuracy=0.3871, value_mse=0.1079
+313/313 [==============================] - 50s 159ms/step - loss: 3.2711 - policy_loss: 2.4793 - value_loss: 0.6672 - policy_categorical_accuracy: 0.3843 - value_mse: 0.1081
+📊 WandB: Logged epoch 48 metrics
+Epoch 48/100: time=50.60s, loss=3.2711, policy_loss=2.4793, value_loss=0.6672, policy_categorical_accuracy=0.3843, value_mse=0.1081
+313/313 [==============================] - 50s 160ms/step - loss: 3.2679 - policy_loss: 2.4774 - value_loss: 0.6667 - policy_categorical_accuracy: 0.3855 - value_mse: 0.1104
+📊 WandB: Logged epoch 49 metrics
+Epoch 49/100: time=50.93s, loss=3.2679, policy_loss=2.4774, value_loss=0.6667, policy_categorical_accuracy=0.3855, value_mse=0.1104
+313/313 [==============================] - 49s 157ms/step - loss: 3.2882 - policy_loss: 2.4976 - value_loss: 0.6676 - policy_categorical_accuracy: 0.3771 - value_mse: 0.1084
+
+🔍 Analyse complète gradient vanishing (époque 50)...
+⚠️  Gradient WARNING at epoch 50
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 50 metrics
+Epoch 50/100: time=50.45s, loss=3.2882, policy_loss=2.4976, value_loss=0.6676, policy_categorical_accuracy=0.3771, value_mse=0.1084
+313/313 [==============================] - 49s 158ms/step - loss: 3.2618 - policy_loss: 2.4728 - value_loss: 0.6669 - policy_categorical_accuracy: 0.3855 - value_mse: 0.1090
+📊 WandB: Logged epoch 51 metrics
+Epoch 51/100: time=50.17s, loss=3.2618, policy_loss=2.4728, value_loss=0.6669, policy_categorical_accuracy=0.3855, value_mse=0.1090
+313/313 [==============================] - 49s 156ms/step - loss: 3.2309 - policy_loss: 2.4460 - value_loss: 0.6634 - policy_categorical_accuracy: 0.3878 - value_mse: 0.1078
+📊 WandB: Logged epoch 52 metrics
+Epoch 52/100: time=49.69s, loss=3.2309, policy_loss=2.4460, value_loss=0.6634, policy_categorical_accuracy=0.3878, value_mse=0.1078
+313/313 [==============================] - 49s 158ms/step - loss: 3.2202 - policy_loss: 2.4351 - value_loss: 0.6644 - policy_categorical_accuracy: 0.3860 - value_mse: 0.1084
+📊 WandB: Logged epoch 53 metrics
+Epoch 53/100: time=50.22s, loss=3.2202, policy_loss=2.4351, value_loss=0.6644, policy_categorical_accuracy=0.3860, value_mse=0.1084
+313/313 [==============================] - 49s 156ms/step - loss: 3.2198 - policy_loss: 2.4343 - value_loss: 0.6654 - policy_categorical_accuracy: 0.3857 - value_mse: 0.1098
+📊 WandB: Logged epoch 54 metrics
+Epoch 54/100: time=49.73s, loss=3.2198, policy_loss=2.4343, value_loss=0.6654, policy_categorical_accuracy=0.3857, value_mse=0.1098
+313/313 [==============================] - 49s 157ms/step - loss: 3.2285 - policy_loss: 2.4473 - value_loss: 0.6617 - policy_categorical_accuracy: 0.3934 - value_mse: 0.1083
+📊 WandB: Logged epoch 55 metrics
+Epoch 55/100: time=49.68s, loss=3.2285, policy_loss=2.4473, value_loss=0.6617, policy_categorical_accuracy=0.3934, value_mse=0.1083
+313/313 [==============================] - 50s 158ms/step - loss: 3.1982 - policy_loss: 2.4178 - value_loss: 0.6615 - policy_categorical_accuracy: 0.3939 - value_mse: 0.1073
+📊 WandB: Logged epoch 56 metrics
+Epoch 56/100: time=50.25s, loss=3.1982, policy_loss=2.4178, value_loss=0.6615, policy_categorical_accuracy=0.3939, value_mse=0.1073
+313/313 [==============================] - 49s 157ms/step - loss: 3.2177 - policy_loss: 2.4390 - value_loss: 0.6604 - policy_categorical_accuracy: 0.3953 - value_mse: 0.1057
+📊 WandB: Logged epoch 57 metrics
+Epoch 57/100: time=49.80s, loss=3.2177, policy_loss=2.4390, value_loss=0.6604, policy_categorical_accuracy=0.3953, value_mse=0.1057
+313/313 [==============================] - 49s 157ms/step - loss: 3.1792 - policy_loss: 2.4005 - value_loss: 0.6610 - policy_categorical_accuracy: 0.3856 - value_mse: 0.1068
+📊 WandB: Logged epoch 58 metrics
+Epoch 58/100: time=49.81s, loss=3.1792, policy_loss=2.4005, value_loss=0.6610, policy_categorical_accuracy=0.3856, value_mse=0.1068
+313/313 [==============================] - 50s 158ms/step - loss: 3.1769 - policy_loss: 2.3940 - value_loss: 0.6657 - policy_categorical_accuracy: 0.3919 - value_mse: 0.1089
+📊 WandB: Logged epoch 59 metrics
+Epoch 59/100: time=50.34s, loss=3.1769, policy_loss=2.3940, value_loss=0.6657, policy_categorical_accuracy=0.3919, value_mse=0.1089
+313/313 [==============================] - 50s 159ms/step - loss: 3.1874 - policy_loss: 2.4080 - value_loss: 0.6627 - policy_categorical_accuracy: 0.3856 - value_mse: 0.1086
+
+🔍 Analyse complète gradient vanishing (époque 60)...
+⚠️  Gradient WARNING at epoch 60
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 60 metrics
+📦 Modèle sauvegardé sur WandB: epoch 60
+💾 WandB: Model saved at epoch 60
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 60
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3856
+     ❌ Sous-performance
+   Value MSE: 0.1086
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.386 sous le benchmark 0.550
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+Epoch 60/100: time=51.59s, loss=3.1874, policy_loss=2.4080, value_loss=0.6627, policy_categorical_accuracy=0.3856, value_mse=0.1086
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 60ms/step - loss: 3.1695 - policy_loss: 2.3995 - value_loss: 0.6536 - policy_categorical_accuracy: 0.3933 - value_mse: 0.1040
+✅ WandB: Logged validation metrics for epoch 60
+🔍 Diagnostic: Recorded validation metrics for epoch 60
+Validation  Epoch {i}/{epochs}:, loss=3.1695, policy_loss=2.3995, value_loss=0.6536, policy_categorical_accuracy=0.3933, value_mse=0.1040
+313/313 [==============================] - 50s 159ms/step - loss: 3.1824 - policy_loss: 2.4039 - value_loss: 0.6622 - policy_categorical_accuracy: 0.4003 - value_mse: 0.1058
+📊 WandB: Logged epoch 61 metrics
+Epoch 61/100: time=50.44s, loss=3.1824, policy_loss=2.4039, value_loss=0.6622, policy_categorical_accuracy=0.4003, value_mse=0.1058
+313/313 [==============================] - 49s 157ms/step - loss: 3.2073 - policy_loss: 2.4303 - value_loss: 0.6612 - policy_categorical_accuracy: 0.3846 - value_mse: 0.1057
+📊 WandB: Logged epoch 62 metrics
+Epoch 62/100: time=50.01s, loss=3.2073, policy_loss=2.4303, value_loss=0.6612, policy_categorical_accuracy=0.3846, value_mse=0.1057
+313/313 [==============================] - 50s 159ms/step - loss: 3.1922 - policy_loss: 2.4165 - value_loss: 0.6603 - policy_categorical_accuracy: 0.3939 - value_mse: 0.1062
+📊 WandB: Logged epoch 63 metrics
+Epoch 63/100: time=50.76s, loss=3.1922, policy_loss=2.4165, value_loss=0.6603, policy_categorical_accuracy=0.3939, value_mse=0.1062
+313/313 [==============================] - 50s 158ms/step - loss: 3.1758 - policy_loss: 2.4054 - value_loss: 0.6554 - policy_categorical_accuracy: 0.3984 - value_mse: 0.1067
+📊 WandB: Logged epoch 64 metrics
+Epoch 64/100: time=50.38s, loss=3.1758, policy_loss=2.4054, value_loss=0.6554, policy_categorical_accuracy=0.3984, value_mse=0.1067
+313/313 [==============================] - 47s 151ms/step - loss: 3.1620 - policy_loss: 2.3879 - value_loss: 0.6595 - policy_categorical_accuracy: 0.3884 - value_mse: 0.1069
+📊 WandB: Logged epoch 65 metrics
+Epoch 65/100: time=47.94s, loss=3.1620, policy_loss=2.3879, value_loss=0.6595, policy_categorical_accuracy=0.3884, value_mse=0.1069
+313/313 [==============================] - 50s 159ms/step - loss: 3.2221 - policy_loss: 2.4419 - value_loss: 0.6660 - policy_categorical_accuracy: 0.3836 - value_mse: 0.1069
+📊 WandB: Logged epoch 66 metrics
+Epoch 66/100: time=50.48s, loss=3.2221, policy_loss=2.4419, value_loss=0.6660, policy_categorical_accuracy=0.3836, value_mse=0.1069
+313/313 [==============================] - 49s 157ms/step - loss: 3.1595 - policy_loss: 2.3838 - value_loss: 0.6618 - policy_categorical_accuracy: 0.3954 - value_mse: 0.1091
+📊 WandB: Logged epoch 67 metrics
+Epoch 67/100: time=49.80s, loss=3.1595, policy_loss=2.3838, value_loss=0.6618, policy_categorical_accuracy=0.3954, value_mse=0.1091
+313/313 [==============================] - 49s 158ms/step - loss: 3.1577 - policy_loss: 2.3827 - value_loss: 0.6615 - policy_categorical_accuracy: 0.3967 - value_mse: 0.1086
+📊 WandB: Logged epoch 68 metrics
+Epoch 68/100: time=50.28s, loss=3.1577, policy_loss=2.3827, value_loss=0.6615, policy_categorical_accuracy=0.3967, value_mse=0.1086
+313/313 [==============================] - 50s 158ms/step - loss: 3.1753 - policy_loss: 2.4005 - value_loss: 0.6616 - policy_categorical_accuracy: 0.3967 - value_mse: 0.1074
+📊 WandB: Logged epoch 69 metrics
+Epoch 69/100: time=50.34s, loss=3.1753, policy_loss=2.4005, value_loss=0.6616, policy_categorical_accuracy=0.3967, value_mse=0.1074
+313/313 [==============================] - 49s 158ms/step - loss: 3.1809 - policy_loss: 2.4081 - value_loss: 0.6599 - policy_categorical_accuracy: 0.3923 - value_mse: 0.1060
+
+🔍 Analyse complète gradient vanishing (époque 70)...
+⚠️  Gradient WARNING at epoch 70
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 70 metrics
+Epoch 70/100: time=50.96s, loss=3.1809, policy_loss=2.4081, value_loss=0.6599, policy_categorical_accuracy=0.3923, value_mse=0.1060
+313/313 [==============================] - 50s 159ms/step - loss: 3.1737 - policy_loss: 2.4011 - value_loss: 0.6599 - policy_categorical_accuracy: 0.3930 - value_mse: 0.1044
+📊 WandB: Logged epoch 71 metrics
+Epoch 71/100: time=50.56s, loss=3.1737, policy_loss=2.4011, value_loss=0.6599, policy_categorical_accuracy=0.3930, value_mse=0.1044
+313/313 [==============================] - 49s 157ms/step - loss: 3.1509 - policy_loss: 2.3775 - value_loss: 0.6611 - policy_categorical_accuracy: 0.3911 - value_mse: 0.1075
+📊 WandB: Logged epoch 72 metrics
+Epoch 72/100: time=49.95s, loss=3.1509, policy_loss=2.3775, value_loss=0.6611, policy_categorical_accuracy=0.3911, value_mse=0.1075
+313/313 [==============================] - 49s 156ms/step - loss: 3.1405 - policy_loss: 2.3692 - value_loss: 0.6592 - policy_categorical_accuracy: 0.3944 - value_mse: 0.1067
+📊 WandB: Logged epoch 73 metrics
+Epoch 73/100: time=49.54s, loss=3.1405, policy_loss=2.3692, value_loss=0.6592, policy_categorical_accuracy=0.3944, value_mse=0.1067
+313/313 [==============================] - 49s 156ms/step - loss: 3.1361 - policy_loss: 2.3675 - value_loss: 0.6567 - policy_categorical_accuracy: 0.3936 - value_mse: 0.1035
+📊 WandB: Logged epoch 74 metrics
+Epoch 74/100: time=49.73s, loss=3.1361, policy_loss=2.3675, value_loss=0.6567, policy_categorical_accuracy=0.3936, value_mse=0.1035
+313/313 [==============================] - 50s 159ms/step - loss: 3.1370 - policy_loss: 2.3664 - value_loss: 0.6590 - policy_categorical_accuracy: 0.3904 - value_mse: 0.1058
+📊 WandB: Logged epoch 75 metrics
+Epoch 75/100: time=50.43s, loss=3.1370, policy_loss=2.3664, value_loss=0.6590, policy_categorical_accuracy=0.3904, value_mse=0.1058
+313/313 [==============================] - 49s 157ms/step - loss: 3.1214 - policy_loss: 2.3528 - value_loss: 0.6571 - policy_categorical_accuracy: 0.4013 - value_mse: 0.1046
+📊 WandB: Logged epoch 76 metrics
+Epoch 76/100: time=49.77s, loss=3.1214, policy_loss=2.3528, value_loss=0.6571, policy_categorical_accuracy=0.4013, value_mse=0.1046
+313/313 [==============================] - 49s 155ms/step - loss: 3.1309 - policy_loss: 2.3616 - value_loss: 0.6580 - policy_categorical_accuracy: 0.3899 - value_mse: 0.1067
+📊 WandB: Logged epoch 77 metrics
+Epoch 77/100: time=49.29s, loss=3.1309, policy_loss=2.3616, value_loss=0.6580, policy_categorical_accuracy=0.3899, value_mse=0.1067
+313/313 [==============================] - 50s 160ms/step - loss: 3.1108 - policy_loss: 2.3429 - value_loss: 0.6567 - policy_categorical_accuracy: 0.4054 - value_mse: 0.1063
+📊 WandB: Logged epoch 78 metrics
+Epoch 78/100: time=50.78s, loss=3.1108, policy_loss=2.3429, value_loss=0.6567, policy_categorical_accuracy=0.4054, value_mse=0.1063
+313/313 [==============================] - 50s 159ms/step - loss: 3.1327 - policy_loss: 2.3685 - value_loss: 0.6532 - policy_categorical_accuracy: 0.3968 - value_mse: 0.1046
+📊 WandB: Logged epoch 79 metrics
+Epoch 79/100: time=50.44s, loss=3.1327, policy_loss=2.3685, value_loss=0.6532, policy_categorical_accuracy=0.3968, value_mse=0.1046
+313/313 [==============================] - 49s 157ms/step - loss: 3.1317 - policy_loss: 2.3641 - value_loss: 0.6567 - policy_categorical_accuracy: 0.3938 - value_mse: 0.1043
+
+🔍 Analyse complète gradient vanishing (époque 80)...
+⚠️  Gradient WARNING at epoch 80
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 80 metrics
+📦 Modèle sauvegardé sur WandB: epoch 80
+💾 WandB: Model saved at epoch 80
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 80
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3938
+     ❌ Sous-performance
+   Value MSE: 0.1043
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.394 sous le benchmark 0.550
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+Epoch 80/100: time=50.72s, loss=3.1317, policy_loss=2.3641, value_loss=0.6567, policy_categorical_accuracy=0.3938, value_mse=0.1043
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 60ms/step - loss: 3.0980 - policy_loss: 2.3400 - value_loss: 0.6473 - policy_categorical_accuracy: 0.4020 - value_mse: 0.1012
+✅ WandB: Logged validation metrics for epoch 80
+🔍 Diagnostic: Recorded validation metrics for epoch 80
+Validation  Epoch {i}/{epochs}:, loss=3.0980, policy_loss=2.3400, value_loss=0.6473, policy_categorical_accuracy=0.4020, value_mse=0.1012
+313/313 [==============================] - 49s 155ms/step - loss: 3.1193 - policy_loss: 2.3540 - value_loss: 0.6546 - policy_categorical_accuracy: 0.4013 - value_mse: 0.1048
+📊 WandB: Logged epoch 81 metrics
+Epoch 81/100: time=49.31s, loss=3.1193, policy_loss=2.3540, value_loss=0.6546, policy_categorical_accuracy=0.4013, value_mse=0.1048
+313/313 [==============================] - 50s 159ms/step - loss: 3.1242 - policy_loss: 2.3614 - value_loss: 0.6521 - policy_categorical_accuracy: 0.3958 - value_mse: 0.1027
+📊 WandB: Logged epoch 82 metrics
+Epoch 82/100: time=50.41s, loss=3.1242, policy_loss=2.3614, value_loss=0.6521, policy_categorical_accuracy=0.3958, value_mse=0.1027
+313/313 [==============================] - 49s 157ms/step - loss: 3.0963 - policy_loss: 2.3310 - value_loss: 0.6549 - policy_categorical_accuracy: 0.4079 - value_mse: 0.1054
+📊 WandB: Logged epoch 83 metrics
+Epoch 83/100: time=49.90s, loss=3.0963, policy_loss=2.3310, value_loss=0.6549, policy_categorical_accuracy=0.4079, value_mse=0.1054
+313/313 [==============================] - 49s 155ms/step - loss: 3.1243 - policy_loss: 2.3572 - value_loss: 0.6567 - policy_categorical_accuracy: 0.3959 - value_mse: 0.1043
+📊 WandB: Logged epoch 84 metrics
+Epoch 84/100: time=49.45s, loss=3.1243, policy_loss=2.3572, value_loss=0.6567, policy_categorical_accuracy=0.3959, value_mse=0.1043
+313/313 [==============================] - 49s 157ms/step - loss: 3.0879 - policy_loss: 2.3228 - value_loss: 0.6547 - policy_categorical_accuracy: 0.4059 - value_mse: 0.1041
+📊 WandB: Logged epoch 85 metrics
+Epoch 85/100: time=50.15s, loss=3.0879, policy_loss=2.3228, value_loss=0.6547, policy_categorical_accuracy=0.4059, value_mse=0.1041
+313/313 [==============================] - 50s 159ms/step - loss: 3.0985 - policy_loss: 2.3326 - value_loss: 0.6556 - policy_categorical_accuracy: 0.4071 - value_mse: 0.1051
+📊 WandB: Logged epoch 86 metrics
+Epoch 86/100: time=50.68s, loss=3.0985, policy_loss=2.3326, value_loss=0.6556, policy_categorical_accuracy=0.4071, value_mse=0.1051
+313/313 [==============================] - 49s 158ms/step - loss: 3.1380 - policy_loss: 2.3733 - value_loss: 0.6545 - policy_categorical_accuracy: 0.4000 - value_mse: 0.1032
+📊 WandB: Logged epoch 87 metrics
+Epoch 87/100: time=50.18s, loss=3.1380, policy_loss=2.3733, value_loss=0.6545, policy_categorical_accuracy=0.4000, value_mse=0.1032
+313/313 [==============================] - 49s 155ms/step - loss: 3.0845 - policy_loss: 2.3179 - value_loss: 0.6564 - policy_categorical_accuracy: 0.4071 - value_mse: 0.1058
+📊 WandB: Logged epoch 88 metrics
+Epoch 88/100: time=49.39s, loss=3.0845, policy_loss=2.3179, value_loss=0.6564, policy_categorical_accuracy=0.4071, value_mse=0.1058
+313/313 [==============================] - 49s 158ms/step - loss: 3.1070 - policy_loss: 2.3407 - value_loss: 0.6562 - policy_categorical_accuracy: 0.3933 - value_mse: 0.1036
+📊 WandB: Logged epoch 89 metrics
+Epoch 89/100: time=50.25s, loss=3.1070, policy_loss=2.3407, value_loss=0.6562, policy_categorical_accuracy=0.3933, value_mse=0.1036
+313/313 [==============================] - 49s 156ms/step - loss: 3.1100 - policy_loss: 2.3456 - value_loss: 0.6544 - policy_categorical_accuracy: 0.4024 - value_mse: 0.1039
+
+🔍 Analyse complète gradient vanishing (époque 90)...
+⚠️  Gradient WARNING at epoch 90
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 90 metrics
+Epoch 90/100: time=50.32s, loss=3.1100, policy_loss=2.3456, value_loss=0.6544, policy_categorical_accuracy=0.4024, value_mse=0.1039
+313/313 [==============================] - 50s 159ms/step - loss: 3.1125 - policy_loss: 2.3464 - value_loss: 0.6560 - policy_categorical_accuracy: 0.4000 - value_mse: 0.1051
+📊 WandB: Logged epoch 91 metrics
+Epoch 91/100: time=50.42s, loss=3.1125, policy_loss=2.3464, value_loss=0.6560, policy_categorical_accuracy=0.4000, value_mse=0.1051
+313/313 [==============================] - 49s 158ms/step - loss: 3.1363 - policy_loss: 2.3736 - value_loss: 0.6527 - policy_categorical_accuracy: 0.3962 - value_mse: 0.1020
+📊 WandB: Logged epoch 92 metrics
+Epoch 92/100: time=50.05s, loss=3.1363, policy_loss=2.3736, value_loss=0.6527, policy_categorical_accuracy=0.3962, value_mse=0.1020
+313/313 [==============================] - 49s 155ms/step - loss: 3.1163 - policy_loss: 2.3529 - value_loss: 0.6534 - policy_categorical_accuracy: 0.3978 - value_mse: 0.1033
+📊 WandB: Logged epoch 93 metrics
+Epoch 93/100: time=49.36s, loss=3.1163, policy_loss=2.3529, value_loss=0.6534, policy_categorical_accuracy=0.3978, value_mse=0.1033
+313/313 [==============================] - 50s 160ms/step - loss: 3.1152 - policy_loss: 2.3542 - value_loss: 0.6510 - policy_categorical_accuracy: 0.3996 - value_mse: 0.1035
+📊 WandB: Logged epoch 94 metrics
+Epoch 94/100: time=50.99s, loss=3.1152, policy_loss=2.3542, value_loss=0.6510, policy_categorical_accuracy=0.3996, value_mse=0.1035
+313/313 [==============================] - 50s 158ms/step - loss: 3.1283 - policy_loss: 2.3640 - value_loss: 0.6543 - policy_categorical_accuracy: 0.3940 - value_mse: 0.1018
+📊 WandB: Logged epoch 95 metrics
+Epoch 95/100: time=50.30s, loss=3.1283, policy_loss=2.3640, value_loss=0.6543, policy_categorical_accuracy=0.3940, value_mse=0.1018
+313/313 [==============================] - 50s 161ms/step - loss: 3.0940 - policy_loss: 2.3322 - value_loss: 0.6518 - policy_categorical_accuracy: 0.4002 - value_mse: 0.1026
+📊 WandB: Logged epoch 96 metrics
+Epoch 96/100: time=51.17s, loss=3.0940, policy_loss=2.3322, value_loss=0.6518, policy_categorical_accuracy=0.4002, value_mse=0.1026
+313/313 [==============================] - 49s 155ms/step - loss: 3.0789 - policy_loss: 2.3159 - value_loss: 0.6530 - policy_categorical_accuracy: 0.4092 - value_mse: 0.1043
+📊 WandB: Logged epoch 97 metrics
+Epoch 97/100: time=49.39s, loss=3.0789, policy_loss=2.3159, value_loss=0.6530, policy_categorical_accuracy=0.4092, value_mse=0.1043
+313/313 [==============================] - 48s 154ms/step - loss: 3.0908 - policy_loss: 2.3285 - value_loss: 0.6524 - policy_categorical_accuracy: 0.4075 - value_mse: 0.1044
+📊 WandB: Logged epoch 98 metrics
+Epoch 98/100: time=48.97s, loss=3.0908, policy_loss=2.3285, value_loss=0.6524, policy_categorical_accuracy=0.4075, value_mse=0.1044
+313/313 [==============================] - 48s 154ms/step - loss: 3.1113 - policy_loss: 2.3482 - value_loss: 0.6532 - policy_categorical_accuracy: 0.3978 - value_mse: 0.1031
+📊 WandB: Logged epoch 99 metrics
+Epoch 99/100: time=49.06s, loss=3.1113, policy_loss=2.3482, value_loss=0.6532, policy_categorical_accuracy=0.3978, value_mse=0.1031
+313/313 [==============================] - 48s 153ms/step - loss: 3.1344 - policy_loss: 2.3668 - value_loss: 0.6577 - policy_categorical_accuracy: 0.3937 - value_mse: 0.1054
+
+🔍 Analyse complète gradient vanishing (époque 100)...
+⚠️  Gradient WARNING at epoch 100
+   • DEAD_NEURONS
+   • DEAD_NEURONS
+📊 WandB: Logged epoch 100 metrics
+📦 Modèle sauvegardé sur WandB: epoch 100
+💾 WandB: Model saved at epoch 100
+
+🔍 DIAGNOSTIC ANALYSIS - Epoch 100
+--------------------------------------------------
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3937
+     ❌ Sous-performance
+   Value MSE: 0.1054
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.394 sous le benchmark 0.550
+   🟡 GRADIENT_VANISHING: Très peu d'amélioration sur 20 époques
+   🟠 ARCHITECTURE_BUG: Convergence anormalement lente - vérifier bottleneck_block
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+   🔧 Vérifier les connexions résiduelles
+   🔧 Utiliser l'activation Swish au lieu de ReLU
+   🔧 Réduire la profondeur du réseau
+   🚨 CRITIQUE: Corriger le bug dans _bottleneck_block
+   🔧 Vérifier: expansion = int(input_filters * factor)
+   🔧 Tester avec un ResNet simple pour comparaison
+
+====================================================================================
+
+💡 AUTOMATED RECOMMENDATIONS:
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/convergence_diagnostics.py:439: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/convergence_diagnostics.py:442: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+2025-06-23 20:45:32,241 - INFO - Diagnostic plots saved to diagnostics_epoch_100.png
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+📊 Diagnostic plots saved: diagnostics_epoch_100.png
+Epoch 100/100: time=51.27s, loss=3.1344, policy_loss=2.3668, value_loss=0.6577, policy_categorical_accuracy=0.3937, value_mse=0.1054
+r.shape = (10000, 19, 19, 31)
+nbExamples = 10000
+313/313 [==============================] - 19s 60ms/step - loss: 3.2811 - policy_loss: 2.4560 - value_loss: 0.7152 - policy_categorical_accuracy: 0.3773 - value_mse: 0.1235
+✅ WandB: Logged validation metrics for epoch 100
+🔍 Diagnostic: Recorded validation metrics for epoch 100
+Validation  Epoch {i}/{epochs}:, loss=3.2811, policy_loss=2.4560, value_loss=0.7152, policy_categorical_accuracy=0.3773, value_mse=0.1235
+Best Model at epoch 80 : loss=3.0980427265167236, policy_loss=2.3400, value_loss=0.6473
+
+🏁 FINAL DIAGNOSTIC REPORT:
+🏥 ================================================================================
+🔍 RAPPORT DE DIAGNOSTIC DE CONVERGENCE
+====================================================================================
+
+📊 SANTÉ GLOBALE: 🟡 WARNING
+
+📈 MÉTRIQUES ACTUELLES:
+----------------------------------------
+   Policy Accuracy: 0.3937
+     ❌ Sous-performance
+   Value MSE: 0.1054
+     ✅ Excellent
+
+🚨 PROBLÈMES DÉTECTÉS:
+----------------------------------------
+   🟠 UNDERFITTING: Accuracy 0.394 sous le benchmark 0.550
+   🟡 GRADIENT_VANISHING: Très peu d'amélioration sur 20 époques
+   🟠 ARCHITECTURE_BUG: Convergence anormalement lente - vérifier bottleneck_block
+
+💡 RECOMMANDATIONS:
+----------------------------------------
+   🔧 Augmenter la capacité du modèle (plus de filtres/blocs)
+   🔧 Réduire la régularisation
+   🔧 Vérifier la qualité des données d'entraînement
+   🔧 Augmenter le learning rate initial
+   🔧 Vérifier les connexions résiduelles
+   🔧 Utiliser l'activation Swish au lieu de ReLU
+   🔧 Réduire la profondeur du réseau
+   🚨 CRITIQUE: Corriger le bug dans _bottleneck_block
+   🔧 Vérifier: expansion = int(input_filters * factor)
+   🔧 Tester avec un ResNet simple pour comparaison
+
+====================================================================================
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535; updating run metadata
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535; uploading media/images/learning_rate_schedule_104_e5a9cd0be74e2f80b4ce.png; uploading output.log; uploading wandb-summary.json (+ 1 more)
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535; uploading media/images/learning_rate_schedule_104_e5a9cd0be74e2f80b4ce.png; uploading output.log; uploading config.yaml
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535; uploading output.log; uploading config.yaml
+wandb: uploading artifact go_mobilenet_epoch_100; uploading history steps 99-99, summary, console lines 472-535
+wandb: uploading history steps 99-99, summary, console lines 472-535
+wandb: uploading history steps 100-104, summary, console lines 535-574
+wandb:
+wandb:
+wandb: Run history:
+wandb:              activation/avg_dead_ratio ▁▂▆█▇▅█▆▇▆
+wandb:              activation/max_dead_ratio ▁▃▄▆▇▇▇▇██
+wandb:            diagnostics/critical_issues ▁
+wandb:               diagnostics/health_score ▁
+wandb:                diagnostics/high_issues ▁
+wandb:               diagnostics/issues_count ▁
+wandb:    diagnostics/policy_current_accuracy ▁
+wandb:    diagnostics/policy_improvement_rate ▁
+wandb:        diagnostics/policy_max_accuracy ▁
+wandb:     diagnostics/value_convergence_rate ▁
+wandb:          diagnostics/value_current_mse ▁
+wandb:              diagnostics/value_min_mse ▁
+wandb:             final/best_validation_loss ▁
+wandb:                 final/epochs_completed ▁
+wandb:              final/total_training_time ▁
+wandb:             gradient_health/num_issues ▁▁███▁█▁██
+wandb:                 gradient_health/status ▁▁▁▁▁▁▁▁▁▁
+wandb:                     gradients/max_norm █▃▂▁▅▂▂▅▅▂
+wandb:                    gradients/mean_norm ▂▂▂▁▆▅▃▅█▃
+wandb:                     gradients/min_norm █▂▁▁▁▁▁▁▁▁
+wandb:                   gradients/norm_ratio ▁▁▁▁▁▁▃▄▆█
+wandb:                     model/layers_count ▁
+wandb:         model/non_trainable_parameters ▁
+wandb:                 model/total_parameters ▁
+wandb:             model/trainable_parameters ▁
+wandb:             optimization/learning_rate ██████▇▇▇▇▇▇▆▆▅▅▅▄▄▄▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:                           system/epoch ▁▁▁▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▇▇███
+wandb:                  timing/epoch_duration ▁▂▃▂▅▁▂▅▂▂▄▆▇▅▄▇▇▇▇█▆▆▇▆▆▇▆▇█▇▇▇▇▇▇▇▆██▅
+wandb:                   timing/total_elapsed ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇██
+wandb:                            train/epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇██
+wandb:                             train/loss █▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      train/policy_categorical_accuracy ▁▄▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇███▇██▇███████████████
+wandb:                      train/policy_loss █▅▄▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                       train/value_loss █▇▇▇▇▇▆▆▆▄▄▄▄▄▄▃▃▃▃▃▃▂▃▃▂▂▂▂▁▂▂▂▂▂▂▁▁▁▁▂
+wandb:                        train/value_mse █▆▆▅▆▆▅▆▅▅▃▃▃▃▃▂▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁▂▂▂▁▁▂▁▂▂
+wandb: validation/policy_categorical_accuracy ▁▄▇█▄
+wandb:                 validation/policy_loss █▅▂▁▄
+wandb:                  validation/total_loss █▄▂▁▄
+wandb:                  validation/value_loss ▅▃▂▁█
+wandb:                   validation/value_mse ▆▃▂▁█
+wandb:
+wandb: Run summary:
+wandb:              activation/avg_dead_ratio 0.43616
+wandb:              activation/max_dead_ratio 0.72688
+wandb:            diagnostics/critical_issues 0
+wandb:               diagnostics/health_score 3
+wandb:              diagnostics/health_status WARNING
+wandb:                diagnostics/high_issues 2
+wandb:               diagnostics/issues_count 3
+wandb:    diagnostics/policy_benchmark_status POOR
+wandb:    diagnostics/policy_current_accuracy 0.3937
+wandb:    diagnostics/policy_improvement_rate -0.00063
+wandb:        diagnostics/policy_max_accuracy 0.4092
+wandb:    diagnostics/policy_plateau_detected True
+wandb:     diagnostics/value_convergence_rate -3e-05
+wandb:          diagnostics/value_current_mse 0.10536
+wandb:              diagnostics/value_min_mse 0.10183
+wandb:  diagnostics/value_stagnation_detected True
+wandb:             final/best_validation_loss 3.09804
+wandb:                 final/epochs_completed 100
+wandb:              final/total_training_time 5017.73643
+wandb:             gradient_health/num_issues 10
+wandb:                 gradient_health/status 0.5
+wandb:                     gradients/max_norm 1.39789
+wandb:                    gradients/mean_norm 0.21864
+wandb:                     gradients/min_norm 0.0
+wandb:                   gradients/norm_ratio 3046986.59148
+wandb:                     model/layers_count 133
+wandb:         model/non_trainable_parameters 4674
+wandb:                 model/total_parameters 103209
+wandb:             model/trainable_parameters 98535
+wandb:             optimization/learning_rate 0.0008
+wandb:                           system/epoch 100
+wandb:                  timing/epoch_duration 51.26779
+wandb:                   timing/total_elapsed 4997.81867
+wandb:                            train/epoch 100
+wandb:                             train/loss 3.13441
+wandb:      train/policy_categorical_accuracy 0.3937
+wandb:                      train/policy_loss 2.36682
+wandb:                       train/value_loss 0.65767
+wandb:                        train/value_mse 0.10536
+wandb: validation/policy_categorical_accuracy 0.3773
+wandb:                 validation/policy_loss 2.45599
+wandb:                  validation/total_loss 3.28105
+wandb:                  validation/value_loss 0.71524
+wandb:                   validation/value_mse 0.12348
+wandb:
+wandb: 🚀 View run Test2 - mobilenet_block_num8_filters32_e100_lr0.0008_b32_N10000 at: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/0hb8ovn7
+wandb: ⭐️ View project at: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training
+wandb: Synced 5 W&B file(s), 1 media file(s), 10 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250623_192213-0hb8ovn7/logs
+✅ Run WandB terminée
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:422: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py:425: UserWarning: Glyph 128269 (\N{LEFT-POINTING MAGNIFYING GLASS}) missing from font(s) DejaVu Sans.
+  plt.savefig(save_path, dpi=300, bbox_inches='tight')
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:124: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+📈 Graphique sauvegardé: gradient_analysis.png
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:82: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  FigureCanvasAgg.draw(self)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128202 (\N{BAR CHART}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 9989 (\N{WHITE HEAVY CHECK MARK}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+/Applications/PyCharm.app/Contents/plugins/python-ce/helpers/pycharm_matplotlib_backend/backend_interagg.py:85: UserWarning: Glyph 128161 (\N{ELECTRIC LIGHT BULB}) missing from font(s) DejaVu Sans.
+  self.print_png(buf)
+
+📊 Validation Results for Model GoMobileNet block_num=8 , filters=31, initial_lr=0.0008 — Epoch 100:
+  - loss                          : 3.2811
+  - policy_loss                   : 2.4560
+  - value_loss                    : 0.7152
+  - policy_categorical_accuracy   : 0.3773
+  - value_mse                     : 0.1235
+  - Time: 5017.7364
+
+Process finished with exit code 0

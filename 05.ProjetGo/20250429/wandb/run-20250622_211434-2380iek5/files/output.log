@@ -1,0 +1,87 @@
+🚀 WandB run initialisée: https://wandb.ai/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/runs/2380iek5
+✅ Gradient tracking configuré
+getValidation
+2025-06-22 21:14:56,836 - WARNING - At this time, the v2.11+ optimizer `tf.keras.optimizers.AdamW` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.AdamW`.
+313/313 [==============================] - 52s 143ms/step - loss: 4.6177 - policy_loss: 3.5757 - value_loss: 0.8110 - policy_categorical_accuracy: 0.2357 - value_mse: 0.1465
+📊 WandB: Logged epoch 1 metrics
+Epoch 1/100: time=52.57s, loss=4.6177, policy_loss=3.5757, value_loss=0.8110, policy_categorical_accuracy=0.2357, value_mse=0.1465
+313/313 [==============================] - 43s 137ms/step - loss: 4.0103 - policy_loss: 3.1402 - value_loss: 0.7140 - policy_categorical_accuracy: 0.2875 - value_mse: 0.1320
+📊 WandB: Logged epoch 2 metrics
+Epoch 2/100: time=43.52s, loss=4.0103, policy_loss=3.1402, value_loss=0.7140, policy_categorical_accuracy=0.2875, value_mse=0.1320
+313/313 [==============================] - 43s 138ms/step - loss: 3.8678 - policy_loss: 3.0178 - value_loss: 0.7018 - policy_categorical_accuracy: 0.3107 - value_mse: 0.1244
+📊 WandB: Logged epoch 3 metrics
+Epoch 3/100: time=43.97s, loss=3.8678, policy_loss=3.0178, value_loss=0.7018, policy_categorical_accuracy=0.3107, value_mse=0.1244
+313/313 [==============================] - 43s 138ms/step - loss: 3.7822 - policy_loss: 2.9484 - value_loss: 0.6972 - policy_categorical_accuracy: 0.3189 - value_mse: 0.1241
+📊 WandB: Logged epoch 4 metrics
+Epoch 4/100: time=43.89s, loss=3.7822, policy_loss=2.9484, value_loss=0.6972, policy_categorical_accuracy=0.3189, value_mse=0.1241
+313/313 [==============================] - 43s 138ms/step - loss: 3.7869 - policy_loss: 2.9534 - value_loss: 0.6968 - policy_categorical_accuracy: 0.3142 - value_mse: 0.1245
+📊 WandB: Logged epoch 5 metrics
+Epoch 5/100: time=43.90s, loss=3.7869, policy_loss=2.9534, value_loss=0.6968, policy_categorical_accuracy=0.3142, value_mse=0.1245
+313/313 [==============================] - 44s 140ms/step - loss: 3.7621 - policy_loss: 2.9331 - value_loss: 0.6951 - policy_categorical_accuracy: 0.3168 - value_mse: 0.1217
+📊 WandB: Logged epoch 6 metrics
+Epoch 6/100: time=44.38s, loss=3.7621, policy_loss=2.9331, value_loss=0.6951, policy_categorical_accuracy=0.3168, value_mse=0.1217
+313/313 [==============================] - 43s 139ms/step - loss: 3.7160 - policy_loss: 2.8929 - value_loss: 0.6948 - policy_categorical_accuracy: 0.3106 - value_mse: 0.1218
+📊 WandB: Logged epoch 7 metrics
+Epoch 7/100: time=44.04s, loss=3.7160, policy_loss=2.8929, value_loss=0.6948, policy_categorical_accuracy=0.3106, value_mse=0.1218
+313/313 [==============================] - 43s 138ms/step - loss: 3.7252 - policy_loss: 2.9063 - value_loss: 0.6953 - policy_categorical_accuracy: 0.3275 - value_mse: 0.1207
+📊 WandB: Logged epoch 8 metrics
+Epoch 8/100: time=43.72s, loss=3.7252, policy_loss=2.9063, value_loss=0.6953, policy_categorical_accuracy=0.3275, value_mse=0.1207
+313/313 [==============================] - 43s 139ms/step - loss: 3.7416 - policy_loss: 2.9262 - value_loss: 0.6970 - policy_categorical_accuracy: 0.3123 - value_mse: 0.1232
+📊 WandB: Logged epoch 9 metrics
+Epoch 9/100: time=44.23s, loss=3.7416, policy_loss=2.9262, value_loss=0.6970, policy_categorical_accuracy=0.3123, value_mse=0.1232
+313/313 [==============================] - 44s 139ms/step - loss: 3.6705 - policy_loss: 2.8594 - value_loss: 0.6940 - policy_categorical_accuracy: 0.3342 - value_mse: 0.1214
+
+🔍 Analyse complète gradient vanishing (époque 10)...
+Traceback (most recent call last):
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py", line 35, in <module>
+    title, model, val, all_history, val_loss_history, total_time, lrs = test_gomobilenet(nb_cycle)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py", line 14, in test_gomobilenet
+    val, all_history, val_loss_history, total_time, lrs = train_model(
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_train.py", line 155, in train_model
+    report = detector.comprehensive_check(sample_inputs, sample_policy, epoch=i)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 222, in comprehensive_check
+    gradient_analysis = self.analyze_gradients(inputs, targets)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 54, in analyze_gradients
+    gradients, loss = self.compute_gradients(inputs, targets)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/var/folders/ks/4y5sbqcj21lfbfdt9zrjwjfr0000gn/T/__autograph_generated_file53nhtzuj.py", line 13, in tf__compute_gradients
+    loss = ag__.converted_call(ag__.ld(tf).keras.losses.categorical_crossentropy, (ag__.ld(targets), ag__.ld(predictions)), None, fscope)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/losses.py", line 2197, in categorical_crossentropy
+    y_pred = tf.convert_to_tensor(y_pred)
+ValueError: in user code:
+
+    File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 39, in compute_gradients  *
+        loss = tf.keras.losses.categorical_crossentropy(targets, predictions)
+    File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/losses.py", line 2197, in categorical_crossentropy
+        y_pred = tf.convert_to_tensor(y_pred)
+
+    ValueError: Dimension 1 in both shapes must be equal, but are 361 and 1. Shapes are [32,361] and [32,1].
+    	From merging shape 0 with other shapes. for '{{node packed}} = Pack[N=2, T=DT_FLOAT, axis=0](model/policy/Softmax, model/value/Sigmoid)' with input shapes: [32,361], [32,1].
+
+Traceback (most recent call last):
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py", line 35, in <module>
+    title, model, val, all_history, val_loss_history, total_time, lrs = test_gomobilenet(nb_cycle)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py", line 14, in test_gomobilenet
+    val, all_history, val_loss_history, total_time, lrs = train_model(
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_train.py", line 155, in train_model
+    report = detector.comprehensive_check(sample_inputs, sample_policy, epoch=i)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 222, in comprehensive_check
+    gradient_analysis = self.analyze_gradients(inputs, targets)
+  File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 54, in analyze_gradients
+    gradients, loss = self.compute_gradients(inputs, targets)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/var/folders/ks/4y5sbqcj21lfbfdt9zrjwjfr0000gn/T/__autograph_generated_file53nhtzuj.py", line 13, in tf__compute_gradients
+    loss = ag__.converted_call(ag__.ld(tf).keras.losses.categorical_crossentropy, (ag__.ld(targets), ag__.ld(predictions)), None, fscope)
+  File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/losses.py", line 2197, in categorical_crossentropy
+    y_pred = tf.convert_to_tensor(y_pred)
+ValueError: in user code:
+
+    File "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/gradient_detector.py", line 39, in compute_gradients  *
+        loss = tf.keras.losses.categorical_crossentropy(targets, predictions)
+    File "/Users/malikchettih/.pyenv/versions/3.9.21/lib/python3.9/site-packages/keras/src/losses.py", line 2197, in categorical_crossentropy
+        y_pred = tf.convert_to_tensor(y_pred)
+
+    ValueError: Dimension 1 in both shapes must be equal, but are 361 and 1. Shapes are [32,361] and [32,1].
+    	From merging shape 0 with other shapes. for '{{node packed}} = Pack[N=2, T=DT_FLOAT, axis=0](model/policy/Softmax, model/value/Sigmoid)' with input shapes: [32,361], [32,1].

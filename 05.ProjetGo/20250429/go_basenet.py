@@ -36,14 +36,39 @@ class GoBaseNet:
         return x
 
     def _bottleneck_block(self, inputs, filters, kernel, factor, squeeze, activation):
-        expension = int(filters * factor)
-        x = self._conv_block(inputs, expension, (1, 1), activation)
+        # ✅ Expansion basée sur les canaux d'entrée
+        input_filters = inputs.shape[-1]
+        expansion = int(input_filters * factor)
+
+        # Expansion 1x1
+        x = self._conv_block(inputs, expansion, (1, 1), activation)
+
+        # Depthwise convolution
         x = self._depthwise_conv_block(x, kernel, activation)
+
+        # Squeeze & Excitation optionnel
         if squeeze:
             x = self._squeeze_block(x)
+
+        # Projection 1x1 vers les canaux de sortie
         x = self._conv_block(x, filters, (1, 1), activation)
-        x = Add()([x, inputs])
+
+        # ✅ Connexion résiduelle seulement si dimensions compatibles
+        if input_filters == filters:
+            x = Add()([x, inputs])
+
         return x
+    #def _bottleneck_block(self, inputs, filters, kernel, factor, squeeze, activation):
+    #    expension = int(filters * factor)
+    #    x = self._conv_block(inputs, expension, (1, 1), activation)
+    #    x = self._depthwise_conv_block(x, kernel, activation)
+    #    if squeeze:
+    #        x = self._squeeze_block(x)
+    #    x = self._conv_block(x, filters, (1, 1), activation)
+    #    x = Add()([x, inputs])
+    #    return x
+
+
 
     # --- MixDepthwise Block ---
     def _mix_depthwise_conv(self, inputs, filters, activation):

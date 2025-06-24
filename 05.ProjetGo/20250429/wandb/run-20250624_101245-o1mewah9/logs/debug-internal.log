@@ -1,0 +1,16 @@
+{"time":"2025-06-24T10:12:45.531479+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250624_101245-o1mewah9/logs/debug-core.log"}
+{"time":"2025-06-24T10:12:45.833614+02:00","level":"INFO","msg":"stream: created new stream","id":"o1mewah9"}
+{"time":"2025-06-24T10:12:45.833638+02:00","level":"INFO","msg":"stream: started","id":"o1mewah9"}
+{"time":"2025-06-24T10:12:45.833646+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"o1mewah9"}
+{"time":"2025-06-24T10:12:45.833656+02:00","level":"INFO","msg":"sender: started","stream_id":"o1mewah9"}
+{"time":"2025-06-24T10:12:45.833652+02:00","level":"INFO","msg":"handler: started","stream_id":"o1mewah9"}
+{"time":"2025-06-24T10:12:46.048343+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-24T12:01:31.479199+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-24T12:01:31.479264+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-24T12:01:32.491725+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading media/images/learning_rate_schedule_104_696106057b9a126e3c63.png","runtime_seconds":0.829190125,"progress":"28.1KB/28.1KB"},{"desc":"uploading output.log","runtime_seconds":0.829154667,"progress":"126.1KB/126.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.673981917,"progress":"1.4KB/1.4KB"}],"total_operations":3}}
+{"time":"2025-06-24T12:01:33.651757+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-24T12:01:33.979326+02:00","level":"INFO","msg":"stream: closing","id":"o1mewah9"}
+{"time":"2025-06-24T12:01:33.979497+02:00","level":"INFO","msg":"handler: closed","stream_id":"o1mewah9"}
+{"time":"2025-06-24T12:01:33.979581+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"o1mewah9"}
+{"time":"2025-06-24T12:01:33.979573+02:00","level":"INFO","msg":"sender: closed","stream_id":"o1mewah9"}
+{"time":"2025-06-24T12:01:33.979889+02:00","level":"INFO","msg":"stream: closed","id":"o1mewah9"}

@@ -1,0 +1,9 @@
+{"time":"2025-06-24T00:10:18.321074+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250624_001018-7th6g9ot/logs/debug-core.log"}
+{"time":"2025-06-24T00:10:18.580215+02:00","level":"INFO","msg":"stream: created new stream","id":"7th6g9ot"}
+{"time":"2025-06-24T00:10:18.580255+02:00","level":"INFO","msg":"stream: started","id":"7th6g9ot"}
+{"time":"2025-06-24T00:10:18.580261+02:00","level":"INFO","msg":"handler: started","stream_id":"7th6g9ot"}
+{"time":"2025-06-24T00:10:18.580285+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"7th6g9ot"}
+{"time":"2025-06-24T00:10:18.580286+02:00","level":"INFO","msg":"sender: started","stream_id":"7th6g9ot"}
+{"time":"2025-06-24T00:10:18.856063+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-24T00:12:34.126662+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/malik-chettih-ia-dauphine-university-in-paris/go-mobilenet-training/7th6g9ot/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2025-06-24T00:14:13.15637+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.5.172:61797->35.186.228.49:443: read: can't assign requested address"}

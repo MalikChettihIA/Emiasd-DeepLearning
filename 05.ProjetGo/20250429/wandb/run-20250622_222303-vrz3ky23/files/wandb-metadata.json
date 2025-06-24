@@ -1,0 +1,43 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit",
+  "python":  "CPython 3.9.21",
+  "startedAt":  "2025-06-22T20:23:03.759363Z",
+  "program":  "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/go_test_small_mobilenet.py",
+  "codePath":  "05.ProjetGo/20250429/go_test_small_mobilenet.py",
+  "git":  {
+    "remote":  "https://github.com/MalikChettihIA/Emiasd-DeepLearning.git",
+    "commit":  "0e0b7cb3fdf40f4c0058a22c044769471ad3ad0f"
+  },
+  "email":  "malik.chettih.ia@gmail.com",
+  "root":  "/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429",
+  "host":  "mbp-de-malik-1.home",
+  "executable":  "/Users/malikchettih/.pyenv/versions/3.9.21/bin/python",
+  "codePathLocal":  "go_test_small_mobilenet.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  14,
+  "disk":  {
+    "/":  {
+      "total":  "994662584320",
+      "used":  "334912839680"
+    },
+    "/System/Volumes/Data":  {
+      "total":  "994662584320",
+      "used":  "334912839680"
+    }
+  },
+  "memory":  {
+    "total":  "51539607552"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  14
+  },
+  "apple":  {
+    "name":  "Apple M4 Pro",
+    "ecpuCores":  4,
+    "pcpuCores":  10,
+    "gpuCores":  20,
+    "memoryGb":  48,
+    "ramTotalBytes":  "51539607552"
+  }
+}

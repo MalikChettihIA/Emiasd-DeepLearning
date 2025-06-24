@@ -2,26 +2,29 @@ from go_utils import plot_version, print_validation_results, plot_learning_rate,
 from go_train import train_model
 from go_mobilenet import GoMobileNet
 
-EPOCHS = 500
+EPOCHS = 100
 N=10000
 
-def test_gomobilenet(nb_cycle, epochs=EPOCHS):
+
+def test_gomobilenet( epochs=EPOCHS):
 
     model = GoMobileNet((19, 19, 31), 361)
-    model = model.build(block_num=4 , filters=64 , factor=4, se=True, drop_out_rate=0.2, activation='swish')
+    model = model.build(block_num=8 , filters=32 , factor=4, se=True, drop_out_rate=0.3, activation='swish')
     model.summary()
 
     val, all_history, val_loss_history, total_time, lrs = train_model(
         model,
         batch=32,
-        initial_lr=0.02,
+        initial_lr=0.0008,
         policy_weight=1.0,
         value_weight=1.0,
         epochs=epochs,
         N=N,
-        nb_cosinedecay_cycle=nb_cycle
+        nb_cosinedecay_cycle=1,
+        block_num=8, filters=32, factor=4, se=True, drop_out_rate=0.0, activation='swish', experiment_name='Test7'
     )
-    return (f'Model GoMobileNet block_num=8, filters=32, factor=4'), model, val, all_history, val_loss_history, total_time, lrs
+    return (f'Model GoMobileNet block_num=8 , filters=32, initial_lr=0.0001'), model, val, all_history, val_loss_history, total_time, lrs
+
 
 if __name__ == "__main__":
 
@@ -30,20 +33,34 @@ if __name__ == "__main__":
     history = []
     loss_history = []
     titles = []
-    for nb_cycle in [1]:
-        print(f'-------------------- Model GoMobileNet - Nb CosineDecay Cycle is {nb_cycle} -------------------- ')
-        title, model, val, all_history, val_loss_history, total_time, lrs = test_gomobilenet(nb_cycle)
-        plot_learning_rate(lrs)
 
-        # Affichage des résultats
-        results = [
-            (model, val, title, total_time)
-        ]
-        print_validation_results(results, epoch=EPOCHS)
+    print(f'-------------------- Model GoMobileNet - Nb CosineDecay Cycle is  -------------------- ')
+    title, model, val, all_history, val_loss_history, total_time, lrs = test_gomobilenet()
+    plot_learning_rate(lrs)
 
-        history.append(all_history)
-        loss_history.append(val_loss_history)
-        titles.append(title)
+    # Affichage des résultats
+    results = [
+        (model, val, title, total_time)
+    ]
+    print_validation_results(results, epoch=EPOCHS)
+
+    history.append(all_history)
+    loss_history.append(val_loss_history)
+    titles.append(title)
+
+    title, model, val, all_history, val_loss_history, total_time, lrs = test_gomobilenet()
+    plot_learning_rate(lrs)
+
+    # Affichage des résultats
+    results = [
+        (model, val, title, total_time)
+    ]
+    print_validation_results(results, epoch=EPOCHS)
+
+    history.append(all_history)
+    loss_history.append(val_loss_history)
+    titles.append(title)
+
 
     # Affichage des courbes comparatives
     plot_result(
