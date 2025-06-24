@@ -190,4 +190,6 @@ getValidation
 ✅ Époque 18/100 (8 transforms avg): time=181.64s, loss=3.1062, policy_loss=2.3385, value_loss=0.6651, policy_categorical_accuracy=0.4007, value_mse=0.1074
 
 📊 Époque 19/100 - Entraînement sur 8 transformations:
-248/313 [======================>.......] - ETA: 9s - loss: 3.2196 - policy_loss: 2.4480 - value_loss: 0.6701 - policy_categorical_accuracy: 0.3872 - value_mse: 0.1107
+313/313 [==============================] - 45s 145ms/step - loss: 3.2068 - policy_loss: 2.4359 - value_loss: 0.6695 - policy_categorical_accuracy: 0.3907 - value_mse: 0.1100
+  🔀 Original (T0): loss=3.2068, policy_loss=2.4359, value_loss=0.6695, policy_categorical_accuracy=0.3907, value_mse=0.1100, time=45.6s
+  🔀 Rot90°   (T1): loss=3.1339, policy_loss=2.3635, value_loss=0.6696, policy_categorical_accuracy=0.4028, value_mse=0.1101, time=43.3s
