@@ -1,72 +1,73 @@
-# Emiasd — Deep Learning
+<div align="center">
 
-Cours et projet de Deep Learning — Master IASD (IA & Science des Données), Paris-Dauphine / PSL.
+# Deep Learning — Master IASD
+
+**Paris-Dauphine · PSL · CNRS**
+
+*Cours, travaux pratiques et projet de recherche en Deep Learning appliqué au jeu de Go*
+
+---
+
+![Python](https://img.shields.io/badge/Python-3.9-blue?logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-3.9-D00000?logo=keras&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)
+![WandB](https://img.shields.io/badge/Weights%20&%20Biases-tracking-FFBE00?logo=weightsandbiases&logoColor=black)
+![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M4%20Pro-000000?logo=apple&logoColor=white)
+
+</div>
+
+---
+
+## Contexte
+
+Cours de Deep Learning du Master **IASD** (Intelligence Artificielle & Science des Données), assuré par :
+
+- **Alexandre Verine** — IA Research Fellow, Centre des Données, ENS PSL. Spécialiste en IA Générative pour l'image.
+- **Tristan Cazenave** — Professeur, LAMSADE, Paris-Dauphine–PSL. Chaire PRAIRIE, éditeur en chef de l'ICGA, expert en jeux de stratégie.
+
+### Objectifs pédagogiques
+
+> Comprendre les fondamentaux du Deep Learning et savoir entraîner des réseaux de neurones sur des données variées avec Keras et PyTorch.
+
+**Compétences développées :**
+- Architecture et entraînement de réseaux de neurones (MLP → CNN → ResNet → MobileNet)
+- Modèles génératifs : Autoencoders, VAE, GAN
+- Application à la vision par ordinateur et aux jeux de stratégie
+- Expérimentation systématique et ablation d'hyperparamètres
+
+---
 
 ## Structure du dépôt
 
-```
-.
-├── 01.Cours/           Cours magistraux (slides PDF)
-├── 02.TP/
-│   ├── Module Cazenave/    TPs 1–6 (réseaux convolutifs, Go, AlphaZero)
-│   └── Module Verrine/     TPs 1–5 (MNIST, segmentation, CNN)
-├── 03.Models/          Implémentations de référence
-│   ├── AlphaZero/      Architecture AlphaZero (config + modèle)
-│   ├── MixNet/         MixConv — convolutions multi-kernel (Keras)
-│   ├── MixNet2/
-│   ├── MobileNetV2/    MobileNetV2 from scratch
-│   └── MobileNetV3/    MobileNetV3 (Large + Small)
-├── 04.Others/          Articles de recherche, notes, ressources complémentaires
-├── 05.ProjetGo/        Projet principal
-│   ├── go_*.py         Code source — modèles et entraînement
-│   ├── go_test000XX*   Scripts d'expériences (ablation, hyperparamètres)
-│   ├── Backups/        Snapshots de travail datés (mars → juillet 2025)
-│   └── Rapport .docx   Rapport de projet final
-└── 06.Livres/          Livres et articles (Deep Learning + Go)
-```
-
-## Projet Go — `05.ProjetGo/`
-
-Application du Deep Learning au jeu de Go, en s'appuyant sur le moteur **Golois**.
-
-### Modèles implémentés
-
-| Fichier | Architecture |
+| Dossier | Contenu |
 |---|---|
-| `go_basenet.py` | Réseau de base (conv + batchnorm) |
-| `go_mobilenet.py` | MobileNet adapté Go |
-| `go_mobilenetv2.py` | MobileNetV2 adapté Go |
-| `go_resnet.py` | ResNet adapté Go |
-| `go_mixnet.py` | MixNet adapté Go |
+| [`01.Cours/`](01.Cours/README.md) | Slides et syllabus du cours |
+| [`02.TP/`](02.TP/README.md) | 11 travaux pratiques (Keras + PyTorch) |
+| [`03.Models/`](03.Models/README.md) | Implémentations de référence (AlphaZero, MobileNet, MixNet, ResNet) |
+| [`04.Others/`](04.Others/README.md) | Articles de recherche, notes et ressources |
+| [`05.ProjetGo/`](05.ProjetGo/README.md) | **Projet principal** — Deep Learning appliqué au jeu de Go |
+| [`06.Livres/`](06.Livres/README.md) | Livres et articles fondateurs |
 
-### Entraînement
+---
 
-```bash
-python go_train.py
+## Projet phare — Go & Deep Learning
+
+Le projet consiste à entraîner des réseaux de neurones profonds pour jouer au **jeu de Go (9×9)**, en s'inspirant directement d'AlphaZero. Le moteur d'évaluation **Golois** (module C++ interfacé en Python) fournit les données d'entraînement.
+
+Plusieurs architectures ont été implémentées et comparées : **BaseNet, ResNet, MobileNet, MobileNetV2, MixNet**. L'entraînement est suivi avec **Weights & Biases** et une campagne d'ablation systématique a été conduite sur 7 axes (régularisation, batch size, nombre de blocs, poids des losses Policy/Value...).
+
+➜ Voir [`05.ProjetGo/`](05.ProjetGo/README.md) pour le détail complet.
+
+---
+
+## Stack technique
+
 ```
-
-Les expériences d'ablation sont numérotées `go_test000XX-*.py` :
-
-| Script | Variable testée |
-|---|---|
-| `go_test00000` | Configuration de base / régularisation |
-| `go_test00001` | Comparaison d'architectures |
-| `go_test00002` | Batch size |
-| `go_test00003` | Nombre de samples (N) |
-| `go_test00004` | Nombre de blocs |
-| `go_test00005` | Poids de la loss Policy |
-| `go_test00006` | Poids de la loss Value |
-
-### Dépendances
-
-- Python 3.9
-- TensorFlow / Keras
-- `golois.cpython-39-darwin.so` — module C++ d'interface avec le moteur Go (inclus)
-- Weights & Biases (`wandb`) pour le suivi des expériences
-
-## Références clés
-
-- [MobileNetworks for Computer Go](04.Others/MobileNetworksForComputerGo.pdf)
-- [Improving Model and Search for Computer Go](04.Others/ImprovingModelAndSearchForComputerGo.pdf)
-- [Cosine Annealing + MixNet + Swish for Computer Go](04.Others/CosineAnnealingMixnetAndSwishActivationForComputerGo.pdf)
-- [AlphaGo Zero — Nature](04.Others/nature24270.epdf)
+Frameworks    TensorFlow 2.16 / Keras 3.9  (module Cazenave)
+              PyTorch 2.x                   (module Verine)
+Suivi         Weights & Biases (wandb)
+Matériel      Apple M4 Pro — GPU Metal
+Environnement Python 3.9 / conda
+```
