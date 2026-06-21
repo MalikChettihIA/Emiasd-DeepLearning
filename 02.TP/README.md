@@ -16,7 +16,7 @@
 
 ## Module Cazenave — Keras / TensorFlow
 
-### TP01 — Dense Networks
+### [TP01 — Dense Networks](Module%20Cazenave/Cazenave_TP01.ipynb)
 Premiers réseaux de neurones entièrement connectés.
 
 | Exercice | Dataset | Tâche |
@@ -29,7 +29,7 @@ Premiers réseaux de neurones entièrement connectés.
 
 ---
 
-### TP02 — Convolutional Networks
+### [TP02 — Convolutional Networks](Module%20Cazenave/Cazenave_TP02.ipynb)
 Introduction aux réseaux de convolution.
 
 | Exercice | Dataset | Architecture |
@@ -39,7 +39,7 @@ Introduction aux réseaux de convolution.
 
 ---
 
-### TP03 — Residual Networks
+### [TP03 — Residual Networks](Module%20Cazenave/Cazenave_TP03.ipynb)
 Connexions résiduelles et Functional API de Keras.
 
 | Exercice | Dataset | Architecture |
@@ -50,7 +50,7 @@ Connexions résiduelles et Functional API de Keras.
 
 ---
 
-### TP04 — Autoencoders & VAE
+### [TP04 — Autoencoders & VAE](Module%20Cazenave/Cazenave_TP04.ipynb)
 Modèles génératifs non-supervisés.
 
 | Exercice | Dataset | Architecture |
@@ -61,12 +61,12 @@ Modèles génératifs non-supervisés.
 
 ---
 
-### TP05 — VAE (suite)
+### [TP05 — VAE (suite)](Module%20Cazenave/Cazenave_TP05.ipynb)
 Variational Autoencoder complet avec espace latent 2D, visualisation de la distribution latente et génération par interpolation.
 
 ---
 
-### TP06 — Mobile Networks
+### [TP06 — Mobile Networks](Module%20Cazenave/Cazenave_TP06.ipynb)
 Implémentation des blocs bottleneck de MobileNet en Keras.
 
 | Exercice | Dataset | Architecture |
@@ -78,7 +78,7 @@ Implémentation des blocs bottleneck de MobileNet en Keras.
 
 ## Module Verine — PyTorch
 
-### TP1 — MLP from scratch (PyTorch)
+### [TP1 — MLP from scratch (PyTorch)](Module%20Verrine/TP1.ipynb)
 Implémentation d'un MLP en PyTorch pur, avec loop d'entraînement manuel.
 
 - MNIST — réseau 784 → 64 → 32 → 10
@@ -89,7 +89,7 @@ Implémentation d'un MLP en PyTorch pur, avec loop d'entraînement manuel.
 
 ---
 
-### TP3 — Autoencoders (PyTorch)
+### [TP3 — Autoencoders (PyTorch)](Module%20Verrine/TP3.ipynb) · [Correction](Module%20Verrine/TP3_correction.ipynb)
 Étude complète des autoencoders avec sélection d'hyperparamètres.
 
 | Modèle | Architecture | Tâche |
@@ -102,7 +102,11 @@ Implémentation d'un MLP en PyTorch pur, avec loop d'entraînement manuel.
 
 ---
 
-### TP5 — GANs (PyTorch)
+### [TP4](Module%20Verrine/TP4.ipynb)
+
+---
+
+### [TP5 — GANs (PyTorch)](Module%20Verrine/TP5.ipynb)
 Introduction aux réseaux antagonistes génératifs.
 
 | Exercice | Données | Architecture |
