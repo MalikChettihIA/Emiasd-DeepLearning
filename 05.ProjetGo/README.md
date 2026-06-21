@@ -131,6 +131,24 @@ Les runs sont organisés par date dans `Backups/20250429/wandb/`. Métriques sui
 
 ---
 
+## Bases scientifiques — Articles de référence
+
+Le projet s'appuie sur une bibliographie de 7 articles qui ont guidé chaque décision architecturale et algorithmique. Ces articles forment une progression depuis les fondations (ResNet, PUCT) jusqu'aux optimisations fines (MixConv, Swish, Squeeze & Excitation).
+
+| Article | Contribution au projet |
+|---|---|
+| [Residual Networks for Computer Go](articles/ResidualNetworksForComputerGo.md) | Justifie `go_resnet.py` et `go_basenet.py` — les skip connections comme baseline |
+| [Spatial Average Pooling for Computer Go](articles/SpatialAveragePoolingForComputerGo.md) | Conception de la tête value — pooling spatial vs GAP |
+| [Mobile Networks for Computer Go](articles/MobileNetworksForComputerGo.md) | **Article central** — justifie `go_mobilenet.py` et `go_mobilenetv2.py` |
+| [Improving Model and Search for Computer Go](articles/ImprovingModelAndSearchForComputerGo.md) | Bloc Squeeze & Excitation dans `go_mobilenet.py`, étude depth/width |
+| [Cosine Annealing, Mixnet and Swish for Computer Go](articles/CosineAnnealingMixnetAndSwishActivationForComputerGo.md) | `go_mixnet.py`, scheduler cosine dans `go_train.py`, activation Swish |
+| [Accelerating Self-Play Learning in Go (KataGo)](articles/AcceleratingSelfPlayLearningInGo.md) | Source du dataset de référence, concept de global pooling bias |
+| [Polygames: Improved Zero Learning](articles/PolygamesImprovedZeroLearning.md) | Architecture fully convolutional, value head invariante à la taille |
+
+→ [Voir le dossier articles complet](articles/README.md)
+
+---
+
 ## Rapport
 
 `Emiasd - Deep Learning - Rapport Projet.docx` — rapport final documentant la méthodologie, les architectures, la campagne d'ablation et les résultats.
