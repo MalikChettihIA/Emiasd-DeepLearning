@@ -1,0 +1,3 @@
+je n'arrive pas a augment avec 8 rotation sans que cela ne fasse colapser l'entraienemnt.
+Je tente de diminuer le lr dde 0.0008 à 0.0004 je met un clipnorm de 1.0 à 0.5
+j'ai hésité à augmenter la taille de batch de 32 à 64 mais je ne l'ai pas fait

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="grade-c">
+<head>
+    <title>Mastering the game of Go without human knowledge | Nature</title>
+    <link rel="canonical" href="/articles/nature24270">
+    <noscript>
+        <meta http-equiv="Refresh" content="0; https://www.nature.com/articles/nature24270.pdf">
+    </noscript>
+    
+    
+    <meta name="journal_id" content="41586"/>
+    <meta name="dc.title" content="Mastering the game of Go without human knowledge"/>
+    <meta name="dc.source" content="Nature 2017 550:7676"/>
+    <meta name="dc.format" content="text/html"/>
+    <meta name="dc.publisher" content="Nature Publishing Group"/>
+    <meta name="dc.date" content="2017-10-19"/>
+    <meta name="dc.type" content="OriginalPaper"/>
+    <meta name="dc.language" content="En"/>
+    <meta name="dc.copyright" content="2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."/>
+    <meta name="dc.rights" content="2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."/>
+    <meta name="dc.rightsAgent" content="journalpermissions@springernature.com"/>
+    <meta name="dc.description" content="A long-standing goal of artificial intelligence is an algorithm that learns, tabula rasa, superhuman proficiency in challenging domains. Recently, AlphaGo became the first program to defeat a world champion in the game of Go. The tree search in AlphaGo evaluated positions and selected moves using deep neural networks. These neural networks were trained by supervised learning from human expert moves, and by reinforcement learning from self-play. Here we introduce an algorithm based solely on reinforcement learning, without human data, guidance or domain knowledge beyond game rules. AlphaGo becomes its own teacher: a neural network is trained to predict AlphaGo&#8217;s own move selections and also the winner of AlphaGo&#8217;s games. This neural network improves the strength of the tree search, resulting in higher quality move selection and stronger self-play in the next iteration. Starting tabula rasa, our new program AlphaGo Zero achieved superhuman performance, winning 100&#8211;0 against the previously published, champion-defeating AlphaGo. Starting from zero knowledge and without human data, AlphaGo Zero was able to teach itself to play Go and to develop novel strategies that provide new insights into the oldest of games. To beat world champions at the game of Go, the computer program AlphaGo has relied largely on supervised learning from millions of human expert moves. David Silver and colleagues have now produced a system called AlphaGo Zero, which is based purely on reinforcement learning and learns solely from self-play. Starting from random moves, it can reach superhuman level in just a couple of days of training and five million games of self-play, and can now beat all previous versions of AlphaGo. Because the machine independently discovers the same fundamental principles of the game that took humans millennia to conceptualize, the work suggests that such principles have some universal character, beyond human bias."/>
+    <meta name="prism.issn" content="1476-4687"/>
+    <meta name="prism.publicationName" content="Nature"/>
+    <meta name="prism.publicationDate" content="2017-10-19"/>
+    <meta name="prism.volume" content="550"/>
+    <meta name="prism.number" content="7676"/>
+    <meta name="prism.section" content="OriginalPaper"/>
+    <meta name="prism.startingPage" content="354"/>
+    <meta name="prism.endingPage" content="359"/>
+    <meta name="prism.copyright" content="2017 Macmillan Publishers Limited, part of Springer Nature. All rights reserved."/>
+    <meta name="prism.rightsAgent" content="journalpermissions@springernature.com"/>
+    <meta name="prism.url" content="https://www.nature.com/articles/nature24270"/>
+    <meta name="prism.doi" content="doi:10.1038/nature24270"/>
+    <meta name="citation_pdf_url" content="https://www.nature.com/articles/nature24270.pdf"/>
+    <meta name="citation_fulltext_html_url" content="https://www.nature.com/articles/nature24270"/>
+    <meta name="citation_journal_title" content="Nature"/>
+    <meta name="citation_journal_abbrev" content="Nature"/>
+    <meta name="citation_publisher" content="Nature Publishing Group"/>
+    <meta name="citation_issn" content="1476-4687"/>
+    <meta name="citation_title" content="Mastering the game of Go without human knowledge"/>
+    <meta name="citation_volume" content="550"/>
+    <meta name="citation_issue" content="7676"/>
+    <meta name="citation_publication_date" content="2017/10"/>
+    <meta name="citation_online_date" content="2017/10/19"/>
+    <meta name="citation_firstpage" content="354"/>
+    <meta name="citation_lastpage" content="359"/>
+    <meta name="citation_article_type" content="Article"/>
+    <meta name="citation_language" content="en"/>
+    <meta name="dc.identifier" content="doi:10.1038/nature24270"/>
+    <meta name="DOI" content="10.1038/nature24270"/>
+    <meta name="size" content="176737"/>
+    <meta name="citation_doi" content="10.1038/nature24270"/>
+    <meta name="citation_springer_api_url" content="http://api.springer.com/xmldata/jats?q=doi:10.1038/nature24270&amp;api_key="/>
+    <meta name="description" content="A long-standing goal of artificial intelligence is an algorithm that learns, tabula rasa, superhuman proficiency in challenging domains. Recently, AlphaGo became the first program to defeat a world champion in the game of Go. The tree search in AlphaGo evaluated positions and selected moves using deep neural networks. These neural networks were trained by supervised learning from human expert moves, and by reinforcement learning from self-play. Here we introduce an algorithm based solely on reinforcement learning, without human data, guidance or domain knowledge beyond game rules. AlphaGo becomes its own teacher: a neural network is trained to predict AlphaGo&#8217;s own move selections and also the winner of AlphaGo&#8217;s games. This neural network improves the strength of the tree search, resulting in higher quality move selection and stronger self-play in the next iteration. Starting tabula rasa, our new program AlphaGo Zero achieved superhuman performance, winning 100&#8211;0 against the previously published, champion-defeating AlphaGo. Starting from zero knowledge and without human data, AlphaGo Zero was able to teach itself to play Go and to develop novel strategies that provide new insights into the oldest of games. To beat world champions at the game of Go, the computer program AlphaGo has relied largely on supervised learning from millions of human expert moves. David Silver and colleagues have now produced a system called AlphaGo Zero, which is based purely on reinforcement learning and learns solely from self-play. Starting from random moves, it can reach superhuman level in just a couple of days of training and five million games of self-play, and can now beat all previous versions of AlphaGo. Because the machine independently discovers the same fundamental principles of the game that took humans millennia to conceptualize, the work suggests that such principles have some universal character, beyond human bias."/>
+    <meta name="dc.creator" content="Silver, David"/>
+    <meta name="dc.creator" content="Schrittwieser, Julian"/>
+    <meta name="dc.creator" content="Simonyan, Karen"/>
+    <meta name="dc.creator" content="Antonoglou, Ioannis"/>
+    <meta name="dc.creator" content="Huang, Aja"/>
+    <meta name="dc.creator" content="Guez, Arthur"/>
+    <meta name="dc.creator" content="Hubert, Thomas"/>
+    <meta name="dc.creator" content="Baker, Lucas"/>
+    <meta name="dc.creator" content="Lai, Matthew"/>
+    <meta name="dc.creator" content="Bolton, Adrian"/>
+    <meta name="dc.creator" content="Chen, Yutian"/>
+    <meta name="dc.creator" content="Lillicrap, Timothy"/>
+    <meta name="dc.creator" content="Hui, Fan"/>
+    <meta name="dc.creator" content="Sifre, Laurent"/>
+    <meta name="dc.creator" content="van den Driessche, George"/>
+    <meta name="dc.creator" content="Graepel, Thore"/>
+    <meta name="dc.creator" content="Hassabis, Demis"/>
+    <meta name="dc.subject" content="Computational science"/>
+    <meta name="dc.subject" content="Computer science"/>
+    <meta name="dc.subject" content="Reward"/>
+    <meta name="citation_reference" content="Friedman, J., Hastie, T. &amp; Tibshirani, R. The Elements of Statistical Learning: Data Mining, Inference, and Prediction (Springer, 2009)"/>
+    <meta name="citation_reference" content="citation_journal_title=Nature; citation_title=Deep learning; citation_author=Y LeCun, Y Bengio, G Hinton; citation_volume=521; citation_publication_date=2015; citation_pages=436-444; citation_doi=10.1038/nature14539; citation_id=CR2"/>
+    <meta name="citation_reference" content="Krizhevsky, A., Sutskever, I. &amp; Hinton, G. ImageNet classification with deep convolutional neural networks. In Adv. Neural Inf. Process. Syst. Vol. 25 (eds Pereira, F., Burges, C. J. C., Bottou, L. &amp; Weinberger, K. Q. ) 1097&#8211;1105 (2012)"/>
+    <meta name="citation_reference" content="He, K., Zhang, X., Ren, S . &amp; Sun, J. Deep residual learning for image recognition. In Proc. 29th IEEE Conf. Comput. Vis. Pattern Recognit. 770&#8211;778 (2016)"/>
+    <meta name="citation_reference" content="Hayes-Roth, F., Waterman, D. &amp; Lenat, D. Building Expert Systems (Addison-Wesley, 1984)"/>
+    <meta name="citation_reference" content="citation_journal_title=Nature; citation_title=Human-level control through deep reinforcement learning; citation_author=V Mnih; citation_volume=518; citation_publication_date=2015; citation_pages=529-533; citation_doi=10.1038/nature14236; citation_id=CR6"/>
+    <meta name="citation_reference" content="Guo, X., Singh, S. P., Lee, H., Lewis, R. L. &amp; Wang, X. Deep learning for real-time Atari game play using offline Monte-Carlo tree search planning. In Adv. Neural Inf. Process. Syst. Vol. 27 (eds Ghahramani, Z., Welling, M., Cortes, C., Lawrence, N. D. &amp; Weinberger, K. Q. ) 3338&#8211;3346 (2014)"/>
+    <meta name="citation_reference" content="Mnih, V . et al. Asynchronous methods for deep reinforcement learning. In Proc. 33rd Int. Conf. Mach. Learn. Vol. 48 (eds Balcan, M. F. &amp; Weinberger, K. Q. ) 1928&#8211;1937 (2016)"/>
+    <meta name="citation_reference" content="Jaderberg, M . et al. Reinforcement learning with unsupervised auxiliary tasks. In 5th Int. Conf. Learn. Representations (2017)"/>
+    <meta name="citation_reference" content="Dosovitskiy, A. &amp; Koltun, V. Learning to act by predicting the future. In 5th Int. Conf. Learn. Representations (2017)"/>
+    <meta name="citation_reference" content="Man&#180;dziuk, J. in Challenges for Computational Intelligence ( Duch, W. &amp; Man&#180;dziuk, J. ) 407&#8211;442 (Springer, 2007)"/>
+    <meta name="citation_reference" content="citation_journal_title=Nature; citation_title=Mastering the game of Go with deep neural networks and tree search; citation_author=D Silver; citation_volume=529; citation_publication_date=2016; citation_pages=484-489; citation_doi=10.1038/nature16961; citation_id=CR12"/>
+    <meta name="citation_reference" content="Coulom, R. Efficient selectivity and backup operators in Monte-Carlo tree search. In 5th Int. Conf. Computers and Games (eds Ciancarini, P. &amp; van den Herik, H. J. ) 72&#8211;83 (2006)"/>
+    <meta name="citation_reference" content="Kocsis, L. &amp; Szepesv&#225;ri, C. Bandit based Monte-Carlo planning. In 15th Eu. Conf. Mach. Learn. 282&#8211;293 (2006)"/>
+    <meta name="citation_reference" content="citation_journal_title=Comput. Intell. AI Games; citation_title=A survey of Monte Carlo tree search methods. IEEE Trans; citation_author=C Browne; citation_volume=4; citation_publication_date=2012; citation_pages=1-49; citation_doi=10.1109/TCIAIG.2012.2186810; citation_id=CR15"/>
+    <meta name="citation_reference" content="citation_journal_title=Biol. Cybern.; citation_title=Neocognitron: a self organizing neural network model for a mechanism of pattern recognition unaffected by shift in position; citation_author=K Fukushima; citation_volume=36; citation_publication_date=1980; citation_pages=193-202; citation_doi=10.1007/BF00344251; citation_id=CR16"/>
+    <meta name="citation_reference" content="LeCun, Y. &amp; Bengio, Y. in The Handbook of Brain Theory and Neural Networks Ch. 3 (ed. Arbib, M. ) 276&#8211;278 (MIT Press, 1995)"/>
+    <meta name="citation_reference" content="Ioffe, S. &amp; Szegedy, C. Batch normalization: accelerating deep network training by reducing internal covariate shift. In Proc. 32nd Int. Conf. Mach. Learn. Vol. 37 448&#8211;456 (2015)"/>
+    <meta name="citation_reference" content="citation_journal_title=Nature; citation_title=Digital selection and analogue amplification coexist in a cortex-inspired silicon circuit; citation_author=RHR Hahnloser, R Sarpeshkar, MA Mahowald, RJ Douglas, HS Seung; citation_volume=405; citation_publication_date=2000; citation_pages=947-951; citation_doi=10.1038/35016072; citation_id=CR19"/>
+    <meta name="citation_reference" content="Howard, R. Dynamic Programming and Markov Processes (MIT Press, 1960)"/>
+    <meta name="citation_reference" content="Sutton, R . &amp; Barto, A. Reinforcement Learning: an Introduction (MIT Press, 1998)"/>
+    <meta name="citation_reference" content="citation_journal_title=J. Control Theory Appl.; citation_title=Approximate policy iteration: a survey and some new methods; citation_author=DP Bertsekas; citation_volume=9; citation_publication_date=2011; citation_pages=310-335; citation_doi=10.1007/s11768-011-1005-3; citation_id=CR22"/>
+    <meta name="citation_reference" content="Scherrer, B. Approximate policy iteration schemes: a comparison. In Proc. 31st Int. Conf. Mach. Learn. Vol. 32 1314&#8211;1322 (2014)"/>
+    <meta name="citation_reference" content="citation_journal_title=Ann. Math. Artif. Intell.; citation_title=Multi-armed bandits with episode context; citation_author=CD Rosin; citation_volume=61; citation_publication_date=2011; citation_pages=203-230; citation_doi=10.1007/s10472-011-9258-6; citation_id=CR24"/>
+    <meta name="citation_reference" content="Coulom, R. Whole-history rating: a Bayesian rating system for players of time-varying strength. In Int. Conf. Comput. Games (eds van den Herik, H. J., Xu, X . Ma, Z . &amp; Winands, M. H. M. ) Vol. 5131 113&#8211;124 (Springer, 2008)"/>
+    <meta name="citation_reference" content="citation_journal_title=Int. J. Knowledge-Based Intelligent Engineering Systems; citation_title=The world of independent learners is not Markovian; citation_author=GJ Laurent, L Matignon, N Le Fort-Piat; citation_volume=15; citation_publication_date=2011; citation_pages=55-64; citation_doi=10.3233/KES-2010-0206; citation_id=CR26"/>
+    <meta name="citation_reference" content="Foerster, J. N . et al. Stabilising experience replay for deep multi-agent reinforcement learning. In Proc. 34th Int. Conf. Mach. Learn. Vol. 70 1146&#8211;1155 (2017)"/>
+    <meta name="citation_reference" content="Heinrich, J . &amp; Silver, D. Deep reinforcement learning from self-play in imperfect-information games. In NIPS Deep Reinforcement Learning Workshop (2016)"/>
+    <meta name="citation_reference" content="Jouppi, N. P . et al. In-datacenter performance analysis of a Tensor Processing Unit. Proc. 44th Annu. Int. Symp. Comp. Architecture Vol. 17 1&#8211;12 (2017)"/>
+    <meta name="citation_reference" content="Maddison, C. J., Huang, A., Sutskever, I . &amp; Silver, D. Move evaluation in Go using deep convolutional neural networks. In 3rd Int. Conf. Learn. Representations. (2015)"/>
+    <meta name="citation_reference" content="Clark, C . &amp; Storkey, A. J. Training deep convolutional neural networks to play Go. In Proc. 32nd Int. Conf. Mach. Learn. Vol. 37 1766&#8211;1774 (2015)"/>
+    <meta name="citation_reference" content="Tian, Y. &amp; Zhu, Y. Better computer Go player with neural network and long-term prediction. In 4th Int. Conf. Learn. Representations (2016)"/>
+    <meta name="citation_reference" content="Cazenave, T. Residual networks for computer Go. IEEE Trans. Comput. Intell. AI Games 
+                    https://doi.org/10.1109/TCIAIG.2017.2681042
+                    
+                   (2017)"/>
+    <meta name="citation_reference" content="Huang, A. AlphaGo master online series of games. 
+                    https://deepmind.com/research/AlphaGo/match-archive/master
+                    
+                   (2017)"/>
+    <meta name="citation_reference" content="citation_journal_title=Adv. Neural Inf. Process. Syst.; citation_title=Monte Carlo matrix inversion and reinforcement learning; citation_author=AG Barto, M Duff; citation_volume=6; citation_publication_date=1994; citation_pages=687-694; citation_id=CR35"/>
+    <meta name="citation_reference" content="citation_journal_title=Mach. Learn.; citation_title=Reinforcement learning with replacing eligibility traces; citation_author=SP Singh, RS Sutton; citation_volume=22; citation_publication_date=1996; citation_pages=123-158; citation_id=CR36"/>
+    <meta name="citation_reference" content="Lagoudakis, M. G. &amp; Parr, R. Reinforcement learning as classification: leveraging modern classifiers. In Proc. 20th Int. Conf. Mach. Learn. 424&#8211;431 (2003)"/>
+    <meta name="citation_reference" content="citation_journal_title=J. Mach. Learn. Res.; citation_title=Approximate modified policy iteration and its application to the game of Tetris; citation_author=B Scherrer, M Ghavamzadeh, V Gabillon, B Lesner, M Geist; citation_volume=16; citation_publication_date=2015; citation_pages=1629-1676; citation_id=CR38"/>
+    <meta name="citation_reference" content="Littman, M. L. Markov games as a framework for multi-agent reinforcement learning. In Proc. 11th Int. Conf. Mach. Learn. 157&#8211;163 (1994)"/>
+    <meta name="citation_reference" content="Enzenberger, M. The integration of a priori knowledge into a Go playing neural network. 
+                    http://www.cgl.ucsf.edu/go/Programs/neurogo-html/neurogo.html
+                    
+                   (1996)"/>
+    <meta name="citation_reference" content="Enzenberger, M. in Advances in Computer Games (eds Van Den Herik, H. J., Iida, H. &amp; Heinz, E. A. ) 97&#8211;108 (2003)"/>
+    <meta name="citation_reference" content="citation_journal_title=Mach. Learn.; citation_title=Learning to predict by the method of temporal differences; citation_author=R Sutton; citation_volume=3; citation_publication_date=1988; citation_pages=9-44; citation_id=CR42"/>
+    <meta name="citation_reference" content="citation_journal_title=Adv. Neural Inf. Process. Syst.; citation_title=Temporal difference learning of position evaluation in the game of Go; citation_author=NN Schraudolph, P Dayan, TJ Sejnowski; citation_volume=6; citation_publication_date=1994; citation_pages=817-824; citation_id=CR43"/>
+    <meta name="citation_reference" content="citation_journal_title=Mach. Learn.; citation_title=Temporal-difference search in computer Go; citation_author=D Silver, R Sutton, M M&#252;ller; citation_volume=87; citation_publication_date=2012; citation_pages=183-219; citation_doi=10.1007/s10994-012-5280-0; citation_id=CR44"/>
+    <meta name="citation_reference" content="Silver, D. Reinforcement Learning and Simulation-Based Search in Computer Go. PhD thesis, Univ. Alberta, Edmonton, Canada (2009)"/>
+    <meta name="citation_reference" content="citation_journal_title=Artif. Intell.; citation_title=Monte-Carlo tree search and rapid action value estimation in computer Go; citation_author=S Gelly, D Silver; citation_volume=175; citation_publication_date=2011; citation_pages=1856-1875; citation_doi=10.1016/j.artint.2011.03.007; citation_id=CR46"/>
+    <meta name="citation_reference" content="citation_journal_title=Int. Comput. Games Assoc. J.; citation_title=Computing Elo ratings of move patterns in the game of Go; citation_author=R Coulom; citation_volume=30; citation_publication_date=2007; citation_pages=198-208; citation_id=CR47"/>
+    <meta name="citation_reference" content="Gelly, S., Wang, Y., Munos, R. &amp; Teytaud, O. Modification of UCT with patterns in Monte-Carlo Go. Report No. 6062 (INRIA, 2006)"/>
+    <meta name="citation_reference" content="citation_journal_title=Mach. Learn.; citation_title=Learning to play chess using temporal differences; citation_author=J Baxter, A Tridgell, L Weaver; citation_volume=40; citation_publication_date=2000; citation_pages=243-263; citation_doi=10.1023/A:1007634325138; citation_id=CR49"/>
+    <meta name="citation_reference" content="Veness, J., Silver, D., Blair, A. &amp; Uther, W. Bootstrapping from game tree search. In Adv. Neural Inf. Process. Syst. 1937&#8211;1945 (2009)"/>
+    <meta name="citation_reference" content="Lai, M. Giraffe: Using Deep Reinforcement Learning to Play Chess. MSc thesis, Imperial College London (2015)"/>
+    <meta name="citation_reference" content="Schaeffer, J., Hlynka, M . &amp; Jussila, V. Temporal difference learning applied to a high-performance game-playing program. In Proc. 17th Int. Jt Conf. Artif. Intell. Vol. 1 529&#8211;534 (2001)"/>
+    <meta name="citation_reference" content="citation_journal_title=Neural Comput.; citation_title=TD-gammon, a self-teaching backgammon program, achieves master-level play; citation_author=G Tesauro; citation_volume=6; citation_publication_date=1994; citation_pages=215-219; citation_doi=10.1162/neco.1994.6.2.215; citation_id=CR53"/>
+    <meta name="citation_reference" content="Buro, M. From simple features to sophisticated evaluation functions. In Proc. 1st Int. Conf. Comput. Games 126&#8211;145 (1999)"/>
+    <meta name="citation_reference" content="citation_journal_title=Artif. Intell.; citation_title=World-championship-caliber Scrabble; citation_author=B Sheppard; citation_volume=134; citation_publication_date=2002; citation_pages=241-275; citation_doi=10.1016/S0004-3702(01)00166-7; citation_id=CR55"/>
+    <meta name="citation_reference" content="citation_journal_title=Science; citation_title=DeepStack: expert-level artificial intelligence in heads-up no-limit poker; citation_author=M Moravc&#711;&#237;k; citation_volume=356; citation_publication_date=2017; citation_pages=508-513; citation_doi=10.1126/science.aam6960; citation_id=CR56"/>
+    <meta name="citation_reference" content="Tesauro, G &amp; Galperin, G. On-line policy improvement using Monte-Carlo search. In Adv. Neural Inf. Process. Syst. 1068&#8211;1074 (1996)"/>
+    <meta name="citation_reference" content="Tesauro, G. Neurogammon: a neural-network backgammon program. In Proc. Int. Jt Conf. Neural Netw. Vol. 3, 33&#8211;39 (1990)"/>
+    <meta name="citation_reference" content="citation_journal_title=IBM J. Res. Develop.; citation_title=Some studies in machine learning using the game of checkers II - recent progress; citation_author=AL Samuel; citation_volume=11; citation_publication_date=1967; citation_pages=601-617; citation_doi=10.1147/rd.116.0601; citation_id=CR59"/>
+    <meta name="citation_reference" content="citation_journal_title=Int. J. Robot. Res.; citation_title=Reinforcement learning in robotics: a survey; citation_author=J Kober, JA Bagnell, J Peters; citation_volume=32; citation_publication_date=2013; citation_pages=1238-1274; citation_doi=10.1177/0278364913495721; citation_id=CR60"/>
+    <meta name="citation_reference" content="Zhang, W. &amp; Dietterich, T. G. A reinforcement learning approach to job-shop scheduling. In Proc. 14th Int. Jt Conf. Artif. Intell. 1114&#8211;1120 (1995)"/>
+    <meta name="citation_reference" content="Cazenave, T., Balbo, F. &amp; Pinson, S. Using a Monte-Carlo approach for bus regulation. In Int. IEEE Conf. Intell. Transport. Syst. 1&#8211;6 (2009)"/>
+    <meta name="citation_reference" content="Evans, R. &amp; Gao, J. Deepmind AI reduces Google data centre cooling bill by 40%. 
+                    https://deepmind.com/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-40/
+                    
+                   (2016)"/>
+    <meta name="citation_reference" content="Abe, N . et al. Empirical comparison of various reinforcement learning strategies for sequential targeted marketing. In IEEE Int. Conf. Data Mining 3&#8211;10 (2002)"/>
+    <meta name="citation_reference" content="Silver, D., Newnham, L., Barker, D., Weller, S. &amp; McFall, J. Concurrent reinforcement learning from customer interactions. In Proc. 30th Int. Conf. Mach. Learn. Vol. 28 924&#8211;932 (2013)"/>
+    <meta name="citation_reference" content="Tromp, J. Tromp&#8211;Taylor rules. 
+                    http://tromp.github.io/go.html
+                    
+                   (1995)"/>
+    <meta name="citation_reference" content="citation_journal_title=Artif. Intell.; citation_title=Computer Go; citation_author=M M&#252;ller; citation_volume=134; citation_publication_date=2002; citation_pages=145-179; citation_doi=10.1016/S0004-3702(01)00121-7; citation_id=CR67"/>
+    <meta name="citation_reference" content="citation_journal_title=Proc. IEEE; citation_title=Taking the human out of the loop: a review of Bayesian optimization; citation_author=B Shahriari, K Swersky, Z Wang, RP Adams, N de Freitas; citation_volume=104; citation_publication_date=2016; citation_pages=148-175; citation_doi=10.1109/JPROC.2015.2494218; citation_id=CR68"/>
+    <meta name="citation_reference" content="citation_journal_title=Comput. Games; citation_title=On the scalability of parallel UCT; citation_author=RB Segal; citation_volume=6515; citation_publication_date=2011; citation_pages=36-47; citation_doi=10.1007/978-3-642-17928-0_4; citation_id=CR69"/>
+    <meta name="citation_author" content="Silver, David"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Schrittwieser, Julian"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Simonyan, Karen"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Antonoglou, Ioannis"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Huang, Aja"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Guez, Arthur"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Hubert, Thomas"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Baker, Lucas"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Lai, Matthew"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Bolton, Adrian"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Chen, Yutian"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Lillicrap, Timothy"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Hui, Fan"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Sifre, Laurent"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="van den Driessche, George"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Graepel, Thore"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="citation_author" content="Hassabis, Demis"/>
+    <meta name="citation_author_institution" content="DeepMind, London, UK"/>
+    <meta name="access_endpoint" content="https://www.nature.com/platform/readcube-access"/>
+    <meta name="twitter:site" content="@nature"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image:alt" content="Content cover image"/>
+    <meta name="twitter:title" content="Mastering the game of Go without human knowledge"/>
+    <meta name="twitter:description" content="Nature - To beat world champions at the game of Go, the computer program AlphaGo has relied largely on supervised learning from millions of human expert moves. David Silver and colleagues have now..."/>
+    <meta name="twitter:image" content="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnature24270/MediaObjects/41586_2017_Article_BFnature24270_Fig1_HTML.jpg"/>
+    
+
+    <script src="//content.readcube.com/nature/epdf.js"></script>
+    
+<!-- Google Tag Manager -->
+<script data-test="gtm-head">
+    window.initGTM = function() {
+        if (window.config.mustardcut) {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s),
+                        dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-MRVXSHQ');
+        }
+    }
+</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRVXSHQ"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div class="break-box box-1 js-box-1" id="small-screen"></div>
+<div class="break-box box-2 js-box-2" id="single-column"></div>
+<div class="break-box box-3 js-box-3" id="smaller-screen"></div>
+<div class="break-box box-4 js-box-4" id="standard-screen"></div>
+</body>
+</html>

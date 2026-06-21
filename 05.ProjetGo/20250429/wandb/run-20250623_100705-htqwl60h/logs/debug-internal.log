@@ -1,6 +1,0 @@
-{"time":"2025-06-23T10:07:05.558282+02:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/Users/malikchettih/Projects/Emiasd-Projects/Emiasd-DeepLearning/05.ProjetGo/20250429/wandb/run-20250623_100705-htqwl60h/logs/debug-core.log"}
-{"time":"2025-06-23T10:07:07.427746+02:00","level":"INFO","msg":"stream: created new stream","id":"htqwl60h"}
-{"time":"2025-06-23T10:07:07.427774+02:00","level":"INFO","msg":"stream: started","id":"htqwl60h"}
-{"time":"2025-06-23T10:07:07.427784+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"htqwl60h"}
-{"time":"2025-06-23T10:07:07.427792+02:00","level":"INFO","msg":"sender: started","stream_id":"htqwl60h"}
-{"time":"2025-06-23T10:07:07.427786+02:00","level":"INFO","msg":"handler: started","stream_id":"htqwl60h"}
