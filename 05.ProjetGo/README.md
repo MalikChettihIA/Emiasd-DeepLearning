@@ -151,4 +151,4 @@ Le projet s'appuie sur une bibliographie de 7 articles qui ont guidé chaque dé
 
 ## Rapport
 
-`Emiasd - Deep Learning - Rapport Projet.docx` — rapport final documentant la méthodologie, les architectures, la campagne d'ablation et les résultats.
+Rapport final documentant la méthodologie, les architectures, la campagne d'ablation et les résultats : [PDF](Emiasd%20-%20Deep%20Learning%20-%20Rapport%20Projet.pdf) · [DOCX](Emiasd%20-%20Deep%20Learning%20-%20Rapport%20Projet.docx)
