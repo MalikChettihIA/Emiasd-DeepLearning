@@ -1,52 +1,41 @@
-<div align="center">
+# 📖 06 — Books & Papers
 
-# 06 — Livres & Articles
-
-![Research](https://img.shields.io/badge/Articles-IEEE%20%7C%20Nature%20%7C%20AAAI-lightgrey)
-![Books](https://img.shields.io/badge/Livres-MIT%20Press%20%7C%20Manning-4A90E2)
-
-</div>
-
-Bibliothèque de référence du cours et du projet.
+![Research](https://img.shields.io/badge/Papers-IEEE%20%7C%20Nature%20%7C%20AAAI-lightgrey?style=flat) ![Books](https://img.shields.io/badge/Books-MIT%20Press%20%7C%20Manning-4A90E2?style=flat)
 
 ---
 
-## Livres
+Reference library for the course and the project.
 
-| Fichier | Auteurs | Éditeur | Pertinence |
+## Books
+
+| File | Authors | Publisher | Relevance |
 |---|---|---|---|
-| `Deep Learning with Python.pdf` | François Chollet | Manning, 2020 | **Référence principale** du module Cazenave — Keras, CNN, RNN, GAN, VAE |
-| `Deep_Learning_and_the_Game_of_Go.pdf` | Pumperla & Ferguson | Manning, 2019 | Deep Learning appliqué au Go — AlphaGo, MCTS, réseaux de politique |
-| `Deep_Learning_and_the_Game_of_Go.epub` | Pumperla & Ferguson | Manning, 2019 | Version ebook |
+| `Deep Learning with Python.pdf` | François Chollet | Manning, 2020 | **Main reference** for the Cazenave module — Keras, CNN, RNN, GAN, VAE |
+| `Deep_Learning_and_the_Game_of_Go.pdf` | Pumperla & Ferguson | Manning, 2019 | Deep Learning applied to Go — AlphaGo, MCTS, policy networks |
+| `Deep_Learning_and_the_Game_of_Go.epub` | Pumperla & Ferguson | Manning, 2019 | Ebook version |
 
----
+## Papers — Computer Go & Self-Play
 
-## Articles — Computer Go & Self-Play
-
-| Fichier | Référence | Contribution clé |
+| File | Reference | Key contribution |
 |---|---|---|
-| `MobileNetworksForComputerGo.pdf` | Cazenave, IEEE ToG 2021 | Adaptation de MobileNet au jeu de Go — base du projet |
-| `ImprovingModelAndSearchForComputerGo.pdf` | Cazenave, IEEE CoG 2021 | Optimisation architecture + recherche pour le Go |
-| `CosineAnnealingMixnetAndSwishActivationForComputerGo.pdf` | Cazenave et al., ACG 2021 | Cosine Annealing + MixConv + Swish — améliorations du projet |
-| `2020 Accelerating Self-Play Learning in Go.pdf` | Wu, AAAI RLG 2020 | Accélération de l'apprentissage par auto-jeu |
-| `2020 Polygames Improved Zero Learning.pdf` | Cazenave et al., ICGA 2020 | Généralisation d'AlphaZero à plusieurs jeux |
-| `2021 CosineAnnealingMixnetAndSwishActivationForComputerGo.pdf` | Cazenave et al., ACG 2021 | Version conférence |
+| `MobileNetworksForComputerGo.pdf` | Cazenave, IEEE ToG 2021 | Adapting MobileNet to Go — basis of the project |
+| `ImprovingModelAndSearchForComputerGo.pdf` | Cazenave, IEEE CoG 2021 | Architecture + search optimization for Go |
+| `CosineAnnealingMixnetAndSwishActivationForComputerGo.pdf` | Cazenave et al., ACG 2021 | Cosine Annealing + MixConv + Swish — project improvements |
+| `2020 Accelerating Self-Play Learning in Go.pdf` | Wu, AAAI RLG 2020 | Speeding up self-play learning |
+| `2020 Polygames Improved Zero Learning.pdf` | Cazenave et al., ICGA 2020 | Generalizing AlphaZero to multiple games |
+| `2021 CosineAnnealingMixnetAndSwishActivationForComputerGo.pdf` | Cazenave et al., ACG 2021 | Conference version |
 
----
+## Papers — Foundational architectures
 
-## Articles — Architectures fondatrices
-
-| Fichier | Référence | Contribution clé |
+| File | Reference | Key contribution |
 |---|---|---|
-| `resnet.pdf` | He et al., CVPR 2016 | **Residual Networks** — skip connections, entraînement de réseaux très profonds |
+| `resnet.pdf` | He et al., CVPR 2016 | **Residual Networks** — skip connections, training very deep networks |
 | `sap.pdf` | Cazenave, IJCAI 2018 | Spatial Average Pooling for Computer Go |
 
----
+## Recommended reading to understand the project
 
-## Lecture recommandée pour comprendre le projet
-
-1. **Chollet** — *Deep Learning with Python* : bases théoriques et pratiques Keras
-2. **MobileNetworksForComputerGo** : comprendre comment adapter une architecture légère au Go
-3. **ImprovingModelAndSearchForComputerGo** : optimisations mises en œuvre dans le projet
-4. **CosineAnnealingMixnetAndSwish** : scheduler et activations utilisés dans les expériences finales
-5. **Pumperla & Ferguson** — *Deep Learning and the Game of Go* : contexte AlphaGo/AlphaZero
+1. **Chollet** — *Deep Learning with Python*: theoretical and practical Keras foundations
+2. **MobileNetworksForComputerGo**: how to adapt a lightweight architecture to Go
+3. **ImprovingModelAndSearchForComputerGo**: optimizations implemented in the project
+4. **CosineAnnealingMixnetAndSwish**: scheduler and activations used in the final experiments
+5. **Pumperla & Ferguson** — *Deep Learning and the Game of Go*: AlphaGo/AlphaZero context

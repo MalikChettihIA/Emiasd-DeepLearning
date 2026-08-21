@@ -1,61 +1,49 @@
-<div align="center">
+# 📚 01 — Course
 
-# 01 — Cours
-
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?logo=tensorflow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
-![Niveau](https://img.shields.io/badge/Niveau-Master%20IASD-6A0DAD?logo=academia&logoColor=white)
-
-</div>
-
-Slides et syllabus du cours « Deep Learning » — Master IASD, Paris-Dauphine / PSL, janvier–mars 2025.
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?style=flat&logo=tensorflow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat&logo=pytorch&logoColor=white) ![Level](https://img.shields.io/badge/Level-Master%20IASD-6A0DAD?style=flat)
 
 ---
 
-## Intervenants
+Slides and syllabus for the "Deep Learning" course — Master IASD, Paris-Dauphine / PSL, January–March 2025.
 
-### Alexandre Verine — janvier 2025
-IA Research Fellow, Centre des Données, **École Normale Supérieure PSL**.  
-Spécialisé en IA Générative pour l'image — expressivité des réseaux de neurones, compromis diversité/qualité.
+## Instructors
 
-**Plan du cours :**  
+### Alexandre Verine — January 2025
+AI Research Fellow, Centre des Données, **École Normale Supérieure PSL**.
+Specialist in generative AI for images — network expressivity, diversity/quality tradeoffs.
+
+**Course outline:**
 Representation Learning · Neural Networks · MLP · CNN · RNN and Applications
 
-**Compétences visées :**  
-Comprendre comment un réseau de neurones est un approximateur universel. Maîtriser les opérations à l'inférence et l'entraînement (backpropagation) avec une introduction à **PyTorch**.
+**Target skills:**
+Understand how a neural network is a universal approximator. Master inference and training operations (backpropagation) with an introduction to **PyTorch**.
 
----
+### Tristan Cazenave — March 2025
+Professor, **LAMSADE**, Université Paris-Dauphine–PSL.
+PRAIRIE Chair · Editor-in-Chief of the ICGA · Head of the games working group at GDR RADIA (CNRS).
 
-### Tristan Cazenave — mars 2025
-Professeur, **LAMSADE**, Université Paris-Dauphine–PSL.  
-Chaire PRAIRIE · Éditeur en chef de l'ICGA · Responsable du groupe de travail jeux du GDR RADIA (CNRS).
-
-**Plan du cours :**  
-Computer Vision · Generative Networks · Recurrent Networks · NLP · Graph Neural Networks · Computer Games  
+**Course outline:**
+Computer Vision · Generative Networks · Recurrent Networks · NLP · Graph Neural Networks · Computer Games
 Backpropagation · Activation Functions · Regularization · Dropout · Transfer Learning · Mobile Networks · Transformers · LSTM
 
-**Compétences visées :**  
-Définir et entraîner un réseau en **Keras**. Savoir quelle architecture utiliser selon le cas d'usage.
+**Target skills:**
+Define and train a network in **Keras**. Know which architecture to use for a given use case.
 
----
+## Folder content
 
-## Contenu du dossier
-
-| Fichier | Description |
+| File | Description |
 |---|---|
-| `1.Verine Cazenave Syllabus Deep learning janvier 2025.pdf` | Syllabus officiel du cours (objectifs, plan, bibliographie) |
-| `2.Verine Slides chap01.pdf` | Slides module Verine — Chapitre 1 |
-| `2.Verine Slides chap02.pdf` | Slides module Verine — Chapitre 2 |
-| `DeepLearningIASD.pdf` | Cours complet module Cazenave |
-| `slides.pdf` | Slides complémentaires |
+| `1.Verine Cazenave Syllabus Deep learning janvier 2025.pdf` | Official course syllabus (objectives, outline, bibliography) |
+| `2.Verine Slides chap01.pdf` | Verine module slides — Chapter 1 |
+| `2.Verine Slides chap02.pdf` | Verine module slides — Chapter 2 |
+| `DeepLearningIASD.pdf` | Full Cazenave module course |
+| `slides.pdf` | Additional slides |
 
----
-
-## Bibliographie
+## Bibliography
 
 - *Deep Learning*, Goodfellow, Bengio & Courville — MIT Press
 - *Deep Learning with Python*, François Chollet — Manning, 2020
-- *Keras and TensorFlow* — documentation officielle
+- *Keras and TensorFlow* — official documentation
 - Cazenave T. — *Residual Networks for Computer Go*, IEEE ToG 2018
 - Silver D. et al. — *Mastering the game of Go without human knowledge*, Nature 2017
 - Cazenave T. — *Mobile Networks for Computer Go*, IEEE ToG 2021
