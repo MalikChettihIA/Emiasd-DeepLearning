@@ -4,7 +4,7 @@
 
 ---
 
-This repository gathers my work for the **Deep Learning** course of the **EMIASD Executive Master (Artificial Intelligence & Data Science) at Université Paris-Dauphine**, taught by:
+This repository gathers my work for the **Deep Learning** course of the **[EMIASD Executive Master](https://executive-education.dauphine.psl.eu/formations/executive-master-diplome-universite/ia-science-donnees) (Artificial Intelligence & Data Science) at Université Paris-Dauphine \| PSL**, taught by:
 
 - **Alexandre Verine** — AI Research Fellow, Centre des Données, ENS PSL. Specialist in generative AI for images.
 - **Tristan Cazenave** — Professor, LAMSADE, Paris-Dauphine \| PSL. PRAIRIE Chair, Editor-in-Chief of the ICGA, expert in strategy games.
